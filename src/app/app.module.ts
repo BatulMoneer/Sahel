@@ -10,6 +10,7 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { CartComponent } from './main-apps/cart/cart.component';
 import { HomeComponent } from './main-apps/home/home.component';
 import { AccountComponent } from './main-apps/account/account.component';
+import { ButtonComponent } from './shared-components/button/button.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AccountComponent } from './main-apps/account/account.component';
     FooterComponent,
     CartComponent,
     HomeComponent,
-    AccountComponent
+    AccountComponent,
+    ButtonComponent
   ],
   imports: [
     BrowserModule,
