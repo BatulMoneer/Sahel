@@ -10,7 +10,10 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { CartComponent } from './main-apps/cart/cart.component';
 import { HomeComponent } from './main-apps/home/home.component';
 import { AccountComponent } from './main-apps/account/account.component';
-import { ButtonComponent } from './shared-components/button/button.component';
+import { ItemCardComponent } from './shared-components/item-card/item-card.component';
+import { GreenButtonComponent } from './shared-components/green-button/green-button.component';
+import { PinkButtonComponent } from './shared-components/pink-button/pink-button.component';
+import { ShopCardComponent } from './shared-components/shop-card/shop-card.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { ButtonComponent } from './shared-components/button/button.component';
     CartComponent,
     HomeComponent,
     AccountComponent,
-    ButtonComponent
+    ItemCardComponent,
+    GreenButtonComponent,
+    PinkButtonComponent,
+    ShopCardComponent,
   ],
   imports: [
     BrowserModule,
