@@ -10,7 +10,7 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   header_list = [
-    {content:"تسجيل الدخول", link:"login"},
+    {content:"تسجيل الدخول", link:"/auth/login"},
     {content:"السلة", link:"cart"},
     {content:"الرئيسية", link:"home"}
   ]

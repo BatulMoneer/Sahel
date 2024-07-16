@@ -1,1 +1,47 @@
-<p>collector-signup works!</p>
+<app-header></app-header>
+<router-outlet>
+  <div class="body">
+    <form class="form">
+      <div class="slide-controls">
+        <input type="radio" name="slide" id="signup">
+        <label class="slide signup" for="signup">إنشاء حساب</label>
+
+        <input type="radio" name="slide" id="login" (change)="navigateToAccountType()">
+        <label class="slide login" for="login">تسجيل دخول</label>
+      </div>
+      <div class="slider-tab"></div>
+      <h1 class="title">أنشئ حسابك</h1>
+      <h6 class="note">أنشئ حسابك لتبدأ رحلتك في متجرنا</h6>
+
+      <div class="input-group">
+        <p class="text">الاسم</p>
+        <app-text-field></app-text-field>
+      </div>
+
+      <div class="input-group">
+        <p class="text">رقم الجوال</p>
+        <app-text-field></app-text-field>
+      </div>
+
+      <div class="input-group">
+        <p class="text">العمر</p>
+        <input type="date" class="age-input" required>
+      </div>
+
+      <div class="input-group">
+        <p class="text">البريد الالكتروني</p>
+        <app-text-field></app-text-field>
+      </div>
+
+      <div class="input-group">
+        <p class="text">كلمة المرور</p>
+        <app-pass-field></app-pass-field>
+      </div>
+
+      <app-button [value]='submit' [link]='link'></app-button>
+      <p class="change"><a routerLink="/auth/login">سجل الدخول</a> لديك حساب؟ </p>
+    </form>
+  </div>
+
+</router-outlet>
+<app-footer></app-footer>

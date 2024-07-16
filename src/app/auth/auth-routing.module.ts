@@ -6,6 +6,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { CustomerSignupComponent } from './customer-signup/customer-signup.component';
 import { CollectorSignupComponent } from './collector-signup/collector-signup.component';
+import { AccountTypeComponent } from './account-type/account-type.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path : 'collectorSignup',
     component : CollectorSignupComponent
+  },
+  {
+    path : 'accountType',
+    component : AccountTypeComponent
   }
 
 ];

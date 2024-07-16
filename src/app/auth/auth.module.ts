@@ -11,6 +11,7 @@ import { CustomerSignupComponent } from './customer-signup/customer-signup.compo
 import { CollectorSignupComponent } from './collector-signup/collector-signup.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
+import { AccountTypeComponent } from './account-type/account-type.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { FooterComponent } from './layout/footer/footer.component';
     CustomerSignupComponent,
     CollectorSignupComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    AccountTypeComponent
   ],
   imports: [
     CommonModule,

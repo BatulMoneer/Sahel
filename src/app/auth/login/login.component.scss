@@ -1,0 +1,158 @@
+@import url(https://fonts.googleapis.com/css?family=Almarai);
+
+.body {
+  font-family: var(--font);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  height: 100%;
+  margin: 0;
+}
+
+.form {
+  background: var(--background);
+  padding: 20px;
+  width: 370px;
+  text-align: right;
+}
+
+.slide-controls {
+  gap: 1px;
+
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.slide-controls input {
+  display: none;
+}
+
+.slide {
+  cursor: pointer;
+  padding: 7px 20px;
+  width: 200px;
+  text-align: center;
+  transition: background 0.3s;
+}
+
+.slide.login {
+  background: var(--main);
+  color: var(--background);
+}
+
+.slide.signup {
+  background: var(--back);
+  color: var(--textCol);
+}
+.slide.signup:hover {
+  background: var(--main);
+  color: var(--background);
+}
+
+.slide-controls input:checked + .slide {
+  background: var(--main);
+  color: var(--background);
+}
+
+.slider-tab {
+  height: 2px;
+  background: var(--main);
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: var(--textCol);
+}
+
+.note {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: var(--textCol);
+  font-weight: lighter;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  margin-bottom: 20px;
+}
+
+.text {
+  display: inline;
+  text-align: right;
+  font-size: 18px;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  color: var(--textCol);
+}
+
+
+
+app-button {
+  display: flex;
+  justify-content: center;
+  margin: 70px 0px 10px 0px;
+  cursor: pointer;
+  text-decoration: none;
+
+}
+
+.change {
+  display: flex;
+  justify-content: center;
+  color: var(--textCol);
+  font-size: 18;
+  a {
+    padding-right: 5px;
+    text-decoration: none;
+    color: var(--textCol);
+    font-weight: bold;
+  }
+  a:hover{
+    cursor: pointer;
+    color: var(--main);
+  }
+
+}
+
+
+
+@media (max-width: 500px) {
+  .body {
+    padding: 10px;
+  }
+
+  .form {
+    padding: 10px;
+  }
+
+  .slide {
+    width: 100%;
+    padding: 8px 0;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .note {
+    font-size: 10px;
+  }
+
+  .text {
+    font-size: 14px;
+  }
+
+  app-button {
+    margin: 30px 0px 10px 0px;
+  }
+
+  .change {
+    font-size: 14px;
+  }
+}

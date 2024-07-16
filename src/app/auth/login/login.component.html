@@ -1,13 +1,32 @@
 <app-header></app-header>
 <router-outlet>
-  <form class="form">
-    <p>الايميل</p>
-    <app-text-field></app-text-field>
-    <p>كلمة المرور</p>
+  <div class="body">
+    <form class="form">
+      <div class="slide-controls">
+        <input type="radio" name="slide" id="signup" (change)="navigateToAccountType()">
+        <label class="slide signup" for="signup">إنشاء حساب</label>
 
-    <app-pass-field></app-pass-field>
-    <app-green-button></app-green-button>
-  </form>
+        <input type="radio" name="slide" id="login" checked>
+        <label class="slide login" for="login">تسجيل دخول</label>
+      </div>
+      <div class="slider-tab"></div>
+      <h1 class="title">سجل دخولك</h1>
+      <h6 class="note">سجل دخولك لتبدأ رحلتك في متجرنا</h6>
+
+      <div class="input-group">
+        <p class="text">البريد الالكتروني</p>
+        <app-text-field></app-text-field>
+      </div>
+
+      <div class="input-group">
+        <p class="text">كلمة المرور</p>
+        <app-pass-field></app-pass-field>
+      </div>
+
+      <app-button [value]='submit' [link]='link'></app-button>
+      <p class="change"><a routerLink="/auth/accountType">انشاء حساب </a>ليس لديك حساب؟ </p>
+    </form>
+  </div>
 
 </router-outlet>
 <app-footer></app-footer>

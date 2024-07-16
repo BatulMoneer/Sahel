@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-customer-signup',
@@ -7,8 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomerSignupComponent implements OnInit {
 
-  constructor() { }
+  submit = "انشاء حساب";
+  link = "home";
 
+  constructor(private router:Router) { }
+  navigateToAccountType() {
+    this.router.navigate(['/auth/login']);
+  }
   ngOnInit(): void {
   }
 
