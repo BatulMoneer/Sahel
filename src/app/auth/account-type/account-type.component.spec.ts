@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GreenButtonComponent } from './green-button.component';
+import { AccountTypeComponent } from './account-type.component';
 
-describe('GreenButtonComponent', () => {
-  let component: GreenButtonComponent;
-  let fixture: ComponentFixture<GreenButtonComponent>;
+describe('AccountTypeComponent', () => {
+  let component: AccountTypeComponent;
+  let fixture: ComponentFixture<AccountTypeComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GreenButtonComponent ]
+      declarations: [ AccountTypeComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GreenButtonComponent);
+    fixture = TestBed.createComponent(AccountTypeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

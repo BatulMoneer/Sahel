@@ -1,0 +1,99 @@
+
+.body {
+  font-family: var(--font);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 150px;
+  height: 100%;
+  margin: 0;
+}
+
+.form {
+  background: var(--background);
+  padding: 20px;
+  width: 450px;
+  text-align: right;
+}
+
+.slide-controls {
+  display: flex;
+  gap: 3px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.slide-controls input {
+  display: none;
+}
+
+.slide {
+  cursor: pointer;
+  padding: 7px 20px;
+  width: 200px;
+  text-align: center;
+  transition: background 0.3s;
+}
+
+
+
+.slide.store,
+.slide.customer,
+.slide.collector {
+  background: var(--back);
+  color: var(--textCol);
+}
+
+.slide.store:hover,
+.slide.customer:hover,
+.slide.collector:hover {
+  background: var(--main);
+  color: var(--background);
+}
+
+
+.slide-controls input:checked + .slide {
+  background: var(--main);
+  color: var(--background);
+}
+
+.slider-tab {
+  height: 2px;
+  background: var(--green);
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: var(--textCol);
+}
+
+.note {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: var(--textCol);
+}
+
+@media (max-width: 500px) {
+  .body {
+    padding: 50px 20px;
+  }
+
+  .form {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .slide {
+    width: 80px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .note {
+    font-size: 12px;
+  }
+}

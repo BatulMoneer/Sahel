@@ -1,0 +1,23 @@
+<app-header></app-header>
+<router-outlet>
+  <div class="body">
+    <form class="form">
+
+      <h1 class="title">اختر نوع الحساب</h1>
+      <h6 class="note">اختر نوع الحساب الذي تود انشاؤه</h6>
+
+      <div class="slide-controls">
+        <input type="radio" name="slide" id="customer" (change)="navigateToAccountType()">
+        <label class="slide customer" for="customer">مستفيد</label>
+
+        <input type="radio" name="slide" id="store" (change)="navigateToAccountType()">
+        <label class="slide store" for="store">متجر</label>
+
+        <input type="radio" name="slide" id="collector" (change)="navigateToAccountType()">
+        <label class="slide collector" for="collector">مندوب تجميع</label>
+      </div>
+
+    </form>
+  </div>
+</router-outlet>
+<app-footer></app-footer>

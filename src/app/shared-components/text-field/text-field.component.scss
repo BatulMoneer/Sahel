@@ -1,9 +1,11 @@
 input{
   border: none;
-  box-shadow: 0px 2px 6px #30303033;
+  padding: 7px 20px;
+
+  box-shadow: 0px 2px 6px var(--shadow);
 }
 
 input:focus {
-  outline-color: #c98f7432;
+  outline-color: var(--main);
 }
 
