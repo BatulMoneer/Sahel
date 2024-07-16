@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GreenButtonComponent implements OnInit {
 
-  link = "some link";
-  value = "Some Text";
+  link = "test";
+   value :"Some Text";
   constructor() { }
 
   ngOnInit(): void {

@@ -1,0 +1,58 @@
+@import url(https://fonts.googleapis.com/css?family=Almarai);
+
+.header {
+  overflow: hidden;
+  background-color: #ffffff;
+  padding: 10px 35px;
+  font-family: 'Almarai';
+  box-shadow: 0px 2px 6px #30303033;
+  padding-left: 20px;
+}
+
+.header a {
+  float: right;
+  color: #303030;
+  padding: 10px 5px 0px 5px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.header a:hover{
+  color: #C98F74;
+}
+
+.header a.active {
+  color: #C98F74;
+  font-weight: bold;
+}
+
+.header .logo {
+  align-content: center;
+  font-weight: bold;
+}
+
+.header a.logo img {
+  height: 50px;
+  width: auto;
+  padding-right: 10px;
+}
+
+.header-left {
+  float: left;
+  padding-left: 20px;
+}
+
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: center;
+
+  }
+
+  .header-left {
+    float: none;
+    display: flex;
+    justify-content: center;
+  }
+}
