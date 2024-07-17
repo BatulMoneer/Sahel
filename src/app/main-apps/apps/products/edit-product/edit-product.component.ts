@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-edit-product',
   templateUrl: './edit-product.component.html',
@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditProductComponent implements OnInit {
 
-  constructor() { }
+  constructor(){}
 
   ngOnInit(): void {
   }

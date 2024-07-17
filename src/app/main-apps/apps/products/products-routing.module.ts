@@ -6,7 +6,13 @@ import { RouterModule, Routes } from '@angular/router';
 
 
 const routes: Routes = [
-  {path: 'app-ch-the-p-of-m-the-p',
+  {
+    path: '',
+    redirectTo: 'app-ch-the-p-of-m-the-p',
+    pathMatch: 'full'
+  },
+  {
+    path: 'app-ch-the-p-of-m-the-p',
     component: ChThePOfMThePComponent
   },
   {
