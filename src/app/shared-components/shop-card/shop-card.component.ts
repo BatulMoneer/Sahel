@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 
 @Component({
   selector: 'app-shop-card',
@@ -7,14 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShopCardComponent implements OnInit {
 
-  title = 'بندة'
-  image = '../../../assets/images/Panda.png'
-  info = 'فرع الشرائع - مخطط 2'
-  link = 'home'
 
-  constructor() { }
+  @Input() more :  any;
+  @Input() submit : any;
+
+  @Input() title = '';
+  @Input() image = '';
+  @Input() info = '';
+
+  constructor() {
+    console.log(this.more)
+    console.log(this.submit)
+   }
 
   ngOnInit(): void {
+    console.log(this.more)
+    console.log(this.submit)
   }
 
 }

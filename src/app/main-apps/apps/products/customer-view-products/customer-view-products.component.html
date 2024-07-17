@@ -1,0 +1,32 @@
+<div class="body">
+  <div class="top">
+    <img src="../../../../../assets/images/Panda.png" alt="Panda">
+    <h1 class="head">متجر بنده | فرع الشرائع</h1>
+  </div>
+
+  <div class="search-container">
+    <i class="fas fa-search search-icon"></i>
+    <input type="text" placeholder="بحث">
+  </div>
+
+  <!--<div *ngFor="let cat of category" class="section">-->
+
+  <h1 class="category">مواد غذائية</h1>
+  <div class="carousel">
+    <button (click)="scrollLeft()" class="arrow left-arrow" [disabled]="isAtStart()">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <div class="grid">
+      <div class="grid-inner" #scrollContainer>
+        <app-item-card *ngFor="let i of [].constructor(9); let index = index" class="grid-item" [link]="link"
+          [value]="value" [title]="title" [image]="image" [info]="info"></app-item-card>
+      </div>
+    </div>
+    <button (click)="scrollRight()" class="arrow right-arrow" [disabled]="isAtEnd()">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
+
+
+  <app-button [link]="linkk" [value]="valuee"></app-button>
+</div>

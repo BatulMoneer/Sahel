@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { elementAt } from 'rxjs';
 
 @Component({
   selector: 'app-account-type',
