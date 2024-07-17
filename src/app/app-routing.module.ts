@@ -4,19 +4,20 @@ import { MainLayoutComponent } from './main-apps/layout/main-layout/main-layout.
 
 const routes: Routes = [
   {
-    path : '',
+    path: '',
     redirectTo: 'auth/login',
     pathMatch: 'full'
   },
   {
     path: 'auth',
-    loadChildren: () => import('./auth/auth.module').then(m=> m.AuthModule)
+    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
   },
   {
     path: 'apps',
     component: MainLayoutComponent,
-    loadChildren: () => import('./main-apps/main-apps.module').then(m=> m.MainAppsModule)
+    loadChildren: () => import('./main-apps/main-apps.module').then(m => m.MainAppsModule)
   },
+
 
 ];
 
