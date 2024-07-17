@@ -10,6 +10,11 @@ import { AccountTypeComponent } from './account-type/account-type.component';
 
 const routes: Routes = [
   {
+    path: '',
+    redirectTo: 'auth/login',
+    pathMatch: 'full'
+  },
+  {
 
     path : 'login',
     component : LoginComponent
@@ -19,7 +24,7 @@ const routes: Routes = [
     component : LogoutComponent
   },
   {
-    path : 'not-found',
+    path : 'notFound',
     component : NotFoundComponent
   },
   {
@@ -37,6 +42,11 @@ const routes: Routes = [
   {
     path : 'accountType',
     component : AccountTypeComponent
+  },
+
+  { //must be at last, for an unexsisting page
+    path : '**',
+    redirectTo : 'notFound' // or design a page for it 404
   }
 
 ];

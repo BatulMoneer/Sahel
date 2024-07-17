@@ -1,0 +1,107 @@
+<div class="body">
+
+  <div>
+    <h1 class="title">حسابي</h1>
+    <form action="" class="form">
+
+      <div class="section">
+        <h6 class="note">محفظتي</h6>
+        <div class="wallet-group">
+          <p class="wallet"> ريال<a>15.30 </a>رصيد المحفظة </p>
+        </div>
+      </div>
+
+      <div class="section">
+        <h6 class="note">معلوماتي</h6>
+        <div class="input-group">
+          <p class="text">الاسم</p>
+          <app-text-field></app-text-field>
+        </div>
+        <div class="input-group">
+          <p class="text">رقم الجوال</p>
+          <app-text-field></app-text-field>
+        </div>
+        <div class="input-group">
+          <p class="text">البريد الالكتروني</p>
+          <app-text-field></app-text-field>
+        </div>
+        <div class="input-group">
+          <p class="text">كلمة المرور</p>
+          <app-pass-field></app-pass-field>
+        </div>
+      </div>
+
+      <div class="section">
+        <h6 class="note">الموقع</h6>
+        <div class="input-group">
+          <p class="text">الحي</p>
+          <app-text-field></app-text-field>
+        </div>
+        <div class="input-group">
+          <p class="text">الشارع</p>
+          <app-text-field></app-text-field>
+        </div>
+        <div class="input-group">
+          <p class="text">المبنى</p>
+          <app-text-field></app-text-field>
+        </div>
+        <p class="loc">نوع الموقع</p>
+        <div class="checkbox">
+          <div class="checkbox-wrapper-24">
+            <input type="checkbox" id="check-24" name="check" value="" />
+            <label for="check-24">
+              <span></span>بيت
+            </label>
+          </div>
+          <div class="checkbox-wrapper-24">
+            <input type="checkbox" id="check-23" name="check" value="" />
+            <label for="check-23">
+              <span></span>عمل
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h6 class="note">اضافة بطاقة</h6>
+        <div class="input-group">
+          <p class="text">رقم البطاقة</p>
+          <app-text-field></app-text-field>
+        </div>
+        <div class="input-group">
+          <p class="text">تاريخ الانتهاء</p>
+          <app-text-field></app-text-field>
+        </div>
+        <div class="input-group">
+          <p class="text">رمز التأكيد</p>
+          <app-text-field></app-text-field>
+        </div>
+        <app-button [link]="add_card_link" [value]="add_card"></app-button>
+
+
+      </div>
+      <div class="section">
+        <h6 class="text">البطاقات المحفوظة</h6>
+
+        <div class="saved-cards">
+          <div class="card">
+            <i class="fas fa-trash-alt trash-icon"></i>
+            <span class="card-info">تنتهي برقم 9801</span>
+            <i class="fas fa-credit-card card-icon"></i>
+          </div>
+          <div class="card">
+            <i class="fas fa-trash-alt trash-icon"></i>
+            <span class="card-info">تنتهي برقم 1256</span>
+            <i class="fas fa-credit-card card-icon"></i>
+
+          </div>
+          <div class="card">
+            <i class="fas fa-trash-alt trash-icon"></i>
+            <span class="card-info">تنتهي برقم 1023</span>
+            <i class="fas fa-credit-card card-icon"></i>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

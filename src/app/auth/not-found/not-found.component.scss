@@ -1,0 +1,22 @@
+.body {
+  font-family: var(--font);
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  padding: 150px;
+  height: 100%;
+  margin: 0;
+}
+
+.title {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: var(--textCol);
+}
+
+.note {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: var(--warn);
+  font-weight: lighter;
+}

@@ -1,0 +1,39 @@
+<div class="body">
+  <div class="baner">
+    <img src="../../../../../assets/images/Baner.png" alt=" ">
+    <div class="baner-text">
+      <h1 class="baner-head">سهّل؟ يسهل عليك كثير</h1>
+      <h2 class="baner-title">مقاضي الشهر عندنا وكلها بمكان واحد</h2>
+    </div>
+  </div>
+  <div class="text">
+    <h1 class="head">حدد متجرك على الخريطة</h1>
+    <h6 class="title">ابحث عن متجرك المفضل وقم بتحديده على الخريطة</h6>
+  </div>
+  <div>
+    <div class="map">
+      <img src="../../../../../assets/images/map.png" alt="">
+    </div>
+  </div>
+  <div class="text">
+    <h1 class="head">اختر متجرك المفضل</h1>
+    <h6 class="title">اختر متجرك المفضل من القائمة اذا لم ترد استعمال الخريطة</h6>
+  </div>
+
+  <div class="search-container">
+    <i class="fas fa-search search-icon"></i>
+    <input type="text" placeholder="بحث">
+  </div>
+
+  <div class="grid">
+    <app-shop-card class="grid-item" title="{{title}}" image="{{image}}" info="{{info}}" more="{{productLink}}"
+      submit="{{moreProducts }}"></app-shop-card>
+    <app-shop-card class="grid-item" title="{{title}}" image="{{image}}" info="{{info}}" more="{{productLink}}"
+      submit="{{moreProducts }}"></app-shop-card>
+    <app-shop-card class="grid-item" title="{{title}}" image="{{image}}" info="{{info}}" more="{{productLink}}"
+      submit="{{moreProducts }}"></app-shop-card>
+    <app-shop-card class="grid-item" title="{{title}}" image="{{image}}" info="{{info}}" more="{{productLink}}"
+      submit="{{moreProducts }}"></app-shop-card>
+  </div>
+  <app-button [value]="more_shops" [link]="more_shops_link"></app-button>
+</div>
