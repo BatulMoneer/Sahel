@@ -12,9 +12,10 @@ import { PassFieldComponent } from './pass-field/pass-field.component';
   declarations: [
     ItemCardComponent,
     ButtonComponent,
-    ShopCardComponent,
     TextFieldComponent,
-    PassFieldComponent
+    PassFieldComponent,
+    ShopCardComponent,
+
   ],
   imports: [
 
@@ -25,10 +26,11 @@ import { PassFieldComponent } from './pass-field/pass-field.component';
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   exports: [
     ItemCardComponent,
-   ButtonComponent,
-    ShopCardComponent,
+    ButtonComponent,
     TextFieldComponent,
-    PassFieldComponent
+    PassFieldComponent,
+    ShopCardComponent,
+
   ]
 })
 export class SharedComponentsModule { }

@@ -3,6 +3,7 @@ import { AddNewProductComponent } from './add-new-product/add-new-product.compon
 import { ChThePOfMThePComponent } from './ch-the-p-of-m-the-p/ch-the-p-of-m-the-p.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CustomerViewProductsComponent } from './customer-view-products/customer-view-products.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'app-edit-product',
     component: EditProductComponent
+  },
+  {
+    path: 'customer-view-products',
+    component: CustomerViewProductsComponent
   }
 
 ];

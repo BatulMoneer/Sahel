@@ -1,0 +1,320 @@
+.body {
+  font-family: var(--font);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 40px 0px 40px 0px;
+  height: 100%;
+  margin: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.form {
+  background: var(--background);
+  width: 770px;
+  text-align: right;
+  justify-content: flex-end;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+
+}
+
+.section {
+  width: 48%;
+}
+
+.title {
+  text-align: right;
+  font-size: 64px;
+  margin-bottom: 0;
+  color: var(--prime);
+}
+
+.note {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: var(--prime);
+  font-weight: lighter;
+}
+
+.wallet {
+  background-color: var(--back);
+  height: 70px;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+    a{
+      color: var(--main);
+      padding: 3px;
+      font-weight: bold;
+    }
+
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  margin-bottom: 10px;
+}
+
+.text {
+  display: inline;
+  text-align: right;
+  font-size: 18px;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  color: var(--textCol);
+}
+
+.body .loc {
+  padding-top: 5px;
+  font-size: 18px;
+  text-align: right;
+  color: var(--textCol);
+}
+
+app-button {
+  display: flex;
+  justify-content: center;
+  margin: 70px 0px 10px 0px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.checkbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  gap: 10px;
+  padding-top: 10px;
+}
+
+.checkbox-wrapper-24 .checkbox {
+  display: table-cell;
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.checkbox-wrapper-24 label {
+  display: inline-block;
+  color: var(--main);
+  cursor: pointer;
+  position: relative;
+}
+
+.checkbox-wrapper-24 label span {
+  display: inline-block;
+  position: relative;
+  background-color: transparent;
+  width: 25px;
+  height: 25px;
+  transform-origin: center;
+  border: 2px solid var(--main);
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 10px;
+  transition: background-color 150ms 200ms, transform 350ms cubic-bezier(0.78, -1.22, 0.17, 1.89);
+}
+
+.checkbox-wrapper-24 label span:before {
+  content: "";
+  width: 0px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--main);
+  position: absolute;
+  transform: rotate(45deg);
+  top: 13px;
+  left: 9px;
+  transition: width 50ms ease 50ms;
+  transform-origin: 0% 0%;
+}
+
+.checkbox-wrapper-24 label span:after {
+  content: "";
+  width: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--main);
+  position: absolute;
+  transform: rotate(305deg);
+  top: 16px;
+  left: 10px;
+  transition: width 50ms ease;
+  transform-origin: 0% 0%;
+}
+
+.checkbox-wrapper-24 label:hover span:before {
+  width: 5px;
+  transition: width 100ms ease;
+}
+
+.checkbox-wrapper-24 label:hover span:after {
+  width: 10px;
+  transition: width 150ms ease 100ms;
+}
+
+.checkbox-wrapper-24 input[type=checkbox] {
+  display: none;
+}
+
+.checkbox-wrapper-24 input[type=checkbox]:checked + label span {
+  background-color: var(--main);
+  transform: scale(1.25);
+}
+
+.checkbox-wrapper-24 input[type=checkbox]:checked + label span:after {
+  width: 10px;
+  background: var(--background);
+  transition: width 150ms ease 100ms;
+}
+
+.checkbox-wrapper-24 input[type=checkbox]:checked + label span:before {
+  width: 5px;
+  background: var(--background);
+  transition: width 150ms ease 100ms;
+}
+
+.checkbox-wrapper-24 input[type=checkbox]:checked + label:hover span {
+  background-color: var(--main);
+  transform: scale(1.25);
+}
+
+.checkbox-wrapper-24 input[type=checkbox]:checked + label:hover span:after {
+  width: 10px;
+  background: var(--background);
+  transition: width 150ms ease 100ms;
+}
+
+.checkbox-wrapper-24 input[type=checkbox]:checked + label:hover span:before {
+  width: 5px;
+  background: var(--background);
+  transition: width 150ms ease 100ms;
+}
+
+.saved-cards {
+  text-align: right;
+  margin: 20px;
+}
+
+.card {
+  display: flex;
+  align-items: right;
+  border-bottom: 1px solid var(--prime);
+  padding: 10px 0;
+}
+
+.card-icon {
+  font-size: 24px;
+  cursor: pointer;
+  padding-left: 5px;
+  color: var(--prime);
+}
+
+.trash-icon {
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--warn);
+}
+
+.card-info {
+  flex-grow: 1;
+  font-size: 18px;
+  color: var(--textCol);
+  text-align: right;
+  margin: 10 10px;
+}
+
+@media (max-width: 1110px) {
+  .body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0px 40px 0px;
+
+    margin: 0;
+  }
+
+  .form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  .section {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  padding: 40px 0px 40px 0px;
+
+    margin: 0;
+
+
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    margin: 0;
+  }
+
+  .title {
+    font-size: 64px;
+  }
+
+  .note {
+    font-size: 25px;
+  }
+
+  .text {
+    font-size: 14px;
+  }
+
+  app-button {
+    margin: 30px 0px 10px 0px;
+  }
+
+  .change {
+    font-size: 14px;
+  }
+
+  .card-info {
+    font-size: 14px;
+  }
+
+  .trash-icon,
+  .card-icon {
+    font-size: 20px;
+  }
+
+  .section {
+    width: 100%;
+    padding: 5px;
+  }
+}
