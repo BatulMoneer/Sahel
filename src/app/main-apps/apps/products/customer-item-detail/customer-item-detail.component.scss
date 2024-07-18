@@ -1,0 +1,168 @@
+.body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 50px;
+}
+
+.stuff{
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+flex-direction: row-reverse;
+padding: 40px;
+overflow: hidden;
+align-items: center;
+}
+
+.line{
+  display: flex;
+  justify-content: center;
+
+}
+
+.slider-tab {
+  height: 2px;
+  background: var(--main);
+  margin: 20px 0px;
+  width: 90%;
+}
+
+.right{
+display: flex;
+flex-direction: column;
+align-items: end;
+text-align: right;
+}
+
+.bottom{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    text-align: center;
+}
+
+.name{
+color: var(--textCol);
+font-size: 32px !important;
+}
+
+.bar-text{
+  color: var(--textCol);
+font-size: 18px !important;
+}
+
+.price{
+  color: var(--warn);
+  font-size: 25px !important;
+}
+
+.barimg{
+
+  width: 200px;
+  margin-bottom: 20px;
+  height: auto;
+
+}
+
+.itemimg{
+  height: 400px;
+  width: auto;
+
+
+}
+
+.butt{
+ border: none;
+ border-radius: 10px;
+ padding: 7px 9px;
+ margin: 2px 5px;
+
+}
+
+.butt:hover{
+  background-color: var(--main);
+  color: var(--background);
+ }
+
+
+.carousel {
+  display: flex;
+  align-items: center;
+  width: 85%;
+  position: relative;
+}
+
+.grid {
+  display: flex;
+  padding: 20px;
+
+  overflow: hidden;
+  width: 100%;
+}
+
+.grid-inner {
+  display: flex;
+  transition: transform 0.3s ease;
+}
+
+.grid-item {
+  flex: 0 0 25%;
+  max-width: 300px;
+}
+
+.arrow {
+  background-color: var(--background);
+  border: none;
+  color: var(--prime);
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1;
+  position: relative;
+  font-size: 24px;
+}
+
+.arrow:disabled {
+  color: var(textCol);
+  cursor: not-allowed;
+}
+
+.category{
+  color: var(--main);
+  font-size: 25px;
+}
+
+
+
+app-button{
+  padding-left: 20px;
+}
+
+.back{
+  padding-top: 20px;
+  padding-left: 0;
+
+}
+
+@media (max-width:  1110px) {
+  .body{
+    gap: 20px;
+  }
+  .itemimg{
+    height: 300px;
+    width: auto;
+  }
+}
+
+@media (max-width:  500px) {
+  .body{
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 20px;
+  }
+  .itemimg{
+    height: 300px;
+    width: auto;
+  }
+
+}

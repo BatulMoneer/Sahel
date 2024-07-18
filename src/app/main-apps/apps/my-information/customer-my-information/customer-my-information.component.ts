@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-customer-my-information',
@@ -7,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomerMyInformationComponent implements OnInit {
 
+  title1 = "عمل"
+  title2 = "بيت"
   add_card = "اضف البطاقة"
   add_card_link = "link"
+  @Output() wallet = 15.30;
   constructor() { }
 
   ngOnInit(): void {

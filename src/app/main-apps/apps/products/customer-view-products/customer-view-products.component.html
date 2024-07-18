@@ -9,24 +9,25 @@
     <input type="text" placeholder="بحث">
   </div>
 
-  <!--<div *ngFor="let cat of category" class="section">-->
 
-  <h1 class="category">مواد غذائية</h1>
-  <div class="carousel">
-    <button (click)="scrollLeft()" class="arrow left-arrow" [disabled]="isAtStart()">
-      <i class="fas fa-chevron-left"></i>
-    </button>
-    <div class="grid">
-      <div class="grid-inner" #scrollContainer>
-        <app-item-card *ngFor="let i of [].constructor(9); let index = index" class="grid-item" [link]="link"
-          [value]="value" [title]="title" [image]="image" [info]="info"></app-item-card>
+  <ng-container *ngFor="let cat of category;let categoryIndex=index">
+    <h1 class="category">{{cat.title}}</h1>
+    <div class="carousel">
+      <button (click)="scrollLeft(categoryIndex)" class="arrow left-arrow" [disabled]="isAtStart(cat.currentIndex)">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <div class="grid">
+        <div class="grid-inner" id="scrollContainer{{categoryIndex}}{{cat.currentIndex}}">
+          <app-item-card *ngFor="let i of cat.array;" class="grid-item" [link]="i.link" [value]="i.value"
+            [title]="i.product" [image]="i.image" [info]="i.info"></app-item-card>
+        </div>
       </div>
+      <button (click)="scrollRight(categoryIndex,cat.array)" class="arrow right-arrow"
+        [disabled]="isAtEnd(cat.currentIndex,cat.array)">
+        <i class="fas fa-chevron-right"></i>
+      </button>
     </div>
-    <button (click)="scrollRight()" class="arrow right-arrow" [disabled]="isAtEnd()">
-      <i class="fas fa-chevron-right"></i>
-    </button>
-  </div>
-
+  </ng-container>
 
   <app-button [link]="linkk" [value]="valuee"></app-button>
 </div>

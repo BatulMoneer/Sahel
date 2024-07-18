@@ -1,0 +1,48 @@
+<div class="body">
+  <div class="stuff">
+
+    <div class="right">
+      <h1 class="name">{{title}}</h1>
+      <h1 class="price"> السعر: {{price}} ريال</h1>
+      <h1 class="bar-text">الباركود</h1>
+      <img class="barimg" [src]="barcode" alt="barcode">
+
+      <div class="bottom">
+        <app-button [link]="link" [value]="value"></app-button>
+        <div>
+          <button class="butt" (click)="inc()"><i class="fas fa-plus"></i></button>
+          <span>{{amount}}</span>
+          <button class="butt" (click)="dec()"><i class="fas fa-minus"></i></button>
+
+        </div>
+      </div>
+    </div>
+    <img class="itemimg" [src]="image" alt="">
+  </div>
+
+  <div class="line">
+    <div class="slider-tab"></div>
+  </div>
+
+
+  <h1 class="category">منتجات مشابهة</h1>
+
+
+  <div class="carousel">
+    <button (click)="scrollLeft()" class="arrow left-arrow" [disabled]="isAtStart()">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <div class="grid">
+      <div class="grid-inner" #scrollContainer>
+
+        <app-item-card *ngFor="let item of array" class="grid-item" link="{{item.link}}" value="{{item.value}}"
+          title="{{item.product}}" image="{{item.image}}" info="{{item.info}}"></app-item-card>
+      </div>
+    </div>
+    <button (click)="scrollRight()" class="arrow right-arrow" [disabled]="isAtEnd()">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
+
+  <app-button class="back" [link]="back_link" [value]="back"></app-button>
+</div>

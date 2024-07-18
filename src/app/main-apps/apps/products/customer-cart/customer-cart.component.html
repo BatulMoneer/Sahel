@@ -1,0 +1,53 @@
+<div class="body">
+  <div class="head">
+    <h1 class="title">سلة التسوق</h1>
+    <h1 class="count">({{count}})</h1>
+  </div>
+  <div class="shop">
+    <img src="" alt="">
+    <h1 class="sub-title">{{shopname}}</h1>
+  </div>
+  <div class="items">
+    <ng-container *ngFor="let item of products">
+      <app-cart-card [image]="item.image" [info]="item.info" [barcode]="item.barcode"
+        [title]="item.title"></app-cart-card>
+
+      <button class="butt"><i class="fas fa-trash-alt trash-icon"></i></button>
+      <div>
+        <button class="butt" (click)="inc()"><i class="fas fa-plus"></i></button>
+        <span>{{amount}}</span>
+        <button class="butt" (click)="dec()"><i class="fas fa-minus"></i></button>
+
+      </div>
+    </ng-container>
+
+  </div>
+  <div class="brief">
+    <h1 class="sub-title">ملخص الطلب</h1>
+    <h6 class="text">سعر المنتجات ({{count}} منتجات) <p class="info">{{price}}</p>
+    </h6>
+    <h6 class="text">سعر التوصيل <p class="info">{{delivery}}</p>
+    </h6>
+    <h6 class="text">رصيد المحفظة <p class="info">{{wallet}}</p>
+    </h6>
+    <h6 class="text-bold">المجموع:<p class="info">(شامل التوصيل)</p>{{total}}</h6>
+
+    <h6 class="text">طريقة الدفع</h6>
+
+    <div class="checkbox">
+      <ng-div *ngFor="let item of cards">
+        <p class="small">تنتهي ب </p>
+
+        <app-checkbox [title]="item"></app-checkbox>
+
+      </ng-div>
+    </div>
+
+    <a>الموقع</a>
+
+    <h6 class="text">طريقة الدفع</h6>
+    <p class="small"></p>
+
+
+  </div>
+</div>

@@ -6,6 +6,8 @@ import { ShopCardComponent } from './shop-card/shop-card.component';
 import { RouterModule } from '@angular/router';
 import { TextFieldComponent } from './text-field/text-field.component';
 import { PassFieldComponent } from './pass-field/pass-field.component';
+import { CartCardComponent } from './cart-card/cart-card.component';
+import { CheckboxComponent } from './checkbox/checkbox.component';
 
 
 @NgModule({
@@ -15,6 +17,8 @@ import { PassFieldComponent } from './pass-field/pass-field.component';
     TextFieldComponent,
     PassFieldComponent,
     ShopCardComponent,
+    CartCardComponent,
+    CheckboxComponent,
 
   ],
   imports: [
@@ -30,6 +34,9 @@ import { PassFieldComponent } from './pass-field/pass-field.component';
     TextFieldComponent,
     PassFieldComponent,
     ShopCardComponent,
+    CartCardComponent,
+    CheckboxComponent,
+
 
   ]
 })
