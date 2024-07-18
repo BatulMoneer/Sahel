@@ -1,0 +1,171 @@
+.body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: right;
+  padding: 50px;
+  overflow: hidden;
+}
+
+.head{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 5px;
+
+}
+
+.title{
+  font-size: 64px;
+  color: var(--prime);
+  padding: 0;
+margin: 0;
+}
+
+.image{
+  width: 150px;
+}
+
+.sub-title{
+  color: var(--textCol) ;
+  font-size: 25px;
+  padding-bottom: 30px;
+}
+
+.butt{
+  border: none;
+  border-radius: 10px;
+  padding: 7px 9px;
+  margin: 2px 5px;
+
+ }
+
+ .butt:hover{
+   background-color: var(--main);
+   color: var(--background);
+  }
+
+.trash{
+  padding: 7px 25px;
+}
+
+.trash:hover{
+  background-color: var(--warn);
+   color: var(--background);
+}
+
+
+.buts{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0px;
+}
+
+
+.items{
+  display: block;
+}
+
+app-cart-card{
+  display: block;
+}
+
+.brief{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: start;
+  gap: 100px;
+  padding-bottom: 50px;
+
+}
+
+.one{
+  padding: 0px;
+  margin: 0px;
+}
+
+.text{
+  font-size: 18px;
+  display: inline;
+  font-weight: normal;
+  padding: 10px 0px;
+  margin: 0px;
+}
+
+.info{
+  color: var(--prime);
+  font-weight: bold;
+  padding: 0px 10px;
+  margin: 0px;
+
+}
+
+.text-bold{
+  color: var(--warn);
+  font-weight: bold;
+  font-size: 18px;
+
+}
+
+.part{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.three,
+.two{
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+a{
+  color: var(--prime);
+}
+
+
+
+app-checkbox{
+  padding: 30px;
+}
+
+@media (max-width : 1100px){
+  .body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .head{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+
+
+  }
+
+  .brief{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 20px;
+    padding-bottom: 50px;
+
+  }
+  .buts{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width : 500px){
+  .title{
+    font-size: 32px;
+  }
+  .sub-title{
+    font-size: 18px;
+  }
+}
