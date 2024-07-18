@@ -7,7 +7,7 @@
       <div class="section">
         <h6 class="note">محفظتي</h6>
         <div class="wallet-group">
-          <p class="wallet"> ريال<a>15.30 </a>رصيد المحفظة </p>
+          <p class="wallet"> ريال<a>{{wallet}} </a>رصيد المحفظة </p>
         </div>
       </div>
 
@@ -47,18 +47,8 @@
         </div>
         <p class="loc">نوع الموقع</p>
         <div class="checkbox">
-          <div class="checkbox-wrapper-24">
-            <input type="checkbox" id="check-24" name="check" value="" />
-            <label for="check-24">
-              <span></span>بيت
-            </label>
-          </div>
-          <div class="checkbox-wrapper-24">
-            <input type="checkbox" id="check-23" name="check" value="" />
-            <label for="check-23">
-              <span></span>عمل
-            </label>
-          </div>
+          <app-checkbox [title]="title1"></app-checkbox>
+          <app-checkbox [title]="title2"></app-checkbox>
         </div>
       </div>
 

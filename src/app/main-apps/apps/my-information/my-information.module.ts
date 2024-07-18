@@ -18,6 +18,11 @@ import { SharedComponentsModule } from 'src/app/shared-components/shared-compone
     CommonModule,
     MyInformationRoutingModule,
     SharedComponentsModule
+  ],
+  exports: [
+    CustomerMyInformationComponent
+
   ]
 })
+
 export class MyInformationModule { }

@@ -7,19 +7,23 @@ import { AddNewProductComponent } from './add-new-product/add-new-product.compon
 import { EditProductComponent } from './edit-product/edit-product.component';
 import { CustomerViewProductsComponent } from './customer-view-products/customer-view-products.component';
 import { SharedComponentsModule } from 'src/app/shared-components/shared-components.module';
-
+import { CustomerItemDetailComponent } from './customer-item-detail/customer-item-detail.component';
+import { CustomerCartComponent } from './customer-cart/customer-cart.component';
 
 @NgModule({
   declarations: [
     ChThePOfMThePComponent,
     AddNewProductComponent,
     EditProductComponent,
-    CustomerViewProductsComponent
+    CustomerViewProductsComponent,
+    CustomerItemDetailComponent,
+    CustomerCartComponent
   ],
   imports: [
     CommonModule,
     ProductsRoutingModule,
-    SharedComponentsModule
+    SharedComponentsModule,
+
   ]
 })
 export class ProductsModule { }
