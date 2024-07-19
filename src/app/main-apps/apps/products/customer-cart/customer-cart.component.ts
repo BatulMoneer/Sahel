@@ -33,7 +33,7 @@ export class CustomerCartComponent implements OnInit {
     }
   ]
 
-  cards = [1345, 8763, 7398]
+  cards = [{ card: 1345, check: "one" }, { card: 1345, check: "two" }, { card: 1345, check: "three" }]
 
   count = this.products.length
   shopname = "متجر بنده | فرع الشرائع "

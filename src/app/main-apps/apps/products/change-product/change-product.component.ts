@@ -1,3 +1,4 @@
+import { OrderService } from './../../../../service/order.service';
 import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -37,7 +38,8 @@ export class ChangeProductComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private orderService: OrderService
   ) { }
 
   ngOnInit(): void {
@@ -45,6 +47,7 @@ export class ChangeProductComponent implements OnInit {
 
 
   changeProduct(newProductPrice: number): void {
+    this.orderService.setProductFound(true);
     if (newProductPrice > this.info) {
       this.snackBar.open('هذا المنتج أغلى. هل تريد متابعة الدفع؟', 'نعم', {
         duration: 5000,
@@ -64,6 +67,7 @@ export class ChangeProductComponent implements OnInit {
   }
 
   cancelProduct(): void {
+    this.orderService.setProductFound(true);
     this.snackBar.open('تم إلغاء المنتج بنجاح', 'إغلاق', { duration: 3000 });
   }
 

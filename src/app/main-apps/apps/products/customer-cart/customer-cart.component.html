@@ -53,7 +53,7 @@
       <h6 class="text">طريقة الدفع</h6>
       <div class="checkbox">
         <ng-div *ngFor="let item of cards">
-          <app-checkbox title="{{item}}تنتهي ب"></app-checkbox>
+          <app-checkbox [check]="item.check" title="{{item.card}}تنتهي ب"></app-checkbox>
         </ng-div>
       </div>
       <a routerLink="/apps/my-information/app-customer-my-information">اضف بطاقة</a>
