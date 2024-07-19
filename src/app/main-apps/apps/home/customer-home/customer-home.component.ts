@@ -12,7 +12,7 @@ export class CustomerHomeComponent implements OnInit {
 
 
   moreProducts = "عرض المنتجات"
-  productLink = "link"
+  productLink = "/apps/products/customer-view-products"
 
   title = 'متجر بنده';
   image = '../../../assets/images/Panda.png';

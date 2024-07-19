@@ -6,6 +6,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { CustomerViewProductsComponent } from './customer-view-products/customer-view-products.component';
 import { CustomerItemDetailComponent } from './customer-item-detail/customer-item-detail.component';
 import { CustomerCartComponent } from './customer-cart/customer-cart.component';
+import { OrderStateComponent } from './order-state/order-state.component';
+import { ChangeProductComponent } from './change-product/change-product.component';
 
 
 const routes: Routes = [
@@ -37,7 +39,16 @@ const routes: Routes = [
   {
     path: 'customer-cart',
     component: CustomerCartComponent
+  },
+  {
+    path: 'order-state',
+    component: OrderStateComponent
+  },
+  {
+    path: 'change-product',
+    component: ChangeProductComponent
   }
+
 
 ];
 

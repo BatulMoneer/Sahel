@@ -9,6 +9,11 @@ import { CustomerViewProductsComponent } from './customer-view-products/customer
 import { SharedComponentsModule } from 'src/app/shared-components/shared-components.module';
 import { CustomerItemDetailComponent } from './customer-item-detail/customer-item-detail.component';
 import { CustomerCartComponent } from './customer-cart/customer-cart.component';
+import { OrderStateComponent } from './order-state/order-state.component';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatIconModule } from '@angular/material/icon';
+import { ChangeProductComponent } from './change-product/change-product.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -17,12 +22,17 @@ import { CustomerCartComponent } from './customer-cart/customer-cart.component';
     EditProductComponent,
     CustomerViewProductsComponent,
     CustomerItemDetailComponent,
-    CustomerCartComponent
+    CustomerCartComponent,
+    OrderStateComponent,
+    ChangeProductComponent
   ],
   imports: [
     CommonModule,
     ProductsRoutingModule,
     SharedComponentsModule,
+    MatIconModule,
+    MatProgressBarModule,
+    MatSnackBarModule
 
   ]
 })
