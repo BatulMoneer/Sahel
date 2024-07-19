@@ -1,12 +1,14 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { CustomerMyInformationComponent } from '../../my-information/customer-my-information/customer-my-information.component';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { OrderService } from '../../../../service/order.service';
+
 
 @Component({
-  selector: 'app-customer-cart',
-  templateUrl: './customer-cart.component.html',
-  styleUrls: ['./customer-cart.component.scss']
+  selector: 'app-order-state',
+  templateUrl: './order-state.component.html',
+  styleUrls: ['./order-state.component.scss']
 })
-export class CustomerCartComponent implements OnInit {
+export class OrderStateComponent implements OnInit {
 
   products = [
     {
@@ -33,13 +35,17 @@ export class CustomerCartComponent implements OnInit {
     }
   ]
 
-  cards = [1345, 8763, 7398]
+  hasOrder: boolean = true;
 
+  card: number = 3374;
+
+  linkOrder = "/apps/products/customer-view-products"
+  valueOrder = "عرض المنتجات"
   count = this.products.length
   shopname = "متجر بنده | فرع الشرائع "
   shopimage = "../../../../../assets/images/Panda.png"
   doneOrder = "ادفع الآن"
-  doneOrderLink = "/apps/products/order-state"
+  doneOrderLink = "link"
   location = "الشرائع, الفردوس 3726 (بيت)"
   delivery = 20
   wallet = 0
@@ -56,29 +62,27 @@ export class CustomerCartComponent implements OnInit {
   price = this.getPrice()
 
   total = this.price + this.delivery - this.wallet
+  orderState: number = 0;
+  deliveryPerson: any = { name: '', phone: '' };
+  productFound: boolean = false;
 
+  constructor(private orderService: OrderService) { }
 
-
-  //@ViewChild('child') child: CustomerMyInformationComponent
-
-  //wallet = this.getWallet();
-  //  getWallet() {
-  //    return this.child.wallet
-  // }
-
-  inc(index) {
-    index.amount += 1;
+  ngOnInit(): void {
+    this.hasOrder = this.orderService.hasOrder();
+    this.orderState = this.orderService.getOrderState();
+    this.productFound = this.orderService.isProductFound();
   }
 
-  dec(index) {
-    if (index.amount > 0) {
-      index.amount -= 1;
+  nextState(): void {
+    if (this.orderState === 2 && !this.productFound) {
+      return;
+    }
+    this.orderState++;
+    if (this.orderState === 3) {
+      this.deliveryPerson = { name: 'قصي', phone: '0577896554' };
     }
   }
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }
