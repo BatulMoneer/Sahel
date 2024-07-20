@@ -1,0 +1,18 @@
+<div class="body">
+  <div class="right">
+    <div class="shop">
+      <img src={{shopImg}} class="image" alt={{shopName}}>
+      <h1 class="title">{{shopName}}</h1>
+
+    </div>
+    <div class="texts">
+      <p class="text">عدد المنتجات: {{noOfItems}} منتجات</p>
+      <p class="text">سعر المنتجات : {{price}} ريال</p>
+      <p class="text">سعر التجميع: {{collectPrice}} ريال</p>
+    </div>
+  </div>
+  <div class="left">
+    <h1 class="text">{{customerLocation}}</h1>
+    <app-button [link]="link" [value]="value"></app-button>
+  </div>
+</div>

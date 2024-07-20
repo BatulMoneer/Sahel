@@ -1,0 +1,9 @@
+<div class="body">
+  <h1 class="title">
+    فواتير الدفع
+  </h1>
+  <ng-container *ngFor="let item of reciepts">
+    <app-payment [no]="item.no" [date]="item.date" [image]="item.image" [price]="item.price"></app-payment>
+  </ng-container>
+  <app-button [link]="'/apps/my-information/app-collector-my-information'" [value]="'عودة'"></app-button>
+</div>

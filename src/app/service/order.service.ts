@@ -5,9 +5,27 @@ import { Injectable } from '@angular/core';
 })
 export class OrderService {
   private orderState: number = 0;
-  private productFound: boolean = false;
+  private productFound: boolean = true;
+  private currentUser: number = 1;
+  private isActive: boolean = false;
 
   constructor() { }
+
+  setStatus(isActive: boolean): void {
+    this.isActive = isActive;
+  }
+
+  getStatus(): boolean {
+    return this.isActive;
+  }
+
+  setUser(user) {
+    this.currentUser = user
+  }
+  getUser(): number {
+    return this.currentUser
+
+  }
 
   hasOrder(): boolean {
 

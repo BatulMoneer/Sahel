@@ -1,0 +1,161 @@
+.body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 100px;
+
+}
+
+.one{
+  padding-bottom: 40px;
+}
+
+.two{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.two-top{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  padding: 20px;
+gap: 20px;
+}
+
+.two-down{
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+width: 700px;
+
+}
+
+.two-down-right{
+  display: flex;
+  align-items: center;
+}
+
+.two-down-left{
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  gap: 20px;
+}
+
+.three-down{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.title{
+  font-size: 64px;
+  padding: 0;
+  margin-bottom: 0;
+  color: var(--prime);
+}
+
+.sub-title{
+  font-size: 18px;
+  color: var(--textCol);
+}
+
+.image{
+  width: 200px;
+  border-radius: 100px;
+}
+
+.three{
+display: flex;
+flex-direction: row-reverse;
+align-items: end;
+justify-content: space-between;
+width: 700px;
+
+}
+
+.right{
+text-align: right;
+}
+
+.wallet {
+  background-color: var(--back);
+  height: 70px;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+    a{
+      color: var(--main);
+      padding: 3px;
+      font-weight: bold;
+    }
+
+}
+
+@media (max-width: 1110px) {
+  .two-down, .three {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .two-down-left, .two-down-right {
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+}
+
+
+@media (max-width: 500px) {
+  .body {
+    padding: 0;
+    padding-bottom: 100px;
+
+  }
+
+  @media (max-width :500px) {
+    .title{
+      padding-top: 40px;
+      font-size: 33px;
+    }
+  }
+
+  .sub-title {
+    font-size: 14px;
+  }
+
+  .image {
+    width: 120px;
+  }
+
+  .two-down-left{
+    gap: 20px;
+  }
+
+  .two-down, .three {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+   .two-down-right {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .wallet {
+    height: 50px;
+  }
+}

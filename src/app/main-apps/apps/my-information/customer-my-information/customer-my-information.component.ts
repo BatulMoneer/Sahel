@@ -11,6 +11,8 @@ export class CustomerMyInformationComponent implements OnInit {
   title2 = "بيت"
   add_card = "اضف البطاقة"
   add_card_link = "link"
+  save_link = ""
+  save = "حفظ"
   @Output() wallet = 15.30;
   constructor() { }
 

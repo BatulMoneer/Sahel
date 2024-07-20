@@ -14,6 +14,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatIconModule } from '@angular/material/icon';
 import { ChangeProductComponent } from './change-product/change-product.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { CollectorOrdersComponent } from './collector-orders/collector-orders.component';
+import { CollectorOrderDetailsComponent } from './collector-order-details/collector-order-details.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     CustomerItemDetailComponent,
     CustomerCartComponent,
     OrderStateComponent,
-    ChangeProductComponent
+    ChangeProductComponent,
+    CollectorOrdersComponent,
+    CollectorOrderDetailsComponent
   ],
   imports: [
     CommonModule,
