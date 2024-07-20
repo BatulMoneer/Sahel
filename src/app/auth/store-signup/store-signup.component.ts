@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { OrderService } from 'src/app/service/order.service';
 
 @Component({
   selector: 'app-store-signup',
@@ -9,9 +10,9 @@ import { Router } from '@angular/router';
 export class StoreSignupComponent implements OnInit {
 
   submit = "انشاء حساب";
-  link = "home";
+  link = "/apps/home/app-store-home";
 
-  constructor(private router:Router) { }
+  constructor(private router: Router, private service: OrderService) { }
   navigateToAccountType() {
     this.router.navigate(['/auth/login']);
   }
@@ -27,6 +28,7 @@ export class StoreSignupComponent implements OnInit {
     console.log(this.selectedFile);
   }
   ngOnInit(): void {
+    this.service.setUser(3)
   }
 
 }

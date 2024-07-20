@@ -1,0 +1,17 @@
+<div class="body">
+  <div class="top">
+    <div class="welcome-message">
+      <h1> !مرحبا {{ name }} </h1>
+      <p>أهلاً بعودتك إلى العمل في منصة سهل بكل نشاط</p>
+    </div>
+    <img src="../../../../../assets/images/Hat.png" alt="Hat" class="welcome-image" />
+  </div>
+  <div class="status-container">
+    <p class="status-description">حدد حالة استقبال الطلبات لديك</p>
+    <div class="cont">
+      <label for="status-toggle" class="status-label">حالة استقبال الطلبات</label>
+      <input type="checkbox" id="status-toggle" (ngModel)="isActive" (change)="toggleStatus()" />
+    </div>
+  </div>
+  <app-button [link]="link" [value]="value"></app-button>
+</div>

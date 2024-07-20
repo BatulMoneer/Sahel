@@ -1,0 +1,9 @@
+<div class="body">
+  <h1 class="title">
+    فواتير استلام المحفظة
+  </h1>
+  <ng-container *ngFor="let item of reciepts">
+    <app-reciept [no]="item.no" [date]="item.date" [store]="item.store" [link]='link' [value]='value'></app-reciept>
+  </ng-container>
+  <app-button [link]="'/apps/my-information/app-collector-my-information'" [value]="'عودة'"></app-button>
+</div>

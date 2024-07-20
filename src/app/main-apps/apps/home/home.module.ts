@@ -6,6 +6,7 @@ import { StoreHomeComponent } from './store-home/store-home.component';
 import { ManagerHomeComponent } from './manager-home/manager-home.component';
 import { CustomerHomeComponent } from './customer-home/customer-home.component';
 import { SharedComponentsModule } from 'src/app/shared-components/shared-components.module';
+import { CollectorHomeComponent } from './collector-home/collector-home.component';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import { SharedComponentsModule } from 'src/app/shared-components/shared-compone
     StoreHomeComponent,
     ManagerHomeComponent,
     CustomerHomeComponent,
+    CollectorHomeComponent,
   ],
   imports: [
     CommonModule,

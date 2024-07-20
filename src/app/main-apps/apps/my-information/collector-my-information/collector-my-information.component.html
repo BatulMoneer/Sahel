@@ -1,0 +1,38 @@
+<div class="body">
+  <div class="one">
+    <h1 class="title">حسابي</h1>
+  </div>
+
+  <div class="two">
+    <div class="two-top">
+      <img src="{{image}}" alt="" class="image">
+      <h6 class="sub-title">{{job}}</h6>
+    </div>
+    <div class="two-down">
+      <div class="top-down-right">
+        <h6 class="sub-title">{{name}} {{age}} سنة</h6>
+      </div>
+      <div class="two-down-left">
+        <app-button [link]="info_link" [value]="' تعديل المعلومات'"></app-button>
+        <app-button [link]="logout_link" [value]="' تسجيل الخروج'"></app-button>
+      </div>
+    </div>
+  </div>
+
+  <div class="three">
+    <div class="right">
+      <h6 class="sub-title">محفظتي وفواتيري</h6>
+      <div class="wallet-group">
+        <p class="wallet"> ريال<a>{{wallet}} </a>رصيد المحفظة </p>
+      </div>
+      <div class="three-down">
+        <app-button [link]="request_wallet_link" [value]="' رفع طلب استلام المبلغ'"></app-button>
+        <app-button [link]="wallet_recieve_link" [value]="' عرض فواتير الاستلام'"></app-button>
+
+      </div>
+    </div>
+    <div class="left">
+      <app-button [link]="reciept_link" [value]="' عرض فواتير الدفع'"></app-button>
+    </div>
+  </div>
+</div>

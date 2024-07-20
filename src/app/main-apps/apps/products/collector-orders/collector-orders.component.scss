@@ -1,0 +1,44 @@
+.body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+}
+
+.head{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.title{
+  font-size: 64px;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: var(--prime);
+}
+.sub-title{
+  font-size: 25px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: var(--textCol);
+}
+
+.bot{
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  padding-top: 40px;
+  gap: 20px;
+}
+
+.orders {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px;
+}

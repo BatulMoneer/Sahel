@@ -6,13 +6,25 @@ import { StoreMyInformationComponent } from './store-my-information/store-my-inf
 import { ManagerMyInformationComponent } from './manager-my-information/manager-my-information.component';
 import { CustomerMyInformationComponent } from './customer-my-information/customer-my-information.component';
 import { SharedComponentsModule } from 'src/app/shared-components/shared-components.module';
+import { CollectorMyInformationComponent } from './collector-my-information/collector-my-information.component';
+import { EditCollectorInformationComponent } from './edit-collector-information/edit-collector-information.component';
+import { CollectorViewRecieptsComponent } from './collector-view-reciepts/collector-view-reciepts.component';
+import { CollectorRequestWalletComponent } from './collector-request-wallet/collector-request-wallet.component';
+import { CollectorViewPaymentsComponent } from './collector-view-payments/collector-view-payments.component';
+import { CollectorRecieptDetailsComponent } from './collector-reciept-details/collector-reciept-details.component';
 
 
 @NgModule({
   declarations: [
     StoreMyInformationComponent,
     ManagerMyInformationComponent,
-    CustomerMyInformationComponent
+    CustomerMyInformationComponent,
+    CollectorMyInformationComponent,
+    EditCollectorInformationComponent,
+    CollectorViewRecieptsComponent,
+    CollectorRequestWalletComponent,
+    CollectorViewPaymentsComponent,
+    CollectorRecieptDetailsComponent
   ],
   imports: [
     CommonModule,
