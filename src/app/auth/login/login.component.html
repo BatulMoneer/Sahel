@@ -1,7 +1,7 @@
 <app-header></app-header>
 <router-outlet>
   <div class="body">
-    <form class="form">
+    <form class="form" [formGroup]="formData" (ngSubmit)="login()">
       <div class="slide-controls">
         <input type="radio" name="slide" id="signup" (change)="navigateToAccountType()">
         <label class="slide signup" for="signup">إنشاء حساب</label>
@@ -13,17 +13,46 @@
       <h1 class="title">سجل دخولك</h1>
       <h6 class="note">سجل دخولك لتبدأ رحلتك في متجرنا</h6>
 
-      <div class="input-group">
-        <p class="text">البريد الالكتروني</p>
-        <app-text-field></app-text-field>
+      <div class="group">
+        <div class="input-group">
+          <p class="text">البريد الالكتروني</p>
+          <input type="text" formControlName="email" placeholder="ادخل البريد" required>
+
+        </div>
+        <div *ngIf="submitted_crearte && formData.controls['email'].errors">
+          <p class="invalid-feedback-custom" *ngIf="submitted_crearte && formData.controls['email'].errors.required">
+            الحقل مطلوب!
+          </p>
+          <p class="invalid-feedback-custom" *ngIf="submitted_crearte && formData.controls['email'].errors.email">
+            البريد غير صحيح!
+          </p>
+        </div>
       </div>
 
-      <div class="input-group">
-        <p class="text">كلمة المرور</p>
-        <app-pass-field></app-pass-field>
+      <div class="group">
+        <div class="input-group">
+          <p class="text">كلمة المرور</p>
+          <input type="password" formControlName="password" placeholder="ادخل كلمة المرور" required>
+
+
+        </div>
+        <div *ngIf="submitted_crearte && formData.controls['password'].errors">
+          <p class="invalid-feedback-custom" *ngIf="submitted_crearte && formData.controls['password'].errors.required">
+            الحقل مطلوب!</p>
+          <p class="invalid-feedback-custom"
+            *ngIf="submitted_crearte && formData.controls['password'].errors.minlength">
+            كلمة السر يجب ان تكون أطول من 8 عناصر!</p>
+          <p class="invalid-feedback-custom" *ngIf="submitted_crearte && formData.controls['password'].errors.pattern">
+            كلمة السر يجب ان تحتوي حروف كبيرة وصغيرة وارقام!</p>
+        </div>
       </div>
 
-      <app-button [value]='submit' [link]='link'></app-button>
+
+      <div class="btn">
+        <button type="submit">تسجيل
+          الدخول</button>
+      </div>
+
       <p class="change"><a routerLink="/auth/accountType">انشاء حساب </a>ليس لديك حساب؟ </p>
     </form>
   </div>

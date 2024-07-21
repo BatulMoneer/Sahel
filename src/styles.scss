@@ -38,6 +38,48 @@ $Sahel-warn: mat.define-palette(mat.$red-palette);
   font-weight: bold;
 }
 
+input{
+  border: none;
+  padding: 7px 20px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 6px var(--shadow);
+}
+
+input:focus {
+  outline-color: var(--main);
+}
+
+
+button{
+  background-color: var(--main);
+  border-radius: 10px;
+  border: var(--main);
+  padding: 7px 20px;
+  font-family: var(--font);
+  color: var(--background);
+  box-shadow: 0px 2px 6px var(--shadow);
+  text-decoration: none;
+  cursor: pointer;
+
+}
+
+button:hover{
+  background-color: var(--textCol);
+}
+
+.grey-button {
+  background-color: var(--back);
+  cursor: not-allowed;
+}
+
+.grey-button:hover{
+  background-color: var(--back);
+}
+
+input{
+  text-align:right;
+  }
+
 $Sahel-theme: mat.define-light-theme((
   color: (
     primary: $Sahel-primary,

@@ -12,6 +12,7 @@ import { ChangeCardComponent } from './change-card/change-card.component';
 import { CollectorOrderComponent } from './collector-order/collector-order.component';
 import { RecieptComponent } from './reciept/reciept.component';
 import { PaymentComponent } from './payment/payment.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -28,11 +29,14 @@ import { PaymentComponent } from './payment/payment.component';
     RecieptComponent,
     PaymentComponent,
 
+
   ],
   imports: [
 
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule,
 
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
