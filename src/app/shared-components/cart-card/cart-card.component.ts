@@ -12,6 +12,7 @@ export class CartCardComponent implements OnInit {
   @Input() value: "";
 
   @Input() title = '';
+  @Input() amount = 1;
   @Input() image = '';
   @Input() info = '';
   @Input() barcode = '';

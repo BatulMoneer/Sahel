@@ -1,4 +1,5 @@
 import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 
 
 @Component({
@@ -7,61 +8,81 @@ import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
   styleUrls: ['./customer-item-detail.component.scss']
 })
 export class CustomerItemDetailComponent implements OnInit {
+
+
+  constructor(private dialoRef: MatDialog) { }
+
   @ViewChild('scrollContainer') scrollContainer!: ElementRef;
 
   array = [
     {
       link: "/apps/products/customer-item-detail",
       value: "عرض",
-      product: 'شوفان',
-      image: '../../../assets/images/Oats.jpg',
-      info: '20 ريال',
+      title: ' شوفان كويكر 500جم',
+      image: '../../../../../assets/images/Oats.jpg',
+      info: 15,
+      barcode: '../../../../../assets/images/Barcode.png',
+      amount: 1
     },
     {
       link: "/apps/products/customer-item-detail",
       value: "عرض",
-      product: 'شوفان',
-      image: '../../../assets/images/Oats.jpg',
-      info: '20 ريال',
+      title: ' شوفان كويكر 500جم',
+      image: '../../../../../assets/images/Oats.jpg',
+      info: 15,
+      barcode: '../../../../../assets/images/Barcode.png',
+      amount: 1
     },
     {
       link: "/apps/products/customer-item-detail",
       value: "عرض",
-      product: 'شوفان',
-      image: '../../../assets/images/Oats.jpg',
-      info: '20 ريال',
+      title: ' شوفان كويكر 500جم',
+      image: '../../../../../assets/images/Oats.jpg',
+      info: 15,
+      barcode: '../../../../../assets/images/Barcode.png',
+      amount: 1
     },
     {
       link: "/apps/products/customer-item-detail",
       value: "عرض",
-      product: 'شوفان',
-      image: '../../../assets/images/Oats.jpg',
-      info: '20 ريال',
+      title: ' شوفان كويكر 500جم',
+      image: '../../../../../assets/images/Oats.jpg',
+      info: 15,
+      barcode: '../../../../../assets/images/Barcode.png',
+      amount: 1
     },
     {
       link: "/apps/products/customer-item-detail",
       value: "عرض",
-      product: 'شوفان',
-      image: '../../../assets/images/Oats.jpg',
-      info: '20 ريال',
+      title: ' شوفان كويكر 500جم',
+      image: '../../../../../assets/images/Oats.jpg',
+      info: 15,
+      barcode: '../../../../../assets/images/Barcode.png',
+      amount: 1
     },
     {
       link: "/apps/products/customer-item-detail",
       value: "عرض",
-      product: 'شوفان',
-      image: '../../../assets/images/Oats.jpg',
-      info: '20 ريال',
+      title: ' شوفان كويكر 500جم',
+      image: '../../../../../assets/images/Oats.jpg',
+      info: 15,
+      barcode: '../../../../../assets/images/Barcode.png',
+      amount: 1
     },
   ]
 
+  current = {
+    link: "/apps/products/customer-item-detail",
+    value: "عرض",
+    title: ' شوفان كويكر 500جم',
+    image: '../../../../../assets/images/Oats.jpg',
+    info: 15,
+    barcode: '../../../../../assets/images/Barcode.png',
+    amount: 1
+  }
 
   link = "/apps/products/customer-cart"
   value = "اضف الى السلة"
-  value2 = "عرض"
-  link2 = "/apps/products/customer-item-detail"
-  title = 'شوفان كويكر  500جم';
-  image = '../../../../../assets/images/Oats.jpg';
-  price = '20';
   barcode = '../../../../../assets/images/Barcode.png';
   amount = 1;
   back = "عودة"
@@ -71,6 +92,26 @@ export class CustomerItemDetailComponent implements OnInit {
   itemsCount = this.array.length;
   visibleItems = 4;
 
+
+  addToCart() {
+    let order;
+
+    let retString = localStorage.getItem("cart")
+    let retArray = JSON.parse(retString)
+    order = retArray
+    this.current.amount = this.amount
+    if (order == null) {
+      order = [this.current]
+    }
+    else {
+      order.push(this.current)
+    }
+
+    let arr = JSON.stringify(order)
+    localStorage.setItem('cart', arr)
+    console.log("kkkk")
+
+  }
   scrollLeft() {
     if (!this.isAtStart()) {
       this.currentIndex--;
@@ -110,7 +151,6 @@ export class CustomerItemDetailComponent implements OnInit {
     }
   }
 
-  constructor() { }
 
   ngOnInit(): void {
 

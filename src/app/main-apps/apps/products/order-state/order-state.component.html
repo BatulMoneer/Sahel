@@ -78,8 +78,8 @@
 
   <div class="items">
     <ng-container *ngFor="let item of products">
-      <app-cart-card [image]="item.image" [info]="item.info" [barcode]="item.barcode"
-        [title]="item.title"></app-cart-card>
+      <app-cart-card [image]="item.image" [info]="item.info" [barcode]="item.barcode" [title]="item.title"
+        [amount]="item.amount"></app-cart-card>
     </ng-container>
   </div>
 

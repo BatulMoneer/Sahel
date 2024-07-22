@@ -12,6 +12,7 @@ import { CollectorViewRecieptsComponent } from './collector-view-reciepts/collec
 import { CollectorRequestWalletComponent } from './collector-request-wallet/collector-request-wallet.component';
 import { CollectorViewPaymentsComponent } from './collector-view-payments/collector-view-payments.component';
 import { CollectorRecieptDetailsComponent } from './collector-reciept-details/collector-reciept-details.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { CollectorRecieptDetailsComponent } from './collector-reciept-details/co
   imports: [
     CommonModule,
     MyInformationRoutingModule,
-    SharedComponentsModule
+    SharedComponentsModule,
+    FormsModule
   ],
   exports: [
     CustomerMyInformationComponent

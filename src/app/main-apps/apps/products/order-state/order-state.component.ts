@@ -10,30 +10,7 @@ import { OrderService } from '../../../../service/order.service';
 })
 export class OrderStateComponent implements OnInit {
 
-  products = [
-    {
-      title: ' شوفان كويكر 500جم',
-      image: '../../../../../assets/images/Oats.jpg',
-      info: 15,
-      barcode: '../../../../../assets/images/Barcode.png',
-      amount: 1
-    },
-    {
-      title: ' شوفان كويكر 500جم',
-      image: '../../../../../assets/images/Oats.jpg',
-      info: 15,
-      barcode: '../../../../../assets/images/Barcode.png',
-      amount: 1
-
-    },
-    {
-      title: ' شوفان كويكر 500جم',
-      image: '../../../../../assets/images/Oats.jpg',
-      info: 15,
-      barcode: '../../../../../assets/images/Barcode.png',
-      amount: 1
-    }
-  ]
+  products = []
 
   hasOrder: boolean = true;
 
@@ -53,7 +30,7 @@ export class OrderStateComponent implements OnInit {
   getPrice() {
     let val = 0;
     for (let i of this.products) {
-      val += i.info;
+      val += i.info * i.amount;
 
     }
     return val;
@@ -72,9 +49,23 @@ export class OrderStateComponent implements OnInit {
     this.hasOrder = this.orderService.hasOrder();
     this.orderState = this.orderService.getOrderState();
     this.productFound = this.orderService.isProductFound();
+
+
+
+    let retString = localStorage.getItem("cart");
+    if (retString) {
+      this.products = JSON.parse(retString);
+    }
+
+    this.count = this.products.length
+
+    this.price = this.getPrice()
+    this.total = this.price + this.delivery - this.wallet
+    console.log(this.products);
   }
 
   nextState(): void {
+
     if (this.orderState === 2 && !this.productFound) {
       return;
     }

@@ -8,31 +8,7 @@ import { CustomerMyInformationComponent } from '../../my-information/customer-my
 })
 export class CustomerCartComponent implements OnInit {
 
-  products = [
-    {
-      title: ' شوفان كويكر 500جم',
-      image: '../../../../../assets/images/Oats.jpg',
-      info: 15,
-      barcode: '../../../../../assets/images/Barcode.png',
-      amount: 1
-    },
-    {
-      title: ' شوفان كويكر 500جم',
-      image: '../../../../../assets/images/Oats.jpg',
-      info: 15,
-      barcode: '../../../../../assets/images/Barcode.png',
-      amount: 1
-
-    },
-    {
-      title: ' شوفان كويكر 500جم',
-      image: '../../../../../assets/images/Oats.jpg',
-      info: 15,
-      barcode: '../../../../../assets/images/Barcode.png',
-      amount: 1
-    }
-  ]
-
+  products = []
   cards = [{ card: 1345, check: "one" }, { card: 1345, check: "two" }, { card: 1345, check: "three" }]
 
   count = this.products.length
@@ -47,7 +23,7 @@ export class CustomerCartComponent implements OnInit {
   getPrice() {
     let val = 0;
     for (let i of this.products) {
-      val += i.info;
+      val += i.info * i.amount;
 
     }
     return val;
@@ -57,28 +33,41 @@ export class CustomerCartComponent implements OnInit {
 
   total = this.price + this.delivery - this.wallet
 
-
-
-  //@ViewChild('child') child: CustomerMyInformationComponent
-
-  //wallet = this.getWallet();
-  //  getWallet() {
-  //    return this.child.wallet
-  // }
-
   inc(index) {
     index.amount += 1;
+    this.updateValues();
   }
 
   dec(index) {
-    if (index.amount > 0) {
+    if (index.amount > 1) {
       index.amount -= 1;
+
+      this.updateValues();
     }
+  }
+
+  deleteProduct(index: number) {
+    this.products.splice(index, 1);
+    this.updateValues();
+    localStorage.setItem('cart', JSON.stringify(this.products));
+  }
+
+  updateValues() {
+    this.count = this.products.length;
+    this.price = this.getPrice();
+    this.total = this.price + this.delivery - this.wallet;
+    localStorage.setItem('cart', JSON.stringify(this.products));
   }
 
   constructor() { }
 
   ngOnInit(): void {
+    let retString = localStorage.getItem("cart");
+    if (retString) {
+      this.products = JSON.parse(retString);
+    }
+    this.updateValues();
+    console.log(this.products);
   }
 
 }

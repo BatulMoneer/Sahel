@@ -19,11 +19,17 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-
 }
 
 .section {
   width: 48%;
+}
+
+.button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 
 .title {
@@ -40,6 +46,18 @@
   font-weight: lighter;
 }
 
+.input-group {
+  position: relative;
+}
+
+.password-strength {
+  color: #ff0000;
+}
+
+.input-group input[type="password"] {
+  padding-right: 25px;
+}
+
 .wallet {
   background-color: var(--back);
   height: 70px;
@@ -48,14 +66,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
 
-
-    a{
-      color: var(--main);
-      padding: 3px;
-      font-weight: bold;
-    }
-
+.wallet a {
+  color: var(--main);
+  padding: 3px;
+  font-weight: bold;
 }
 
 .input-group {
@@ -64,7 +80,32 @@
   flex-direction: row-reverse;
   margin-bottom: 10px;
 }
+.input-group2 {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-bottom: 15px;
+}
 
+
+.password-container {
+  display: flex;
+  align-items: center;
+}
+
+.password-strength {
+  color: var(--warn);
+  margin-top: 5px;
+  font-size: 14px;
+  display: block;
+}
+
+.password-strength {
+  display: block;
+  color: var(--warn);
+  margin-top: 5px;
+  font-size: 14px;
+}
 .text {
   display: inline;
   text-align: right;
@@ -97,7 +138,6 @@ app-button {
   padding-top: 10px;
 }
 
-
 .saved-cards {
   text-align: right;
   margin: 20px;
@@ -128,7 +168,7 @@ app-button {
   font-size: 18px;
   color: var(--textCol);
   text-align: right;
-  margin: 10 10px;
+  margin: 10px 10px;
 }
 
 @media (max-width: 1110px) {
@@ -138,7 +178,6 @@ app-button {
     align-items: center;
     justify-content: center;
     padding: 40px 0px 40px 0px;
-
     margin: 0;
   }
 
@@ -156,6 +195,10 @@ app-button {
     width: 100%;
     padding: 10px;
   }
+
+  .button-container {
+    margin-top: 10px;
+  }
 }
 
 @media (max-width: 500px) {
@@ -164,11 +207,8 @@ app-button {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-  padding: 40px 0px 40px 0px;
-
+    padding: 40px 0px 40px 0px;
     margin: 0;
-
-
   }
 
   .form {
@@ -212,5 +252,9 @@ app-button {
   .section {
     width: 100%;
     padding: 5px;
+  }
+
+  .button-container {
+    margin-top: 5px;
   }
 }

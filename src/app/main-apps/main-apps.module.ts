@@ -4,19 +4,21 @@ import { MainAppsRoutingModule } from './main-apps-routing.module';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
-    MainLayoutComponent
+    MainLayoutComponent,
   ],
   imports: [
     CommonModule,
-    MainAppsRoutingModule
+    MainAppsRoutingModule,
+    MatDialogModule
   ],
-  exports:[
+  exports: [
     HeaderComponent,
     FooterComponent
   ]
