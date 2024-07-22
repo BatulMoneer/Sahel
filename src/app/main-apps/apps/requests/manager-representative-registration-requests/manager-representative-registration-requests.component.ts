@@ -9,6 +9,54 @@ export class ManagerRepresentativeRegistrationRequestsComponent implements OnIni
 
   constructor() { }
 
+  arrayList = [
+    {
+      collectorName: 'عامر عثمان',
+      collectorAge: '31	',
+      email: 'amir@gmail.com',
+      phone: '0593644354',
+      commercialRegistration: '//awfwaf//waf/waf',
+      id: '1',
+      reason: " "
+    },
+    {
+      collectorName: 'عامر عثمان',
+      collectorAge: '31	',
+      email: 'amir@gmail.com',
+      phone: '0593644354',
+      commercialRegistration: '//awfwaf//waf/waf',
+      id: '1',
+      reason: " "
+    },
+    {
+      collectorName: 'عامر عثمان',
+      collectorAge: '31	',
+      email: 'amir@gmail.com',
+      phone: '0593644354',
+      commercialRegistration: '//awfwaf//waf/waf',
+      id: '1',
+      reason: " "
+    },
+    {
+      collectorName: 'عامر عثمان',
+      collectorAge: '31	',
+      email: 'amir@gmail.com',
+      phone: '0593644354',
+      commercialRegistration: '//awfwaf//waf/waf',
+      id: '1',
+      reason: " "
+    },
+    {
+      collectorName: 'عامر عثمان',
+      collectorAge: '31	',
+      email: 'amir@gmail.com',
+      phone: '0593644354',
+      commercialRegistration: '//awfwaf//waf/waf',
+      id: '1',
+      reason: " "
+    },
+  ]
+
   ngOnInit(): void {
   }
 

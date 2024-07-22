@@ -16,7 +16,7 @@ export class ChThePOfMThePComponent implements OnInit {
       this.router.navigate(['/apps/products/app-add-new-product']);
     }
     else if (inputId === 'edit') {
-      this.router.navigate(['/apps//products/app-edit-product']);
+      this.router.navigate(['/apps//products/app-choose-product-will-update-it']);
     }
   }
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-choose-manager-registration-requests',
@@ -7,7 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChooseManagerRegistrationRequestsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
+
+  navigateToRequests() {
+    const inputId = (event.target as HTMLInputElement).id;
+    if (inputId === 'stores') {
+      this.router.navigate(['/apps/requests/app-manager-stores-registration-requests']);
+    }
+    else if (inputId === 'collectors') {
+      this.router.navigate(['/apps//requests/app-manager-representative-registration-requests']);
+    }
+  }
+
 
   ngOnInit(): void {
   }

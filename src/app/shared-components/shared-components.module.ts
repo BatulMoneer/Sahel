@@ -8,11 +8,16 @@ import { TextFieldComponent } from './text-field/text-field.component';
 import { PassFieldComponent } from './pass-field/pass-field.component';
 import { CartCardComponent } from './cart-card/cart-card.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
+
+import { TableComponent } from './table/table.component';
+
+
 import { ChangeCardComponent } from './change-card/change-card.component';
 import { CollectorOrderComponent } from './collector-order/collector-order.component';
 import { RecieptComponent } from './reciept/reciept.component';
 import { PaymentComponent } from './payment/payment.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -24,10 +29,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ShopCardComponent,
     CartCardComponent,
     CheckboxComponent,
+
+    TableComponent,
+
     ChangeCardComponent,
     CollectorOrderComponent,
     RecieptComponent,
     PaymentComponent,
+
 
 
   ],
@@ -48,10 +57,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ShopCardComponent,
     CartCardComponent,
     CheckboxComponent,
+
+    TableComponent,
+
     ChangeCardComponent,
     CollectorOrderComponent,
     RecieptComponent,
     PaymentComponent,
+
 
 
   ]

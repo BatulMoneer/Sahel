@@ -1,0 +1,40 @@
+<div class="body">
+  <form>
+
+    <div class="titleDiv">
+      <h1>تحديث منتج</h1>
+    </div>
+
+    <div class="tableTitleDiv">
+      <h2>جدول المنتجات</h2>
+      <h6>انقر لتحديث المنتج أو حذفه نهائياَ</h6>
+     </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>اسم المنتج</th>
+          <th>سعر المنتج</th>
+          <th>قسم المنتج</th>
+          <th>الكمية</th>
+          <th>صورة المنتج</th>
+          <th>باركود المنتج</th>
+          <th colspan="2">عملية</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="trbody" *ngFor="let item of arrayList">
+          <td class="tdbody">{{item.prodcutName}}</td>
+          <td class="tdbody">{{item.productPrice}}</td>
+          <td class="tdbody">{{item.productSection}}</td>
+          <td class="tdbody">{{item.quntity}}</td>
+          <td class="tdbody"><img src="" alt="صورة المنتج"></td>
+          <td class="tdbody"><img src="" alt="باركود المنتج"></td>
+          <td class="tdbody"><button>تحديث</button></td>
+          <td class="tdbody"><button>حذف</button></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </form>
+</div>

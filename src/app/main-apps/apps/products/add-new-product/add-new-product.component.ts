@@ -6,7 +6,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./add-new-product.component.scss']
 })
 export class AddNewProductComponent implements OnInit {
-
+  submit = "إضافة";
+  link = "link";
   constructor(){}
 
   ngOnInit(): void {

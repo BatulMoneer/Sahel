@@ -1,26 +1,58 @@
 <div class="body">
-  <form class="form">
+  <form>
 
-    <h1 class="title">إضافة منتج جديد</h1>
-    <h6 class="note">أضف تفاصيل المنتج</h6>
+  <div class = "titleDiv">
+    <h1>إضافة منتج جديد</h1>
+    <h6>أضف تفاصيل المنتج</h6>
+  </div>
 
-      <label class="productNameField" for="productName">اسم المنتج</label>
-      <input type="text" class=" field" name="productName" id="productName" placeholder="ادخل اسم المنتج">
+    <div class="productNameDiv">
+      <label class="productNameLabel" for="productName">اسم المنتج :</label>
+      <input class="productNameField" type="text" id="productName"  name="productNameName" placeholder="ادخل اسم المنتج"  required>
+    </div>
 
-      <label class="productPriceField" for="productPrice">سعر المنتج</label>
-      <input type="text" class=" field" name="productPrice" id="productPrice" placeholder="ادخل سعر المنتج">
+    <div class="productPriceDiv">
+      <label class="productPriceLabel" for="productPrice">سعر المنتج :</label>
+      <input class = "productPriceField" type="text" id="productPrice" name="productPriceName" placeholder="ادخل سعر المنتج" required>
+    </div>
 
-      <label class="productsSectionsField" for="productsSections">قسم المنتج:</label>
-      <select id="productsSections" name="productsSectionsDropList">
-        <option value="الشاي والقهوة">الشاي والقهوة</option>
-        <option value="المعلبات">المعلبات</option>
-        <option value="فواكه وخضروات">فواكه وخضروات</option>
-        <option value="الماء والمشروبات">الماء والمشروبات</option>
-        <option value="أجهزة إلكترونية">أجهزة إلكترونية والمشروبات</option>
-      </select>
+<div class="container">
+      <label class="productsSectionLabel" for="productsSection"> قسم المنتج :</label>
+<div class="divLine">
+      <input class ="productsSectionList" list="productsSection" name="productsSection" placeholder="اختر قسم المنتج">
+      <datalist id="productsSection" name="productsSectionsName">
+        <option value="الشاي والقهوة">
+          <option value="المعلبات">
+          <option value="فواكه وخضروات">
+          <option value="الماء والمشروبات">
+          <option value="العناية الشخصية">
+          <option value="أجهزة إلكترونية">
+      </datalist>
+          <input class ="anotherSectionRadio" type="radio" name="anotherSectionName" id="anotherSection">
+          <label class="anotherSectionLabel" for="anotherSection">أخرى</label>
+          </div>
+        </div>
 
-      <label class=" anotherSectionRadio" for="anotherSection">أخرى</label>
-      <input type = "radio" name = "anotherSection">
+    <div class="quantityDiv">
+      <label class="quantityLabel" for="quantity">الكمية :</label>
+      <input class="quantityCounter" type="number" id = "quantity" name="quantityName" placeholder="ادخل كمية المنتج" min="0">
+    </div>
+
+    <div class="productPhotoDiv">
+      <label class="productPhotoLabel" for="productPhoto">أرفق صورة المنتج :</label>
+      <input class="productPhotoInput" type="file" name="productPhotoName" id="productPhoto">
+    </div>
+
+    <div class="productBarcodeDiv">
+      <label class="productBarcodeLabel" for="productBarcode">أرفق صورة لباركود المنتج :</label>
+      <input class = "productBarcodeInput" type="file" name="productBarcodeName" id="productBarcode">
+    </div>
+
+    <div class="ResetAddDiv">
+      <input class="resetButton" type="reset" value="مسح الحقول" name="resetName">
+      <app-button [value]='submit' [link]='link'></app-button>
+    </div>
 
   </form>
 </div>
+
