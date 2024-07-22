@@ -157,11 +157,15 @@ app-button{
 @media (max-width:  500px) {
   .body{
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     gap: 20px;
   }
+  .stuff{
+    display: flex;
+    flex-direction: column-reverse;
+  }
   .itemimg{
-    height: 300px;
+    height: 200px;
     width: auto;
   }
 

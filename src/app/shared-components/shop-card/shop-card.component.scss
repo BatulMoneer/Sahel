@@ -11,7 +11,6 @@
 }
 
 
-
 .card-info{
   text-align: right;
   padding: 10px;
@@ -44,26 +43,26 @@ app-button{
 
 @media (max-width: 500px) {
   .body {
-    flex-direction: column; /* Stack items vertically */
-    width: 100%; /* Full width */
-    align-items: center; /* Center items */
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
   }
 
   .card-img {
-    width: 100%; /* Make image responsive */
-    padding-left: 0; /* Remove padding */
+
+    padding-left: 0;
   }
 
   .card-info {
-    text-align: center; /* Center text on smaller screens */
+    text-align: center;
   }
 
   .card-title {
-    font-size: 20px; /* Adjust title size */
+    font-size: 18px;
   }
 
   .card-text {
-    font-size: 16px; /* Adjust text size */
+    font-size: 14px;
   }
 }
 

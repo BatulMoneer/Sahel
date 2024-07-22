@@ -1,3 +1,11 @@
+:root {
+  --font: Arial, sans-serif;
+  --textCol: #333;
+  --prime: #007bff;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --background: #fff;
+}
+
 .body {
   font-family: var(--font);
   display: flex;
@@ -10,33 +18,47 @@
   padding-bottom: 50px;
 }
 
-.top{
+.top {
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
+  margin-bottom: 20px;
 }
 
-img{
-  width: 350px;
-
+img {
+  width: 150px;
+  margin-right: 20px;
 }
-.head{
+
+.head {
   color: var(--textCol);
-  font-size: 64px;
-
+  font-size: 48px;
+  margin: 0;
 }
 
-.category{
+.category {
   padding-top: 30px;
   color: var(--prime);
   font-size: 33px;
+  cursor: pointer;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.category:hover {
+  color: var(--textCol);
+}
+
+.category:visited {
+  color: var(--textCol);
 }
 
 .search-container {
   display: flex;
   justify-content: center;
   position: relative;
-  width: 40%;
+  width: 60%;
+  margin-bottom: 20px;
 }
 
 .search-icon {
@@ -61,12 +83,12 @@ input[type="text"] {
   align-items: center;
   width: 85%;
   position: relative;
+  margin-bottom: 20px;
 }
 
 .grid {
   display: flex;
   padding: 20px;
-
   overflow: hidden;
   width: 100%;
 }
@@ -93,29 +115,80 @@ input[type="text"] {
 }
 
 .arrow:disabled {
-  color: var(textCol);
+  color: var(--textCol);
   cursor: not-allowed;
 }
 
-app-button{
+.all-products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+  gap: 20px;
+}
+
+app-button {
   padding-top: 20px;
 }
 
-@media (max-width:  1110px) {
-  .body{
+@media (max-width: 1110px) {
+  .body {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-.top{
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.head{
-  font-size: 32px;
+
+  .top {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .head {
+    font-size: 32px;
+  }
+
+  .search-container {
+    width: 80%;
+  }
 
 }
 
+
+
+@media (max-width: 500px) {
+
+  .body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .top {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .carousel {
+    display: flex;
+    align-items: center;
+  justify-content: center;
+}
+
+
+  .all-products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;}
+
+  .head {
+    font-size: 24px;
+  }
+
+  .grid-item {
+    flex: 0 0 90%;
+    max-width: 90%;
+  }
 }

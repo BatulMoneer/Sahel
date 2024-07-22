@@ -26,14 +26,15 @@
   </div>
 
   <div class="grid">
-    <app-shop-card class="grid-item" title="{{title}}" image="{{image}}" info="{{info}}" more="{{productLink}}"
-      submit="{{moreProducts }}"></app-shop-card>
-    <app-shop-card class="grid-item" title="{{title}}" image="{{image}}" info="{{info}}" more="{{productLink}}"
-      submit="{{moreProducts }}"></app-shop-card>
-    <app-shop-card class="grid-item" title="{{title}}" image="{{image}}" info="{{info}}" more="{{productLink}}"
-      submit="{{moreProducts }}"></app-shop-card>
-    <app-shop-card class="grid-item" title="{{title}}" image="{{image}}" info="{{info}}" more="{{productLink}}"
-      submit="{{moreProducts }}"></app-shop-card>
+    <app-shop-card *ngFor="let shop of displayedShops" class="grid-item" [title]="shop.title" [image]="shop.image"
+      [info]="shop.info" [more]="shop.productLink" [submit]="moreProducts">
+    </app-shop-card>
   </div>
-  <app-button [value]="more_shops" [link]="more_shops_link"></app-button>
+
+
+
+  <button (click)="showAllShops()">
+    {{ showMore ? 'عرض أقل' : 'عرض المزيد من المتاجر' }}
+  </button>
+
 </div>

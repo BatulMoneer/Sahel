@@ -11,12 +11,12 @@
   </div>
 
   <div class="items">
-    <ng-container *ngFor="let item of products">
-      <app-cart-card [image]="item.image" [info]="item.info" [barcode]="item.barcode"
-        [title]="item.title"></app-cart-card>
+    <ng-container *ngFor="let item of products; let i = index">
+      <app-cart-card [image]="item.image" [info]="item.info" [barcode]="item.barcode" [title]="item.title"
+        [amount]="item.amount"></app-cart-card>
 
       <div class="buts">
-        <button class="butt trash"><i class="fas fa-trash-alt trash-icon"></i></button>
+        <button class="butt trash" (click)="deleteProduct(i)"><i class="fas fa-trash-alt trash-icon"></i></button>
         <div class="amount">
           <button class="butt" (click)="inc(item)"><i class="fas fa-plus"></i></button>
           <span>{{item.amount}}</span>
