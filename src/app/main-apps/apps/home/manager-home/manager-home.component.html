@@ -1,1 +1,87 @@
-<p>manager-home works!</p>
+<div class=body>
+  <form>
+
+    <div class="titleDiv">
+      <h1>الإحصائيات</h1>
+      <h6>راقب نجاحك</h6>
+    </div>
+
+    <div class="tableTitleDiv">
+      <h2>بيانات العملاء</h2>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>اسم العميل</th>
+          <th>العنوان</th>
+          <th>البريد الإلكتروني</th>
+          <th>رقم الجوال</th>
+          <th>رقم الحساب المصرفي</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="trbody" *ngFor="let item of arrayList">
+          <td class="tdbody">{{item.customerName}}</td>
+          <td class="tdbody">{{item.customerAddress}}</td>
+          <td class="tdbody">{{item.Email}}</td>
+          <td class="tdbody">{{item.phone}}</td>
+          <td class="tdbody">{{item.IBAN}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="tableTitleDiv">
+      <h2>بيانات المناديب</h2>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>اسم المندوب</th>
+          <th>العمر</th>
+          <th>البريد الإلكتروني</th>
+          <th>رقم الجوال</th>
+          <th>رقم الحساب المصرفي</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="trbody" *ngFor="let item of arrayList0">
+          <td class="tdbody">{{item.collectorName}}</td>
+          <td class="tdbody">{{item.collectorAge}}</td>
+          <td class="tdbody">{{item.Email}}</td>
+          <td class="tdbody">{{item.phone}}</td>
+          <td class="tdbody">{{item.IBAN}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="tableTitleDiv">
+      <h2>بيانات المتاجر</h2>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>المتجر</th>
+          <th>الفرع</th>
+          <th>البريد الإلكتروني</th>
+          <th>رقم الجوال</th>
+          <th>المبيعات الشهرية</th>
+          <th>السجل التجاري</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="trbody" *ngFor="let item of arrayList1">
+          <td class="tdbody">{{item.StoreName}}</td>
+          <td class="tdbody">{{item.storeAddress}}</td>
+          <td class="tdbody">{{item.Email}}</td>
+          <td class="tdbody">{{item.phone}}</td>
+          <td class="tdbody">{{item.monthSales}}</td>
+          <td>ملف</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </form>
+</div>

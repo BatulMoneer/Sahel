@@ -1,0 +1,37 @@
+<div class="body">
+  <form>
+
+    <div class="titleDiv">
+      <h1>طلبات تسجيل مناديب التجميع</h1>
+    </div>
+
+    <div class="tableTitleDiv">
+      <h2>تفاصيل الطلبات</h2>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>اسم المندوب</th>
+          <th>العمر</th>
+          <th>البريد الإلكتروني</th>
+          <th>رقم الجوال</th>
+          <th colspan="2">الرد</th>
+          <th>تفاصيل الرد</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="trbody" *ngFor="let item of arrayList">
+          <td class="tdbody">{{item.collectorName}}</td>
+          <td class="tdbody">{{item.collectorAge}}</td>
+          <td class="tdbody">{{item.email}}</td>
+          <td class="tdbody">{{item.phone}}</td>
+          <td class="tdbody"><button>قبول</button></td>
+          <td class="tdbody"><button>رفض</button></td>
+          <td class="tdbody">{{item.reason}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </form>
+</div>

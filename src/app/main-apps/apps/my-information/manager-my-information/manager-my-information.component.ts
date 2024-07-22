@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class ManagerMyInformationComponent implements OnInit {
 
   constructor() { }
+  value = "تحديث";
+  link = "link";
 
   ngOnInit(): void {
   }

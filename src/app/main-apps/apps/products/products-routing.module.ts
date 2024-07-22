@@ -1,3 +1,4 @@
+import { ChooseProductWillUpdateItComponent } from './choose-product-will-update-it/choose-product-will-update-it.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
 import { AddNewProductComponent } from './add-new-product/add-new-product.component';
 import { ChThePOfMThePComponent } from './ch-the-p-of-m-the-p/ch-the-p-of-m-the-p.component';
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     path: 'customer-cart',
     component: CustomerCartComponent
+  },
+  {
+    path: 'app-choose-product-will-update-it',
+    component: ChooseProductWillUpdateItComponent
   }
 
 ];

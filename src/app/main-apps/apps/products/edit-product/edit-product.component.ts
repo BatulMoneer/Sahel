@@ -7,6 +7,8 @@ import { Router } from '@angular/router';
 })
 export class EditProductComponent implements OnInit {
 
+  submit = "تحديث";
+  link = "home";
   constructor(){}
 
   ngOnInit(): void {

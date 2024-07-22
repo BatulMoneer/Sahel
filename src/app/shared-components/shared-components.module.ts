@@ -8,6 +8,8 @@ import { TextFieldComponent } from './text-field/text-field.component';
 import { PassFieldComponent } from './pass-field/pass-field.component';
 import { CartCardComponent } from './cart-card/cart-card.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
+import { TableComponent } from './table/table.component';
+
 
 
 @NgModule({
@@ -19,6 +21,8 @@ import { CheckboxComponent } from './checkbox/checkbox.component';
     ShopCardComponent,
     CartCardComponent,
     CheckboxComponent,
+    TableComponent,
+
 
   ],
   imports: [
@@ -36,6 +40,7 @@ import { CheckboxComponent } from './checkbox/checkbox.component';
     ShopCardComponent,
     CartCardComponent,
     CheckboxComponent,
+    TableComponent,
 
 
   ]

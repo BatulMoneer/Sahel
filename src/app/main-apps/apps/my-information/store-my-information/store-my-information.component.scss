@@ -1,0 +1,109 @@
+.body {
+  direction: rtl;
+  height: 100%;
+  padding: auto;
+  margin: auto;
+  font-family: var(--font);
+  display: flex;
+  justify-content: center;
+  background-color: var(--back);
+}
+
+form {
+  height: auto;
+  width: auto;
+  padding: auto;
+  margin: auto;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  display: flex;
+  justify-content: right;
+  flex-direction: column;
+  // background-color: red;
+}
+
+.titleDiv {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 30px;
+
+  h1 {
+    font-size: 45px;
+    color: var(--prime);
+    padding: 5px;
+    margin: 0;
+  }
+}
+
+.storeNameDiv,
+.storeBranchDiv,
+.storeEmailDiv,
+.storePhoneDiv,
+.passwordDiv,
+.commercialRegistrationDiv {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+
+.storeNameLable,
+.storeBranchLable,
+.storeEmailLable,
+.storePhoneLable,
+.passwordLable,
+.commercialRegistrationLable {
+  font-size: 18px;
+  color: var(--textCol);
+  padding: 0;
+  margin: 20px 60px 5px 30px;
+}
+
+.storeNameField,
+.storeBranchField,
+.storeEmailIField,
+.storePhoneField,
+.passwordField,
+.iamgeField {
+  border: none;
+  padding: 7px 20px;
+  margin: 0px 80px 5px 30px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 6px var(--shadow);
+  display: flex;
+  text-align: center;
+}
+
+input:focus {
+  outline-color: var(--main);
+}
+
+.iamgeField{
+  background-color: var(--background);
+}
+
+.updateDiv {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.updateButton {
+  background-color: var(--main);
+  border-radius: 10px;
+  border: var(--main);
+  padding: 7px 20px;
+  margin-top: 20px;
+  font-family: var(--font);
+  color: var(--background);
+  box-shadow: 0px 2px 6px var(--shadow);
+  text-decoration: none;
+}
+
+.updateButton:hover{
+  background-color: var(textCol);
+}
+
+

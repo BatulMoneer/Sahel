@@ -6,11 +6,13 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
 
 
+
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
-    MainLayoutComponent
+    MainLayoutComponent,
+
   ],
   imports: [
     CommonModule,

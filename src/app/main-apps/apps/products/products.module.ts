@@ -9,6 +9,7 @@ import { CustomerViewProductsComponent } from './customer-view-products/customer
 import { SharedComponentsModule } from 'src/app/shared-components/shared-components.module';
 import { CustomerItemDetailComponent } from './customer-item-detail/customer-item-detail.component';
 import { CustomerCartComponent } from './customer-cart/customer-cart.component';
+import { ChooseProductWillUpdateItComponent } from './choose-product-will-update-it/choose-product-will-update-it.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CustomerCartComponent } from './customer-cart/customer-cart.component';
     EditProductComponent,
     CustomerViewProductsComponent,
     CustomerItemDetailComponent,
-    CustomerCartComponent
+    CustomerCartComponent,
+    ChooseProductWillUpdateItComponent
   ],
   imports: [
     CommonModule,

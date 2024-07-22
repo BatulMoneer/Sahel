@@ -1,0 +1,130 @@
+.body {
+  direction: rtl;
+  height: 100%;
+  padding: auto;
+  margin: auto;
+  font-family: var(--font);
+  display: flex;
+  justify-content: center;
+  background-color: var(--back);
+}
+
+form {
+  height: auto;
+  width: auto;
+  padding: auto;
+  margin: auto;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  display: flex;
+  justify-content: right;
+  flex-direction: column;
+}
+
+.titleDiv {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 20px;
+
+  h1 {
+    font-size: 45px;
+    color: var(--prime);
+    padding: 5px;
+    margin: 0;
+  }
+
+  h6 {
+    font-size: 14px;
+    color: var(--textCol);
+    padding: 5px;
+    margin: 0;
+    margin-right: 15px;
+  }
+}
+
+.productNameDiv,
+.productPriceDiv,
+.productsSectionDiv,
+.quantityDiv,
+.productPhotoDiv,
+.productBarcodeDiv {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+
+.productNameLabel,
+.productPriceLabel,
+.productsSectionLabel,
+.quantityLabel,
+.productPhotoLabel,
+.productBarcodeLabel {
+  font-size: 18px;
+  color: var(--textCol);
+  padding: 0;
+  margin: 20px 60px 5px 30px;
+}
+
+.productNameField,
+.productPriceField,
+.productsSectionList,
+.quantityCounter,
+.productPhotoInput,
+.productBarcodeInput {
+  border: none;
+  padding: 7px 20px;
+  margin: 0px 80px 5px 30px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 6px var(--shadow);
+  display: flex;
+  text-align: center;
+}
+
+input:focus {
+  outline-color: var(--main);
+}
+
+.container {
+  padding: 0;
+  margin: 0;
+  background: blue;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.anotherSectionLabel {
+  padding: 0;
+  margin: 0 10px;
+}
+
+.quantityCounter {
+  width: 200px;
+}
+
+.productBarcodeInput,
+.productPhotoInput {
+  background-color: var(--background);
+}
+
+
+.ResetAddDiv {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.resetButton {
+  border: none;
+  padding: 7px 20px;
+  margin: 10px 30px 10px 30px;
+  width: 120px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 6px var(--shadow);
+  display: flex;
+  text-align: center;
+  background-color: var(--background);
+}
