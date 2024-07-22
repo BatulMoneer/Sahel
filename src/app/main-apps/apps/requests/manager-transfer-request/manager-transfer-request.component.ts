@@ -9,6 +9,65 @@ export class ManagerTransferRequestComponent implements OnInit {
 
   constructor() { }
 
+  arrayList = [
+    {
+      collertorName: 'عامر عثمان',
+      orderNumber: '1	',
+      orderDate: '2 / 1 / 1446',
+      bill: '3000',
+      orderStatus: 'تم التحويل',
+      details: '',
+    },
+    {
+      collertorName: 'عامر عثمان',
+      orderNumber: '1	',
+      orderDate: '2 / 1 / 1446',
+      bill: '3000',
+      orderStatus: 'تم التحويل',
+      details: '',
+    },
+    {
+      collertorName: 'عامر عثمان',
+      orderNumber: '1	',
+      orderDate: '2 / 1 / 1446',
+      bill: '3000',
+      orderStatus: 'تم التحويل',
+      details: '',
+    },
+    {
+      collertorName: 'عامر عثمان',
+      orderNumber: '1	',
+      orderDate: '2 / 1 / 1446',
+      bill: '3000',
+      orderStatus: 'تم التحويل',
+      details: '',
+    },
+    {
+      collertorName: 'عامر عثمان',
+      orderNumber: '1	',
+      orderDate: '2 / 1 / 1446',
+      bill: '3000',
+      orderStatus: 'تم التحويل',
+      details: '',
+    },
+    {
+      collertorName: 'عامر عثمان',
+      orderNumber: '1	',
+      orderDate: '2 / 1 / 1446',
+      bill: '3000',
+      orderStatus: 'تم التحويل',
+      details: '',
+    },
+    {
+      collertorName: 'عامر عثمان',
+      orderNumber: '1	',
+      orderDate: '2 / 1 / 1446',
+      bill: '3000',
+      orderStatus: 'تم التحويل',
+      details: '',
+    },
+  ]
+
   ngOnInit(): void {
   }
 

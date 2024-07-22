@@ -1,11 +1,11 @@
-import { ManagerAlertsComponent } from './manager-alerts/manager-alerts.component';
+import { AlertsComponent } from './alerts/alerts.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  {path: 'app-manager-alerts',
-    component: ManagerAlertsComponent
-  },
+  {path: "app-alerts",
+    component: AlertsComponent
+  }
 ];
 
 @NgModule({

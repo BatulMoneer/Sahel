@@ -1,1 +1,45 @@
-test
+<div class="body">
+  <form>
+
+    <div class="titleDiv">
+      <h1>الإحصائيات</h1>
+      <h6>راقب نجاحك</h6>
+    </div>
+
+    <!-- <div class="storeInfoDiv">
+        <img src="C:\Users\faado\Documents\GitHub\Sahel\src\assets\images\Panda.png" alt="store logo">
+        <h2> الشرايع - مخطط 2</h2>
+    </div> -->
+
+    <div class="tableTitleDiv">
+      <h3>مقارنة مع المتاجر الأخرى</h3>
+     </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>المتجر</th>
+          <th>نسبة المبيعات بين المتاجر</th>
+          <th>الترتيب حسب المبيعات</th>
+          <th>فرع المتجر</th>
+          <th>الترتيب حسب الفروع</th>
+          <th>عدد العملاء</th>
+          <th>التقدم</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <tr class="trbody" *ngFor="let item of arrayList">
+            <td class="tdbody">{{item.store}}</td>
+            <td class="tdbody">{{item.percentageOfSalesBetweenStores}}</td>
+            <td class="tdbody">{{item.sortBySales}}</td>
+            <td class="tdbody">{{item.branchOfStore}}</td>
+            <td class="tdbody">{{item.sortByBranchs}}</td>
+            <td class="tdbody">{{item.NumberOfClients}}</td>
+            <td class="tdbody">{{item.productBarcode}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </form>
+</div>

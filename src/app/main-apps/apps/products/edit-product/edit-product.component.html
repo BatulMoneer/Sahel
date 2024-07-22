@@ -1,1 +1,59 @@
-<<p>edit-product works!</p>>
+<div class="body">
+  <form>
+
+    <div class="titleDiv">
+    <h1>تحديث منتج</h1>
+    <h6>حدث تفاصيل المنتج</h6>
+  </div>
+
+    <div class="productNameDiv">
+      <label class="productNameLabel" for="productName">اسم المنتج :</label>
+      <input class="productNameField" type="text" id="productName" name="productNameName" value="صابون الببايا"  required>
+    </div>
+
+    <div class="productPriceDiv">
+      <label class="productPriceLabel" for="productPrice">سعر المنتج :</label>
+      <input class = "productPriceField" type="text" id="productPrice" name="productPriceName" value="10 ريال"  required>
+    </div>
+    <div class="container">
+    <div class="productsSectionDiv">
+      <label class="productsSectionLabel" for="productsSection">قسم المنتج :</label>
+      <input class ="productsSectionList" list="productsSection" name="productsSection" placeholder="حدث قسم المنتج">
+      <datalist id="productsSection" name="productsSectionsName" >
+        <option value="الشاي والقهوة">
+        <option value="المعلبات">
+        <option value="فواكه وخضروات">
+        <option value="الماء والمشروبات">
+        <option value="العناية الشخصية" >
+        <option value="أجهزة إلكترونية">
+      </datalist>
+    </div>
+
+    <div class = "anotherSectionDiv">
+      <input class ="anotherSectionRadioInput" type="radio" name="anotherSectionName" id="anotherSection">
+      <label class="anotherSectionLabel" for="anotherSection">أخرى</label>
+      </div>
+  </div>
+
+    <div class="quantityDiv">
+      <label class="quantityLabel" for="quantity">الكمية :</label>
+      <input class="quantityCounter" type="number" id = "quantity" name="quantityName" min="0" value="600">
+    </div>
+
+    <div class="productPhotoDiv">
+      <label class="productPhotoLabel" for="productPhoto">حدث صورة المنتج :</label>
+      <input class="productPhotoInput" type="file" name="productPhotoName" id="productPhoto">
+    </div>
+
+    <div class="productBarcodeDiv">
+      <label class="productBarcodeLabel" for="productBarcode">حدث صورة لباركود المنتج :</label>
+      <input class = "productBarcodeInput" type="file" name="productBarcodeName" id="productBarcode">
+    </div>
+
+    <div class="ResetAddDiv">
+      <input class="resetButton" type="reset" value="مسح الحقول" name="resetName">
+      <app-button [value]='submit' [link]='link'></app-button>
+    </div>
+
+  </form>
+</div>

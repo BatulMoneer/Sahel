@@ -1,1 +1,39 @@
-<p>manager-stores-registration-requests works!</p>
+<div class="body">
+  <form>
+
+    <div class="titleDiv">
+      <h1>طلبات تسجيل المتاجر</h1>
+    </div>
+
+    <div class="tableTitleDiv">
+      <h2>تفاصيل الطلبات</h2>
+    </div>
+
+    <table>
+      <thead>
+        <tr class="trHead">
+          <th class="tdHead">اسم المتجر</th>
+          <th class="tdHead">الفرع</th>
+          <th class="tdHead">البريد الإلكتروني</th>
+          <th class="tdHead">رقم الجوال</th>
+          <th class="tdHead">السجل التجاري</th>
+          <th class="tdHead" colspan="2">الرد</th>
+          <th class="tdHead">تفاصيل الرد</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="trbody" *ngFor="let item of arrayList">
+          <td class="tdbody">{{item.store}}</td>
+          <td class="tdbody">{{item.branch}}</td>
+          <td class="tdbody">{{item.email}}</td>
+          <td class="tdbody">{{item.phone}}</td>
+          <td class="tdbody"><img src="" alt="السجل التجاري"></td>
+          <td class="tdbody"><button>قبول</button></td>
+          <td class="tdbody"><button>رفض</button></td>
+          <td class="tdbody">{{item.reason}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </form>
+</div>

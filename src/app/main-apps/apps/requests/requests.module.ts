@@ -11,9 +11,9 @@ import { ManagerStoresRegistrationRequestsComponent } from './manager-stores-reg
 @NgModule({
   declarations: [
     ManagerTransferRequestComponent,
-    ChooseManagerRegistrationRequestsComponent,
     ManagerRepresentativeRegistrationRequestsComponent,
-    ManagerStoresRegistrationRequestsComponent
+    ManagerStoresRegistrationRequestsComponent,
+    ChooseManagerRegistrationRequestsComponent
   ],
   imports: [
     CommonModule,

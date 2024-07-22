@@ -1,0 +1,92 @@
+
+.body {
+  font-family: var(--font);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 150px;
+  height: 100%;
+  margin: 0;
+}
+
+form {
+  background-color:var(--background);
+  text-align: right;
+}
+
+h1 {
+  font-size: 64px;
+  color: var(--textCol);
+  padding: 5px;
+  margin: 0;
+}
+
+h6 {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: var(--textCol);
+  padding: 5px;
+  margin: 20px;
+}
+
+.slide-controls {
+  display: flex;
+  gap: 3px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.slide-controls input {
+  display: none;
+}
+
+.slide {
+  cursor: pointer;
+  padding: 7px 20px;
+  width: 200px;
+  text-align: center;
+  transition: background 0.3s;
+}
+
+
+ .slide.stores,
+ .slide.collectors {
+  background: var(--back);
+  color: var(--textCol);
+}
+
+.slide.stores:hover,
+.slide.collectors:hover {
+  background: var(--main);
+  color: var(--background);
+}
+
+
+.slide-controls input:checked + .slide {
+  background: var(--main);
+  color: var(--background);
+}
+
+
+@media (max-width: 500px) {
+  .body {
+    padding: 50px 20px;
+  }
+
+  form {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .slide {
+    width: 80px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h6 {
+    font-size: 12px;
+  }
+}

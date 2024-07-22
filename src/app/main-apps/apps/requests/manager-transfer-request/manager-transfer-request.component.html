@@ -1,1 +1,36 @@
-<p>manager-transfer-request works!</p>
+<div class="body">
+  <form>
+    <div class="titleDiv">
+      <h1>طلبات التحويل للمناديب</h1>
+    </div>
+
+    <div class="tableTitleDiv">
+      <h2>قائمة تغاصيل الطلبات</h2>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>اسم المندوب</th>
+          <th>رقم الطلب</th>
+          <th>تاريخ الطلب</th>
+          <th>الفاتورة</th>
+          <th>حالة الطلب</th>
+          <th>تفاصيل الحالة</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+        <tr class="trbody" *ngFor="let item of arrayList">
+          <td class="tdbody">{{item.collertorName}}</td>
+          <td class="tdbody">{{item.orderNumber}}</td>
+          <td class="tdbody">{{item.orderDate}}</td>
+          <td class="tdbody">{{item.bill}}</td>
+          <td class="tdbody">{{item.orderStatus}}</td>
+          <td class="tdbody">{{item.orderStatus}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </form>
+</div>
