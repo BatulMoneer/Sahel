@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { InfoUpdatedPopComponent } from '../../popup/info-updated-pop/info-updated-pop.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-customer-my-information',
@@ -6,7 +9,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./customer-my-information.component.scss']
 })
 export class CustomerMyInformationComponent implements OnInit {
-
   title1 = "عمل";
   title2 = "بيت";
   add_card = "اضف البطاقة";
@@ -38,14 +40,17 @@ export class CustomerMyInformationComponent implements OnInit {
     { number: '9801 1235 4652 1532' }
   ];
 
-  constructor() { }
+  constructor(private snackBar: MatSnackBar, private dialog: MatDialog) { }
 
+  openDialog(): void {
+    this.dialog.open(InfoUpdatedPopComponent);
+
+  }
 
   ngOnInit(): void {
     this.name = 'بتول';
     this.phoneNumber = '1234567890';
   }
-
 
   toggleNewPasswordVisibility() {
     this.showNewPassword = !this.showNewPassword;
@@ -72,6 +77,7 @@ export class CustomerMyInformationComponent implements OnInit {
 
     this.passwordStrength = strengthScore;
   }
+
   formatCardNumber() {
     this.cardNumber = this.cardNumber.replace(/\s+/g, '').replace(/(\d{4})(?=\d)/g, '$1 ');
   }
@@ -84,17 +90,29 @@ export class CustomerMyInformationComponent implements OnInit {
     const sanitizedCardNumber = this.cardNumber.replace(/\s/g, '');
 
     if (!cardNumberRegex.test(sanitizedCardNumber)) {
-      alert('رقم البطاقة يجب أن يكون 16 رقمًا');
+      this.snackBar.open('رقم البطاقة يجب أن يكون 16 رقمًا', 'إغلاق', {
+        duration: 3000,
+        verticalPosition: 'top',
+        horizontalPosition: 'center'
+      });
       return;
     }
 
     if (!expirationDateRegex.test(this.expirationDate)) {
-      alert('تاريخ الانتهاء يجب أن يكون بالصيغة MM/YY');
+      this.snackBar.open('تاريخ الانتهاء يجب أن يكون بالصيغة MM/YY', 'إغلاق', {
+        duration: 3000,
+        verticalPosition: 'top',
+        horizontalPosition: 'center'
+      });
       return;
     }
 
     if (!confirmationCodeRegex.test(this.confirmationCode)) {
-      alert('رمز التأكيد يجب أن يكون 3 أرقام');
+      this.snackBar.open('رمز التأكيد يجب أن يكون 3 أرقام', 'إغلاق', {
+        duration: 3000,
+        verticalPosition: 'top',
+        horizontalPosition: 'center'
+      });
       return;
     }
 
@@ -107,10 +125,13 @@ export class CustomerMyInformationComponent implements OnInit {
       this.expirationDate = '';
       this.confirmationCode = '';
     } else {
-      alert('يرجى ملء جميع الحقول');
+      this.snackBar.open('يرجى ملء جميع الحقول', 'إغلاق', {
+        duration: 3000,
+        verticalPosition: 'top',
+        horizontalPosition: 'center'
+      });
     }
   }
-
 
   removeCard(cardNumber: string) {
     this.savedCards = this.savedCards.filter(card => card.number !== cardNumber);
@@ -118,23 +139,47 @@ export class CustomerMyInformationComponent implements OnInit {
 
   saveChanges() {
     if (this.currentPassword !== this.currentStoredPassword) {
-      alert('كلمة المرور الحالية غير صحيحة');
+      this.snackBar.open('كلمة المرور الحالية غير صحيحة', 'إغلاق', {
+        duration: 3000,
+        verticalPosition: 'top',
+        horizontalPosition: 'center'
+      });
       return;
     }
 
     if (this.newPassword !== this.confirmPassword) {
-      alert('كلمات المرور الجديدة غير متطابقة');
+      this.snackBar.open('كلمات المرور الجديدة غير متطابقة', 'إغلاق', {
+        duration: 3000,
+        verticalPosition: 'top',
+        horizontalPosition: 'center'
+      });
       return;
     }
 
     if (this.passwordStrength < 4) {
-      alert('كلمة المرور ضعيفة');
+      this.snackBar.open('كلمة المرور ضعيفة', 'إغلاق', {
+        duration: 3000,
+        verticalPosition: 'top',
+        horizontalPosition: 'center'
+      });
+      return;
+    }
+
+    if (this.newPassword === this.currentStoredPassword) {
+      this.snackBar.open('كلمة المرور الجديدة يجب أن تكون مختلفة عن كلمة المرور الحالية', 'إغلاق', {
+        duration: 3000,
+        verticalPosition: 'top',
+        horizontalPosition: 'center'
+      });
       return;
     }
 
     this.currentStoredPassword = this.newPassword;
-    alert('كلمة المرور تم تحديثها بنجاح');
-
+    this.snackBar.open('كلمة المرور تم تحديثها بنجاح', 'إغلاق', {
+      duration: 3000,
+      verticalPosition: 'top',
+      horizontalPosition: 'center'
+    });
 
     console.log('User information saved:', {
       wallet: this.wallet,
@@ -151,4 +196,5 @@ export class CustomerMyInformationComponent implements OnInit {
       confirmationCode: this.confirmationCode
     });
   }
+
 }

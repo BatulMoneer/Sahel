@@ -6,6 +6,7 @@
   box-shadow: 0px 2px 6px #30303033;
   display: flex;
   border-radius: 10px;
+  align-items: center;
   flex-direction: row-reverse;
   width: 400px;
 }
@@ -18,8 +19,9 @@
 }
 
 .card-img{
-  width: 150px;
-  height: auto;
+  height: 120px;
+  width: auto;
+
   margin: 0 ;
   padding-left: 10px;
 }

@@ -41,7 +41,7 @@ $Sahel-warn: mat.define-palette(mat.$red-palette);
 input{
   border: none;
   padding: 7px 20px;
-  border-radius: 10px;
+  border-radius: 10px !important;
   box-shadow: 0px 2px 6px var(--shadow);
 }
 

@@ -19,8 +19,8 @@
       </button>
       <div class="grid">
         <div class="grid-inner" id="scrollContainer{{categoryIndex}}{{cat.currentIndex}}">
-          <app-item-card *ngFor="let i of cat.array.slice(0, visibleItems)" class="grid-item" [link]="i.link"
-            [value]="i.value" [title]="i.product" [image]="i.image" [info]="i.info"></app-item-card>
+          <app-item-card *ngFor="let i of cat.array" class="grid-item" [link]="i.link" [value]="i.value"
+            [title]="i.product" [image]="i.image" [info]="i.info"></app-item-card>
         </div>
       </div>
       <button (click)="scrollRight(categoryIndex, cat.array)" class="arrow right-arrow"
