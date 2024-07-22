@@ -1,0 +1,27 @@
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 100px 0px;
+}
+
+
+.confirmation-icon {
+  margin-bottom: 1rem;
+  font-size: 50px;
+  color: var(--main);
+}
+
+h1 {
+  color: var(--textCol);
+  margin-bottom: 1rem;
+  font-size: 64px;
+}
+
+p {
+  color: var(--textCol);
+font-size: 14px;
+  margin-bottom: 100px;
+}
+

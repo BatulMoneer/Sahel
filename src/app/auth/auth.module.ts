@@ -12,6 +12,7 @@ import { CollectorSignupComponent } from './collector-signup/collector-signup.co
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { AccountTypeComponent } from './account-type/account-type.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -29,7 +30,9 @@ import { AccountTypeComponent } from './account-type/account-type.component';
   imports: [
     CommonModule,
     AuthRoutingModule,
-    SharedComponentsModule
+    SharedComponentsModule,
+    FormsModule,
+    ReactiveFormsModule,
   ]
 })
 export class AuthModule { }

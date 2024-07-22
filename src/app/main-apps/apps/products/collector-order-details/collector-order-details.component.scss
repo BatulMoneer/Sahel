@@ -1,0 +1,116 @@
+.body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+}
+
+.head{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  gap: 100px;
+}
+
+.title{
+  font-size: 64px;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: var(--prime);
+}
+.image{
+  width: 200px;
+}
+
+.bottom{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.items{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.orders{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.input-group{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+  gap: 10px;
+  padding: 40px;
+}
+
+input[type="file"] {
+  border: none;
+  padding: 7px 20px;
+width: 190px;
+  box-shadow: 0px 2px 6px var(--shadow);
+}
+
+input[type="file"]:focus {
+  outline-color: var(--main);
+}
+
+@media (max-width: 1110px) {
+  .head {
+    flex-direction: column;
+    gap: 50px;
+    justify-content: center;
+  }
+
+  .title {
+    font-size: 48px;
+  }
+
+  .image {
+    width: 150px;
+  }
+
+  .items {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .input-group {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .title {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .image {
+    width: 100px;
+  }
+
+  .head, .items, .orders {
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .input-group {
+    padding: 10px;
+  }
+}

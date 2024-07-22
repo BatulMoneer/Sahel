@@ -1,57 +1,134 @@
 <app-header></app-header>
 <router-outlet>
   <div class="body">
-    <form class="form">
+    <form class="form" [formGroup]="formData" (ngSubmit)="signUp()">
+
+
       <div class="slide-controls">
-        <div class = "inputGroup">
         <input type="radio" name="slide" id="signup">
         <label class="slide signup" for="signup">إنشاء حساب</label>
 
         <input type="radio" name="slide" id="login" (change)="navigateToAccountType()">
         <label class="slide login" for="login">تسجيل دخول</label>
       </div>
+
+
       <div class="slider-tab"></div>
       <h1 class="title">أنشئ حسابك</h1>
       <h6 class="note">أنشئ حسابك وكن شريكاَ في النجاح</h6>
 
-      <div class="input-group">
-        <p class="text">اسم المتجر</p>
-        <app-text-field></app-text-field>
-      </div>
+      <div class="group">
+        <div class="input-group">
+          <p class="text">اسم المتجر</p>
+          <input type="text" formControlName="name" placeholder="ادخل الاسم" required>
+
+        </div>
+        <div *ngIf="submitted_crearte && formData.controls['name'].errors">
+          <div class="invalid-feedback-custom" *ngIf="submitted_crearte && formData.controls['name'].errors.required">
+            الحقل مطلوب!
+          </div>
+        </div>
       </div>
 
-      <div class="input-group">
-        <p class="text">الفرع</p>
-        <app-text-field></app-text-field>
-      </div>
+      <div class="group">
+        <div class="input-group">
+          <p class="text">الفرع</p>
+          <input type="text" formControlName="section" placeholder="ادخل الفرع" required>
 
-      <div class="input-group">
-        <p class="text">البريد الالكتروني</p>
-        <app-text-field></app-text-field>
-      </div>
-
-      <div class="input-group">
-        <p class="text">كلمة المرور</p>
-        <app-pass-field></app-pass-field>
-      </div>
-
-      <div class="input-group">
-        <p class="text">رقم الجوال</p>
-        <app-pass-field></app-pass-field>
-      </div>
-
-      <div class="input-group">
-        <p class="text">السجل التجاري</p>
-        <input type="file" (change)="handleFileInput($event)" accept="image/*,.pdf required">
-      </div>
-
-      <div class="input-group">
-        <p class="text">شعار المتجر</p>
-        <input type="file" (change)="handleImageInput($event)" accept="image/* required">
+        </div>
+        <div *ngIf="submitted_crearte && formData.controls['section'].errors">
+          <div class="invalid-feedback-custom"
+            *ngIf="submitted_crearte && formData.controls['section'].errors.required">
+            الحقل مطلوب!
+          </div>
+        </div>
       </div>
 
 
-      <app-button [value]='submit' [link]='link'></app-button>
+
+      <div class="group">
+        <div class=" input-group">
+          <p class="text">البريد الالكتروني</p>
+          <input type="text" formControlName="email" placeholder="ادخل البريد" required>
+
+        </div>
+        <div *ngIf="submitted_crearte && formData.controls['email'].errors">
+          <p class="invalid-feedback-custom" *ngIf="submitted_crearte && formData.controls['email'].errors.required">
+            الحقل مطلوب!
+          </p>
+          <p class="invalid-feedback-custom" *ngIf="submitted_crearte && formData.controls['email'].errors.email">
+            البريد غير صحيح!
+          </p>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="input-group">
+          <p class="text">كلمة المرور</p>
+          <input type="password" formControlName="password" placeholder="ادخل كلمة المرور" required>
+        </div>
+        <div *ngIf="submitted_crearte && formData.controls['password'].errors">
+          <p class="invalid-feedback-custom" *ngIf="submitted_crearte && formData.controls['password'].errors.required">
+            الحقل مطلوب!</p>
+          <p class="invalid-feedback-custom"
+            *ngIf="submitted_crearte && formData.controls['password'].errors.minlength">
+            كلمة السر يجب ان تكون أطول من 8 عناصر!</p>
+          <p class="invalid-feedback-custom" *ngIf="submitted_crearte && formData.controls['password'].errors.pattern">
+            كلمة السر يجب ان تحتوي حروف كبيرة وصغيرة وارقام!</p>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="input-group">
+          <p class="text">رقم الجوال</p>
+          <input type="text" formControlName="phone" placeholder="ادخل الرقم" required>
+
+        </div>
+        <div *ngIf="submitted_crearte && formData.controls['phone'].errors">
+          <div class="invalid-feedback-custom" *ngIf="submitted_crearte && formData.controls['phone'].errors.required">
+            الحقل مطلوب!
+          </div>
+          <div class="invalid-feedback-custom" *ngIf="submitted_crearte && formData.controls['phone'].errors.pattern">
+            الرقم غير صحيح!
+          </div>
+        </div>
+      </div>
+
+
+      <div class="group">
+        <div class="input-group">
+          <p class="text">السجل التجاري</p>
+          <input type="file" formControlName="record" (change)="handleFileInput($event)" accept="image/*,.pdf required">
+
+        </div>
+        <div *ngIf="submitted_crearte && formData.controls['record'].errors">
+          <div class="invalid-feedback-custom" *ngIf="submitted_crearte && formData.controls['record'].errors.required">
+            الحقل مطلوب!
+          </div>
+
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="input-group">
+          <p class="text">شعار المتجر</p>
+          <input type="file" formControlName="logo" (change)="handleImageInput($event)" accept="image/* required">
+
+        </div>
+        <div *ngIf="submitted_crearte && formData.controls['logo'].errors">
+          <div class="invalid-feedback-custom" *ngIf="submitted_crearte && formData.controls['logo'].errors.required">
+            الحقل مطلوب!
+          </div>
+
+        </div>
+      </div>
+
+
+
+      <div class="btn">
+        <button type="submit">انشاء حساب
+        </button>
+      </div>
       <p class="change"><a routerLink="/auth/login">سجل الدخول</a> لديك حساب؟ </p>
     </form>
   </div>

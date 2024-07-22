@@ -1,0 +1,39 @@
+<div class="body">
+  <div class="head">
+    <h1 class="title">
+      الطلب الحالي
+    </h1>
+    <img [src]="image" class="image">
+  </div>
+
+  <div class="bot">
+    <div class="orders">
+      <ng-container *ngFor="let item of products; let i=index">
+        <div class="items">
+
+          <app-cart-card [title]="item.title" [image]="item.image" [barcode]="item.barcode"
+            [info]="item.info"></app-cart-card>
+
+
+          <div class="check">
+            <app-checkbox [title]="'تأكيد'" [check]="i" (change)="onCheckChange($event, i, 'confirm')"></app-checkbox>
+            <app-checkbox [title]="'غير موجود'" [check]="i"
+              (change)="onCheckChange($event, i, 'notFound')"></app-checkbox>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+
+    <div class="bottom" *ngIf="allConfirmed">
+      <div class="input-group">
+        <p class="text">رفع صورة للفاتورة</p>
+        <input type="file" accept="image/*,.pdf required">
+
+
+      </div>
+      <app-button [link]="link" [value]="value"></app-button>
+    </div>
+
+
+  </div>
+</div>

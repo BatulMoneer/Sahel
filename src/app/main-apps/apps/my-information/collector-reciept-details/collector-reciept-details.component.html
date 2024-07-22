@@ -1,0 +1,20 @@
+<div class="body">
+  <h1 class="title">
+    فاتورة {{no}}
+  </h1>
+  <div class="cont">
+    <h1 class="sub-title">
+      تم استلام الفاتورة: <a>{{date}}</a>
+    </h1>
+    <h1 class="sub-title">
+      المبلغ: <a>{{amount}} ريال</a>
+    </h1>
+    <h1 class="sub-title">
+      رقم البطاقة: <a>{{amount}}</a>
+    </h1>
+    <h1 class="sub-title">
+      اسم صاحب البطاقة: <a>{{name}}</a>
+    </h1>
+  </div>
+  <app-button [link]="'/apps/my-information/app-collector-view-reciepts'" [value]="'عودة'"></app-button>
+</div>

@@ -1,0 +1,30 @@
+<div class="body">
+  <h1 class="category"> استبدال منتج</h1>
+
+  <div class="top">
+    <app-cart-card [image]="image" [title]="title" [info]="info" [barcode]="barcode"></app-cart-card>
+
+    <button (click)="cancelProduct()" class="btn">
+      <i class="fas fa-trash-alt trash-icon"></i>الغاء المنتج
+    </button>
+  </div>
+
+  <h1 class="category">منتجات مشابهة</h1>
+
+  <div class="carousel">
+    <button (click)="scrollLeft()" class="arrow left-arrow" [disabled]="isAtStart()">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <div class="grid">
+      <div class="grid-inner" #scrollContainer>
+        <app-change-card *ngFor="let item of array" class="grid-item" [link]="link" [value]="value"
+          [title]="item.product" [image]="item.image" [info]="item.info" (change)="changeProduct(item.info)">
+        </app-change-card>
+      </div>
+    </div>
+    <button (click)="scrollRight()" class="arrow right-arrow" [disabled]="isAtEnd()">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
+  <button class="btn2" (click)="goBack()">{{value2}}</button>
+</div>

@@ -1,0 +1,223 @@
+.body {
+  font-family: var(--font);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0px 0px 40px 0px;
+  height: 100%;
+  margin: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.form {
+  display: flex;
+flex-direction: column;
+  text-align: right;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.top{
+  display: flex;
+  flex-direction: row-reverse;
+    text-align: right;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.image{
+  width: 200px;
+  border-radius: 100px;
+}
+.bottom{
+  background: var(--background);
+  width: 770px;
+  text-align: right;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.section {
+  width: 48%;
+}
+
+.title {
+  text-align: right;
+
+  font-size: 64px;
+  margin-bottom: 50px;
+  color: var(--prime);
+}
+
+.note {
+  font-size: 32px;
+
+  margin-bottom: 10px;
+  color: var(--prime);
+  font-weight: lighter;
+}
+
+
+
+.input-group {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  margin-bottom: 10px;
+}
+
+.text {
+  display: inline;
+  text-align: right;
+  font-size: 18px;
+  margin-left: 10px;
+  color: var(--textCol);
+}
+
+
+
+app-button {
+  display: flex;
+  justify-content: center;
+  margin: 70px 0px 10px 0px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+
+.age-input{
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  padding: 7px 20px;
+  box-shadow: 0px 2px 6px var(--shadow);
+}
+
+.age-input:focus{
+  outline: none;
+}
+
+
+.saved-cards {
+  text-align: right;
+  margin: 20px;
+}
+
+.card {
+  display: flex;
+  align-items: right;
+  border-bottom: 1px solid var(--prime);
+  padding: 10px 0;
+}
+
+.card-icon {
+  font-size: 24px;
+  cursor: pointer;
+  padding-left: 5px;
+  color: var(--prime);
+}
+
+.trash-icon {
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--warn);
+}
+
+.card-info {
+  flex-grow: 1;
+  font-size: 18px;
+  color: var(--textCol);
+  text-align: right;
+  margin: 10 10px;
+}
+
+@media (max-width: 1110px) {
+  .body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0px 40px 0px;
+
+    margin: 0;
+  }
+
+  .bottom {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  .section {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  padding: 0px 0px 40px 0px;
+
+    margin: 0;
+
+
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    margin: 0;
+  }
+    .title{
+      padding-top: 40px;
+      font-size: 33px;
+    }
+
+
+  .note {
+    font-size: 25px;
+  }
+
+  .text {
+    font-size: 14px;
+  }
+
+  app-button {
+    margin: 30px 0px 10px 0px;
+  }
+
+  .change {
+    font-size: 14px;
+  }
+
+  .card-info {
+    font-size: 14px;
+  }
+
+  .trash-icon,
+  .card-icon {
+    font-size: 20px;
+  }
+
+  .section {
+    width: 100%;
+    padding: 5px;
+  }
+}

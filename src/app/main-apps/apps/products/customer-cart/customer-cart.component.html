@@ -1,53 +1,70 @@
 <div class="body">
+
   <div class="head">
     <h1 class="title">سلة التسوق</h1>
-    <h1 class="count">({{count}})</h1>
+    <h1 class="sub-title">(منتجات {{count}})</h1>
   </div>
-  <div class="shop">
-    <img src="" alt="">
+
+  <div class="head">
+    <img class="image" [src]="shopimage" alt="">
     <h1 class="sub-title">{{shopname}}</h1>
   </div>
+
   <div class="items">
     <ng-container *ngFor="let item of products">
       <app-cart-card [image]="item.image" [info]="item.info" [barcode]="item.barcode"
         [title]="item.title"></app-cart-card>
 
-      <button class="butt"><i class="fas fa-trash-alt trash-icon"></i></button>
-      <div>
-        <button class="butt" (click)="inc()"><i class="fas fa-plus"></i></button>
-        <span>{{amount}}</span>
-        <button class="butt" (click)="dec()"><i class="fas fa-minus"></i></button>
-
+      <div class="buts">
+        <button class="butt trash"><i class="fas fa-trash-alt trash-icon"></i></button>
+        <div class="amount">
+          <button class="butt" (click)="inc(item)"><i class="fas fa-plus"></i></button>
+          <span>{{item.amount}}</span>
+          <button class="butt" (click)="dec(item)"><i class="fas fa-minus"></i></button>
+        </div>
       </div>
     </ng-container>
-
   </div>
+
+  <h1 class="sub-title">ملخص الطلب</h1>
   <div class="brief">
-    <h1 class="sub-title">ملخص الطلب</h1>
-    <h6 class="text">سعر المنتجات ({{count}} منتجات) <p class="info">{{price}}</p>
-    </h6>
-    <h6 class="text">سعر التوصيل <p class="info">{{delivery}}</p>
-    </h6>
-    <h6 class="text">رصيد المحفظة <p class="info">{{wallet}}</p>
-    </h6>
-    <h6 class="text-bold">المجموع:<p class="info">(شامل التوصيل)</p>{{total}}</h6>
 
-    <h6 class="text">طريقة الدفع</h6>
 
-    <div class="checkbox">
-      <ng-div *ngFor="let item of cards">
-        <p class="small">تنتهي ب </p>
-
-        <app-checkbox [title]="item"></app-checkbox>
-
-      </ng-div>
+    <div class="one">
+      <div class="part">
+        <h6 class="text">سعر المنتجات ({{count}} منتجات)</h6>
+        <p class="info">{{price}} ريال</p>
+      </div>
+      <div class="part">
+        <h6 class="text">سعر التوصيل</h6>
+        <p class="info">{{delivery}} ريال</p>
+      </div>
+      <div class="part">
+        <h6 class="text">رصيد المحفظة</h6>
+        <p class="info">{{wallet}} ريال</p>
+      </div>
+      <div class="part">
+        <h6 class="text-bold">المجموع: {{total}}</h6>
+        <p class="info">(شامل التوصيل)</p>
+      </div>
     </div>
 
-    <a>الموقع</a>
+    <div class="two">
+      <h6 class="text">طريقة الدفع</h6>
+      <div class="checkbox">
+        <ng-div *ngFor="let item of cards">
+          <app-checkbox [check]="item.check" title="{{item.card}}تنتهي ب"></app-checkbox>
+        </ng-div>
+      </div>
+      <a routerLink="/apps/my-information/app-customer-my-information">اضف بطاقة</a>
+    </div>
 
-    <h6 class="text">طريقة الدفع</h6>
-    <p class="small"></p>
+    <div class="three">
+      <h6 class="text">الموقع</h6>
+      <p class="small">{{location}}</p>
 
-
+      <a routerLink="/apps/my-information/app-customer-my-information">تعديل</a>
+    </div>
   </div>
+  <app-button [link]="doneOrderLink" [value]="doneOrder"></app-button>
 </div>

@@ -6,7 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { MainLayoutComponent } from './main-apps/layout/main-layout/main-layout.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 
 
@@ -22,7 +23,9 @@ import { MainLayoutComponent } from './main-apps/layout/main-layout/main-layout.
     AppRoutingModule,
     BrowserAnimationsModule,
     NgbModule,
-    SharedComponentsModule
+    SharedComponentsModule,
+    MatIconModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

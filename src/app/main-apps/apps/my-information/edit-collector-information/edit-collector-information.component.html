@@ -1,0 +1,54 @@
+<div class="body">
+  <h1 class="title">معلوماتي</h1>
+  <div>
+    <form action="" class="form">
+      <div class="top">
+        <img src="{{image}}" alt="" class="image">
+        <h6 class="text">تعديل الصورة</h6>
+      </div>
+
+      <div class="bottom">
+        <div class="section">
+
+          <h6 class="text">البطاقة الائتمانية</h6>
+
+          <div class="saved-cards">
+            <div class="card">
+              <i class="fas fa-trash-alt trash-icon"></i>
+              <span class="card-info">تنتهي برقم 9801</span>
+              <i class="fas fa-credit-card card-icon"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h6 class="note">معلوماتي</h6>
+          <div class="input-group">
+            <p class="text">الاسم</p>
+            <app-text-field></app-text-field>
+          </div>
+          <div class="input-group">
+            <p class="text">رقم الجوال</p>
+            <app-text-field></app-text-field>
+          </div>
+          <div class="input-group">
+            <p class="text">البريد الالكتروني</p>
+            <app-text-field></app-text-field>
+          </div>
+          <div class="input-group">
+            <p class="text">كلمة المرور</p>
+            <app-pass-field></app-pass-field>
+          </div>
+          <div class="input-group">
+            <p class="text">العمر</p>
+            <input type="date" class="age-input" required>
+          </div>
+        </div>
+
+
+
+        <app-button [link]="save_link" [value]="save"></app-button>
+      </div>
+    </form>
+  </div>
+</div>

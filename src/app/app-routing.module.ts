@@ -17,6 +17,10 @@ const routes: Routes = [
     component: MainLayoutComponent,
     loadChildren: () => import('./main-apps/main-apps.module').then(m => m.MainAppsModule)
   },
+  { //must be at last, for an unexsisting page
+    path: '**',
+    redirectTo: '/auth/notFound' // or design a page for it 404
+  }
 
 
 ];

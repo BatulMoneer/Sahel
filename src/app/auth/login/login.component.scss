@@ -75,11 +75,13 @@
 }
 
 .input-group {
+  text-align: right;
   display: flex;
   align-items: center;
   flex-direction: row-reverse;
-  margin-bottom: 20px;
+  margin-top: 20px;
 }
+
 
 .text {
   display: inline;
@@ -90,14 +92,31 @@
   color: var(--textCol);
 }
 
+.group{
+  display: flex;
+  justify-items: end;
+  flex-direction: column;
+  div{
+    .invalid-feedback-custom{
+      font-size: 10px;
+      color: var(--warn);
+      padding-top: 3px;
+      margin-top: 0;
+    }
+  }
+}
 
+.invalid-feedback-custom{
+  display: inline-block;
+  flex-wrap: wrap;
+}
 
-app-button {
+.btn {
+
+  padding: 20px 5px;
   display: flex;
   justify-content: center;
-  margin: 70px 0px 10px 0px;
-  cursor: pointer;
-  text-decoration: none;
+  align-self: center;
 
 }
 
