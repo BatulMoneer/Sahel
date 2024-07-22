@@ -2,9 +2,9 @@
   font-family: var(--font);
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
-  padding: 40px 0px 40px 0px;
+  padding: 50px 0px 40px 0px;
   height: 100%;
   margin: 0;
   width: 100%;
@@ -35,13 +35,13 @@
 .title {
   text-align: right;
   font-size: 64px;
-  margin-bottom: 0;
+  margin-bottom: 50px;
   color: var(--prime);
 }
 
 .note {
   font-size: 32px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   color: var(--prime);
   font-weight: lighter;
 }
@@ -76,20 +76,14 @@
 
 .input-group {
   display: flex;
-  align-items: center;
-  flex-direction: row-reverse;
+  flex-direction: column;
+  align-items: flex-end;
   margin-bottom: 10px;
 }
-.input-group2 {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  margin-bottom: 15px;
-}
-
 
 .password-container {
   display: flex;
+  flex-direction: row-reverse;
   align-items: center;
 }
 
@@ -106,12 +100,11 @@
   margin-top: 5px;
   font-size: 14px;
 }
+
 .text {
-  display: inline;
   text-align: right;
   font-size: 18px;
-  margin-left: 10px;
-  margin-bottom: 5px;
+  margin-top: 20px;
   color: var(--textCol);
 }
 
@@ -139,15 +132,20 @@ app-button {
 }
 
 .saved-cards {
+
   text-align: right;
-  margin: 20px;
+  margin: 20px 0px;
 }
 
 .card {
   display: flex;
-  align-items: right;
-  border-bottom: 1px solid var(--prime);
-  padding: 10px 0;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  border: none;
+  box-shadow: 0px 2px 6px var(--shadow);
+  padding: 5px 10px;
+  margin: 10px;
 }
 
 .card-icon {
@@ -164,7 +162,6 @@ app-button {
 }
 
 .card-info {
-  flex-grow: 1;
   font-size: 18px;
   color: var(--textCol);
   text-align: right;
@@ -182,7 +179,6 @@ app-button {
   }
 
   .form {
-    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -192,7 +188,6 @@ app-button {
   }
 
   .section {
-    width: 100%;
     padding: 10px;
   }
 
@@ -221,11 +216,11 @@ app-button {
   }
 
   .title {
-    font-size: 64px;
+    font-size: 32px;
   }
 
   .note {
-    font-size: 25px;
+    font-size: 18px;
   }
 
   .text {
@@ -250,7 +245,6 @@ app-button {
   }
 
   .section {
-    width: 100%;
     padding: 5px;
   }
 

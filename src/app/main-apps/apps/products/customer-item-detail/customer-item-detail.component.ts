@@ -1,5 +1,6 @@
 import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { AddToCartPopComponent } from '../../popup/add-to-cart-pop/add-to-cart-pop.component';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { MatDialog } from '@angular/material/dialog';
 export class CustomerItemDetailComponent implements OnInit {
 
 
-  constructor(private dialoRef: MatDialog) { }
+  constructor(private dialog: MatDialog) { }
 
   @ViewChild('scrollContainer') scrollContainer!: ElementRef;
 
@@ -111,6 +112,7 @@ export class CustomerItemDetailComponent implements OnInit {
     localStorage.setItem('cart', arr)
     console.log("kkkk")
 
+    this.openDialog()
   }
   scrollLeft() {
     if (!this.isAtStart()) {
@@ -149,6 +151,10 @@ export class CustomerItemDetailComponent implements OnInit {
     if (this.amount > 0) {
       this.amount -= 1;
     }
+  }
+
+  openDialog(): void {
+    this.dialog.open(AddToCartPopComponent);
   }
 
 

@@ -10,9 +10,9 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   header_list = [
-    {content:"تسجيل الدخول", link:"/auth/login"},
-    {content:"السلة", link:"cart"},
-    {content:"الرئيسية", link:"home"}
+    { content: "تسجيل الدخول", link: "/auth/login" },
+    { content: "السلة", link: "/apps/products/customer-cart" },
+    { content: "الرئيسية", link: "/apps/home/app-customer-home" }
   ]
   ngOnInit(): void {
   }

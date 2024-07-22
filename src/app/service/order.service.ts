@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class OrderService {
   private orderState: number = 0;
-  private productFound: boolean = true;
+  private productFound: boolean = false;
   private currentUser: number = 1;
   private isActive: boolean = false;
 

@@ -47,7 +47,8 @@ const routes: Routes = [
 
     path: 'app-choose-product-will-update-it',
     component: ChooseProductWillUpdateItComponent
-
+  },
+  {
     path: 'order-state',
     component: OrderStateComponent
   },

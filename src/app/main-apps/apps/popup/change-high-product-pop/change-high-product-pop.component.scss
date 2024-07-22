@@ -1,0 +1,51 @@
+/* confirm-dialog.component.css */
+
+.custom-dialog-container {
+  background-color: var(--main);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 4px var(--shadow);
+  margin: 0;
+  width: 300px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.custom-dialog-title {
+  font-size: 25px;
+  font-weight: bold;
+  color: var(--background);
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.custom-dialog-content {
+  font-size: 18px;
+  color: var(--background);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.custom-dialog-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.custom-button {
+  background-color: var(--background);
+  color: var(--textCol);
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin: 0 10px;
+  font-size: 16px;
+}
+
+.custom-button:hover {
+  background-color: var(--textCol);
+  color: var(--background);
+}
