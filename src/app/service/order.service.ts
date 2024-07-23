@@ -52,4 +52,13 @@ export class OrderService {
     this.productFound = found;
   }
 
+  otp: number
+  getOtp() {
+    return this.otp;
+  }
+
+  setOtp(value: number) {
+    this.otp = value;
+  }
+
 }

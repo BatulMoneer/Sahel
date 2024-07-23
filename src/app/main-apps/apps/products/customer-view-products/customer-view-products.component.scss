@@ -19,10 +19,14 @@
 }
 
 .top {
+
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
   margin-bottom: 20px;
+margin-top: 100px;
+
+
 }
 
 img {
@@ -31,9 +35,11 @@ img {
 }
 
 .head {
+
   color: var(--textCol);
   font-size: 48px;
   margin: 0;
+
 }
 
 .category {
