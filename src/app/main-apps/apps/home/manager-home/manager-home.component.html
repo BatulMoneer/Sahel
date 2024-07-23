@@ -13,20 +13,20 @@
     <table>
       <thead>
         <tr>
-          <th>اسم العميل</th>
+          <th class="thName">اسم العميل</th>
           <th>العنوان</th>
           <th>البريد الإلكتروني</th>
           <th>رقم الجوال</th>
-          <th>رقم الحساب المصرفي</th>
+          <th class="thLast">رقم الحساب المصرفي</th>
         </tr>
       </thead>
       <tbody>
-        <tr class="trbody" *ngFor="let item of arrayList">
-          <td class="tdbody">{{item.customerName}}</td>
-          <td class="tdbody">{{item.customerAddress}}</td>
-          <td class="tdbody">{{item.Email}}</td>
-          <td class="tdbody">{{item.phone}}</td>
-          <td class="tdbody">{{item.IBAN}}</td>
+        <tr *ngFor="let item of arrayList">
+          <td>{{item.customerName}}</td>
+          <td>{{item.customerAddress}}</td>
+          <td>{{item.Email}}</td>
+          <td>{{item.phone}}</td>
+          <td>{{item.IBAN}}</td>
         </tr>
       </tbody>
     </table>
@@ -38,20 +38,20 @@
     <table>
       <thead>
         <tr>
-          <th>اسم المندوب</th>
+          <th class="thName">اسم المندوب</th>
           <th>العمر</th>
           <th>البريد الإلكتروني</th>
           <th>رقم الجوال</th>
-          <th>رقم الحساب المصرفي</th>
+          <th class="thLast">رقم الحساب المصرفي</th>
         </tr>
       </thead>
       <tbody>
-        <tr class="trbody" *ngFor="let item of arrayList0">
-          <td class="tdbody">{{item.collectorName}}</td>
-          <td class="tdbody">{{item.collectorAge}}</td>
-          <td class="tdbody">{{item.Email}}</td>
-          <td class="tdbody">{{item.phone}}</td>
-          <td class="tdbody">{{item.IBAN}}</td>
+        <tr *ngFor="let item of arrayList0">
+          <td>{{item.collectorName}}</td>
+          <td>{{item.collectorAge}}</td>
+          <td>{{item.Email}}</td>
+          <td>{{item.phone}}</td>
+          <td>{{item.IBAN}}</td>
         </tr>
       </tbody>
     </table>
@@ -63,21 +63,21 @@
     <table>
       <thead>
         <tr>
-          <th>المتجر</th>
+          <th class="thName">المتجر</th>
           <th>الفرع</th>
           <th>البريد الإلكتروني</th>
           <th>رقم الجوال</th>
           <th>المبيعات الشهرية</th>
-          <th>السجل التجاري</th>
+          <th class="thLast">السجل التجاري</th>
         </tr>
       </thead>
       <tbody>
-        <tr class="trbody" *ngFor="let item of arrayList1">
-          <td class="tdbody">{{item.StoreName}}</td>
-          <td class="tdbody">{{item.storeAddress}}</td>
-          <td class="tdbody">{{item.Email}}</td>
-          <td class="tdbody">{{item.phone}}</td>
-          <td class="tdbody">{{item.monthSales}}</td>
+        <tr *ngFor="let item of arrayList1">
+          <td>{{item.StoreName}}</td>
+          <td>{{item.storeAddress}}</td>
+          <td>{{item.Email}}</td>
+          <td>{{item.phone}}</td>
+          <td>{{item.monthSales}}</td>
           <td>ملف</td>
         </tr>
       </tbody>

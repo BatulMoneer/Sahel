@@ -16,7 +16,7 @@ export class ManagerTransferRequestComponent implements OnInit {
       orderDate: '2 / 1 / 1446',
       bill: '3000',
       orderStatus: 'تم التحويل',
-      details: '',
+      notes: '',
     },
     {
       collertorName: 'عامر عثمان',
@@ -24,7 +24,7 @@ export class ManagerTransferRequestComponent implements OnInit {
       orderDate: '2 / 1 / 1446',
       bill: '3000',
       orderStatus: 'تم التحويل',
-      details: '',
+      notes: '',
     },
     {
       collertorName: 'عامر عثمان',
@@ -32,7 +32,7 @@ export class ManagerTransferRequestComponent implements OnInit {
       orderDate: '2 / 1 / 1446',
       bill: '3000',
       orderStatus: 'تم التحويل',
-      details: '',
+      notes: '',
     },
     {
       collertorName: 'عامر عثمان',
@@ -40,7 +40,7 @@ export class ManagerTransferRequestComponent implements OnInit {
       orderDate: '2 / 1 / 1446',
       bill: '3000',
       orderStatus: 'تم التحويل',
-      details: '',
+      notes: '',
     },
     {
       collertorName: 'عامر عثمان',
@@ -48,7 +48,7 @@ export class ManagerTransferRequestComponent implements OnInit {
       orderDate: '2 / 1 / 1446',
       bill: '3000',
       orderStatus: 'تم التحويل',
-      details: '',
+      notes: '',
     },
     {
       collertorName: 'عامر عثمان',
@@ -56,7 +56,7 @@ export class ManagerTransferRequestComponent implements OnInit {
       orderDate: '2 / 1 / 1446',
       bill: '3000',
       orderStatus: 'تم التحويل',
-      details: '',
+      notes: '',
     },
     {
       collertorName: 'عامر عثمان',
@@ -64,7 +64,7 @@ export class ManagerTransferRequestComponent implements OnInit {
       orderDate: '2 / 1 / 1446',
       bill: '3000',
       orderStatus: 'تم التحويل',
-      details: '',
+      notes: '',
     },
   ]
 

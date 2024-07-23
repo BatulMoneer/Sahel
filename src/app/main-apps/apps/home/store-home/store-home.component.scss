@@ -1,89 +1,115 @@
 .body {
-  padding: 40px;
+  direction: rtl;
   height: 100%;
-  margin: 0;
+  padding: 20px;
+  margin: 20px;
   font-family: var(--font);
   display: flex;
   justify-content: center;
+  background-color: var(--background);
 }
 
 form {
-  background: var(--background);
-  padding: 10px;
-  width: auto;
   height: auto;
-  margin: 0;
-  width: auto;
-  height: auto;
+  width: 90%;
+  padding: 10px 0px 30px;
+  margin: 50px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--background);
+  box-shadow: 0px 2px 6px var(--shadow);
+  border-radius: 10px;
 }
 
-.title {
-  align-items: center;
+.titleDiv {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 10px;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 h1 {
+  font-size: 45px;
+  color: var(--prime);
   padding: 5px;
   margin: 0;
-  font-size: 64px;
-  color: var(--textCol);
-  text-align: center;
 }
 
 h6 {
-  padding: 5px;
-  margin: 0;
   font-size: 14px;
   color: var(--textCol);
-  text-align: center;
+  padding: 5px;
+  margin: 0;
+  margin-right: 10px;
+  margin-bottom: 15px;
 }
 
-.storeInfoDiv {
+.tableTitleDiv {
+  padding: 0;
+  margin: 0;
+  margin-top: 10px;
+  color: var(--textCol);
+  display: flex;
+  align-self: center;
   justify-content: center;
+  flex-direction: column;
+}
+
+h2 {
+  font-size: 25px;
+  color: var(--textCol);
+  padding: 5px;
+  margin: 0;
+  margin-right: 15px;
+  margin-bottom: 15px;
 }
 
 table {
-  display: flex;
-  text-align: center;
+  width: 90%;
   display: table;
-  direction: rtl;
-  width: 100%;
-  background-color: var(--back);
-  border: 1px,solid;
-  border-spacing: 2px;
-  border-color: var(--background);
-  border-color: black;
-}
-
-thead {
-  padding: 25px;
-  margin: auto;
+  align-self: center;
   text-align: center;
-  border: 1px,solid;
-  border-spacing: 2px;
-  border-color: black;
-
+  background-color: var(--background);
+  color: var(--font);
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px 3px var(--shadow);
 }
 
-tbody {
-  padding: 25px;
-  margin: auto;
-  text-align: center;
-  border: 1px,solid;
-  border-spacing: 2px;
-  border-color: black;
+th {
+  background-color: var(--prime);
+  width: auto;
+  height: auto;
+  padding: 10px;
+  margin: 0;
+  color: var(--background) !important;
 }
 
-tr {
-  border: 2px,solid;
-  border-spacing: 2px;
-  border-color: black;
+.thName{
+  border-radius: 0 10px 0 0;
+}
+
+.thLast{
+  border-radius: 10px 0 0 0;
 }
 
 td {
-  padding: 25px;
-  margin: auto;
-  border: 1px,solid;
-  border-spacing: 2px;
-  border-color: black;
+  width: auto;
+  height: auto;
+  padding: 10px;
+  margin: 0;
 }
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+td :hover {
+  background-color: var(--back);
+  color: var(--textCol);
+}
+
 

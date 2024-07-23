@@ -11,26 +11,26 @@
 
     <table>
       <thead>
-        <tr class="trHead">
-          <th class="tdHead">اسم المتجر</th>
-          <th class="tdHead">الفرع</th>
-          <th class="tdHead">البريد الإلكتروني</th>
-          <th class="tdHead">رقم الجوال</th>
-          <th class="tdHead">السجل التجاري</th>
-          <th class="tdHead" colspan="2">الرد</th>
-          <th class="tdHead">تفاصيل الرد</th>
+        <tr>
+          <th class="thName">اسم المتجر</th>
+          <th>الفرع</th>
+          <th>البريد الإلكتروني</th>
+          <th>رقم الجوال</th>
+          <th>السجل التجاري</th>
+          <th>الرد</th>
+          <th class="thLast">تبرير الرد</th>
         </tr>
       </thead>
       <tbody>
-        <tr class="trbody" *ngFor="let item of arrayList">
-          <td class="tdbody">{{item.store}}</td>
-          <td class="tdbody">{{item.branch}}</td>
-          <td class="tdbody">{{item.email}}</td>
-          <td class="tdbody">{{item.phone}}</td>
-          <td class="tdbody"><img src="" alt="السجل التجاري"></td>
-          <td class="tdbody"><button>قبول</button></td>
-          <td class="tdbody"><button>رفض</button></td>
-          <td class="tdbody">{{item.reason}}</td>
+        <tr *ngFor="let item of arrayList">
+          <td>{{item.store}}</td>
+          <td>{{item.branch}}</td>
+          <td>{{item.email}}</td>
+          <td>{{item.phone}}</td>
+          <td><img src="" alt="السجل"></td>
+          <td class="tdButton"><button>قبول</button>
+            <button>رفض</button></td>
+          <td><input class = "replayField" type="text" id="replay" name="replayName" value="تم الرفض بسبب عدم وجود تطابق بين البيانات و السجل التجاري"> </td>
         </tr>
       </tbody>
     </table>

@@ -14,32 +14,73 @@
 //   text-align: right;
 // }
 
+// .body {
+//   direction: rtl;
+//   height: 100%;
+//   padding: auto;
+//   margin: auto;
+//   font-family: var(--font);
+//   display: flex;
+//   justify-content: center;
+//   background-color: var(--back);
+// }
+
+// form {
+//   height: 800px;
+//   width: auto;
+//   padding: auto;
+//   margin: auto;
+//   margin-top: 60px;
+//   margin-bottom: 60px;
+//   display: flex;
+//   justify-content: center;
+//   flex-direction: column;
+//   background-color: red;
+// }
+
 .body {
   direction: rtl;
-  height: 100%;
-  padding: auto;
-  margin: auto;
   font-family: var(--font);
   display: flex;
   justify-content: center;
-  background-color: var(--back);
+  align-items: center;
+  padding: 5px;
+  height: 100%;
+  margin: 0;
 }
 
 form {
-  height: 800px;
-  width: auto;
-  padding: auto;
-  margin: auto;
-  margin-top: 60px;
-  margin-bottom: 60px;
+  background-color:var(--background);
+  height: 500px;
   display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 0px;
+  margin: 0px;
+}
+
+.container {
+  display: flex;
+  align-self: center;
   justify-content: center;
   flex-direction: column;
-  background-color: red;
+  padding: 5px;
+  margin: 50px;
+  margin-top: 120px;
+}
+
+.titleDiv {
+  padding: 0px;
+  margin: 0;
+  margin-bottom: 10px;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 h1 {
-  font-size: 64px;
+  font-size: 45px;
   color: var(--textCol);
   padding: 5px;
   margin: 0;
@@ -47,10 +88,11 @@ h1 {
 
 h6 {
   font-size: 14px;
-  margin-bottom: 20px;
   color: var(--textCol);
   padding: 5px;
-  margin: 20px;
+  margin: 0;
+  margin-right: 10px;
+  margin-bottom: 15px;
 }
 
 .slide-controls {

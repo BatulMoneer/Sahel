@@ -11,6 +11,30 @@ export class EditProductComponent implements OnInit {
   link = "home";
   constructor(){}
 
+  arrayList = [
+    {
+      section: 'الشاي والقهوة'
+    },
+    {
+      section: 'hyhgjg'
+    },
+    {
+      section: 'الشاي والقهوة'
+    },
+    {
+      section: 'الشاي والقهوة'
+    },
+    {
+      section: 'الشاي والقهوة'
+    },
+    {
+      section: 'الشاي والقهوة'
+    },
+    {
+      section: 'الشاي والقهوة'
+    },
+  ]
+
   ngOnInit(): void {
   }
 

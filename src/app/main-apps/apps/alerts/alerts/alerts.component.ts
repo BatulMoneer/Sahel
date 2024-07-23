@@ -9,7 +9,28 @@ export class AlertsComponent implements OnInit {
 
   constructor() { }
 
-
+  arrayList = [
+    {
+      alert: 'يرغب متجر بن داوود بالإنضمام لقائمة المتاجر',
+      dateAlert: '1 / 1 / 1446',
+    },
+    {
+      alert: 'يرغب متجر بن داوود بالإنضمام لقائمة المتاجر',
+      dateAlert: '1 / 1 / 1446',
+    },
+    {
+      alert: 'يرغب متجر بن داوود بالإنضمام لقائمة المتاجر',
+      dateAlert: '1 / 1 / 1446',
+    },
+    {
+      alert: 'يرغب متجر بن داوود بالإنضمام لقائمة المتاجر',
+      dateAlert: '1 / 1 / 1446',
+    },
+    {
+      alert: 'يرغب متجر بن داوود بالإنضمام لقائمة المتاجر',
+      dateAlert: '1 / 1 / 1446',
+    },
+  ]
 
   ngOnInit(): void {
   }

@@ -15,25 +15,20 @@
       <label class="productPriceLabel" for="productPrice">سعر المنتج :</label>
       <input class = "productPriceField" type="text" id="productPrice" name="productPriceName" value="10 ريال"  required>
     </div>
-    <div class="container">
-    <div class="productsSectionDiv">
-      <label class="productsSectionLabel" for="productsSection">قسم المنتج :</label>
-      <input class ="productsSectionList" list="productsSection" name="productsSection" placeholder="حدث قسم المنتج">
-      <datalist id="productsSection" name="productsSectionsName" >
-        <option value="الشاي والقهوة">
-        <option value="المعلبات">
-        <option value="فواكه وخضروات">
-        <option value="الماء والمشروبات">
-        <option value="العناية الشخصية" >
-        <option value="أجهزة إلكترونية">
-      </datalist>
-    </div>
 
-    <div class = "anotherSectionDiv">
-      <input class ="anotherSectionRadioInput" type="radio" name="anotherSectionName" id="anotherSection">
-      <label class="anotherSectionLabel" for="anotherSection">أخرى</label>
-      </div>
-  </div>
+    <div class="productsSectionDiv">
+      <label class="productsSectionLabel" for="productsSection"> قسم المنتج :</label>
+<div class="productsSectionDiv_">
+      <input class ="productsSectionList" list="productsSection" name="productsSection" placeholder="اختر قسم المنتج">
+      <datalist id="productsSection" name="productsSectionsName">
+       <ng-container *ngFor="let item of arrayList">
+       <option  value="{{item.section}}">
+       </ng-container>
+      </datalist>
+          <input class ="anotherSectionRadio" type="radio" name="anotherSectionName" id="anotherSection">
+          <label class="anotherSectionLabel" for="anotherSection">أخرى</label>
+          </div>
+        </div>
 
     <div class="quantityDiv">
       <label class="quantityLabel" for="quantity">الكمية :</label>

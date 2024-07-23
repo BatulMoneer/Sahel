@@ -17,7 +17,7 @@ export class ManagerStoresRegistrationRequestsComponent implements OnInit {
       email: 'banda@gmail.com	',
       phone: '0593644354',
       commercialRegistration: '//awfwaf//waf/waf',
-      reason: "تم الرفض بسبب عدم وجود تطابق بين البيانات و السجل التجاري"
+      notes: "تم الرفض بسبب عدم وجود تطابق بين البيانات و السجل التجاري"
     },
     {
       id: '1',
@@ -26,7 +26,7 @@ export class ManagerStoresRegistrationRequestsComponent implements OnInit {
       email: 'ahmad@gmail.com	',
       phone: '0593644354',
       commercialRegistration: '//awfwaf//waf/waf',
-      reason: "تم الرفض بسبب عدم وجود تطابق بين البيانات و السجل التجاري"
+      notes: "تم الرفض بسبب عدم وجود تطابق بين البيانات و السجل التجاري"
     },
     {
       id: '1',
@@ -35,7 +35,7 @@ export class ManagerStoresRegistrationRequestsComponent implements OnInit {
       email: 'yaser@gmail.com	',
       phone: '0593644354',
       commercialRegistration: '//awfwaf//waf/waf',
-      reason: "تم الرفض بسبب عدم وجود تطابق بين البيانات و السجل التجاري"
+      notes: "تم الرفض بسبب عدم وجود تطابق بين البيانات و السجل التجاري"
     },
     {
       id: '1',
@@ -44,7 +44,7 @@ export class ManagerStoresRegistrationRequestsComponent implements OnInit {
       email: 'yaser@gmail.com	',
       phone: '0593644354',
       commercialRegistration: '//awfwaf//waf/waf',
-      reason: "تم الرفض بسبب عدم وجود تطابق بين البيانات و السجل التجاري"
+      notes: "تم الرفض بسبب عدم وجود تطابق بين البيانات و السجل التجاري"
     },
     {
       id: '1',
@@ -53,7 +53,7 @@ export class ManagerStoresRegistrationRequestsComponent implements OnInit {
       email: 'yaser@gmail.com	',
       phone: '0593644354',
       commercialRegistration: '//awfwaf//waf/waf',
-      reason: "تم الرفض بسبب عدم وجود تطابق بين البيانات و السجل التجاري"
+      notes: "تم الرفض بسبب عدم وجود تطابق بين البيانات و السجل التجاري"
     },
   ]
 
