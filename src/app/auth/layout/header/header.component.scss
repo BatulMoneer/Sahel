@@ -8,6 +8,7 @@
   font-family: var(--font);
   box-shadow: 0px 2px 6px var(--shadow);
   padding-left: 20px;
+  margin-bottom: 100px;
 }
 
 .header a {
@@ -42,6 +43,21 @@
   float: left;
   padding-left: 20px;
 }
+
+/* The sticky class is added to the header with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+
+
+}
+
+.sticky + .content {
+  padding-top: 102px;
+}
+
 
 @media screen and (max-width: 500px) {
   .header a {

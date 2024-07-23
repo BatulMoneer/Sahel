@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { PopupRoutingModule } from './popup-routing.module';
@@ -9,6 +9,8 @@ import { CancelProductPopComponent } from './cancel-product-pop/cancel-product-p
 import { ChangeHighProductPopComponent } from './change-high-product-pop/change-high-product-pop.component';
 import { ChangeLowProductPopComponent } from './change-low-product-pop/change-low-product-pop.component';
 import { InfoUpdatedPopComponent } from './info-updated-pop/info-updated-pop.component';
+import { OtpPopComponent } from './otp-pop/otp-pop.component';
+import { NgOtpInputModule } from 'ng-otp-input';
 
 
 @NgModule({
@@ -19,11 +21,26 @@ import { InfoUpdatedPopComponent } from './info-updated-pop/info-updated-pop.com
     ChangeHighProductPopComponent,
     ChangeLowProductPopComponent,
     InfoUpdatedPopComponent,
+    OtpPopComponent,
   ],
   imports: [
     CommonModule,
     PopupRoutingModule,
-    MatDialogModule
-  ]
+    MatDialogModule,
+    NgOtpInputModule,
+
+
+  ],
+  exports: [
+    AddToCartPopComponent,
+    PayNowPopComponent,
+    CancelProductPopComponent,
+    ChangeHighProductPopComponent,
+    ChangeLowProductPopComponent,
+    InfoUpdatedPopComponent,
+    OtpPopComponent,
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+
 })
 export class PopupModule { }

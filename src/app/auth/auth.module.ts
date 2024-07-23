@@ -13,7 +13,8 @@ import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { AccountTypeComponent } from './account-type/account-type.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { NgOtpInputModule } from 'ng-otp-input';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SharedComponentsModule,
     FormsModule,
     ReactiveFormsModule,
+    MatDialogModule,
+    NgOtpInputModule
   ]
 })
 export class AuthModule { }

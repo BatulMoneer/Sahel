@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Almarai);
 
 .header {
+  position: fixed;
   overflow: hidden;
   background-color: var(--background);
   padding: 10px 35px;
@@ -8,6 +9,20 @@
   font-family: var(--font);
   box-shadow: 0px 2px 6px var(--shadow);
   padding-left: 20px;
+}
+
+/* The sticky class is added to the header with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 102px;
 }
 
 .header a {
