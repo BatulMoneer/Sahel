@@ -56,6 +56,7 @@ export class LoginComponent implements OnInit {
       ]],
       password_user: ['', [
         Validators.required,
+
         // Validators.minLength(8),
         // Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}')
       ]],

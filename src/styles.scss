@@ -60,7 +60,6 @@ button{
   box-shadow: 0px 2px 6px var(--shadow);
   text-decoration: none;
   cursor: pointer;
-
 }
 
 button:hover{
@@ -87,6 +86,7 @@ $Sahel-theme: mat.define-light-theme((
     warn: $Sahel-warn,
   )
 ));
+
 
 @include mat.all-component-themes($Sahel-theme);
 

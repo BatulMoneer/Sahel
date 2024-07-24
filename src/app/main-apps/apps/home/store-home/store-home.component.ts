@@ -17,7 +17,7 @@ export class StoreHomeComponent implements OnInit {
       branchOfStore: 'الشيششة',
       sortByBranchs: '1',
       NumberOfClients: '700,000 عميل',
-      productBarcode: '+',
+      progress: '+',
     },
     {
       store: 'بن داوود',
@@ -26,7 +26,7 @@ export class StoreHomeComponent implements OnInit {
       branchOfStore: 'الشيششة',
       sortByBranchs: '1',
       NumberOfClients: '700,000 عميل',
-      productBarcode: '+',
+      progress: '+',
     },
     {
       store: 'بن داوود',
@@ -35,7 +35,7 @@ export class StoreHomeComponent implements OnInit {
       branchOfStore: 'الشيششة',
       sortByBranchs: '1',
       NumberOfClients: '700,000 عميل',
-      productBarcode: '+',
+      progress: '+',
     },
     {
       store: 'بن داوود',
@@ -44,7 +44,7 @@ export class StoreHomeComponent implements OnInit {
       branchOfStore: 'الشيششة',
       sortByBranchs: '1',
       NumberOfClients: '700,000 عميل',
-      productBarcode: '+',
+      progress: '+',
     },
     {
       store: 'بن داوود',
@@ -53,7 +53,7 @@ export class StoreHomeComponent implements OnInit {
       branchOfStore: 'الشيششة',
       sortByBranchs: '1',
       NumberOfClients: '700,000 عميل',
-      productBarcode: '+',
+      progress: '+',
     },
     {
       store: 'بن داوود',
@@ -62,7 +62,7 @@ export class StoreHomeComponent implements OnInit {
       branchOfStore: 'الشيششة',
       sortByBranchs: '1',
       NumberOfClients: '700,000 عميل',
-      productBarcode: '+',
+      progress: '+',
     },
     {
       store: 'بن داوود',
@@ -71,7 +71,7 @@ export class StoreHomeComponent implements OnInit {
       branchOfStore: 'الشيششة',
       sortByBranchs: '1',
       NumberOfClients: '700,000 عميل',
-      productBarcode: '+',
+      progress: '+',
     },
   ]
   ngOnInit(): void {

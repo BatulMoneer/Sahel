@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-choose-product-will-update-it',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChooseProductWillUpdateItComponent implements OnInit {
 
-  constructor() { }
+  constructor(private modalService: NgbModal) {}
+
+	open(content) {
+		this.modalService.open(content ,{ centered: true })
+
+	}
 
   arrayList = [
     {

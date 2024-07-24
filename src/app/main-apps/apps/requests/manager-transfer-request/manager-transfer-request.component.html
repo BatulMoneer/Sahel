@@ -5,29 +5,29 @@
     </div>
 
     <div class="tableTitleDiv">
-      <h2>قائمة تغاصيل الطلبات</h2>
+      <h2>تغاصيل الطلبات</h2>
     </div>
 
     <table>
       <thead>
         <tr>
-          <th>اسم المندوب</th>
+          <th class="thName">اسم المندوب</th>
           <th>رقم الطلب</th>
           <th>تاريخ الطلب</th>
           <th>الفاتورة</th>
           <th>حالة الطلب</th>
-          <th>تفاصيل الحالة</th>
+          <th class="thNotes">ملاحظات</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-        <tr class="trbody" *ngFor="let item of arrayList">
-          <td class="tdbody">{{item.collertorName}}</td>
-          <td class="tdbody">{{item.orderNumber}}</td>
-          <td class="tdbody">{{item.orderDate}}</td>
-          <td class="tdbody">{{item.bill}}</td>
-          <td class="tdbody">{{item.orderStatus}}</td>
-          <td class="tdbody">{{item.orderStatus}}</td>
+        <tr *ngFor="let item of arrayList">
+          <td class="tdName">{{item.collertorName}}</td>
+          <td>{{item.orderNumber}}</td>
+          <td>{{item.orderDate}}</td>
+          <td>{{item.bill}}</td>
+          <td>{{item.orderStatus}}</td>
+          <td>{{item.notes}}</td>
         </tr>
       </tbody>
     </table>

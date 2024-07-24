@@ -8,7 +8,32 @@ import { Router } from '@angular/router';
 export class AddNewProductComponent implements OnInit {
   submit = "إضافة";
   link = "link";
+
   constructor(){}
+
+ arrayList = [
+    {
+      section: 'الشاي والقهوة'
+    },
+    {
+      section: 'hyhgjg'
+    },
+    {
+      section: 'الشاي والقهوة'
+    },
+    {
+      section: 'الشاي والقهوة'
+    },
+    {
+      section: 'الشاي والقهوة'
+    },
+    {
+      section: 'الشاي والقهوة'
+    },
+    {
+      section: 'الشاي والقهوة'
+    },
+  ]
 
   ngOnInit(): void {
   }

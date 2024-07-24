@@ -12,23 +12,23 @@
     <table>
       <thead>
         <tr>
-          <th>اسم المندوب</th>
+          <th class="thName">اسم المندوب</th>
           <th>العمر</th>
           <th>البريد الإلكتروني</th>
           <th>رقم الجوال</th>
-          <th colspan="2">الرد</th>
-          <th>تفاصيل الرد</th>
+          <th>الرد</th>
+          <th class="thLast">تبرير الرد</th>
         </tr>
       </thead>
       <tbody>
-        <tr class="trbody" *ngFor="let item of arrayList">
-          <td class="tdbody">{{item.collectorName}}</td>
-          <td class="tdbody">{{item.collectorAge}}</td>
-          <td class="tdbody">{{item.email}}</td>
-          <td class="tdbody">{{item.phone}}</td>
-          <td class="tdbody"><button>قبول</button></td>
-          <td class="tdbody"><button>رفض</button></td>
-          <td class="tdbody">{{item.reason}}</td>
+        <tr *ngFor="let item of arrayList">
+          <td>{{item.collectorName}}</td>
+          <td>{{item.collectorAge}}</td>
+          <td>{{item.email}}</td>
+          <td>{{item.phone}}</td>
+          <td class="tdButton"><button>قبول</button>
+          <button>رفض</button></td>
+          <td><input class = "replayField" type="text" id="replay" name="replayName" value="تم قبولك"> </td>
         </tr>
       </tbody>
     </table>

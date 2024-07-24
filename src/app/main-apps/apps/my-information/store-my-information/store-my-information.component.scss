@@ -1,25 +1,27 @@
 .body {
   direction: rtl;
   height: 100%;
-  padding: auto;
-  margin: auto;
+  padding: 20px;
+  margin: 20px;
   font-family: var(--font);
   display: flex;
   justify-content: center;
-  background-color: var(--back);
+  background-color: var(--background);
 }
 
 form {
   height: auto;
   width: auto;
-  padding: auto;
-  margin: auto;
+  padding: 30px;
+  margin: 10px;
   margin-top: 60px;
   margin-bottom: 60px;
   display: flex;
-  justify-content: right;
+  justify-content: center;
   flex-direction: column;
-  // background-color: red;
+  background-color: var(--background);
+  border-radius: 10px;
+  box-shadow: 0px 2px 6px var(--shadow);
 }
 
 .titleDiv {
@@ -57,7 +59,7 @@ form {
   font-size: 18px;
   color: var(--textCol);
   padding: 0;
-  margin: 20px 60px 5px 30px;
+  margin: 20px 60px 15px 30px;
 }
 
 .storeNameField,
@@ -68,7 +70,7 @@ form {
 .iamgeField {
   border: none;
   padding: 7px 20px;
-  margin: 0px 80px 5px 30px;
+  margin: 0px 80px 5px 80px;
   border-radius: 10px;
   box-shadow: 0px 2px 6px var(--shadow);
   display: flex;
@@ -79,14 +81,13 @@ input:focus {
   outline-color: var(--main);
 }
 
-.iamgeField{
-  background-color: var(--background);
-}
-
 .updateDiv {
   padding: 0;
+  padding-bottom: 10px;
   margin: 0;
+  margin-bottom: 20px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
@@ -95,15 +96,33 @@ input:focus {
   border-radius: 10px;
   border: var(--main);
   padding: 7px 20px;
-  margin-top: 20px;
+  margin-top: 50px;
+  margin-bottom: 0px;
   font-family: var(--font);
   color: var(--background);
   box-shadow: 0px 2px 6px var(--shadow);
   text-decoration: none;
+  width: 80px;
+  display: flex;
+  align-self: center;
+  text-align: center;
 }
 
 .updateButton:hover{
   background-color: var(textCol);
+}
+
+.signout{
+  background-color: var(--background);
+  color: var(--prime);
+  border: 0;
+  width: 150px;
+  padding: 7px 35px 7px 20px;
+  margin: 0;
+  display: flex;
+  align-self: center;
+  text-align: center;
+  box-shadow: 0px 0px 0px var(--shadow);
 }
 
 

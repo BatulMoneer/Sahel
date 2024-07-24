@@ -1,24 +1,25 @@
 .body {
   direction: rtl;
   height: 100%;
-  padding: auto;
-  margin: auto;
+  padding: 20px;
+  margin: 20px;
   font-family: var(--font);
   display: flex;
   justify-content: center;
-  background-color: var(--back);
+  background-color: var(--background);
 }
 
 form {
   height: auto;
-  width: auto;
-  padding: auto;
-  margin: auto;
-  margin-top: 60px;
-  margin-bottom: 60px;
+  width: 90%;
+  padding: 10px 0px 30px;
+  margin: 50px;
   display: flex;
   justify-content: center;
   flex-direction: column;
+  background-color: var(--background);
+  box-shadow: 0px 2px 6px var(--shadow);
+  border-radius: 10px;
 }
 
 .titleDiv {
@@ -41,7 +42,7 @@ h1 {
 .tableTitleDiv {
   padding: 0;
   margin: 0;
-  margin-top: 30px;
+  margin-top: 10px;
   color: var(--textCol);
   display: flex;
   align-self: center;
@@ -60,52 +61,41 @@ h2 {
 
 
 table {
-  width: 100%;
+  width: 90%;
   display: table;
   align-self: center;
   text-align: center;
   background-color: var(--background);
-  border: 1.5px,solid;
-  border-color: var(--prime);
   color: var(--font);
+  border-radius: 10px;
   box-shadow: 3px 3px 3px 3px var(--shadow);
 }
 
 th {
-  border: 0.5px,solid;
-  border-color: var(--prime);
-  background-color: #eebaa1;
+  background-color: var(--prime);
   width: auto;
   height: auto;
   padding: 10px;
   margin: 0;
+  color: var(--background) !important;
+}
+
+
+.thName{
+  border-radius: 0 10px 0 0;
+}
+
+.thNotes{
+  border-radius: 10px 0 0 0;
 }
 
 td {
-  border: 0.5px,solid;
-  border-color: var(--prime);
   width: auto;
   height: auto;
   padding: 10px;
   margin: 0;
 }
 
-td :hover {
-  background-color: var(--back);
-  color: var(--textCol);
-}
-
-button {
-  width: 50px;
-  background-color: var(--main);
-  border-radius: 10px;
-  border: var(--main);
-  padding: 7px 10px 7px 10px;
-  font-family: var(--font);
-  color: var(--background);
-  box-shadow: 0px 2px 6px var(--shadow);
-  text-decoration: none;
-  font-size: 14px;
-  display: flex;
-  text-align: center;
+tr:nth-child(even) {
+  background-color: #f2f2f2;
 }

@@ -12,31 +12,31 @@
     </div> -->
 
     <div class="tableTitleDiv">
-      <h3>مقارنة مع المتاجر الأخرى</h3>
+      <h2>مقارنة مع المتاجر الأخرى</h2>
      </div>
 
     <table>
       <thead>
         <tr>
-          <th>المتجر</th>
+          <th class="thName">المتجر</th>
           <th>نسبة المبيعات بين المتاجر</th>
           <th>الترتيب حسب المبيعات</th>
           <th>فرع المتجر</th>
           <th>الترتيب حسب الفروع</th>
           <th>عدد العملاء</th>
-          <th>التقدم</th>
+          <th class="thLast">التقدم</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <tr class="trbody" *ngFor="let item of arrayList">
-            <td class="tdbody">{{item.store}}</td>
-            <td class="tdbody">{{item.percentageOfSalesBetweenStores}}</td>
-            <td class="tdbody">{{item.sortBySales}}</td>
-            <td class="tdbody">{{item.branchOfStore}}</td>
-            <td class="tdbody">{{item.sortByBranchs}}</td>
-            <td class="tdbody">{{item.NumberOfClients}}</td>
-            <td class="tdbody">{{item.productBarcode}}</td>
+          <tr *ngFor="let item of arrayList">
+            <td>{{item.store}}</td>
+            <td>{{item.percentageOfSalesBetweenStores}}</td>
+            <td>{{item.sortBySales}}</td>
+            <td>{{item.branchOfStore}}</td>
+            <td>{{item.sortByBranchs}}</td>
+            <td>{{item.NumberOfClients}}</td>
+            <td class="tdProgress">{{item.progress}}</td>
         </tr>
       </tbody>
     </table>
