@@ -16,7 +16,7 @@
       <div class="group">
         <div class="input-group">
           <p class="text">البريد الالكتروني</p>
-          <input type="text" formControlName="email_user" placeholder="ادخل البريد" required>
+          <input type="email" formControlName="email_user" placeholder="ادخل البريد" required>
 
         </div>
         <div *ngIf="submitted_crearte && formData.controls['email_user'].errors">
@@ -24,7 +24,7 @@
             *ngIf="submitted_crearte && formData.controls['email_user'].errors.required">
             الحقل مطلوب!
           </p>
-          <p class="invalid-feedback-custom" *ngIf="submitted_crearte && formData.controls['email_user'].errors.email">
+          <p class="invalid-feedback-custom" *ngIf="submitted_crearte && formData.controls['email_user'].errors.email_user">
             البريد غير صحيح!
           </p>
         </div>
@@ -59,6 +59,5 @@
       <p class="change"><a routerLink="/auth/accountType">انشاء حساب </a>ليس لديك حساب؟ </p>
     </form>
   </div>
-
 </router-outlet>
 <app-footer></app-footer>

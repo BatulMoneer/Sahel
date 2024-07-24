@@ -25,7 +25,7 @@
         <td>{{item.branch}}</td>
         <td>{{item.email}}</td>
         <td>{{item.phone}}</td>
-        <td><img src="" alt="السجل"></td>
+        <td><img [src]="item.img" alt="السجل"></td>
         <td class="tdButton">
           <button (click)="open(content)">قبول</button>
         </td>

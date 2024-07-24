@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-manager-my-information',
@@ -7,11 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ManagerMyInformationComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
   value = "تحديث";
   link = "link";
 
   ngOnInit(): void {
+  }
+
+  signout(){
+    localStorage.removeItem("user");
+    localStorage.removeItem("token")
+
+    this.router.navigate(['/auth/login']);
+
   }
 
 }
