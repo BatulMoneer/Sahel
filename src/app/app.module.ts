@@ -11,6 +11,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { PopupModule } from './main-apps/apps/popup/popup.module';
+import { TokenInterceptorInterceptor } from './services/token-interceptor.interceptor';
 
 
 @NgModule({
@@ -29,7 +30,13 @@ import { PopupModule } from './main-apps/apps/popup/popup.module';
     CommonModule,
     PopupModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

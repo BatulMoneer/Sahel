@@ -1,15 +1,15 @@
 .body {
   direction: rtl;
   height: 100%;
-  padding: 20px;
-  margin: 20px;
+  padding: 30px;
+  margin: 50px;
   font-family: var(--font);
   display: flex;
   justify-content: center;
   background-color: var(--background);
 }
 
-form {
+.containerDiv {
   height: auto;
   width: 90%;
   padding: 10px 0px 30px;
@@ -44,7 +44,7 @@ h6 {
   color: var(--textCol);
   padding: 5px;
   margin: 0;
-  margin-right: 10px;
+  margin-right: 30px;
   margin-bottom: 15px;
 }
 

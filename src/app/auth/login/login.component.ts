@@ -27,26 +27,6 @@ export class LoginComponent implements OnInit {
     private dialog: MatDialog,
     private service: OrderService
   ) { }
-  navigateToAccountType() {
-    this.router.navigate(['/auth/accountType']);
-  }
-
-  login() {
-    this.impApiService.post(auth.login, this.formData.value).subscribe(data => {
-      this.submitted_crearte = true
-      if (this.formData.invalid) {
-        return null;
-      }
-      else {
-        console.log(data.OTP)
-        this.service.setOtp(data.OTP)
-        this.dialog.open(OtpPopComponent)
-
-      }
-    })
-
-
-  }
 
   ngOnInit(): void {
     this.formData = this.formBuilder.group({
@@ -61,6 +41,30 @@ export class LoginComponent implements OnInit {
         // Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}')
       ]],
     });
+  }
+
+  navigateToAccountType() {
+    this.router.navigate(['/auth/accountType']);
+  }
+
+  login() {
+    this.submitted_crearte = true
+    if (this.formData.invalid) {
+      return null;
+    }
+
+    this.impApiService.post(auth.login, this.formData.value).subscribe(data => {
+
+      // localStorage.setItem('user', JSON.stringify(data.user_info))
+      // localStorage.setItem('token', data.token)
+      // this.router.navigate(['/auth/accountType'])
+
+      this.service.setOtp(data.OTP)
+      this.dialog.open(OtpPopComponent)
+
+    })
+
+
   }
 
 }

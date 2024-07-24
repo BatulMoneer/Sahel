@@ -1,52 +1,12 @@
-
-// .body {
-//   font-family: var(--font);
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   padding: 150px;
-//   height: 100%;
-//   margin: 0;
-// }
-
-// form {
-//   background-color:var(--background);
-//   text-align: right;
-// }
-
-// .body {
-//   direction: rtl;
-//   height: 100%;
-//   padding: auto;
-//   margin: auto;
-//   font-family: var(--font);
-//   display: flex;
-//   justify-content: center;
-//   background-color: var(--back);
-// }
-
-// form {
-//   height: 800px;
-//   width: auto;
-//   padding: auto;
-//   margin: auto;
-//   margin-top: 60px;
-//   margin-bottom: 60px;
-//   display: flex;
-//   justify-content: center;
-//   flex-direction: column;
-//   background-color: red;
-// }
-
 .body {
   direction: rtl;
   font-family: var(--font);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5px;
+  padding: 10px;
+  margin: 30px;
   height: 100%;
-  margin: 0;
 }
 
 form {

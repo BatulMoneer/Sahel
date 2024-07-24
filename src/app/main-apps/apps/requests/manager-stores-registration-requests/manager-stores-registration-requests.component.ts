@@ -23,44 +23,10 @@ export class ManagerStoresRegistrationRequestsComponent implements OnInit {
       email: 'banda@gmail.com	',
       phone: '0593644354',
       commercialRegistration: '//awfwaf//waf/waf',
-      notes: "تم الرفض بسبب عدم وجود تطابق بين البيانات و السجل التجاري"
+      notes: "تم الرفض بسبب عدم وجود تطابق بين البيانات و السجل التجاري",
+      img:"../../../../../assets/images/Panda.png"
     },
-    {
-      id: '1',
-      store: 'بنده	',
-      branch: 'البحيرات',
-      email: 'ahmad@gmail.com	',
-      phone: '0593644354',
-      commercialRegistration: '//awfwaf//waf/waf',
-      notes: "تم الرفض بسبب عدم وجود تطابق بين البيانات و السجل التجاري"
-    },
-    {
-      id: '1',
-      store: 'بنده	',
-      branch: 'الشرائع',
-      email: 'yaser@gmail.com	',
-      phone: '0593644354',
-      commercialRegistration: '//awfwaf//waf/waf',
-      notes: "تم الرفض بسبب عدم وجود تطابق بين البيانات و السجل التجاري"
-    },
-    {
-      id: '1',
-      store: 'بنده	',
-      branch: 'الشرائع',
-      email: 'yaser@gmail.com	',
-      phone: '0593644354',
-      commercialRegistration: '//awfwaf//waf/waf',
-      notes: "تم الرفض بسبب عدم وجود تطابق بين البيانات و السجل التجاري"
-    },
-    {
-      id: '1',
-      store: 'بنده	',
-      branch: 'الشرائع',
-      email: 'yaser@gmail.com	',
-      phone: '0593644354',
-      commercialRegistration: '//awfwaf//waf/waf',
-      notes: "تم الرفض بسبب عدم وجود تطابق بين البيانات و السجل التجاري"
-    },
+
   ]
 
   ngOnInit(): void {

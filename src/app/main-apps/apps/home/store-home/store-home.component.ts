@@ -74,6 +74,8 @@ export class StoreHomeComponent implements OnInit {
       progress: '+',
     },
   ]
+
+  img = "../../../../../assets/images/Panda.png";
   ngOnInit(): void {
   }
 
