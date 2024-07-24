@@ -5,11 +5,12 @@
       <h1>التنبيهات</h1>
     </div>
 
-    <div class="headOfAlerts">
-      <p>التنبيه</p>
-      <p>تاريخ التنبيه</p>
-    </div>
-    <div *ngFor="let item of arrayList">
+        <div class="headOfAlerts">
+          <div class="alertdiv"><p>التنبيه</p></div>
+          <div class="alertDatediv"><p>تاريخ التنبيه</p></div>
+        </div>
+
+    <div *ngFor="let item of arrayList" class="Alerts">
       <p>{{item.alert}}</p>
       <p>{{item.dateAlert}}</p>
     </div>
