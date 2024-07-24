@@ -3,16 +3,19 @@
   flex-direction: column;
 
  justify-content: center;
-  align-items: end;
+  align-items: center;
   padding: 100px;
+  padding-top: 50px;
 
  }
 
  .title{
-   font-size: 33px;
+   font-size: 64px;
    color: var(--prime);
    padding: 0;
- margin: 30px 0px;
+   padding-bottom: 50px;
+margin-top: 100px;
+
  }
 
  .status-container {
@@ -123,16 +126,17 @@
    }
  button {
    margin-right: 10px;
+   margin-bottom: 50px;
  }
 
 
  .items {
    display: flex;
    flex-wrap: wrap;
-   justify-content: end;
+   justify-content: center;
    align-items: center;
-   gap: 20px 60px;
-   margin-right: 100px;
+   gap: 20px;
+   margin-bottom: 50px;
  }
 
  app-cart-card {
@@ -207,6 +211,7 @@
  @media (max-width : 1100px){
    .body{
      padding: 0;
+     padding-top: 50px;
      align-items: center;
    }
    .items{
@@ -226,11 +231,13 @@
  @media (max-width: 500px) {
    .body {
      padding: 0px;
+     padding-top: 50px;
      margin: 0;
    }
 
    .title {
-     font-size: 24px;
+     font-size: 32px;
+
    }
 
    .status-container li {
@@ -256,6 +263,7 @@
      flex-direction: column;
      justify-content: center;
      padding: 0;
+     padding-bottom: 50px;
      margin: 0;
    }
  }

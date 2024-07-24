@@ -1,5 +1,9 @@
+import { Router } from '@angular/router';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { CustomerMyInformationComponent } from '../../my-information/customer-my-information/customer-my-information.component';
+import { MatDialog } from '@angular/material/dialog';
+import { AddToCartPopComponent } from '../../popup/add-to-cart-pop/add-to-cart-pop.component';
+
 
 @Component({
   selector: 'app-customer-cart',
@@ -14,8 +18,6 @@ export class CustomerCartComponent implements OnInit {
   count = this.products.length
   shopname = "متجر بنده | فرع الشرائع "
   shopimage = "../../../../../assets/images/Panda.png"
-  doneOrder = "ادفع الآن"
-  doneOrderLink = "/apps/products/order-state"
   location = "الشرائع, الفردوس 3726 (بيت)"
   delivery = 20
   wallet = 0
@@ -59,7 +61,13 @@ export class CustomerCartComponent implements OnInit {
     localStorage.setItem('cart', JSON.stringify(this.products));
   }
 
-  constructor() { }
+  constructor(private dialog: MatDialog, private router: Router) { }
+
+  openDialog(): void {
+    this.dialog.open(AddToCartPopComponent);
+    this.router.navigate(['/apps/products/order-state']);
+
+  }
 
   ngOnInit(): void {
     let retString = localStorage.getItem("cart");

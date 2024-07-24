@@ -67,6 +67,24 @@ export class CustomerViewProductsComponent implements OnInit {
           linkk: "link",
           valuee: "المزيد من الاصناف",
         },
+        {
+          link: "/apps/products/customer-item-detail",
+          value: "عرض",
+          product: 'شوفان',
+          image: '../../../assets/images/Oats.jpg',
+          info: 20,
+          linkk: "link",
+          valuee: "المزيد من الاصناف",
+        },
+        {
+          link: "/apps/products/customer-item-detail",
+          value: "عرض",
+          product: 'شوفان',
+          image: '../../../assets/images/Oats.jpg',
+          info: 20,
+          linkk: "link",
+          valuee: "المزيد من الاصناف",
+        },
       ]
 
     },

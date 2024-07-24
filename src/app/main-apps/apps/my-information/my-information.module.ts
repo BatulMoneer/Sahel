@@ -13,6 +13,7 @@ import { CollectorRequestWalletComponent } from './collector-request-wallet/coll
 import { CollectorViewPaymentsComponent } from './collector-view-payments/collector-view-payments.component';
 import { CollectorRecieptDetailsComponent } from './collector-reciept-details/collector-reciept-details.component';
 import { FormsModule } from '@angular/forms';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     MyInformationRoutingModule,
     SharedComponentsModule,
-    FormsModule
+    FormsModule,
+    MatSnackBarModule
   ],
   exports: [
     CustomerMyInformationComponent

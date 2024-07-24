@@ -1,7 +1,10 @@
 import { OrderService } from './../../../../service/order.service';
 import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
+import { CancelProductPopComponent } from '../../popup/cancel-product-pop/cancel-product-pop.component';
+import { ChangeHighProductPopComponent } from '../../popup/change-high-product-pop/change-high-product-pop.component';
+import { ChangeLowProductPopComponent } from '../../popup/change-low-product-pop/change-low-product-pop.component';
 
 @Component({
   selector: 'app-change-product',
@@ -38,7 +41,7 @@ export class ChangeProductComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private snackBar: MatSnackBar,
+    private dialog: MatDialog,
     private orderService: OrderService
   ) { }
 
@@ -47,29 +50,23 @@ export class ChangeProductComponent implements OnInit {
 
 
   changeProduct(newProductPrice: number): void {
-    this.orderService.setProductFound(true);
     if (newProductPrice > this.info) {
-      this.snackBar.open('هذا المنتج أغلى. هل تريد متابعة الدفع؟', 'نعم', {
-        duration: 5000,
-        panelClass: ['custom-snackbar'],
-        verticalPosition: 'top',
-        horizontalPosition: 'center'
-      }).onAction().subscribe(() => {
-        this.proceedToPayment();
-      });
+      this.orderService.setProductFound(true);
+      this.dialog.open(ChangeHighProductPopComponent);
     } else {
-      this.snackBar.open('تم استبدال المنتج بنجاح', 'إغلاق', { duration: 3000 });
+      this.orderService.setProductFound(true);
+      this.dialog.open(ChangeLowProductPopComponent);
+
+
     }
   }
 
-  proceedToPayment(): void {
-    this.router.navigate(['/payment']);
-  }
 
   cancelProduct(): void {
     this.orderService.setProductFound(true);
-    this.snackBar.open('تم إلغاء المنتج بنجاح', 'إغلاق', { duration: 3000 });
+    this.dialog.open(CancelProductPopComponent);
   }
+
 
   goBack(): void {
     this.router.navigate(['/apps/products/order-state']);

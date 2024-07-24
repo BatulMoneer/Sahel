@@ -8,15 +8,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { PopupModule } from './main-apps/apps/popup/popup.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-
-
-
   ],
   imports: [
     BrowserModule,
@@ -25,7 +24,10 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     NgbModule,
     SharedComponentsModule,
     MatIconModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    HttpClientModule,
+    CommonModule,
+    PopupModule
   ],
   providers: [],
   bootstrap: [AppComponent]
