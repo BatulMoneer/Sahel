@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
       password: ['', [
         Validators.required,
         Validators.minLength(8),
-        Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}') // At least one uppercase, one lowercase, and one number
+        // Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}') // At least one uppercase, one lowercase, and one number
       ]],
     });
   }
