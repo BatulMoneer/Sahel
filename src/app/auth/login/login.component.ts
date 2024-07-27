@@ -37,8 +37,8 @@ export class LoginComponent implements OnInit {
       password_user: ['', [
         Validators.required,
 
-        // Validators.minLength(8),
-        // Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}')
+        Validators.minLength(8),
+        Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}')
       ]],
     });
   }
@@ -48,19 +48,18 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+
     this.submitted_crearte = true
     if (this.formData.invalid) {
       return null;
     }
 
     this.impApiService.post(auth.login, this.formData.value).subscribe(data => {
-
-      // localStorage.setItem('user', JSON.stringify(data.user_info))
-      // localStorage.setItem('token', data.token)
-      // this.router.navigate(['/auth/accountType'])
-
+      this.service.setUser(data.user_type_id)
+      console.log(data.OTP)
       this.service.setOtp(data.OTP)
       this.dialog.open(OtpPopComponent)
+
 
     })
 

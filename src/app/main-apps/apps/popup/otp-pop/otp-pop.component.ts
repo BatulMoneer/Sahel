@@ -12,7 +12,7 @@ export class OtpPopComponent implements OnInit {
 
   constructor(public dialogRef: MatDialogRef<OtpPopComponent>,
     private service: OrderService,
-    private router: Router
+    private router: Router,
   ) { }
 
   @ViewChild("ngOtpInput") ngOtpInput: any;
@@ -28,8 +28,16 @@ export class OtpPopComponent implements OnInit {
 
     else if (this.ngOtpInput.currentVal == this.otp) {
       console.log("great?")
-      this.router.navigate(['/auth/accountType']);
       this.dialogRef.close();
+      if (this.service.getUser() == 1) {
+        this.router.navigate(['/apps/home/app-customer-home']);
+      }
+      else if (this.service.getUser() == 2) {
+        this.router.navigate(['/apps/home/app-collector-home']);
+      }
+      else if (this.service.getUser() == 3) {
+        this.router.navigate(['/apps/home/app-store-home']);
+      }
       return;
 
     }
