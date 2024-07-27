@@ -22,6 +22,7 @@ flex-direction: column;
 
 }
 
+
 .top{
   display: flex;
   flex-direction: row-reverse;
@@ -46,6 +47,9 @@ flex-direction: column;
 }
 
 .section {
+  padding-top: 40px;
+  display: flex;
+flex-direction: column;
   width: 48%;
 }
 
@@ -69,8 +73,8 @@ flex-direction: column;
 
 .input-group {
   display: flex;
-  align-items: center;
-  flex-direction: row-reverse;
+  align-items: end;
+  flex-direction: column;
   margin-bottom: 10px;
 }
 
@@ -107,15 +111,20 @@ app-button {
 
 
 .saved-cards {
+
   text-align: right;
-  margin: 20px;
+  margin: 20px 0px;
 }
 
 .card {
   display: flex;
-  align-items: right;
-  border-bottom: 1px solid var(--prime);
-  padding: 10px 0;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  border: none;
+  box-shadow: 0px 2px 6px var(--shadow);
+  padding: 5px 10px;
+  margin: 10px;
 }
 
 .card-icon {
@@ -132,13 +141,11 @@ app-button {
 }
 
 .card-info {
-  flex-grow: 1;
   font-size: 18px;
   color: var(--textCol);
   text-align: right;
-  margin: 10 10px;
+  margin: 10px 10px;
 }
-
 @media (max-width: 1110px) {
   .body {
     display: flex;

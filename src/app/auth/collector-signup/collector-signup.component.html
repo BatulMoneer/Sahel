@@ -16,11 +16,12 @@
       <div class="group">
         <div class="input-group">
           <p class="text">الاسم</p>
-          <input type="text" formControlName="name" placeholder="ادخل الاسم" required>
+          <input type="text" formControlName="name_user" placeholder="ادخل الاسم" required>
 
         </div>
-        <div *ngIf="submitted_crearte && formData.controls['name'].errors">
-          <div class="invalid-feedback-custom" *ngIf="submitted_crearte && formData.controls['name'].errors.required">
+        <div *ngIf="submitted_crearte && formData.controls['name_user'].errors">
+          <div class="invalid-feedback-custom"
+            *ngIf="submitted_crearte && formData.controls['name_user'].errors.required">
             الحقل مطلوب!
           </div>
         </div>
@@ -30,14 +31,16 @@
       <div class="group">
         <div class="input-group">
           <p class="text">رقم الجوال</p>
-          <input type="text" formControlName="phone" placeholder="ادخل الرقم" required>
+          <input type="text" formControlName="phone_user" placeholder="ادخل الرقم" required>
 
         </div>
-        <div *ngIf="submitted_crearte && formData.controls['phone'].errors">
-          <div class="invalid-feedback-custom" *ngIf="submitted_crearte && formData.controls['phone'].errors.required">
+        <div *ngIf="submitted_crearte && formData.controls['phone_user'].errors">
+          <div class="invalid-feedback-custom"
+            *ngIf="submitted_crearte && formData.controls['phone_user'].errors.required">
             الحقل مطلوب!
           </div>
-          <div class="invalid-feedback-custom" *ngIf="submitted_crearte && formData.controls['phone'].errors.pattern">
+          <div class="invalid-feedback-custom"
+            *ngIf="submitted_crearte && formData.controls['phone_user'].errors.pattern">
             الرقم غير صحيح!
           </div>
         </div>
@@ -60,14 +63,15 @@
       <div class="group">
         <div class=" input-group">
           <p class="text">البريد الالكتروني</p>
-          <input type="text" formControlName="email" placeholder="ادخل البريد" required>
+          <input type="text" formControlName="email_user" placeholder="ادخل البريد" required>
 
         </div>
-        <div *ngIf="submitted_crearte && formData.controls['email'].errors">
-          <p class="invalid-feedback-custom" *ngIf="submitted_crearte && formData.controls['email'].errors.required">
+        <div *ngIf="submitted_crearte && formData.controls['email_user'].errors">
+          <p class="invalid-feedback-custom"
+            *ngIf="submitted_crearte && formData.controls['email_user'].errors.required">
             الحقل مطلوب!
           </p>
-          <p class="invalid-feedback-custom" *ngIf="submitted_crearte && formData.controls['email'].errors.email">
+          <p class="invalid-feedback-custom" *ngIf="submitted_crearte && formData.controls['email_user'].errors.email">
             البريد غير صحيح!
           </p>
         </div>
@@ -76,18 +80,22 @@
       <div class="group">
         <div class="input-group">
           <p class="text">كلمة المرور</p>
-          <input type="password" formControlName="password" placeholder="ادخل كلمة المرور" required>
+          <input type="password" formControlName="password_user" placeholder="ادخل كلمة المرور" required>
         </div>
-        <div *ngIf="submitted_crearte && formData.controls['password'].errors">
-          <p class="invalid-feedback-custom" *ngIf="submitted_crearte && formData.controls['password'].errors.required">
+        <div *ngIf="submitted_crearte && formData.controls['password_user'].errors">
+          <p class="invalid-feedback-custom"
+            *ngIf="submitted_crearte && formData.controls['password_user'].errors.required">
             الحقل مطلوب!</p>
           <p class="invalid-feedback-custom"
-            *ngIf="submitted_crearte && formData.controls['password'].errors.minlength">
+            *ngIf="submitted_crearte && formData.controls['password_user'].errors.minlength">
             كلمة السر يجب ان تكون أطول من 8 عناصر!</p>
-          <p class="invalid-feedback-custom" *ngIf="submitted_crearte && formData.controls['password'].errors.pattern">
+          <p class="invalid-feedback-custom"
+            *ngIf="submitted_crearte && formData.controls['password_user'].errors.pattern">
             كلمة السر يجب ان تحتوي حروف كبيرة وصغيرة وارقام!</p>
         </div>
       </div>
+
+      <input type="hidden" formControlName="user_type_id">
 
       <div class="btn">
         <button type="submit">انشاء حساب

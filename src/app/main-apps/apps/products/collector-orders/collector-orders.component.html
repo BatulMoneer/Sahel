@@ -1,33 +1,28 @@
 <div class="body">
   <div class="head">
-    <h1 class="title">
-      الطلبات المتوفرة
-    </h1>
-    <h6 class="sub-title">
-      ({{orders}})
-    </h6>
+    <h1 class="title">الطلبات المتوفرة</h1>
+    <h6 class="sub-title">({{ ordersCount }})</h6>
   </div>
 
   <div class="bot">
-    <h6 class="sub-title">
-      متجري ({{myShopOrders.length}})
-    </h6>
+    <h6 class="sub-title">متجري ({{ myShopOrders.length }})</h6>
     <div class="orders">
       <ng-container *ngFor="let item of myShopOrders">
         <app-collector-order [shopImg]="item.shopImg" [shopName]="item.shopName" [noOfItems]="item.noOfItems"
-          [price]="item.price" [collectorPrice]=" item.collectorPrice" [customerLocation]="item.customerLocation"
-          [link]="link" [value]="value"></app-collector-order>
+          [price]="item.price" [collectPrice]="item.collectPrice" [customerLocation]="item.customerLocation"
+          [link]="link" [value]="value" (orderButtonClick)="onOrderButtonClick(item)">
+        </app-collector-order>
       </ng-container>
     </div>
 
-    <h6 class="sub-title">
-      متاجر اخرى ({{otherShopOrders.length}})
-    </h6>
+    <h6 class="sub-title">متاجر اخرى ({{ otherShopOrders.length }})</h6>
     <div class="orders">
       <ng-container *ngFor="let item of otherShopOrders">
         <app-collector-order class="order" [shopImg]="item.shopImg" [shopName]="item.shopName"
-          [noOfItems]="item.noOfItems" [price]="item.price" [collectorPrice]=" item.collectorPrice"
-          [customerLocation]="item.customerLocation" [link]="link" [value]="value"></app-collector-order>
+          [noOfItems]="item.noOfItems" [price]="item.price" [collectPrice]="item.collectPrice"
+          [customerLocation]="item.customerLocation" [link]="link" [value]="value"
+          (orderButtonClick)="onOrderButtonClick(item)">
+        </app-collector-order>
       </ng-container>
     </div>
   </div>

@@ -12,7 +12,7 @@ export class OrderStateComponent implements OnInit {
 
   products = []
 
-  hasOrder: boolean = true;
+  hasOrder: boolean = false;
 
   card: number = 3374;
 
@@ -36,6 +36,7 @@ export class OrderStateComponent implements OnInit {
     return val;
   }
 
+  allProductFound = this.orderService.isAllProductFound
   price = this.getPrice()
 
   total = this.price + this.delivery - this.wallet
@@ -43,11 +44,14 @@ export class OrderStateComponent implements OnInit {
   deliveryPerson: any = { name: '', phone: '' };
   productFound: boolean = false;
 
+
+
   constructor(private orderService: OrderService) { }
 
   ngOnInit(): void {
-    this.hasOrder = this.orderService.hasOrder();
+    this.hasOrder = this.orderService.getHasOrder()
     this.orderState = this.orderService.getOrderState();
+    console.log(this.orderState)
     this.productFound = this.orderService.isProductFound();
 
 
@@ -74,6 +78,7 @@ export class OrderStateComponent implements OnInit {
       this.deliveryPerson = { name: 'قصي', phone: '0577896554' };
     }
   }
+
 
 
 }

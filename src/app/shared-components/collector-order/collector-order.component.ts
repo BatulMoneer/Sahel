@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-collector-order',
@@ -7,14 +7,19 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CollectorOrderComponent implements OnInit {
 
-  @Input() shopImg = ""
-  @Input() shopName = ""
-  @Input() noOfItems = 0
-  @Input() price = 0
-  @Input() collectPrice = 0
-  @Input() customerLocation = ""
-  @Input() link = ""
-  @Input() value = ""
+  @Input() shopImg: string = "";
+  @Input() shopName: string = "";
+  @Input() noOfItems: number = 0;
+  @Input() price: number = 0;
+  @Input() collectPrice: number = 0;
+  @Input() customerLocation: string = "";
+  @Input() link: string = "";
+  @Input() value: string = "";
+  @Output() orderButtonClick = new EventEmitter<void>();
+
+  onClick() {
+    this.orderButtonClick.emit();
+  }
 
   constructor() { }
 

@@ -4,6 +4,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { OrderService } from 'src/app/service/order.service';
 import { ImpApiService } from 'src/app/services/imp-api.service';
 import { auth } from 'src/app/constant/Routes';
+import { MatDialog } from '@angular/material/dialog';
+import { OtpPopComponent } from 'src/app/main-apps/apps/popup/otp-pop/otp-pop.component';
 
 @Component({
   selector: 'app-customer-signup',
@@ -19,7 +21,8 @@ export class CustomerSignupComponent implements OnInit {
     private router: Router,
     private service: OrderService,
     private formBuilder: FormBuilder,
-    private impApiService: ImpApiService
+    private impApiService: ImpApiService,
+    private dialog: MatDialog,
   ) { }
   navigateToAccountType() {
     this.router.navigate(['/auth/login']);
@@ -34,17 +37,19 @@ export class CustomerSignupComponent implements OnInit {
 
   signUp() {
 
-    this.impApiService.post(auth.create, this.formData.value).subscribe(data => {
-      this.submitted_crearte = true
-      if (this.formData.invalid) {
-        return null;
-      }
-      else {
-        this.router.navigate(['/apps/home/app-customer-home']);
-
-      }
+    this.submitted_crearte = true
+    if (this.formData.invalid) {
+      return null;
     }
-    )
+
+    this.impApiService.post(auth.create, this.formData.value).subscribe(data => {
+
+      console.log(data.otp)
+      this.service.setOtp(data.otp)
+      this.dialog.open(OtpPopComponent)
+
+
+    })
   }
 
   ngOnInit(): void {
@@ -66,7 +71,8 @@ export class CustomerSignupComponent implements OnInit {
       phone_user: ['', [
         Validators.required,
         Validators.pattern('^05[0-9]{8}$')
-      ]]
+      ]],
+      user_type_id: [1]
     });
 
   }

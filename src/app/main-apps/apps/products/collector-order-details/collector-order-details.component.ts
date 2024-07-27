@@ -7,36 +7,7 @@ import { OrderService } from 'src/app/service/order.service';
   styleUrls: ['./collector-order-details.component.scss']
 })
 export class CollectorOrderDetailsComponent implements OnInit {
-  products = [
-    {
-      title: ' شوفان كويكر 500جم',
-      image: '../../../../../assets/images/Oats.jpg',
-      info: 15,
-      barcode: '../../../../../assets/images/Barcode.png',
-      amount: 1,
-      confirmed: true,
-      notFound: true
-    },
-    {
-      title: ' شوفان كويكر 500جم',
-      image: '../../../../../assets/images/Oats.jpg',
-      info: 15,
-      barcode: '../../../../../assets/images/Barcode.png',
-      amount: 1,
-      confirmed: true,
-      notFound: true
-
-    },
-    {
-      title: ' شوفان كويكر 500جم',
-      image: '../../../../../assets/images/Oats.jpg',
-      info: 15,
-      barcode: '../../../../../assets/images/Barcode.png',
-      amount: 1,
-      confirmed: true,
-      notFound: true
-    }
-  ]
+  products = [];
 
   image = "../../../../../assets/images/Panda.png";
   allConfirmed = false;
@@ -45,7 +16,13 @@ export class CollectorOrderDetailsComponent implements OnInit {
 
   constructor(private orderService: OrderService) { }
 
-  ngOnInit(): void { }
+
+  ngOnInit(): void {
+    const currentOrder = this.orderService.getOrderById(this.orderService.getCurrentOrderID());
+    if (currentOrder) {
+      this.products = currentOrder.items || [];
+    }
+  }
 
   onCheckChange(event, index: number, type: string): void {
     if (type === 'confirm') {
@@ -55,10 +32,20 @@ export class CollectorOrderDetailsComponent implements OnInit {
       this.products[index].notFound = true;
       this.products[index].confirmed = false;
       this.orderService.setProductFound(false);
+      this.orderService.setOrderState(2);
     }
 
     this.allConfirmed = this.products.every(product => !product.notFound);
+
+
   }
 
+  doneOrder() {
+    this.orderService.setAllProductFound(true)
+    this.orderService.setOrderState(2);
+    this.orderService.setProductFound(true);
+
+
+  }
 
 }

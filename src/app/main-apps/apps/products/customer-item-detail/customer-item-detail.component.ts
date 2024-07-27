@@ -17,6 +17,7 @@ export class CustomerItemDetailComponent implements OnInit {
 
   array = [
     {
+      productId: 1,
       link: "/apps/products/customer-item-detail",
       value: "عرض",
       title: ' شوفان كويكر 500جم',
@@ -26,6 +27,7 @@ export class CustomerItemDetailComponent implements OnInit {
       amount: 1
     },
     {
+      productId: 1,
       link: "/apps/products/customer-item-detail",
       value: "عرض",
       title: ' شوفان كويكر 500جم',
@@ -35,6 +37,7 @@ export class CustomerItemDetailComponent implements OnInit {
       amount: 1
     },
     {
+      productId: 1,
       link: "/apps/products/customer-item-detail",
       value: "عرض",
       title: ' شوفان كويكر 500جم',
@@ -44,6 +47,7 @@ export class CustomerItemDetailComponent implements OnInit {
       amount: 1
     },
     {
+      productId: 1,
       link: "/apps/products/customer-item-detail",
       value: "عرض",
       title: ' شوفان كويكر 500جم',
@@ -53,6 +57,8 @@ export class CustomerItemDetailComponent implements OnInit {
       amount: 1
     },
     {
+      productId: 1,
+
       link: "/apps/products/customer-item-detail",
       value: "عرض",
       title: ' شوفان كويكر 500جم',
@@ -62,6 +68,8 @@ export class CustomerItemDetailComponent implements OnInit {
       amount: 1
     },
     {
+      productId: 1,
+
       link: "/apps/products/customer-item-detail",
       value: "عرض",
       title: ' شوفان كويكر 500جم',
@@ -73,6 +81,7 @@ export class CustomerItemDetailComponent implements OnInit {
   ]
 
   current = {
+    productId: 1,
     link: "/apps/products/customer-item-detail",
     value: "عرض",
     title: ' شوفان كويكر 500جم',

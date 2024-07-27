@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { link } from 'fs';
+import { Order } from 'src/app/model/order.model';
+import { OrderService } from 'src/app/service/order.service';
 
 @Component({
   selector: 'app-collector-orders',
@@ -7,64 +8,35 @@ import { link } from 'fs';
   styleUrls: ['./collector-orders.component.scss']
 })
 export class CollectorOrdersComponent implements OnInit {
+  allOrders: Order[] = [];
+  myShopOrders: Order[] = [];
+  otherShopOrders: Order[] = [];
+  ordersCount: number = 0;
+  link = "/apps/products/collector-order-details";
+  value = "قبول";
 
-  myShopOrders = [
-    {
-      orderNo: 1,
-      shopImg: "../../../../../assets/images/Panda.png",
-      shopName: "بنده الشرائع",
-      noOfItems: 3,
-      price: 73,
-      collectPrice: 30,
-      customerLocation: "الشرائع, مخطط 1, 1743",
-    },
-    {
-      orderNo: 1,
-      shopImg: "../../../../../assets/images/Panda.png",
-      shopName: "بنده الشرائع",
-      noOfItems: 3,
-      price: 73,
-      collectPrice: 30,
-      customerLocation: "الشرائع, مخطط 1, 1743",
-    },
-    {
-      orderNo: 1,
-      shopImg: "../../../../../assets/images/Panda.png",
-      shopName: "بنده الشرائع",
-      noOfItems: 3,
-      price: 73,
-      collectPrice: 30,
-      customerLocation: "الشرائع, مخطط 1, 1743",
-    }
-  ]
+  constructor(private service: OrderService) { }
 
-  otherShopOrders = [
-    {
-      orderNo: 1,
-      shopImg: "../../../../../assets/images/Panda.png",
-      shopName: "بنده الشرائع",
-      noOfItems: 3,
-      price: 73,
-      collectPrice: 30,
-      customerLocation: "الشرائع, مخطط 1, 1743",
-    },
-    {
-      orderNo: 1,
-      shopImg: "../../../../../assets/images/Panda.png",
-      shopName: "بنده الشرائع",
-      noOfItems: 3,
-      price: 73,
-      collectPrice: 30,
-      customerLocation: "الشرائع, مخطط 1, 1743",
-    }
-  ]
+  onOrderButtonClick(order: Order): void {
+    console.log('Order button clicked for:', order);
+    order.status = "accepted"
+    this.service.setOrderState(1)
+    this.service.setCurrentOrderID(order.id)
+    console.log(this.service.getOrderState())
 
-  orders = this.myShopOrders.length + this.otherShopOrders.length
-  link = "/apps/products/collector-order-details"
-  value = "قبول"
-  constructor() { }
-
-  ngOnInit(): void {
   }
 
+  ngOnInit(): void {
+    console.log(this.service.getOrders())
+    this.allOrders = this.service.getOrders();
+    this.ordersCount = this.allOrders.length;
+    this.filterOrders();
+  }
+
+  filterOrders(): void {
+    const myShopId = 1;
+
+    this.myShopOrders = this.allOrders;
+    this.otherShopOrders;
+  }
 }
