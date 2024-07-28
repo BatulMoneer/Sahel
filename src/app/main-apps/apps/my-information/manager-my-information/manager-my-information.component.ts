@@ -11,18 +11,20 @@ export class ManagerMyInformationComponent implements OnInit {
   constructor(
     private router: Router
   ) { }
-  value = "تحديث";
-  link = "link";
 
   ngOnInit(): void {
   }
 
-  signout(){
+  signout() {
     localStorage.removeItem("user");
     localStorage.removeItem("token")
 
     this.router.navigate(['/auth/login']);
 
+  }
+
+  update_() {
+    this.router.navigate(['apps/my-information/app-manager-my-information']);
   }
 
 }

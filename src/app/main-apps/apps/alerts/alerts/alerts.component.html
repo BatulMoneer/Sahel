@@ -1,5 +1,5 @@
 <div class=body>
-  <form>
+  <div class="containerDiv">
 
     <div class="titleDiv">
       <h1>التنبيهات</h1>
@@ -11,9 +11,9 @@
         </div>
 
     <div *ngFor="let item of arrayList" class="Alerts">
-      <p>{{item.alert}}</p>
-      <p>{{item.dateAlert}}</p>
+      <div class="alertDetailesDiv"><p >{{item.alert}}</p></div>
+      <div class="divAlertDate"><p>{{item.dateAlert}}</p></div>
     </div>
 
-  </form>
+  </div>
 </div>

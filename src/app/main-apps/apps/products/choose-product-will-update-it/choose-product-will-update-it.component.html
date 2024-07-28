@@ -1,13 +1,18 @@
 <div class="body">
-  <div class="container">
+  <div class="containerDiv">
 
     <div class="titleDiv">
       <h1>تحديث منتج</h1>
     </div>
 
     <div class="tableTitleDiv">
-      <h2>انقر لتحديث المنتج أو حذفه نهائياَ</h2>
+      <h2>اختر العملية التي تريد القيام بها</h2>
      </div>
+
+     <div class="search-container">
+      <i class="fas fa-search search-icon"></i>
+      <input type="text" placeholder="بحث">
+    </div>
 
     <table>
       <thead>
@@ -27,8 +32,8 @@
           <td>{{item.productPrice}}</td>
           <td>{{item.productSection}}</td>
           <td>{{item.quntity}}</td>
-          <td><img src="" alt="باركود"></td>
-          <td><img src="" alt="صورة"></td>
+          <td><img class="productImage" src="{{item.productImage}}" alt="صورة"></td>
+          <td><img class="productBarcode" src="{{item.productBarcode}}" alt="باركود"></td>
           <td class="tdButton">
             <button (click)="open(content)">اختر</button>
           </td>
@@ -40,16 +45,13 @@
 </div>
 
 
-<ng-template #content let-modal>
-  <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+<ng-template class="popUp" #content let-modal>
+  <div class="popUpHeaderDiv">
+    <h4 class="popUpTitleH4" id="popUpTitle">اختر العملية التي تريد تنفيذها : </h4>
     <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
   </div>
-  <div class="modal-body">
-    <input type="text">
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
-    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+  <div class="popUpOprationDiv">
+    <button type="button" class="popUpEditButton" (click)="modal.nevigateAndSend('edit click')">تعديل</button>
+    <button type="button" class="popUpDeleteButton" (click)="modal.delete('delete click')">حذف</button>
   </div>
 </ng-template>

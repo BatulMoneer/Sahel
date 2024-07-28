@@ -1,5 +1,5 @@
 <div class="body">
-  <form>
+  <div class="containerDiv">
 
     <div class="titleDiv">
       <h1>معلوماتي</h1>
@@ -7,28 +7,28 @@
 
     <div class="storeNameDiv">
       <label class="storeNameLable" for="storeName">اسم المتج :</label>
-      <input class="storeNameField" id="storeName" type="text" name="storeNameName" placeholder="بن داوود">
+      <input class="storeNameField" id="storeName" type="text" name="storeNameName" placeholder="بن داوود" disabled="true">
     </div>
 
     <div class="storeBranchDiv">
       <label class="storeBranchLable" for="storeBranch">فرع المتجر :</label>
-      <input class="storeBranchField" id="storeBranch" type="text" name="storeBranchName" placeholder="الشيششة">
+      <input class="storeBranchField" id="storeBranch" type="text" name="storeBranchName" placeholder="الشيششة" disabled="true">
     </div>
 
     <div class="storeEmailDiv">
       <label class="storeEmailLable" for="storeEmail">البريد الإلكتروني :</label>
       <input class="storeEmailIField" id="storeEmail" type="email" name="storeEmailName"
-        placeholder="bundawood@gmial.com">
+        placeholder="bundawood@gmial.com" disabled="true">
     </div>
 
     <div class="storePhoneDiv">
       <label class="storePhoneLable" for="storePhone">رقم الجوال :</label>
-      <input class="storePhoneField" id="storePhone" type="text" name="storePhoneName" placeholder="0598432431">
+      <input class="storePhoneField" id="storePhone" type="text" name="storePhoneName" placeholder="0598432431" disabled="true">
     </div>
 
     <div class="passwordDiv">
       <label class="passwordLable" for="password">كلمة المرور :</label>
-      <input class="passwordField" id="password" type="password" name="password" placeholder="hdgu56jn">
+      <input class="passwordField" id="password" type="password" name="password" value="hdgu56jn" disabled="true">
     </div>
 
     <div class="commercialRegistrationDiv">
@@ -37,9 +37,9 @@
     </div>
 
     <div class="updateDiv">
-      <button class="updateButton">تحديث</button>
-      <button class="signout">تسجيل خروج</button>
+      <button class="updateButton" (click)="update_()">تحديث</button>
+      <button class="signout" (click)="signout()">تسجيل خروج</button>
     </div>
 
-  </form>
+  </div>
 </div>

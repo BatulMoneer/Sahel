@@ -1,5 +1,5 @@
 <div class="body">
-  <form>
+  <div class="containerDiv">
 
     <div class="titleDiv">
       <h1>طلبات تسجيل مناديب التجميع</h1>
@@ -9,6 +9,11 @@
       <h2>تفاصيل الطلبات</h2>
     </div>
 
+    <div class="search-container">
+      <i class="fas fa-search search-icon"></i>
+      <input type="text" placeholder="بحث">
+    </div>
+
     <table>
       <thead>
         <tr>
@@ -16,8 +21,7 @@
           <th>العمر</th>
           <th>البريد الإلكتروني</th>
           <th>رقم الجوال</th>
-          <th>الرد</th>
-          <th class="thLast">تبرير الرد</th>
+          <th class="thLast">الرد</th>
         </tr>
       </thead>
       <tbody>
@@ -26,12 +30,27 @@
           <td>{{item.collectorAge}}</td>
           <td>{{item.email}}</td>
           <td>{{item.phone}}</td>
-          <td class="tdButton"><button>قبول</button>
-          <button>رفض</button></td>
-          <td><input class = "replayField" type="text" id="replay" name="replayName" value="تم قبولك"> </td>
+          <td  class="tdButton"><button class="replayButton" (click)="open(content)">انقر للرد</button></td>
         </tr>
       </tbody>
     </table>
 
-  </form>
+  </div>
 </div>
+
+<ng-template class="popUp" #content let-modal>
+  <div class="popUpHeaderDiv">
+    <h4 class="popUpTitleH4" id="popUpTitle">انقر للقبول أو الرفض مع التوضيح: </h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+
+  <div class="popUpbodyDiv">
+    <label class="rplayMassegeLabel" for="replayMassege">رسالة الرد :</label>
+    <input class="replayMassegeField" id="replayMassege" type="text">
+  </div>
+
+  <div class="popUpOprationDiv">
+    <button type="button" class="popUpacceptanceButton" (click)="modal.acceptance('accept click')">قبول</button>
+    <button type="button" class="popUprejectioneButton" (click)="modal.rejection('reject click')">رفض</button>
+  </div>
+</ng-template>

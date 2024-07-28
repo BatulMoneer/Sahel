@@ -16,8 +16,17 @@ form {
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 0px;
-  margin: 0px;
+  padding: 50px;
+  margin: 50px;
+  margin-top: 110px;
+  box-shadow: 0px 2px 6px var(--shadow);
+  border-radius: 10px;
+  border-top: 2px;
+  border-bottom: 2px;
+  border-right: 0px;
+  border-left: 0px;
+  border-style: solid;
+  border-color: var(--prime);
 }
 
 .container {
@@ -27,7 +36,7 @@ form {
   flex-direction: column;
   padding: 5px;
   margin: 50px;
-  margin-top: 120px;
+  margin-top: 100px;
 }
 
 .titleDiv {
@@ -42,7 +51,7 @@ form {
 
 h1 {
   font-size: 45px;
-  color: var(--textCol);
+  color: var(--prime);
   padding: 5px;
   margin: 0;
 }
@@ -58,7 +67,7 @@ h6 {
 
 .slide-controls {
   display: flex;
-  gap: 3px;
+  gap: 5px;
   justify-content: center;
   margin-bottom: 20px;
 }
@@ -75,11 +84,30 @@ h6 {
   transition: background 0.3s;
 }
 
-
- .slide.stores,
- .slide.collectors {
-  background: var(--back);
+ .slide.stores {
+  background: var(--background);
   color: var(--textCol);
+  box-shadow: 0px 2px 6px var(--shadow);
+  border-radius: 0 10px 10px 0;
+  border-top: 0px;
+  border-bottom: 2px;
+  border-right: 2px;
+  border-left: 0px;
+  border-style: solid;
+  border-color: var(--prime);
+}
+
+ .slide.collectors {
+  background: var(--background);
+  color: var(--textCol);
+  box-shadow: 0px 2px 6px var(--shadow);
+  border-radius: 10px 0px 0px 10px;
+  border-top: 0px;
+  border-bottom: 2px;
+  border-right: 0px;
+  border-left: 2px;
+  border-style: solid;
+  border-color: var(--prime);
 }
 
 .slide.stores:hover,

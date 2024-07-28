@@ -38,4 +38,6 @@ export class AddNewProductComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+
 }

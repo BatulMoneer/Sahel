@@ -12,7 +12,6 @@ export class ManagerStoresRegistrationRequestsComponent implements OnInit {
 
 	open(content) {
 		this.modalService.open(content ,{ centered: true })
-
 	}
 
   arrayList = [
@@ -22,14 +21,82 @@ export class ManagerStoresRegistrationRequestsComponent implements OnInit {
       branch: 'الشوقية',
       email: 'banda@gmail.com	',
       phone: '0593644354',
-      commercialRegistration: '//awfwaf//waf/waf',
+      commercialRegistration: "../../../../../assets/images/commercialRegistration.jpg",
       notes: "تم الرفض بسبب عدم وجود تطابق بين البيانات و السجل التجاري",
-      img:"../../../../../assets/images/Panda.png"
+    },
+    {
+      id: '1',   //القبول والرفض
+      store: 'بنده	',
+      branch: 'الشوقية',
+      email: 'banda@gmail.com	',
+      phone: '0593644354',
+      commercialRegistration: "../../../../../assets/images/commercialRegistration.jpg",
+      notes: "تم الرفض بسبب عدم وجود تطابق بين البيانات و السجل التجاري",
+    },
+    {
+      id: '1',   //القبول والرفض
+      store: 'بنده	',
+      branch: 'الشوقية',
+      email: 'banda@gmail.com	',
+      phone: '0593644354',
+      commercialRegistration: "../../../../../assets/images/commercialRegistration.jpg",
+      notes: "تم الرفض بسبب عدم وجود تطابق بين البيانات و السجل التجاري",
+    },
+    {
+      id: '1',   //القبول والرفض
+      store: 'بنده	',
+      branch: 'الشوقية',
+      email: 'banda@gmail.com	',
+      phone: '0593644354',
+      commercialRegistration: "../../../../../assets/images/commercialRegistration.jpg",
+      notes: "تم الرفض بسبب عدم وجود تطابق بين البيانات و السجل التجاري",
+    },
+    {
+      id: '1',   //القبول والرفض
+      store: 'بنده	',
+      branch: 'الشوقية',
+      email: 'banda@gmail.com	',
+      phone: '0593644354',
+      commercialRegistration: "../../../../../assets/images/commercialRegistration.jpg",
+      notes: "تم الرفض بسبب عدم وجود تطابق بين البيانات و السجل التجاري",
+    },
+    {
+      id: '1',   //القبول والرفض
+      store: 'بنده	',
+      branch: 'الشوقية',
+      email: 'banda@gmail.com	',
+      phone: '0593644354',
+      commercialRegistration: "../../../../../assets/images/commercialRegistration.jpg",
+      notes: "تم الرفض بسبب عدم وجود تطابق بين البيانات و السجل التجاري",
+    },
+    {
+      id: '1',   //القبول والرفض
+      store: 'بنده	',
+      branch: 'الشوقية',
+      email: 'banda@gmail.com	',
+      phone: '0593644354',
+      commercialRegistration: "../../../../../assets/images/commercialRegistration.jpg",
+      notes: "تم الرفض بسبب عدم وجود تطابق بين البيانات و السجل التجاري",
+    },
+    {
+      id: '1',   //القبول والرفض
+      store: 'بنده	',
+      branch: 'الشوقية',
+      email: 'banda@gmail.com	',
+      phone: '0593644354',
+      commercialRegistration: "../../../../../assets/images/commercialRegistration.jpg",
+      notes: "تم الرفض بسبب عدم وجود تطابق بين البيانات و السجل التجاري",
     },
 
   ]
 
   ngOnInit(): void {
+  }
+
+  acceptance(){
+  }
+
+  rejection(){
   }
 
 }

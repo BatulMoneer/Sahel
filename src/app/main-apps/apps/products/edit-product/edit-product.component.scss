@@ -9,40 +9,46 @@
   background-color: var(--background);
 }
 
-  form {
-    height: auto;
-    width: auto;
-    padding: 30px;
-    margin: 10px;
-    margin-top: 60px;
-    margin-bottom: 60px;
-    display: flex;
-    justify-content: right;
-    flex-direction: column;
-    background-color: var(--background);
-    border-radius: 10px;
-    box-shadow: 0px 2px 6px var(--shadow);
-  }
+.containerDiv {
+  height: auto;
+  width: auto;
+  padding: 30px;
+  margin: 10px;
+  margin-top: 110px;
+  margin-bottom: 60px;
+  display: flex;
+  justify-content: right;
+  flex-direction: column;
+  background-color: var(--background);
+  border-radius: 10px;
+  box-shadow: 0px 2px 6px var(--shadow);
+  border-top: 2px;
+  border-bottom: 2px;
+  border-right: 0px;
+  border-left: 0px;
+  border-style: solid;
+  border-color: var(--prime);
+}
 
 .titleDiv {
   padding: 0;
   margin: 0;
   margin-bottom: 20px;
+}
 
-  h1 {
-    font-size: 45px;
-    color: var(--prime);
-    padding: 5px;
-    margin: 0;
-  }
+h1 {
+  font-size: 45px;
+  color: var(--prime) !important;
+  padding: 5px;
+  margin: 0;
+}
 
-  h6 {
-    font-size: 14px;
-    color: var(--textCol);
-    padding: 5px;
-    margin: 0;
-    margin-right: 15px;
-  }
+h6 {
+  font-size: 14px;
+  color: var(--textCol);
+  padding: 5px;
+  margin: 0;
+  margin-right: 15px !important;
 }
 
 .productNameDiv,
@@ -61,13 +67,19 @@
 .productNameLabel,
 .productPriceLabel,
 .productsSectionLabel,
-.quantityLabel,
 .productPhotoLabel,
 .productBarcodeLabel {
   font-size: 18px;
   color: var(--textCol);
   padding: 0;
   margin: 20px 60px 5px 30px;
+}
+
+.quantityLabel {
+  font-size: 18px;
+  color: var(--textCol);
+  padding: 0;
+  margin: 0px 60px 5px 30px;
 }
 
 .productNameField,
@@ -83,9 +95,16 @@
   box-shadow: 0px 2px 6px var(--shadow);
   display: flex;
   text-align: center;
+  border-top: 0px;
+  border-bottom: 2px;
+  border-right: 0px;
+  border-left: 2px;
+  border-style: solid;
+  border-color: var(--prime);
 }
 
 .productsSectionList {
+  margin-bottom: 0;
   margin-left: 10px;
 }
 
@@ -101,21 +120,35 @@ input:focus {
   justify-content: right;
 }
 
-.productsSectionDiv_{
+.productsSectionDiv_ {
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: row;
-  align-items:center ;
-}
-
-.quantityCounter {
-  width: 200px;
+  align-items: center;
 }
 
 .anotherSectionLabel {
   padding: 0;
   margin: 0 10px;
+}
+
+.anotherSectionField {
+  width: 179px;
+  padding: 5px;
+  margin: 0 360px 0 0;
+  display: flex;
+  text-align: center;
+  border-top: 0px;
+  border-bottom: 2px;
+  border-right: 0px;
+  border-left: 2px;
+  border-style: solid;
+  border-color: var(--prime);
+}
+
+.quantityCounter {
+  width: 170px;
 }
 
 .productBarcodeInput,
@@ -130,6 +163,23 @@ input:focus {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.updateButton {
+  background-color: var(--main);
+  border-radius: 10px;
+  border: var(--main);
+  padding: 7px 20px;
+  margin: 0;
+  margin-right: 7px;
+  font-family: var(--font);
+  color: var(--background);
+  box-shadow: 0px 2px 6px var(--shadow);
+  text-decoration: none;
+  width: 80px;
+  display: flex;
+  align-self: center;
+  text-align: center;
 }
 
 .resetButton {

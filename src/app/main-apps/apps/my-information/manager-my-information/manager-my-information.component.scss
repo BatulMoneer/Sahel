@@ -9,12 +9,12 @@
   background-color: var(--background);
 }
 
-form {
+.containerDiv {
   height: auto;
   width: auto;
   padding: 30px;
   margin: 10px;
-  margin-top: 60px;
+  margin-top: 120px;
   margin-bottom: 60px;
   display: flex;
   justify-content: right;
@@ -22,6 +22,12 @@ form {
   background-color: var(--background);
   border-radius: 10px;
   box-shadow: 0px 2px 6px var(--shadow);
+  border-top: 2px;
+  border-bottom: 2px;
+  border-right: 0px;
+  border-left: 0px;
+  border-style: solid;
+  border-color: var(--prime);
 }
 
 .titleDiv {
@@ -73,6 +79,12 @@ form {
   box-shadow: 0px 2px 6px var(--shadow);
   display: flex;
   text-align: center;
+  border-top: 0px;
+  border-bottom: 2px;
+  border-right: 0px;
+  border-left: 2px;
+  border-style: solid;
+  border-color: var(--prime);
 }
 
 input:focus {

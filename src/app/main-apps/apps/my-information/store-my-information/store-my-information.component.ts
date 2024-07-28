@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-store-my-information',
@@ -8,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 export class StoreMyInformationComponent implements OnInit {
 
 
-  constructor() { }
+  constructor(private router: Router ) { }
 
   ngOnInit(): void {
+  }
+
+  signout(){
+    localStorage.removeItem("user");
+    localStorage.removeItem("token")
+
+    this.router.navigate(['/auth/login']);
+
+  }
+
+  update_(){
+    this.router.navigate(['apps/my-information/app-store-my-information']);
   }
 
 }

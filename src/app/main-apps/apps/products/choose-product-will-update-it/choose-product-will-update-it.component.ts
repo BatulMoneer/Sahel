@@ -22,8 +22,8 @@ export class ChooseProductWillUpdateItComponent implements OnInit {
       productPrice: '10 ريال	',
       productSection: 'العناية الشخصية	',
       quntity: '780 منتج	',
-      productImage: '//awfwaf//waf/waf',
-      productBarcode: '//awfwaf//waf/waf',
+      productImage: "../../../../../assets/images/Oats.jpg",
+      productBarcode: "../../../../../assets/images/Barcode.png",
     },
     {
       id: '1',   //القبول والرفض
@@ -31,8 +31,8 @@ export class ChooseProductWillUpdateItComponent implements OnInit {
       productPrice: '10 ريال	',
       productSection: 'العناية الشخصية	',
       quntity: '780 منتج	',
-      productImage: '//awfwaf//waf/waf',
-      productBarcode: '//awfwaf//waf/waf',
+      productImage: "../../../../../assets/images/Oats.jpg",
+      productBarcode: "../../../../../assets/images/Barcode.png"
     },
     {
       id: '1',   //القبول والرفض
@@ -40,8 +40,8 @@ export class ChooseProductWillUpdateItComponent implements OnInit {
       productPrice: '10 ريال	',
       productSection: 'العناية الشخصية	',
       quntity: '780 منتج	',
-      productImage: '//awfwaf//waf/waf',
-      productBarcode: '//awfwaf//waf/waf',
+      productImage: "../../../../../assets/images/Oats.jpg",
+      productBarcode: "../../../../../assets/images/Barcode.png"
     },
     {
       id: '1',   //القبول والرفض
@@ -49,8 +49,8 @@ export class ChooseProductWillUpdateItComponent implements OnInit {
       productPrice: '10 ريال	',
       productSection: 'العناية الشخصية	',
       quntity: '780 منتج	',
-      productImage: '//awfwaf//waf/waf',
-      productBarcode: '//awfwaf//waf/waf',
+       productImage: "../../../../../assets/images/Oats.jpg",
+      productBarcode: "../../../../../assets/images/Barcode.png"
     },
     {
       id: '1',   //القبول والرفض
@@ -58,8 +58,8 @@ export class ChooseProductWillUpdateItComponent implements OnInit {
       productPrice: '10 ريال	',
       productSection: 'العناية الشخصية	',
       quntity: '780 منتج	',
-      productImage: '//awfwaf//waf/waf',
-      productBarcode: '//awfwaf//waf/waf',
+      productImage: "../../../../../assets/images/Oats.jpg",
+      productBarcode: "../../../../../assets/images/Barcode.png"
     },
     {
       id: '1',   //القبول والرفض
@@ -67,8 +67,8 @@ export class ChooseProductWillUpdateItComponent implements OnInit {
       productPrice: '10 ريال	',
       productSection: 'العناية الشخصية	',
       quntity: '780 منتج	',
-      productImage: '//awfwaf//waf/waf',
-      productBarcode: '//awfwaf//waf/waf',
+      productImage: "../../../../../assets/images/Oats.jpg",
+      productBarcode: "../../../../../assets/images/Barcode.png"
     },
     {
       id: '1',   //القبول والرفض
@@ -76,12 +76,20 @@ export class ChooseProductWillUpdateItComponent implements OnInit {
       productPrice: '10 ريال	',
       productSection: 'العناية الشخصية	',
       quntity: '780 منتج	',
-      productImage: '//awfwaf//waf/waf',
-      productBarcode: '//awfwaf//waf/waf',
+      productImage: "../../../../../assets/images/Oats.jpg",
+      productBarcode: "../../../../../assets/images/Barcode.png"
     },
   ]
 
   ngOnInit(): void {
+  }
+
+  navigateAndSend(){
+
+  }
+
+  delete(){
+
   }
 
 }

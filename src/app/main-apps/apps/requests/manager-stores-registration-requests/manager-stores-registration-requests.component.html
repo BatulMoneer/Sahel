@@ -1,4 +1,5 @@
-<div class="body form">
+<div class="body">
+  <div class="containerDiv">
 
   <div class="titleDiv">
     <h1>طلبات تسجيل المتاجر</h1>
@@ -6,6 +7,11 @@
 
   <div class="tableTitleDiv">
     <h2>تفاصيل الطلبات</h2>
+  </div>
+
+  <div class="search-container">
+    <i class="fas fa-search search-icon"></i>
+    <input type="text" placeholder="بحث">
   </div>
 
   <table>
@@ -25,26 +31,29 @@
         <td>{{item.branch}}</td>
         <td>{{item.email}}</td>
         <td>{{item.phone}}</td>
-        <td><img [src]="item.img" alt="السجل"></td>
+        <td><img class="commercialRegistration" src= {{item.commercialRegistration}} alt="السجل"></td>
         <td class="tdButton">
-          <button (click)="open(content)">قبول</button>
+          <button class="replayButton" (click)="open(content)">انقر للرد</button>
         </td>
       </tr>
     </tbody>
   </table>
-
+  </div>
 </div>
 
-<ng-template #content let-modal>
-  <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+<ng-template class="popUp" #content let-modal>
+  <div class="popUpHeaderDiv">
+    <h4 class="popUpTitleH4" id="popUpTitle">انقر للقبول أو الرفض مع التوضيح: </h4>
     <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
   </div>
-  <div class="modal-body">
-    <input type="text">
+
+  <div class="popUpbodyDiv">
+    <label class="rplayMassegeLabel" for="replayMassege">رسالة الرد :</label>
+    <input class="replayMassegeField" id="replayMassege" type="text">
   </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
-    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+
+  <div class="popUpOprationDiv">
+    <button type="button" class="popUpacceptanceButton" (click)="modal.acceptance('accept click')">قبول</button>
+    <button type="button" class="popUprejectioneButton" (click)="modal.rejection('reject click')">رفض</button>
   </div>
 </ng-template>
