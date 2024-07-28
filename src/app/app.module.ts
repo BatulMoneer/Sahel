@@ -13,6 +13,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { PopupModule } from './main-apps/apps/popup/popup.module';
 import { TokenInterceptorInterceptor } from './services/token-interceptor.interceptor';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 
 @NgModule({
@@ -29,8 +30,11 @@ import { TokenInterceptorInterceptor } from './services/token-interceptor.interc
     MatProgressBarModule,
     HttpClientModule,
     CommonModule,
-    PopupModule
+    PopupModule,
+    NgxSpinnerModule
   ],
+  exports: [
+    NgxSpinnerModule,],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,

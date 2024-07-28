@@ -1,9 +1,7 @@
 <app-header></app-header>
 <router-outlet>
   <div class="body">
-    <form class="form" [formGroup]="formData" (ngSubmit)="signUp()">
-
-
+    <form class="form" (ngSubmit)="signUp()">
       <div class="slide-controls">
         <input type="radio" name="slide" id="signup">
         <label class="slide signup" for="signup">إنشاء حساب</label>
@@ -11,8 +9,6 @@
         <input type="radio" name="slide" id="login" (change)="navigateToAccountType()">
         <label class="slide login" for="login">تسجيل دخول</label>
       </div>
-
-
       <div class="slider-tab"></div>
       <h1 class="title">أنشئ حسابك</h1>
       <h6 class="note">أنشئ حسابك وكن شريكاَ في النجاح</h6>
@@ -20,125 +16,81 @@
       <div class="group">
         <div class="input-group">
           <p class="text">اسم المتجر</p>
-          <input type="text" formControlName="name_user" placeholder="ادخل الاسم" required>
-
+          <input type="text" [(ngModel)]="formData.name_user" name="name_user" placeholder="ادخل الاسم" required>
         </div>
-        <div *ngIf="submitted_crearte && formData.controls['name_user'].errors">
-          <div class="invalid-feedback-custom"
-            *ngIf="submitted_crearte && formData.controls['name_user'].errors.required">
-            الحقل مطلوب!
-          </div>
+        <div *ngIf="submitted_crearte && errorMessages.name_user">
+          <div class="invalid-feedback-custom">{{ errorMessages.name_user }}</div>
         </div>
       </div>
 
       <div class="group">
         <div class="input-group">
           <p class="text">الفرع</p>
-          <input type="text" formControlName="branch" placeholder="ادخل الفرع" required>
-
+          <input type="text" [(ngModel)]="formData.branch" name="branch" placeholder="ادخل الفرع" required>
         </div>
-        <div *ngIf="submitted_crearte && formData.controls['branch'].errors">
-          <div class="invalid-feedback-custom" *ngIf="submitted_crearte && formData.controls['branch'].errors.required">
-            الحقل مطلوب!
-          </div>
+        <div *ngIf="submitted_crearte && errorMessages.branch">
+          <div class="invalid-feedback-custom">{{ errorMessages.branch }}</div>
         </div>
       </div>
 
-
-
       <div class="group">
-        <div class=" input-group">
+        <div class="input-group">
           <p class="text">البريد الالكتروني</p>
-          <input type="text" formControlName="email_user" placeholder="ادخل البريد" required>
-
+          <input type="text" [(ngModel)]="formData.email_user" name="email_user" placeholder="ادخل البريد" required>
         </div>
-        <div *ngIf="submitted_crearte && formData.controls['email_user'].errors">
-          <p class="invalid-feedback-custom"
-            *ngIf="submitted_crearte && formData.controls['email_user'].errors.required">
-            الحقل مطلوب!
-          </p>
-          <p class="invalid-feedback-custom" *ngIf="submitted_crearte && formData.controls['email_user'].errors.email">
-            البريد غير صحيح!
-          </p>
+        <div *ngIf="submitted_crearte && errorMessages.email_user">
+          <div class="invalid-feedback-custom">{{ errorMessages.email_user }}</div>
         </div>
       </div>
 
       <div class="group">
         <div class="input-group">
           <p class="text">كلمة المرور</p>
-          <input type="password" formControlName="password_user" placeholder="ادخل كلمة المرور" required>
+          <input type="password" [(ngModel)]="formData.password_user" name="password_user"
+            placeholder="ادخل كلمة المرور" required>
         </div>
-        <div *ngIf="submitted_crearte && formData.controls['password_user'].errors">
-          <p class="invalid-feedback-custom"
-            *ngIf="submitted_crearte && formData.controls['password_user'].errors.required">
-            الحقل مطلوب!</p>
-          <p class="invalid-feedback-custom"
-            *ngIf="submitted_crearte && formData.controls['password_user'].errors.minlength">
-            كلمة السر يجب ان تكون أطول من 8 عناصر!</p>
-          <p class="invalid-feedback-custom"
-            *ngIf="submitted_crearte && formData.controls['password_user'].errors.pattern">
-            كلمة السر يجب ان تحتوي حروف كبيرة وصغيرة وارقام!</p>
+        <div *ngIf="submitted_crearte && errorMessages.password_user">
+          <div class="invalid-feedback-custom">{{ errorMessages.password_user }}</div>
         </div>
       </div>
 
       <div class="group">
         <div class="input-group">
           <p class="text">رقم الجوال</p>
-          <input type="text" formControlName="phone_user" placeholder="ادخل الرقم" required>
-
+          <input type="text" [(ngModel)]="formData.phone_user" name="phone_user" placeholder="ادخل الرقم" required>
         </div>
-        <div *ngIf="submitted_crearte && formData.controls['phone_user'].errors">
-          <div class="invalid-feedback-custom"
-            *ngIf="submitted_crearte && formData.controls['phone_user'].errors.required">
-            الحقل مطلوب!
-          </div>
-          <div class="invalid-feedback-custom"
-            *ngIf="submitted_crearte && formData.controls['phone_user'].errors.pattern">
-            الرقم غير صحيح!
-          </div>
+        <div *ngIf="submitted_crearte && errorMessages.phone_user">
+          <div class="invalid-feedback-custom">{{ errorMessages.phone_user }}</div>
         </div>
       </div>
-
 
       <div class="group">
         <div class="input-group">
           <p class="text">السجل التجاري</p>
-          <input type="file" formControlName="commercial_register" (change)="handleFileInput($event)"
-            accept="image/*,.pdf required">
-
+          <input type="file" (change)="handleFileInput($event)" accept="image/*,.pdf" required>
         </div>
-        <div *ngIf="submitted_crearte && formData.controls['commercial_register'].errors">
-          <div class="invalid-feedback-custom"
-            *ngIf="submitted_crearte && formData.controls['commercial_register'].errors.required">
-            الحقل مطلوب!
-          </div>
-
+        <div *ngIf="submitted_crearte && errorMessages.commercial_register">
+          <div class="invalid-feedback-custom">{{ errorMessages.commercial_register }}</div>
         </div>
       </div>
 
       <div class="group">
         <div class="input-group">
           <p class="text">شعار المتجر</p>
-          <input type="file" formControlName="logo" (change)="handleImageInput($event)" accept="image/* required">
-
+          <input type="file" (change)="handleImageInput($event)" accept="image/*" required>
         </div>
-        <div *ngIf="submitted_crearte && formData.controls['logo'].errors">
-          <div class="invalid-feedback-custom" *ngIf="submitted_crearte && formData.controls['logo'].errors.required">
-            الحقل مطلوب!
-          </div>
-
+        <div *ngIf="submitted_crearte && errorMessages.logo">
+          <div class="invalid-feedback-custom">{{ errorMessages.logo }}</div>
         </div>
       </div>
 
-      <input type="hidden" formControlName="user_type_id">
+      <input type="hidden" [(ngModel)]="formData.user_type_id" name="user_type_id">
 
       <div class="btn">
-        <button type="submit">انشاء حساب
-        </button>
+        <button type="submit">انشاء حساب</button>
       </div>
       <p class="change"><a routerLink="/auth/login">سجل الدخول</a> لديك حساب؟ </p>
     </form>
   </div>
-
 </router-outlet>
 <app-footer></app-footer>
