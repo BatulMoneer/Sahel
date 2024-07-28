@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
       { content: "السلة", link: "/apps/products/customer-cart" },
       { content: "الرئيسية", link: "/apps/home/app-customer-home" }];
     }
-    else if (this.val == ' 2') {
+    else if (this.val == '2') {
       this.header_list = [
         { content: "حسابي", link: "/apps/my-information/app-collector-my-information" },
         { content: "الطلبات", link: "/apps/products/collector-orders" },

@@ -11,6 +11,8 @@ import { ChangeLowProductPopComponent } from './change-low-product-pop/change-lo
 import { InfoUpdatedPopComponent } from './info-updated-pop/info-updated-pop.component';
 import { OtpPopComponent } from './otp-pop/otp-pop.component';
 import { NgOtpInputModule } from 'ng-otp-input';
+import { AccountVerifyComponent } from './account-verify/account-verify.component';
+import { Otp2PopComponent } from './otp2-pop/otp2-pop.component';
 
 
 @NgModule({
@@ -22,6 +24,8 @@ import { NgOtpInputModule } from 'ng-otp-input';
     ChangeLowProductPopComponent,
     InfoUpdatedPopComponent,
     OtpPopComponent,
+    AccountVerifyComponent,
+    Otp2PopComponent,
   ],
   imports: [
     CommonModule,
@@ -39,6 +43,7 @@ import { NgOtpInputModule } from 'ng-otp-input';
     ChangeLowProductPopComponent,
     InfoUpdatedPopComponent,
     OtpPopComponent,
+
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 

@@ -6,6 +6,8 @@ import { ImpApiService } from 'src/app/services/imp-api.service';
 import { auth } from 'src/app/constant/Routes';
 import { MatDialog } from '@angular/material/dialog';
 import { OtpPopComponent } from 'src/app/main-apps/apps/popup/otp-pop/otp-pop.component';
+import { Otp2PopComponent } from 'src/app/main-apps/apps/popup/otp2-pop/otp2-pop.component';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-customer-signup',
@@ -22,16 +24,14 @@ export class CustomerSignupComponent implements OnInit {
     private service: OrderService,
     private formBuilder: FormBuilder,
     private impApiService: ImpApiService,
+    private spinner: NgxSpinnerService,
     private dialog: MatDialog,
   ) { }
   navigateToAccountType() {
     this.router.navigate(['/auth/login']);
   }
 
-  setUser() {
-    localStorage.setItem('header', '1')
 
-  }
 
   formData: FormGroup;
   submitted_crearte = false;
@@ -42,13 +42,16 @@ export class CustomerSignupComponent implements OnInit {
     if (this.formData.invalid) {
       return null;
     }
+    const formValue = this.formData.value;
 
     this.impApiService.post(auth.create, this.formData.value).subscribe(data => {
-      this.setUser()
-      //console.log(data.otp)
-      //this.service.setOtp(data.otp)
-      this.dialog.open(OtpPopComponent)
-
+      if (data.message == "Account successfully created") {
+        localStorage.setItem('header', '1')
+        localStorage.setItem('email', formValue.email_user)
+        console.log(localStorage.getItem('email'))
+        this.spinner.hide()
+        this.dialog.open(Otp2PopComponent);
+      }
 
     })
   }
