@@ -5,6 +5,8 @@ const BASEURL = environment.api;
 export const auth = {
   login: BASEURL + 'login',
   create: BASEURL + 'create',
-  register: BASEURL + 'register'
+  register: BASEURL + 'register',
+  verifyOtp: BASEURL + 'verifyOtp',
+
 
 }

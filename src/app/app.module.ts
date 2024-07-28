@@ -1,3 +1,4 @@
+import { ErrorInterceptorService } from './services/error-interceptor.service';
 import { SharedComponentsModule } from './shared-components/shared-components.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -36,6 +37,12 @@ import { TokenInterceptorInterceptor } from './services/token-interceptor.interc
       useClass: TokenInterceptorInterceptor,
       multi: true,
     },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorInterceptorService,
+      multi: true,
+    },
+
   ],
   bootstrap: [AppComponent]
 })

@@ -69,9 +69,8 @@ export class StoreSignupComponent implements OnInit {
     }
 
     this.impApiService.post(auth.create, payload).subscribe(data => {
-
+      localStorage.setItem('header', '3')
       console.log(data.otp)
-      this.service.setOtp(data.otp)
       this.dialog.open(OtpPopComponent)
 
 
@@ -90,7 +89,6 @@ export class StoreSignupComponent implements OnInit {
     console.log(this.selectedFile);
   }
   ngOnInit(): void {
-    this.service.setUser(3)
 
     this.formData = this.formBuilder.group({
       name_user: ['', [

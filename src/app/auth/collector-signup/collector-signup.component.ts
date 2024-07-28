@@ -58,9 +58,10 @@ export class CollectorSignupComponent implements OnInit {
     }
 
     this.impApiService.post(auth.create, payload).subscribe(data => {
+      localStorage.setItem('header', '2')
+
 
       console.log(data.otp)
-      this.service.setOtp(data.otp)
       this.dialog.open(OtpPopComponent)
 
 
@@ -73,7 +74,6 @@ export class CollectorSignupComponent implements OnInit {
     this.router.navigate(['/auth/login']);
   }
   ngOnInit(): void {
-    this.service.setUser(2)
 
     this.formData = this.formBuilder.group({
       name_user: ['', [

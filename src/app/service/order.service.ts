@@ -9,7 +9,6 @@ export class OrderService {
   private orderState: number = 0;
   private productFound: boolean = false;
   private allProductFound: boolean = false;
-  private currentUser: number = 1;
   private isActive: boolean = false;
   private orders: Order[] = [];
   private currentOrderID: number;
@@ -69,14 +68,6 @@ export class OrderService {
 
   getStatus(): boolean {
     return this.isActive;
-  }
-
-  setUser(user) {
-    this.currentUser = user
-  }
-  getUser(): number {
-    return this.currentUser
-
   }
 
 
@@ -163,18 +154,6 @@ export class OrderService {
       this.hasOrder = false;
     }
     return this.hasOrder;
-  }
-
-
-
-
-  otp: number
-  getOtp() {
-    return this.otp;
-  }
-
-  setOtp(value: number) {
-    this.otp = value;
   }
 
 

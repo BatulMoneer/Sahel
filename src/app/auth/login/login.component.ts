@@ -55,10 +55,28 @@ export class LoginComponent implements OnInit {
     }
 
     this.impApiService.post(auth.login, this.formData.value).subscribe(data => {
-      this.service.setUser(data.user_type_id)
-      console.log(data.OTP)
-      this.service.setOtp(data.OTP)
+      localStorage.setItem('header', data.user_info.user_type_id)
+
+      localStorage.setItem('currentUser', JSON.stringify(data))
+      //localStorage.setItem('token', data.access_token)
+
       this.dialog.open(OtpPopComponent)
+
+      /*
+      if (data.user_info.user_type_id == 1) {
+        this.router.navigate(["/apps/home/app-customer-home"])
+      }
+      if (data.user_info.user_type_id == 2) {
+        this.router.navigate(["/apps/home/app-customer-home"])
+      }
+      if (data.user_info.user_type_id == 3) {
+        this.router.navigate(["/apps/home/app-customer-home"])
+      }
+      if (data.user_info.user_type_id == 4) {
+        this.router.navigate(["/apps/home/app-customer-home"])
+      }*/
+
+      //this.service.setOtp(data.OTP)
 
 
     })

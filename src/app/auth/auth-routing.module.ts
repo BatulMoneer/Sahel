@@ -7,6 +7,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { CustomerSignupComponent } from './customer-signup/customer-signup.component';
 import { CollectorSignupComponent } from './collector-signup/collector-signup.component';
 import { AccountTypeComponent } from './account-type/account-type.component';
+import { CheckTokenGuard } from '../guard/check-token.guard';
 
 const routes: Routes = [
   {
@@ -16,37 +17,37 @@ const routes: Routes = [
   },
   {
 
-    path : 'login',
-    component : LoginComponent
+    path: 'login',
+    component: LoginComponent
   },
   {
-    path : 'logout',
-    component : LogoutComponent
+    path: 'logout',
+    component: LogoutComponent
   },
   {
-    path : 'notFound',
-    component : NotFoundComponent
+    path: 'notFound',
+    component: NotFoundComponent
   },
   {
-    path : 'storeSignup',
-    component : StoreSignupComponent
+    path: 'storeSignup',
+    component: StoreSignupComponent
   },
   {
-    path : 'customerSignup',
-    component : CustomerSignupComponent
+    path: 'customerSignup',
+    component: CustomerSignupComponent
   },
   {
-    path : 'collectorSignup',
-    component : CollectorSignupComponent
+    path: 'collectorSignup',
+    component: CollectorSignupComponent
   },
   {
-    path : 'accountType',
-    component : AccountTypeComponent
+    path: 'accountType',
+    component: AccountTypeComponent
   },
 
   { //must be at last, for an unexsisting page
-    path : '**',
-    redirectTo : 'notFound' // or design a page for it 404
+    path: '**',
+    redirectTo: 'notFound' // or design a page for it 404
   }
 
 ];

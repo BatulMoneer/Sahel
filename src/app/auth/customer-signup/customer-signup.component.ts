@@ -29,7 +29,8 @@ export class CustomerSignupComponent implements OnInit {
   }
 
   setUser() {
-    this.service.setUser(1)
+    localStorage.setItem('header', '1')
+
   }
 
   formData: FormGroup;
@@ -43,9 +44,9 @@ export class CustomerSignupComponent implements OnInit {
     }
 
     this.impApiService.post(auth.create, this.formData.value).subscribe(data => {
-
-      console.log(data.otp)
-      this.service.setOtp(data.otp)
+      this.setUser()
+      //console.log(data.otp)
+      //this.service.setOtp(data.otp)
       this.dialog.open(OtpPopComponent)
 
 
@@ -53,7 +54,6 @@ export class CustomerSignupComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.setUser()
 
     this.formData = this.formBuilder.group({
       name_user: ['', [
