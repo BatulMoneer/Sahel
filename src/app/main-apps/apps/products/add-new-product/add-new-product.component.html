@@ -1,5 +1,5 @@
 <div class="body">
-  <form>
+  <div class="containerDiv">
 
   <div class = "titleDiv">
     <h1>إضافة منتج جديد</h1>
@@ -26,9 +26,11 @@
        </ng-container>
       </datalist>
           <input class ="anotherSectionRadio" type="radio" name="anotherSectionName" id="anotherSection">
-          <label class="anotherSectionLabel" for="anotherSection">أخرى</label>
-          </div>
+          <label class="anotherSectionLabel" for="anotherSection">انقر لإضافة قسم جديد</label>
         </div>
+        </div>
+
+        <input  class="anotherSectionField" type="text" id="anotherSection" name ="anotherSectionInputName"  placeholder="ادخل القسم الجديد" disabled="true">
 
     <div class="quantityDiv">
       <label class="quantityLabel" for="quantity">الكمية :</label>
@@ -50,6 +52,6 @@
       <app-button [value]='submit' [link]='link'></app-button>
     </div>
 
-  </form>
+  </div>
 </div>
 

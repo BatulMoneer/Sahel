@@ -1,5 +1,5 @@
 <div class="body">
-  <form>
+  <div class="containerDiv">
 
     <div class="titleDiv">
     <h1>تحديث منتج</h1>
@@ -26,9 +26,10 @@
        </ng-container>
       </datalist>
           <input class ="anotherSectionRadio" type="radio" name="anotherSectionName" id="anotherSection">
-          <label class="anotherSectionLabel" for="anotherSection">أخرى</label>
+          <label class="anotherSectionLabel" for="anotherSection">انقر لإضافة قسم جديد</label>
           </div>
         </div>
+        <input  class="anotherSectionField" type="text" id="anotherSection" name ="anotherSectionInputName"  placeholder="ادخل القسم الجديد" disabled="true">
 
     <div class="quantityDiv">
       <label class="quantityLabel" for="quantity">الكمية :</label>
@@ -47,8 +48,8 @@
 
     <div class="ResetAddDiv">
       <input class="resetButton" type="reset" value="مسح الحقول" name="resetName">
-      <app-button [value]='submit' [link]='link'></app-button>
+      <input class="updateButton" type="button" value="تحديث" name="updateName">
     </div>
 
-  </form>
+  </div>
 </div>

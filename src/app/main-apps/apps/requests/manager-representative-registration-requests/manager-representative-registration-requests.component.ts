@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-manager-representative-registration-requests',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ManagerRepresentativeRegistrationRequestsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private modalService: NgbModal) { }
+
+  open(content) {
+		this.modalService.open(content ,{ centered: true })
+	}
 
   arrayList = [
     {
@@ -58,6 +63,12 @@ export class ManagerRepresentativeRegistrationRequestsComponent implements OnIni
   ]
 
   ngOnInit(): void {
+  }
+
+  acceptance(){
+  }
+
+  rejection(){
   }
 
 }

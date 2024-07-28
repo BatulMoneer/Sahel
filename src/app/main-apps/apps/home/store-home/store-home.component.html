@@ -1,30 +1,70 @@
 <div class="body">
+
   <div class="containerDiv">
 
-    <div class="titleDiv">
+      <img class="storeLogo" src="{{img}}" alt="شعار المتجر" height="200px" width="200px" >
+
+    <div class="title-div">
       <h1>الإحصائيات</h1>
       <h6>راقب نجاحك</h6>
     </div>
 
-    <div class="storeInfoDiv">
-        <img src="{{img}}" alt="store logo" height="200px" width="200px" >
-        <h2> الشرايع - مخطط 2</h2>
+    <p class="customersP">عدد العملاء</p>
+    <div class="customersContainerDiv" *ngFor="let item of arrayList1">
+      <div class="con">
+      <div class="totalDiv">
+        <p class="totalP">الإجمالي :</p>
+        <p class="totalNP">{{item.total}}</p>
+      </div>
+      <img class="customersIcon" src="../../../../../assets/images/customers.png" alt="Total Image">
+    </div>
+      <div class="con">
+      <div class="newDiv">
+        <p class="newP">الجدد :</p>
+        <p class="newNP">{{item.newCustomer}}</p>
+      </div>
+      <img class="customersIcon" src="../../../../../assets/images/customers.png" alt="Total Image">
+    </div>
+      <div class="con">
+      <div class="returneesDiv">
+        <p class="returneesP">العائدون :</p>
+        <p class="returneesNP">{{item.returnees}}</p>
+      </div>
+      <img class="customersIcon" src="../../../../../assets/images/customers.png" alt="Total Image">
+    </div>
+    </div>
+    <div class="chartContainerFather">
+    <div class="chartContainer">
+    <h2>الإحصائيات الشهرية</h2>
+    <div class="chartDiv" id="main"></div>
+    </div>
+    <div class="chartContainer1">
+    <h2>الإحصائيات السنوية</h2>
+    <div class="chartDiv1" id="main1"></div>
+    </div>
     </div>
 
-    <div class="tableTitleDiv">
+
+
+    <div class="table-title-div">
       <h2>مقارنة مع المتاجر الأخرى</h2>
      </div>
+
+     <div class="search-container">
+      <i class="fas fa-search search-icon"></i>
+      <input type="text" placeholder="بحث">
+    </div>
 
     <table>
       <thead>
         <tr>
-          <th class="thName">المتجر</th>
+          <th class="th-name">المتجر</th>
           <th>نسبة المبيعات بين المتاجر</th>
           <th>الترتيب حسب المبيعات</th>
           <th>فرع المتجر</th>
           <th>الترتيب حسب الفروع</th>
           <th>عدد العملاء</th>
-          <th class="thLast">التقدم</th>
+          <th class="th-last">التقدم</th>
         </tr>
       </thead>
       <tbody>
@@ -36,7 +76,7 @@
             <td>{{item.branchOfStore}}</td>
             <td>{{item.sortByBranchs}}</td>
             <td>{{item.NumberOfClients}}</td>
-            <td class="tdProgress">{{item.progress}}</td>
+            <td>{{item.progress}}</td>
         </tr>
       </tbody>
     </table>

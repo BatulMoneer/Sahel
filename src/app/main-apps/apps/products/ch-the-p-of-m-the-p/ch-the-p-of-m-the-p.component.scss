@@ -11,12 +11,23 @@
 
 form {
   background-color:var(--background);
-  height: 500px;
+  height: 420px;
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
-  padding: 0px;
-  margin: 0px;
+  padding: 50px;
+  margin: 50px;
+  margin-top: 110px;
+  background-color: var(--background);
+  box-shadow: 0px 2px 6px var(--shadow);
+  border-radius: 10px;
+  border-top: 2px;
+  border-bottom: 2px;
+  border-right: 0px;
+  border-left: 0px;
+  border-style: solid;
+  border-color: var(--prime);
 }
 
 .container {
@@ -24,9 +35,9 @@ form {
   align-self: center;
   justify-content: center;
   flex-direction: column;
-  padding: 5px;
-  margin: 50px;
-  margin-top: 120px;
+  padding: 10px;
+  margin: 70px;
+  margin-top: 50px;
 }
 
 .titleDiv {
@@ -37,11 +48,12 @@ form {
   align-self: center;
   justify-content: center;
   flex-direction: column;
+  text-align: right;
 }
 
 h1 {
   font-size: 45px;
-  color: var(--textCol);
+  color: var(--prime);
   padding: 5px;
   margin: 0;
 }
@@ -57,10 +69,12 @@ h6 {
 
 .slide-controls {
   display: flex;
-  gap: 3px;
-  justify-content: center;
-  margin-bottom: 20px;
-}
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
 
 .slide-controls input {
   display: none;
@@ -74,12 +88,32 @@ h6 {
   transition: background 0.3s;
 }
 
-
- .slide.add,
- .slide.edit {
-  background: var(--back);
+.slide.add {
+  background: var(--background);
   color: var(--textCol);
+  box-shadow: 0px 2px 6px var(--shadow);
+  border-radius: 0 10px 10px 0;
+  border-top: 0px;
+  border-bottom: 2px;
+  border-right: 2px;
+  border-left: 0px;
+  border-style: solid;
+  border-color: var(--prime);
 }
+
+ .slide.edit {
+  background: var(--background);
+  color: var(--textCol);
+  box-shadow: 0px 2px 6px var(--shadow);
+  border-radius: 10px 0px 0px 10px;
+  border-top: 0px;
+  border-bottom: 2px;
+  border-right: 0px;
+  border-left: 2px;
+  border-style: solid;
+  border-color: var(--prime);
+}
+
 
 .slide.add:hover,
 .slide.edit:hover {
@@ -87,12 +121,10 @@ h6 {
   color: var(--background);
 }
 
-
 .slide-controls input:checked + .slide {
   background: var(--main);
   color: var(--background);
 }
-
 
 @media (max-width: 500px) {
   .body {

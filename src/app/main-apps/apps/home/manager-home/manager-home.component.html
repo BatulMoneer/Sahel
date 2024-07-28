@@ -1,13 +1,70 @@
 <div class=body>
-  <form>
+  <div class="containerDiv">
 
     <div class="titleDiv">
       <h1>الإحصائيات</h1>
       <h6>راقب نجاحك</h6>
     </div>
 
+    <div class="statisticsContainer">
+
+
+    <div class="usersContainerDiv" *ngFor="let item of arrayList_">
+      <div class="helper1">
+        <div><p class="usersP">عدد المستخدمين</p></div>
+        <div class="helper2">
+      <div class="helper3">
+      <div class="con">
+      <div class="totalDiv">
+        <p class="totalP">الإجمالي :</p>
+        <p class="totalNP">{{item.total}}</p>
+      </div>
+      <img class="customersIcon" src="../../../../../assets/images/customers.png" alt="Total Image">
+    </div>
+      <div class="con">
+      <div class="customerDiv">
+        <p class="customerP">العملاء :</p>
+        <p class="customerNP">{{item.noCustomer}}</p>
+      </div>
+      <img class="customersIcon" src="../../../../../assets/images/customers.png" alt="Total Image">
+    </div>
+      </div>
+      <div class="helper3">
+      <div class="con">
+      <div class="collectorsDiv">
+        <p class="collectorsP">المناديب :</p>
+        <p class="collectorsNP">{{item.noCollectors}}</p>
+      </div>
+      <img class="customersIcon" src="../../../../../assets/images/customers.png" alt="Total Image">
+    </div>
+    <div class="con">
+      <div class="storesDiv">
+        <p class="storesP">المتاجر :</p>
+        <p class="storesNP">{{item.noStores}}</p>
+    </div>
+    <img class="customersIcon" src="../../../../../assets/images/customers.png" alt="Total Image">
+    </div>
+  </div>
+  </div>
+  </div>
+
+    </div>
+
+
+      <div class="chartContainer">
+      <h2>أرباح التطبيق الشهرية</h2>
+      <div class="chartDiv" id="main"></div>
+      </div>
+      </div>
+
+
     <div class="tableTitleDiv">
       <h2>بيانات العملاء</h2>
+    </div>
+
+    <div class="search-container">
+      <i class="fas fa-search search-icon"></i>
+      <input type="text" placeholder="بحث">
     </div>
 
     <table>
@@ -35,6 +92,11 @@
       <h2>بيانات المناديب</h2>
     </div>
 
+    <div class="search-container">
+      <i class="fas fa-search search-icon"></i>
+      <input type="text" placeholder="بحث">
+    </div>
+
     <table>
       <thead>
         <tr>
@@ -60,6 +122,11 @@
       <h2>بيانات المتاجر</h2>
     </div>
 
+    <div class="search-container">
+      <i class="fas fa-search search-icon"></i>
+      <input type="text" placeholder="بحث">
+    </div>
+
     <table>
       <thead>
         <tr>
@@ -78,10 +145,10 @@
           <td>{{item.Email}}</td>
           <td>{{item.phone}}</td>
           <td>{{item.monthSales}}</td>
-          <td>ملف</td>
+          <td><img class="commercialRegistration" src= {{item.commercialRegistration}} alt="السجل"></td>
         </tr>
       </tbody>
     </table>
 
-  </form>
+  </div>
 </div>

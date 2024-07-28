@@ -10,11 +10,12 @@
   background-color: var(--background);
 }
 
-form {
+.containerDiv {
   height: auto;
   width: 90%;
   padding: 10px 0px 30px;
   margin: 50px;
+  margin-top: 110px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,6 +23,12 @@ form {
   background-color: var(--background);
   box-shadow: 0px 2px 6px var(--shadow);
   border-radius: 10px;
+  border-top: 2px;
+  border-bottom: 2px;
+  border-right: 0px;
+  border-left: 0px;
+  border-style: solid;
+  border-color: var(--prime);
 }
 
 .titleDiv {
@@ -48,23 +55,6 @@ h1 {
   font-size: 25px;
   padding: 0;
   margin: 0;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  display: flex;
-  align-self: center;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-}
-
-.headOfAlerts {
-  background-color: var(--background);
-  width: 90%;
-  height: auto;
-  font-size: 25px;
-  padding: 0;
-  margin: 0;
-  margin-bottom: 20px;
   display: flex;
   align-self: center;
   justify-content: center;
@@ -73,16 +63,62 @@ h1 {
 }
 
 .alertdiv {
-  padding: 0;
-  margin: 10px 30px;
+  padding: 0px;
+  margin: 0px;
   width:50%;
   display: flex;
   justify-content: center;
+  text-align: center;
 }
 
 .alertDatediv {
-  padding: 10px 20px;
-  margin: 10px;
+  padding: 0px;
+  margin: 0px;
   width:40%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
 
+.Alerts {
+  background-color: var(--background);
+  box-shadow: 3px 3px 3px 3px var(--shadow);
+  border-radius: 10px;
+  border-top: 0px;
+  border-bottom: 2px;
+  border-right: 0px;
+  border-left: 2px;
+  border-style: solid;
+  border-color: var(--prime);
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  height: auto;
+  font-size: 18px;
+  padding: 5px;
+  padding-bottom: 0px;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.alertDetailesDiv {
+  padding: 0px;
+  margin: 0px;
+  margin-right: 25px;
+  width:50%;
+  display: flex;
+  justify-self: start;
+  justify-content: center;
+  text-align: center;
+}
+
+.divAlertDate {
+  padding: 0px;
+  margin: 0px;
+  margin-right: 35px;
+  width:40%;
+  display: flex;
+  justify-self: end;
+  justify-content: center;
+  text-align: center;
 }
