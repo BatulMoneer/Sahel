@@ -54,18 +54,10 @@ export class Otp2PopComponent implements OnInit {
       }
       if (this.currentID == '3') {
 
-        this.router.navigate(["/apps/home/app-store-home"])
         this.spinner.hide()
 
         this.dialogRef.close();
-
-      }
-      if (this.currentID == '4') {
-
-        this.router.navigate(["/apps/home/app-admin-home"])
-        this.spinner.hide()
-
-        this.dialogRef.close();
+        this.dialog.open(AccountVerifyComponent)
 
       }
 

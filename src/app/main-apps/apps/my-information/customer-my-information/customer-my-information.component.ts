@@ -137,6 +137,10 @@ export class CustomerMyInformationComponent implements OnInit {
     this.savedCards = this.savedCards.filter(card => card.number !== cardNumber);
   }
 
+  signOut() {
+
+  }
+
   saveChanges() {
     if (this.currentPassword !== this.currentStoredPassword) {
       this.snackBar.open('كلمة المرور الحالية غير صحيحة', 'إغلاق', {
