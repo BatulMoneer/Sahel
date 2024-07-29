@@ -6,6 +6,11 @@ import { catchError, Observable, throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class ErrorInterceptorService {
+<<<<<<< HEAD
+=======
+  constructor(private router: Router) { }
+
+>>>>>>> ab309b83c1b6aa8ac6549ed919b683f29171ea2f
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 <<<<<<< HEAD
     return next.handle(request).pipe(catchError(err => {
