@@ -31,10 +31,20 @@ export class HeaderComponent implements OnInit {
     }
     else if (this.val == '3') {
       this.header_list = [
-        { content: "حسابي", link: "" },
-        { content: "ادارة المنتجات", link: "" },
-        { content: "الاحصائيات", link: "" },
-        { content: "الرئيسية", link: "" }
+        { content: "حسابي", link: "/apps/my-information/app-store-my-information" },
+        { content: "ادارة المنتجات", link: "/apps/products/app-ch-the-p-of-m-the-p" },
+        { content: "الاحصائيات", link: "/apps/home/app-store-home" },
+        { content: "الرئيسية", link: "/apps/home/app-customer-home" }
+      ]
+    }
+    else if (this.val == '4') {
+      this.header_list = [
+        { content: "حسابي", link: "/apps/my-information/app-manager-my-information" },
+        { content: "التنبيهات", link: "" },
+        { content: "طلبات التحويل للمناديب", link: "" },
+        { content: "طلبات تسجيل المستخدمين", link: "" },
+        { content: "الاحصائيات", link: "/apps/home/app-manager-home" },
+        { content: "الرئيسية", link: "/apps/home/app-customer-home" }
       ]
     }
   }
