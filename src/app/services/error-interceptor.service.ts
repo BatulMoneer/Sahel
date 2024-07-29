@@ -1,28 +1,15 @@
 import { HttpEvent, HttpHandler, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { catchError, Observable, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ErrorInterceptorService {
-<<<<<<< HEAD
-=======
   constructor(private router: Router) { }
 
->>>>>>> ab309b83c1b6aa8ac6549ed919b683f29171ea2f
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-<<<<<<< HEAD
-    return next.handle(request).pipe(catchError(err => {
-      if (err.status === 400) { }
-      if (err.status === 401) { }
-      if (err.status === 403) { }
-      if (err.status === 422) { }
-      if (err.status === 429) { }
-      if (err.status === 500) { }
-      return throwError(err);
-    }))
-=======
     return next.handle(request).pipe(
       catchError(err => {
         let message = '';
@@ -66,9 +53,8 @@ export class ErrorInterceptorService {
         return throwError(err);
       })
     );
->>>>>>> 43ed0d7136a4d9050c5b9a2a0fd5b403387c15c9
   }
 
 
-  constructor() { }
+
 }
