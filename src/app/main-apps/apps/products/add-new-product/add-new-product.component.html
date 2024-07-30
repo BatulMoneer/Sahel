@@ -1,57 +1,102 @@
 <div class="body">
-  <div class="containerDiv">
 
-  <div class = "titleDiv">
-    <h1>إضافة منتج جديد</h1>
-    <h6>أضف تفاصيل المنتج</h6>
-  </div>
+  <form class="container-div" [formGroup]="formData" (ngSubmit)="addproduct()">
 
-    <div class="productNameDiv">
-      <label class="productNameLabel" for="productName">اسم المنتج :</label>
-      <input class="productNameField" type="text" id="productName"  name="productNameName" placeholder="ادخل اسم المنتج"  required>
+    <div class="title-div">
+      <h1>إضافة منتج جديد</h1>
+      <h6>أضف تفاصيل المنتج</h6>
     </div>
 
-    <div class="productPriceDiv">
-      <label class="productPriceLabel" for="productPrice">سعر المنتج :</label>
-      <input class = "productPriceField" type="text" id="productPrice" name="productPriceName" placeholder="ادخل سعر المنتج" required>
-    </div>
-
-<div class="productsSectionDiv">
-      <label class="productsSectionLabel" for="productsSection"> قسم المنتج :</label>
-<div class="productsSectionDiv_">
-      <input class ="productsSectionList" list="productsSection" name="productsSection" placeholder="اختر قسم المنتج">
-      <datalist id="productsSection" name="productsSectionsName">
-       <ng-container *ngFor="let item of arrayList">
-       <option  value="{{item.section}}">
-       </ng-container>
-      </datalist>
-          <input class ="anotherSectionRadio" type="radio" name="anotherSectionName" id="anotherSection">
-          <label class="anotherSectionLabel" for="anotherSection">انقر لإضافة قسم جديد</label>
+    <div class="group">
+      <div class="product-name-div">
+        <label class="product-name-label" for="product-name">اسم المنتج :</label>
+        <input class="product-name-field" formControlName="product_name" type="text" id="product-name"
+          name="product-name-name" placeholder="ادخل اسم المنتج" required>
+      </div>
+      <div *ngIf="submitted_create && formData.controls['product_name'].errors">
+        <div class="invalid-feedback-custom"
+          *ngIf="submitted_crearte && formData.controls['product_name'].errors.required">
+          الحقل مطلوب!
         </div>
+      </div>
+    </div>
+
+    <div class="group">
+      <div class="product-price-div">
+        <label class="product-price-label" for="product-price">سعر المنتج :</label>
+        <input class="product-price-field" formControlName="price" type="text" id="product-price"
+          name="product-price-name" placeholder="ادخل سعر المنتج" required>
+      </div>
+      <div *ngIf="submitted_create && formData.controls['price'].errors">
+        <div class="invalid-feedback-custom" *ngIf="submitted_crearte && formData.controls['price'].errors.required">
+          الحقل مطلوب!
         </div>
-
-        <input  class="anotherSectionField" type="text" id="anotherSection" name ="anotherSectionInputName"  placeholder="ادخل القسم الجديد" disabled="true">
-
-    <div class="quantityDiv">
-      <label class="quantityLabel" for="quantity">الكمية :</label>
-      <input class="quantityCounter" type="number" id = "quantity" name="quantityName" placeholder="ادخل كمية المنتج" min="0">
+      </div>
     </div>
 
-    <div class="productPhotoDiv">
-      <label class="productPhotoLabel" for="productPhoto">أرفق صورة المنتج :</label>
-      <input class="productPhotoInput" type="file" name="productPhotoName" id="productPhoto">
+    <div class="group">
+      <div class="products-section-div">
+        <label class="products-section-label" for="products-section"> قسم المنتج :</label>
+        <input class="products-section-list" formControlName="category_id" list="products-section"
+          name="products-section-name" placeholder="اختر قسم المنتج">
+        <datalist id="products-section" name="products-sections-name">
+          <ng-container *ngFor="let item of arrayList">
+            <option value="{{item.section}}">
+          </ng-container>
+        </datalist>
+      </div>
+      <div *ngIf="submitted_create && formData.controls['category_id'].errors">
+        <div class="invalid-feedback-custom"
+          *ngIf="submitted_crearte && formData.controls['category_id'].errors.required">
+          الحقل مطلوب!
+        </div>
+      </div>
     </div>
 
-    <div class="productBarcodeDiv">
-      <label class="productBarcodeLabel" for="productBarcode">أرفق صورة لباركود المنتج :</label>
-      <input class = "productBarcodeInput" type="file" name="productBarcodeName" id="productBarcode">
+    <div class="group">
+      <div class="quantity-div">
+        <label class="quantity-label" for="quantity">الكمية :</label>
+        <input class="quantity-counter" formControlName="quantity" type="number" id="quantity" name="quantity-name"
+          placeholder="ادخل كمية المنتج" min="0">
+      </div>
+      <div *ngIf="submitted_create && formData.controls['quantity'].errors">
+        <div class="invalid-feedback-custom" *ngIf="submitted_crearte && formData.controls['quantity'].errors.required">
+          الحقل مطلوب!
+        </div>
+      </div>
     </div>
 
-    <div class="ResetAddDiv">
-      <input class="resetButton" type="reset" value="مسح الحقول" name="resetName">
-      <app-button [value]='submit' [link]='link'></app-button>
+    <div class="group">
+      <div class="product-photo-div">
+        <label class="product-photo-label" for="product-photo">أرفق صورة المنتج :</label>
+        <input class="product-photo-input" formControlName="product_image" type="file" name="product-photo-name"
+          id="product-photo">
+      </div>
+      <div *ngIf="submitted_create && formData.controls['product_image'].errors">
+        <div class="invalid-feedback-custom"
+          *ngIf="submitted_crearte && formData.controls['product_image'].errors.required">
+          الحقل مطلوب!
+        </div>
+      </div>
     </div>
 
-  </div>
+    <div class="group">
+      <div class="product-barcode-div">
+        <label class="product-barcode-label" for="product-barcode">أرفق صورة لباركود المنتج :</label>
+        <input class="product-barcode-input" type="file" name="product-barcode-name" id="product-barcode">
+      </div>
+      <div *ngIf="submitted_create && formData.controls['barcode_image'].errors">
+        <div class="invalid-feedback-custom"
+          *ngIf="submitted_crearte && formData.controls['barcode_image'].errors.required">
+          الحقل مطلوب!
+        </div>
+      </div>
+    </div>
+
+    <div class="Reset-add-div">
+      <input class="reset-button" type="reset" value="مسح الحقول" name="reset-name">
+      <button class="add-button" type="submit" name="add-name">إضافة</button>
+    </div>
+
+  </form>
 </div>
-

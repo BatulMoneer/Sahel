@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
       { content: "السلة", link: "/apps/products/customer-cart" },
       { content: "الرئيسية", link: "/apps/home/app-customer-home" }];
     }
-    else if (this.val == '2') {
+    else if (this.val == ' 2') {
       this.header_list = [
         { content: "حسابي", link: "/apps/my-information/app-collector-my-information" },
         { content: "الطلبات", link: "/apps/products/collector-orders" },
@@ -40,9 +40,9 @@ export class HeaderComponent implements OnInit {
     else if (this.val == '4') {
       this.header_list = [
         { content: "حسابي", link: "/apps/my-information/app-manager-my-information" },
-        { content: "التنبيهات", link: "" },
-        { content: "طلبات التحويل للمناديب", link: "" },
-        { content: "طلبات تسجيل المستخدمين", link: "" },
+        { content: "التنبيهات", link: "apps/alerts/app-alerts" },
+        { content: "طلبات التحويل", link: "apps/requests/app-manager-transfer-request" },
+        { content: "طلبات التسجيل", link: "apps/requests/app-choose-manager-registration-requests" },
         { content: "الاحصائيات", link: "/apps/home/app-manager-home" },
         { content: "الرئيسية", link: "/apps/home/app-customer-home" }
       ]

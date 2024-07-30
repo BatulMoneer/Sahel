@@ -1,23 +1,20 @@
 .body {
   direction: rtl;
   height: 100%;
-  padding: 20px;
-  margin: 20px;
+  padding: 10px;
+  margin: 30px;
   font-family: var(--font);
   display: flex;
   justify-content: center;
   background-color: var(--background);
 }
 
-.containerDiv {
+.container-div {
   height: auto;
   width: auto;
   padding: 30px;
-  margin: 10px;
-  margin-top: 110px;
-  margin-bottom: 60px;
+  margin: 100px 30px 50px;
   display: flex;
-  justify-content: right;
   flex-direction: column;
   background-color: var(--background);
   border-radius: 10px;
@@ -30,10 +27,10 @@
   border-color: var(--prime);
 }
 
-.titleDiv {
+.title-div {
   padding: 0;
   margin: 0;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 h1 {
@@ -51,46 +48,39 @@ h6 {
   margin-right: 15px !important;
 }
 
-.productNameDiv,
-.productPriceDiv,
-.productsSectionDiv,
-.quantityDiv,
-.productPhotoDiv,
-.productBarcodeDiv {
+.product-name-div,
+.product-price-div,
+.products-section-div,
+.quantity-div,
+.product-photo-div,
+.product-barcode-div {
   display: flex;
-  justify-content: center;
   flex-direction: column;
   padding: 0;
   margin: 0;
 }
 
-.productNameLabel,
-.productPriceLabel,
-.productsSectionLabel,
-.productPhotoLabel,
-.productBarcodeLabel {
+.product-name-label,
+.product-price-label,
+.products-section-label,
+.product-photo-label,
+.product-barcode-label,
+.quantity-label  {
   font-size: 18px;
   color: var(--textCol);
   padding: 0;
-  margin: 20px 60px 5px 30px;
+  margin: 10px 60px 5px 30px;
 }
 
-.quantityLabel {
-  font-size: 18px;
-  color: var(--textCol);
-  padding: 0;
-  margin: 0px 60px 5px 30px;
-}
-
-.productNameField,
-.productPriceField,
-.productsSectionList,
-.quantityCounter,
-.productPhotoInput,
-.productBarcodeInput {
+.product-name-field,
+.product-price-field,
+.products-section-list,
+.quantity-counter,
+.product-photo-input,
+.product-barcode-input {
   border: none;
-  padding: 7px 20px;
-  margin: 0px 80px 5px 80px;
+  padding: 5px 20px;
+  margin: 5px 80px 10px 80px;
   border-radius: 10px;
   box-shadow: 0px 2px 6px var(--shadow);
   display: flex;
@@ -98,66 +88,19 @@ h6 {
   border-top: 0px;
   border-bottom: 2px;
   border-right: 0px;
-  border-left: 2px;
+  border-left: 0px;
   border-style: solid;
   border-color: var(--prime);
-}
-
-.productsSectionList {
-  margin-bottom: 0;
-  margin-left: 10px;
-}
-
-input:focus {
-  outline-color: var(--main);
-}
-
-.productsSectionDiv {
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: right;
-}
-
-.productsSectionDiv_ {
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.anotherSectionLabel {
-  padding: 0;
-  margin: 0 10px;
-}
-
-.anotherSectionField {
-  width: 179px;
-  padding: 5px;
-  margin: 0 360px 0 0;
-  display: flex;
-  text-align: center;
-  border-top: 0px;
-  border-bottom: 2px;
-  border-right: 0px;
-  border-left: 2px;
-  border-style: solid;
-  border-color: var(--prime);
-}
-
-.quantityCounter {
-  width: 170px;
-}
-
-.productBarcodeInput,
-.productPhotoInput {
   background-color: var(--background);
   width: 250px;
 }
 
-.ResetAddDiv {
+input:focus {
+  outline-color: var(--main);
+  border-bottom: 0px;
+}
+
+.Reset-add-div {
   padding: 0;
   margin: 0;
   display: flex;
@@ -165,7 +108,7 @@ input:focus {
   align-items: center;
 }
 
-.resetButton {
+.reset-button {
   background-color: var(--background);
   color: var(--prime);
   border: none;
@@ -173,7 +116,22 @@ input:focus {
   padding: 7px 35px 7px 20px;
   margin: 0;
   display: flex;
-  align-self: center;
   text-align: center;
   box-shadow: 0px 0px 0px var(--shadow);
+}
+
+.add-button {
+  background-color: var(--main);
+  border-radius: 10px;
+  border: var(--main);
+  padding: 7px 20px;
+  margin: 0;
+  margin-right: 7px;
+  font-family: var(--font);
+  color: var(--background);
+  box-shadow: 0px 2px 6px var(--shadow);
+  text-decoration: none;
+  width: 80px;
+  display: flex;
+  text-align: center;
 }

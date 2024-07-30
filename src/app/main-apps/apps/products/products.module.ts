@@ -19,6 +19,8 @@ import { ChangeProductComponent } from './change-product/change-product.componen
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CollectorOrdersComponent } from './collector-orders/collector-orders.component';
 import { CollectorOrderDetailsComponent } from './collector-order-details/collector-order-details.component';
+import { MatRadioModule } from '@angular/material/radio';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -44,8 +46,10 @@ import { CollectorOrderDetailsComponent } from './collector-order-details/collec
     SharedComponentsModule,
     MatIconModule,
     MatProgressBarModule,
-    MatSnackBarModule
-
+    MatSnackBarModule,
+    MatRadioModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class ProductsModule { }
