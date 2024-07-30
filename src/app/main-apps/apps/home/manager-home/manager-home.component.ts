@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as echarts from 'echarts';
+import { HOME } from 'src/app/constant/Routes';
+import { ImpApiService } from 'src/app/services/imp-api.service';
 
 @Component({
   selector: 'app-manager-home',
@@ -8,113 +10,20 @@ import * as echarts from 'echarts';
 })
 export class ManagerHomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private impApiService: ImpApiService,
+  ) { }
 
 
-  arrayList_ = [
-    {
-      total: '500,000  عميل',
-      noCustomer: '5,000  عميل',
-      noCollectors: '300,000 عميل',
-      noStores: '300,000 عميل',
-    }
-  ]
+  total: 'Number of users';
+      noCustomer: '5,000  عميل';
+      noCollectors: '300,000 عميل';
+      noStores: '300,000 عميل';
 
-  arrayList = [
-    {
-      customerName: 'عامر عثمان',
-      customerAddress: 'الشرايع - الفردوس - منزل	',
-      Email: 'amir@gmail.com',
-      phone: '0567893465',
-      IBAN: 'SA 12353629187549240358124',
-    },
-    {
-      customerName: 'عامر عثمان',
-      customerAddress: 'الشرايع - الفردوس - منزل	',
-      Email: 'amir@gmail.com',
-      phone: '0567893465',
-      IBAN: 'SA 12353629187549240358124',
-    },
-    {
-      customerName: 'عامر عثمان',
-      customerAddress: 'الشرايع - الفردوس - منزل	',
-      Email: 'amir@gmail.com',
-      phone: '0567893465',
-      IBAN: 'SA 12353629187549240358124',
-    },
-    {
-      customerName: 'عامر عثمان',
-      customerAddress: 'الشرايع - الفردوس - منزل	',
-      Email: 'amir@gmail.com',
-      phone: '0567893465',
-      IBAN: 'SA 12353629187549240358124',
-    },
-    {
-      customerName: 'عامر عثمان',
-      customerAddress: 'الشرايع - الفردوس - منزل	',
-      Email: 'amir@gmail.com',
-      phone: '0567893465',
-      IBAN: 'SA 12353629187549240358124',
-    },
-    {
-      customerName: 'عامر عثمان',
-      customerAddress: 'الشرايع - الفردوس - منزل	',
-      Email: 'amir@gmail.com',
-      phone: '0567893465',
-      IBAN: 'SA 12353629187549240358124',
-    },
-    {
-      customerName: 'عامر عثمان',
-      customerAddress: 'الشرايع - الفردوس - منزل	',
-      Email: 'amir@gmail.com',
-      phone: '0567893465',
-      IBAN: 'SA 12353629187549240358124',
-    },
-  ]
 
-  arrayList0 = [
-    {
-      collectorName: 'عامر عثمان',
-      collectorAge: '31',
-      Email: 'amir@gmail.com',
-      phone: '0567893465',
-      IBAN: 'SA 12353629187549240358124',
-    },
-    {
-      collectorName: 'عامر عثمان',
-      collectorAge: '31',
-      Email: 'amir@gmail.com',
-      phone: '0567893465',
-      IBAN: 'SA 12353629187549240358124',
-    },
-    {
-      collectorName: 'عامر عثمان',
-      collectorAge: '31',
-      Email: 'amir@gmail.com',
-      phone: '0567893465',
-      IBAN: 'SA 12353629187549240358124',
-    },
-    {
-      collectorName: 'عامر عثمان',
-      collectorAge: '31',
-      Email: 'amir@gmail.com',
-      phone: '0567893465',
-      IBAN: 'SA 12353629187549240358124',
-    },
-    {
-      collectorName: 'عامر عثمان',
-      collectorAge: '31',
-      Email: 'amir@gmail.com',
-      phone: '0567893465',
-      IBAN: 'SA 12353629187549240358124',
-    },
-    {
-      collectorName: 'عامر عثمان',
-      collectorAge: '31',
-      Email: 'amir@gmail.com',
-      phone: '0567893465',
-      IBAN: 'SA 12353629187549240358124',
-    },
+  customersList = []
+
+  collectorsList = [
     {
       collectorName: 'عامر عثمان',
       collectorAge: '31',
@@ -169,54 +78,66 @@ export class ManagerHomeComponent implements OnInit {
 
   ngOnInit(): void {
 
-var chartDom = document.getElementById('main');
-var myChart = echarts.init(chartDom);
-var option;
+    this.impApiService.get(HOME.total_users_customers_manager).subscribe(data => {
+      this.total = data.data
+    })
 
-option = {
-  tooltip: {
-    trigger: 'item'
-  },
-  legend: {
-    top: '5%',
-    left: 'center'
-  },
-  series: [
-    {
-      name: 'الأرباح الشهرية للتطبيق :',
-      type: 'pie',
-      radius: ['40%', '70%'],
-      avoidLabelOverlap: false,
-      itemStyle: {
-        borderRadius: 10,
-        borderColor: '#fff',
-        borderWidth: 2
+    this.impApiService.get(HOME.list_users_customers).subscribe(data => {
+      this.customersList = data.data
+    })
+
+    this.impApiService.get(HOME.list_users_collectors).subscribe(data => {
+      this.collectorsList = data.data
+    })
+
+    var chartDom = document.getElementById('main');
+    var myChart = echarts.init(chartDom);
+    var option;
+
+    option = {
+      tooltip: {
+        trigger: 'item'
       },
-      label: {
-        show: false,
-        position: 'center'
+      legend: {
+        top: '5%',
+        left: 'center'
       },
-      emphasis: {
-        label: {
-          show: true,
-          fontSize: 40,
-          fontWeight: 'bold'
+      series: [
+        {
+          name: 'الأرباح الشهرية للتطبيق :',
+          type: 'pie',
+          radius: ['40%', '70%'],
+          avoidLabelOverlap: false,
+          itemStyle: {
+            borderRadius: 10,
+            borderColor: '#fff',
+            borderWidth: 2
+          },
+          label: {
+            show: false,
+            position: 'center'
+          },
+          emphasis: {
+            label: {
+              show: true,
+              fontSize: 40,
+              fontWeight: 'bold'
+            }
+          },
+          labelLine: {
+            show: false
+          },
+          data: [
+            { value: 300000, name: 'أرباح المناديب' },
+            { value: 200000, name: 'أرباح المتاجر' },
+            { value: 900000, name: 'أرباح مدير التطبيق' },
+            { value: 300000, name: 'الإجمالي' }
+          ]
         }
-      },
-      labelLine: {
-        show: false
-      },
-      data: [
-        { value: 300000, name: 'أرباح المناديب' },
-        { value: 200000, name: 'أرباح المتاجر' },
-        { value: 900000, name: 'أرباح مدير التطبيق' },
-        { value: 300000, name: 'الإجمالي' }
       ]
-    }
-  ]
-};
+    };
 
-option && myChart.setOption(option);
+    option && myChart.setOption(option);
   }
 
 }

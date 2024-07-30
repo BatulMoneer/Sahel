@@ -11,12 +11,12 @@ export class StoreHomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
     type EChartsOption = echarts.EChartsOption;
 
     var chartDom = document.getElementById('main')!;
     var myChart = echarts.init(chartDom);
     var option: EChartsOption;
-
     option = {
       legend: {
         top: '25%',
@@ -60,14 +60,9 @@ export class StoreHomeComponent implements OnInit {
     };
     option && myChart.setOption(option);
 
-
-
     var chartDom = document.getElementById('main1')!;
     var myChart = echarts.init(chartDom);
     var option: EChartsOption;
-
-
-
     option = {
       tooltip: {
         trigger: 'item'
@@ -119,16 +114,12 @@ export class StoreHomeComponent implements OnInit {
         }
       ]
     };
-
     option && myChart.setOption(option);
-
-
-
   }
 
   img = "../../../../../assets/images/Panda.png";
 
-  arrayList1 = [
+  customersArray = [
     {
       total: '500,000  عميل',
       newCustomer: '5,000  عميل',
@@ -136,10 +127,7 @@ export class StoreHomeComponent implements OnInit {
     }
   ]
 
-
-
-
-  arrayList = [
+  comparingArray = [
     {
       store: 'بن داوود',
       percentageOfSalesBetweenStores: '30%',

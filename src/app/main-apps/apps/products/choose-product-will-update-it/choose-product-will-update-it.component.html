@@ -32,8 +32,8 @@
           <td>{{item.productPrice}}</td>
           <td>{{item.productSection}}</td>
           <td>{{item.quntity}}</td>
-          <td><img class="productImage" src="{{item.productImage}}" alt="صورة"></td>
-          <td><img class="productBarcode" src="{{item.productBarcode}}" alt="باركود"></td>
+          <td><a href="{{item.productImage}}" target="_blank"><img class="productImage" src="{{item.productImage}}" alt="صورة" ></a></td>
+          <td><a href="{{item.productBarcode}}" target="_blank"><img class="productBarcode" src="{{item.productBarcode}}" alt="باركود"></a></td>
           <td class="tdButton">
             <button (click)="open(content)">اختر</button>
           </td>

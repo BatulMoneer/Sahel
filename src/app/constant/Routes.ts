@@ -7,6 +7,12 @@ export const auth = {
   create: BASEURL + 'create',
   register: BASEURL + 'register',
   verifyOtp: BASEURL + 'verifyOtp',
-
-
 }
+
+export const HOME = {
+ total_users_customers_manager: BASEURL + 'getNumberOfUsers',
+ list_users_customers: BASEURL + 'showAllUsersDetailedInfo',
+ list_users_collectors: BASEURL + 'showAllCollectorsDetailedInfo',
+}
+
+

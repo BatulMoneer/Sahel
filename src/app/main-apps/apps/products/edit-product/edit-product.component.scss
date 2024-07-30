@@ -103,11 +103,6 @@ h6 {
   border-color: var(--prime);
 }
 
-.productsSectionList {
-  margin-bottom: 0;
-  margin-left: 10px;
-}
-
 input:focus {
   outline-color: var(--main);
 }
@@ -118,37 +113,6 @@ input:focus {
   display: flex;
   flex-direction: column;
   justify-content: right;
-}
-
-.productsSectionDiv_ {
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.anotherSectionLabel {
-  padding: 0;
-  margin: 0 10px;
-}
-
-.anotherSectionField {
-  width: 179px;
-  padding: 5px;
-  margin: 0 360px 0 0;
-  display: flex;
-  text-align: center;
-  border-top: 0px;
-  border-bottom: 2px;
-  border-right: 0px;
-  border-left: 2px;
-  border-style: solid;
-  border-color: var(--prime);
-}
-
-.quantityCounter {
-  width: 170px;
 }
 
 .productBarcodeInput,

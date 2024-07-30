@@ -285,6 +285,7 @@ input[type="text"] {
 
 table {
   width: 90%;
+  height: 400px;
   display: table;
   align-self: center;
   text-align: center;
@@ -304,11 +305,11 @@ th {
   color: var(--background) !important;
 }
 
-.thName{
+.th-first{
   border-radius: 0 10px 0 0;
 }
 
-.thLast{
+.th-last{
   border-radius: 10px 0 0 0;
 }
 
