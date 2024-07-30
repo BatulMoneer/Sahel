@@ -9,21 +9,24 @@ export const auth = {
   verifyOtp: BASEURL + 'verifyOtp',
   logout: BASEURL + 'logout',
 
+
+
 }
-
-export const HOME = {
- total_users_customers_manager: BASEURL + 'getNumberOfUsers',
- list_users_customers: BASEURL + 'showAllUsersDetailedInfo',
- list_users_collectors: BASEURL + 'showAllCollectorsDetailedInfo',
-}
-
-
-
-
 export const collector = {
   collectorUpdate: BASEURL + 'collectorUpdate',
 
 
 
 }
+
+
+export const HOME = {
+  //  total_all_users_manager: BASEURL + 'getNumberOfUsers',
+   total_users_customers_manager: BASEURL + 'getNumberOfUsers',
+   total_users_collectors_manager: BASEURL + 'getNumberOfCollectors',
+   total_users_markets_manager: BASEURL + 'getNumberOfMarkets',
+   list_users_customers: BASEURL + 'showAllUsersDetailedInfo',
+   list_users_collectors: BASEURL + 'showAllCollectorsDetailedInfo',
+   list_users_markets: BASEURL + 'showAllMarketsDetailedInfo',
+  }
 

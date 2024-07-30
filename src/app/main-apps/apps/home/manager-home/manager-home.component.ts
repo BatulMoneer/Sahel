@@ -14,72 +14,37 @@ export class ManagerHomeComponent implements OnInit {
     private impApiService: ImpApiService,
   ) { }
 
-
-  total: 'Number of users';
-      noCustomer: '5,000  عميل';
-      noCollectors: '300,000 عميل';
-      noStores: '300,000 عميل';
-
+  total: '';
+  number_of_users: '';
+  number_of_collectors: '';
+  number_of_markets: '';
 
   customersList = []
 
-  collectorsList = [
-    {
-      collectorName: 'عامر عثمان',
-      collectorAge: '31',
-      Email: 'amir@gmail.com',
-      phone: '0567893465',
-      IBAN: 'SA 12353629187549240358124',
-    },
-  ]
+  collectorsList = []
 
-  arrayList1 = [
-    {
-      StoreName: 'بن داوود',
-      storeAddress: '31',
-      Email: 'bindaowood@gmail.com',
-      phone: '0567893465',
-      monthSales: '15,000,000  ريال',
-      commercialRegistration: "../../../../../assets/images/commercialRegistration.jpg",
-    },
-    {
-      StoreName: 'بن داوود',
-      storeAddress: '31',
-      Email: 'bindaowood@gmail.com',
-      phone: '0567893465',
-      monthSales: '15,000,000  ريال',
-      commercialRegistration: "../../../../../assets/images/commercialRegistration.jpg",
-    },
-    {
-      StoreName: 'بن داوود',
-      storeAddress: '31',
-      Email: 'bindaowood@gmail.com',
-      phone: '0567893465',
-      monthSales: '15,000,000  ريال',
-      commercialRegistration: "../../../../../assets/images/commercialRegistration.jpg",
-    },
-    {
-      StoreName: 'بن داوود',
-      storeAddress: '31',
-      Email: 'bindaowood@gmail.com',
-      phone: '0567893465',
-      monthSales: '15,000,000  ريال',
-      commercialRegistration: "../../../../../assets/images/commercialRegistration.jpg",
-    },
-    {
-      StoreName: 'بن داوود',
-      storeAddress: '31',
-      Email: 'bindaowood@gmail.com',
-      phone: '0567893465',
-      monthSales: '15,000,000  ريال',
-      commercialRegistration: "../../../../../assets/images/commercialRegistration.jpg",
-    },
-  ]
+  marketsList = []
 
   ngOnInit(): void {
 
+    // console.log(data); to print data in "inespect"
+
+    // this.impApiService.get(HOME.total_all_users_manager).subscribe(data => {
+    //   console.log(data);
+
+    //   this.total = data.total
+    // })
+
     this.impApiService.get(HOME.total_users_customers_manager).subscribe(data => {
-      this.total = data.data
+      this.number_of_users = data.number_of_users
+    })
+
+    this.impApiService.get(HOME.total_users_collectors_manager).subscribe(data => {
+      this.number_of_collectors = data.number_of_collectors
+    })
+
+    this.impApiService.get(HOME.total_users_markets_manager).subscribe(data => {
+      this.number_of_markets = data.number_of_markets
     })
 
     this.impApiService.get(HOME.list_users_customers).subscribe(data => {
@@ -88,6 +53,9 @@ export class ManagerHomeComponent implements OnInit {
 
     this.impApiService.get(HOME.list_users_collectors).subscribe(data => {
       this.collectorsList = data.data
+    })
+    this.impApiService.get(HOME.list_users_markets).subscribe(data => {
+      this.marketsList = data.data
     })
 
     var chartDom = document.getElementById('main');
@@ -136,7 +104,6 @@ export class ManagerHomeComponent implements OnInit {
         }
       ]
     };
-
     option && myChart.setOption(option);
   }
 

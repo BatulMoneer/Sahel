@@ -1,0 +1,17 @@
+<div class="body">
+  <header class="head">
+    <h1 class="title">تأكيد رقم الجوال</h1>
+    <p class="sub-title" style="font-size: 14px;">أدخل الرمز المرسل الى رقم الجوال</p>
+  </header>
+  <ng-otp-input [config]="{
+    length : 4,
+    allowNumbersOnly: true,
+    inputStyles:{
+    'font-size': '18px'
+  }
+}" #ngOtpInput></ng-otp-input>
+
+  <div class="foot">
+    <button class="btn" (click)="otpCheck()">تأكيد</button>
+  </div>
+</div>

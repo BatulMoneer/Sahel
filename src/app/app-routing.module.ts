@@ -11,11 +11,11 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'auth', canActivate: [CheckTokenGuard],
+    path: 'auth',
     loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
   },
   {
-     path: 'apps', //canActivate: [AuthCheckGuard],
+    path: 'apps', canActivate: [AuthCheckGuard],
     component: MainLayoutComponent,
     loadChildren: () => import('./main-apps/main-apps.module').then(m => m.MainAppsModule)
   },
