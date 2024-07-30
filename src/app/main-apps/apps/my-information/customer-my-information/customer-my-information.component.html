@@ -61,6 +61,13 @@
         <p class="text">المبنى</p>
         <input type="text" [(ngModel)]="building" name="building" />
       </div>
+      <div class="input-group" *ngIf="mylatlng.lat == null && mylatlng.lng == null; else do_that">
+        <button (click)="findMe()">إضافة موقع عن طريق GPS</button>
+      </div>
+      <ng-template #do_that>
+        <button (click)="findMe()">تعديل الموقع عن طريق GPS</button>
+
+      </ng-template>
       <p class="loc">نوع الموقع</p>
       <div class="checkbox">
         <app-checkbox [check]="'aaa'" [title]="'عمل'"></app-checkbox>
@@ -99,6 +106,10 @@
 
     <div class="button-container">
       <button type="submit" (click)="openDialog()">{{save}}</button>
+
+    </div>
+    <div class="button-container">
+      <a class="link" (click)="signOut()">تسجيل الخروج</a>
     </div>
   </form>
 </div>

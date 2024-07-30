@@ -62,15 +62,6 @@ export class OrderService {
 
 
 
-  setStatus(isActive: boolean): void {
-    this.isActive = isActive;
-  }
-
-  getStatus(): boolean {
-    return this.isActive;
-  }
-
-
 
   getOrderState(): number {
     return this.loadOrderState();

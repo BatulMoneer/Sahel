@@ -7,6 +7,8 @@ export const auth = {
   create: BASEURL + 'create',
   register: BASEURL + 'register',
   verifyOtp: BASEURL + 'verifyOtp',
+  logout: BASEURL + 'logout',
+
 }
 
 export const HOME = {
@@ -15,4 +17,13 @@ export const HOME = {
  list_users_collectors: BASEURL + 'showAllCollectorsDetailedInfo',
 }
 
+
+
+
+export const collector = {
+  collectorUpdate: BASEURL + 'collectorUpdate',
+
+
+
+}
 

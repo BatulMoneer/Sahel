@@ -9,20 +9,20 @@ import { Router } from '@angular/router';
 export class StoreMyInformationComponent implements OnInit {
 
 
-  constructor(private router: Router ) { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  signout(){
-    localStorage.removeItem("user");
+  signout() {
+    localStorage.removeItem("currentUser");
     localStorage.removeItem("token")
 
     this.router.navigate(['/auth/login']);
 
   }
 
-  update_(){
+  update_() {
     this.router.navigate(['apps/my-information/app-store-my-information']);
   }
 
