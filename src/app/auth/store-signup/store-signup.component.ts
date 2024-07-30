@@ -48,6 +48,7 @@ export class StoreSignupComponent {
     this.spinner.show();
 
     if (!this.validatePayload(this.formData)) {
+      this.spinner.hide()
       return;
     }
 
@@ -58,6 +59,11 @@ export class StoreSignupComponent {
       phone_user: this.formData.phone_user,
       user_type_id: this.formData.user_type_id,
       questions: [
+
+        {
+          question_id: 2,
+          value: this.formData.branch
+        },
         {
           question_id: 3,
           value: this.formData.commercial_register
@@ -65,19 +71,19 @@ export class StoreSignupComponent {
         {
           question_id: 4,
           value: this.formData.logo
-        },
-        {
-          question_id: 2,
-          value: this.formData.branch
         }
       ]
     };
 
     this.impApiService.post(auth.create, payload).subscribe(data => {
-      this.spinner.hide();
-      if (data.otp) {
+      if (data.message == "Account successfully created") {
+        localStorage.setItem('header', this.formData.user_type_id)
+        localStorage.setItem('email', this.formData.email_user)
+        console.log(localStorage.getItem('email'))
+        this.spinner.hide()
         this.dialog.open(Otp2PopComponent);
       }
+
     });
   }
 

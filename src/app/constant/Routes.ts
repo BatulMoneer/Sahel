@@ -7,6 +7,15 @@ export const auth = {
   create: BASEURL + 'create',
   register: BASEURL + 'register',
   verifyOtp: BASEURL + 'verifyOtp',
+  logout: BASEURL + 'logout',
+
 
 
 }
+export const collector = {
+  collectorUpdate: BASEURL + 'collectorUpdate',
+
+
+
+}
+

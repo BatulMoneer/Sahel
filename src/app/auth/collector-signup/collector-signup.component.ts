@@ -51,6 +51,7 @@ export class CollectorSignupComponent {
     this.spinner.show()
 
     if (!this.validatePayload(this.formData)) {
+      this.spinner.hide()
       return;
     }
 

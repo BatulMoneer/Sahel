@@ -116,6 +116,9 @@ margin-top: 100px;
   text-align: right;
   color: var(--textCol);
 }
+button {
+  margin: 40px 0px;
+}
 
 app-button {
   display: flex;
@@ -124,6 +127,7 @@ app-button {
   cursor: pointer;
   text-decoration: none;
 }
+
 
 .checkbox {
   display: flex;
@@ -168,6 +172,14 @@ app-button {
   color: var(--textCol);
   text-align: right;
   margin: 10px 10px;
+}
+.link{
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--textCol);
+}
+.link:hover{
+  color: var(--prime);
 }
 
 @media (max-width: 1110px) {

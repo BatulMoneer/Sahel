@@ -11,8 +11,7 @@ export class HeaderComponent implements OnInit {
 
   header_list = [
     { content: "تسجيل الدخول", link: "/auth/login" },
-    { content: "السلة", link: "/apps/products/customer-cart" },
-    { content: "الرئيسية", link: "/apps/home/app-customer-home" }
+    { content: "الرئيسية", link: "/auth/home" }
   ]
   ngOnInit(): void {
   }
