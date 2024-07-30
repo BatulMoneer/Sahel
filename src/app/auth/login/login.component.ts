@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { NgxSpinnerService } from 'ngx-spinner';
 import { auth } from 'src/app/constant/Routes';
 import { OtpPopComponent } from 'src/app/main-apps/apps/popup/otp-pop/otp-pop.component';
 import { OrderService } from 'src/app/service/order.service';
@@ -26,8 +25,7 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private impApiService: ImpApiService,
     private dialog: MatDialog,
-    private service: OrderService,
-    private spinner: NgxSpinnerService
+    private service: OrderService
   ) { }
 
   ngOnInit(): void {
@@ -50,7 +48,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.spinner.show()
+
     this.submitted_crearte = true
     if (this.formData.invalid) {
       this.spinner.hide()
@@ -62,9 +60,27 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('header', data.user_info.user_type_id)
       localStorage.setItem('email', data.user_info.email_user)
       localStorage.setItem('currentUser', JSON.stringify(data))
+      //localStorage.setItem('token', data.access_token)
 
-      this.spinner.hide()
       this.dialog.open(OtpPopComponent)
+
+      /*
+      if (data.user_info.user_type_id == 1) {
+        this.router.navigate(["/apps/home/app-customer-home"])
+      }
+      if (data.user_info.user_type_id == 2) {
+        this.router.navigate(["/apps/home/app-customer-home"])
+      }
+      if (data.user_info.user_type_id == 3) {
+        this.router.navigate(["/apps/home/app-customer-home"])
+      }
+      if (data.user_info.user_type_id == 4) {
+        this.router.navigate(["/apps/home/app-customer-home"])
+      }*/
+
+      //this.service.setOtp(data.OTP)
+
+
     })
 
 

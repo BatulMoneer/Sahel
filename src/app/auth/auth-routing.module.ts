@@ -39,7 +39,7 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
-    path: 'logout', canActivate: [CheckTokenGuard],
+    path: 'logout',
     component: LogoutComponent
   },
   {
@@ -47,19 +47,19 @@ const routes: Routes = [
     component: NotFoundComponent
   },
   {
-    path: 'storeSignup', canActivate: [CheckTokenGuard],
+    path: 'storeSignup',
     component: StoreSignupComponent
   },
   {
-    path: 'customerSignup', canActivate: [CheckTokenGuard],
+    path: 'customerSignup',
     component: CustomerSignupComponent
   },
   {
-    path: 'collectorSignup', canActivate: [CheckTokenGuard],
+    path: 'collectorSignup',
     component: CollectorSignupComponent
   },
   {
-    path: 'accountType', canActivate: [CheckTokenGuard],
+    path: 'accountType',
     component: AccountTypeComponent
   },
 

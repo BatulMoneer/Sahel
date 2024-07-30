@@ -35,8 +35,6 @@ import { ToastrModule } from 'ngx-toastr';
     NgxSpinnerModule,
     ToastrModule.forRoot(),
   ],
-  exports: [
-    NgxSpinnerModule,],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,

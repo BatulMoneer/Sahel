@@ -9,9 +9,17 @@ export const auth = {
   verifyOtp: BASEURL + 'verifyOtp',
   logout: BASEURL + 'logout',
 
-
-
 }
+
+export const HOME = {
+ total_users_customers_manager: BASEURL + 'getNumberOfUsers',
+ list_users_customers: BASEURL + 'showAllUsersDetailedInfo',
+ list_users_collectors: BASEURL + 'showAllCollectorsDetailedInfo',
+}
+
+
+
+
 export const collector = {
   collectorUpdate: BASEURL + 'collectorUpdate',
 

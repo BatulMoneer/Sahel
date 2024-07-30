@@ -1,21 +1,20 @@
 .body {
   direction: rtl;
-  height: 100%;
-  padding: 30px;
-  padding-bottom: 5px;
-  margin: 50px;
-  margin-bottom: 0px;
-  font-family: var(--font);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding: 10px;
+  margin: 30px;
+  font-family: var(--font);
   background-color: var(--background);
 }
 
-.containerDiv {
+.container-div {
   height: auto;
   width: 95%;
-  padding: 10px;
-  margin: 90px 30px 50px;
+  padding: 30px;
+  margin: 100px 30px 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,22 +29,18 @@
   border-color: var(--prime);
 }
 
-.storeLogo {
+.store-logo {
   display: flex;
-  align-self: start;
-  align-self: center;
-  height: 250px;
-  width: 250px;
-  padding: 10px;
-  margin: 0;
+  height: 200px;
+  width: auto;
+  padding: 0;
+  margin: 10px 0 0;
 }
 
 .title-div {
   padding: 0;
-  margin: 0;
-  margin-bottom: 10px;
+  margin: 10px 0 ;
   display: flex;
-  align-self: center;
   flex-direction: column;
   align-items: center;
 }
@@ -53,120 +48,99 @@
 h1 {
   font-size: 55px;
   color: var(--prime);
-  padding: 5px;
+  padding: 0 5px 5px;
   margin: 0;
 }
 
 h6 {
   display: flex;
   align-self: self-start;
-  font-size: 14px;
+  font-size: 18px;
   color: var(--textCol);
-  padding: 5px;
-  margin: 0 20px 5px;
+  padding: 5px 0 0;
+  margin: 0 20px;
 }
 
-.customersContainerDiv {
+.p-customers {
+  font-size: 25px;
+  padding: 0px;
+  margin: 10px 10px 5px;
+}
+
+.customers-container-div {
   height: auto;
-  width: 95%;
+  width: 90%;
   padding: 0;
   margin: 0;
-  margin-bottom: 25px;
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 
-.customersP {
-  font-size: 25px;
-  padding: 0px;
-  margin: 5px;
+.card-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: auto;
+  width: 380px;
+  padding: 5px 5px 2px;
+  margin: 5px 5px 10px;
+  background-color: var(--background);
+  box-shadow: 0px 2px 6px var(--shadow);
+  border-radius: 10px;
+  border-top: 0px;
+  border-bottom: 2px;
+  border-right: 0px;
+  border-left: 0px;
+  border-style: solid;
+  border-color: var(--prime);
 }
 
-.totalP,
-.newP,
-.returneesP {
-  font-size: 18px;
-  padding: 5px 5px 0px 0px;
+.p-total-div,
+.p-new-div,
+.p-returnees-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+  width: 150px;
+  padding: 0;
   margin: 0;
 }
 
-.totalNP,
-.newNP,
+.p-total,
+.p-new,
+.p-returnees {
+  font-size: 16px;
+  padding: 5px 5px 0px 0px;
+  margin: 40px 0 0 80px;
+}
+
+.p-total-number,
+.p-new-number,
 .returneesNP {
   font-size: 20px;
   padding: 2px 5px 0px 0px;
   margin: 0;
 }
 
-.totalDiv {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  height: auto;
-  width: 150px;
-  padding: 0;
-  margin: 0;
+.customers-icon{
+  padding: 10px 0px;
+  margin: 0px 0px 20px;
 }
 
-.newDiv {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  height: auto;
-  width: 150px;
-  padding: 0;
-  margin: 0;
-}
-
-.returneesDiv {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  height: auto;
-  width: 150px;
-  padding: 0;
-  margin: 0;
-}
-
-.con {
-  display: flex;
-  flex-direction: row;
-  height: auto;
-  width: 360px;
-  padding: 5px 5px 2px 5px;
-  margin: 5px 0px 10px 5px;
-  background-color: var(--background);
-  box-shadow: 0px 2px 6px var(--shadow);
-  border-radius: 10px;
-  border-top: 0px;
-  border-bottom: 2px;
-  border-right: 0px;
-  border-left: 2px;
-  border-style: solid;
-  border-color: var(--prime);
-}
-
-.customersIcon{
-  padding: 10px;
-  padding-right: 0px;
-  margin-right: 0px;
-  margin: 0px;
-  margin-right: 20px;
-}
-
-.chartContainerFather {
-  width: 95%;
+.chart-container {
+  width: 90%;
   height: auto;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
-.chartContainer {
-  width: 65%;
+.month-statistics-chart {
+  width: auto;
   height: auto;
   padding: 0;
   margin: 0;
@@ -175,8 +149,8 @@ h6 {
   align-items: center;
 }
 
-.chartContainer1 {
-  width: 30%;
+.year-statistics-chart {
+  width: auto;
   height: auto;
   padding: 0;
   margin: 0;
@@ -185,56 +159,50 @@ h6 {
   align-items: center;
 }
 
-.chartDiv {
-  width: 670px;
-  height: 320px;
-  background-color: var(--background);
+.h2-statistics {
+  font-size: 25px;
+  color: var(--textCol);
+  padding: 5px;
+  margin: 10px 0 5px;
+}
+
+.chart-div {
+  width: 780px;
+  height: 350px;
   box-shadow: 0px 2px 6px var(--shadow);
   border-radius: 10px;
   border-top: 0px;
   border-bottom: 2px;
   border-right: 0px;
-  border-left: 2px;
+  border-left: 0px;
   border-style: solid;
   border-color: var(--prime);
   padding: 0px;
-  margin: 0px;
-  margin-bottom: 20px;
-  font-family: var(--font);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin: 5px 5px 10px 5px;
 }
 
-.chartDiv1 {
-  width: 380px;
-  height: 320px;
-  background-color: var(--background);
+.chart-div-1 {
+  width: 400px;
+  height: 350px;
   box-shadow: 0px 2px 6px var(--shadow);
   border-radius: 10px;
   border-top: 0px;
   border-bottom: 2px;
   border-right: 0px;
-  border-left: 2px;
+  border-left: 0px;
   border-style: solid;
   border-color: var(--prime);
-  margin: 0px;
-  margin-bottom: 20px;
-  font-family: var(--font);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 0px;
+  margin: 5px 5px 10px 5px;
 }
 
 .table-title-div {
   padding: 0;
-  margin: 0;
-  margin-top: 10px;
+  margin: 10px 0 5px;
   color: var(--textCol);
   display: flex;
-  align-self: center;
-  justify-content: center;
   flex-direction: column;
+  align-items: center;
 }
 
 h2 {
@@ -242,12 +210,11 @@ h2 {
   color: var(--textCol);
   padding: 5px;
   margin: 0;
-  margin-right: 15px;
-  margin-bottom: 5px;
 }
 
 .search-container {
   display: flex;
+  align-self: center;
   justify-content: center;
   position: relative;
   width: 60%;
@@ -267,21 +234,29 @@ input[type="text"] {
   box-shadow: 0px 2px 6px var(--shadow);
   border: none;
   padding: 10px 40px;
+  margin-bottom: 5px;
   border-radius: 10px;
   font-size: 16px;
   text-align: center;
   border-top: 0px;
   border-bottom: 2px;
   border-right: 0px;
-  border-left: 2px;
+  border-left: 0px;
   border-style: solid;
   border-color: var(--prime);
 }
 
+input:focus {
+  outline-color: var(--main);
+  border-bottom: 0px;
+}
+
 table {
   width: 90%;
+  height: 400px;
+  padding: 0;
+  margin: 5px 0 20px;
   display: table;
-  align-self: center;
   text-align: center;
   background-color: var(--background);
   color: var(--font);
@@ -293,12 +268,12 @@ th {
   background-color: var(--prime);
   width: auto;
   height: auto;
-  padding: 10px;
+  padding: 5px;
   margin: 0;
   color: var(--background) !important;
 }
 
-.th-name {
+.th-first {
   border-radius: 0 10px 0 0;
 }
 
@@ -309,7 +284,7 @@ th {
 td {
   width: auto;
   height: auto;
-  padding: 10px;
+  padding: 5px;
   margin: 0;
 }
 

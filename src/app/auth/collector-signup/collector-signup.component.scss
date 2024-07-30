@@ -77,17 +77,10 @@ margin-top: 100px;
   font-weight: lighter;
 }
 
-.gg {
+.input-group {
   display: flex;
   align-items: center;
   flex-direction: row-reverse;
-  margin-top: 20px;
-}
-
-.input-group {
-  display: flex;
-  align-items: end;
-  flex-direction: column;
   margin-top: 20px;
 }
 
@@ -148,8 +141,6 @@ app-button {
   flex-direction: column;
   div{
     .invalid-feedback-custom{
-      display: block;
-      flex-wrap: nowrap;
       font-size: 10px;
       color: var(--warn);
       padding-top: 3px;

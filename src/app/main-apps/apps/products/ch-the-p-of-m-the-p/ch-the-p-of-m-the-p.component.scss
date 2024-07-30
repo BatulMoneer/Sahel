@@ -9,8 +9,8 @@
   height: 100%;
 }
 
-form {
-  background-color:var(--background);
+.container-div {
+  background-color: var(--background);
   height: 420px;
   display: flex;
   align-items: center;
@@ -30,24 +30,13 @@ form {
   border-color: var(--prime);
 }
 
-.container {
-  display: flex;
-  align-self: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 10px;
-  margin: 70px;
-  margin-top: 50px;
-}
-
-.titleDiv {
+.title-div {
   padding: 0px;
   margin: 0;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   display: flex;
-  align-self: center;
-  justify-content: center;
   flex-direction: column;
+  align-items: center;
   text-align: right;
 }
 
@@ -63,18 +52,17 @@ h6 {
   color: var(--textCol);
   padding: 5px;
   margin: 0;
-  margin-right: 10px;
-  margin-bottom: 15px;
+  margin-left: 35px;
 }
 
 .slide-controls {
   display: flex;
-    gap: 5px;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-  }
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
 
 .slide-controls input {
   display: none;
@@ -95,13 +83,13 @@ h6 {
   border-radius: 0 10px 10px 0;
   border-top: 0px;
   border-bottom: 2px;
-  border-right: 2px;
+  border-right: 0px;
   border-left: 0px;
   border-style: solid;
   border-color: var(--prime);
 }
 
- .slide.edit {
+.slide.edit {
   background: var(--background);
   color: var(--textCol);
   box-shadow: 0px 2px 6px var(--shadow);
@@ -109,7 +97,7 @@ h6 {
   border-top: 0px;
   border-bottom: 2px;
   border-right: 0px;
-  border-left: 2px;
+  border-left: 0px;
   border-style: solid;
   border-color: var(--prime);
 }
@@ -119,11 +107,13 @@ h6 {
 .slide.edit:hover {
   background: var(--main);
   color: var(--background);
+  border-bottom: 0px;
 }
 
-.slide-controls input:checked + .slide {
+.slide-controls input:checked+.slide {
   background: var(--main);
   color: var(--background);
+  border-bottom: 0px;
 }
 
 @media (max-width: 500px) {

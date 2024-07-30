@@ -1,7 +1,7 @@
 <app-header></app-header>
 <router-outlet>
   <div class="body">
-    <form class="form" (ngSubmit)="signUp()">
+    <form class="form" [formGroup]="formData" (ngSubmit)="signUp()">
       <div class="slide-controls">
         <input type="radio" name="slide" id="signup">
         <label class="slide signup" for="signup">إنشاء حساب</label>
@@ -15,64 +15,95 @@
 
       <div class="group">
         <div class="input-group">
-          <div class="gg">
-            <p class="text">الاسم</p>
-            <input type="text" [(ngModel)]="formData.name_user" name="name_user" placeholder="ادخل الاسم" required>
+          <p class="text">الاسم</p>
+          <input type="text" formControlName="name_user" placeholder="ادخل الاسم" required>
+
+        </div>
+        <div *ngIf="submitted_crearte && formData.controls['name_user'].errors">
+          <div class="invalid-feedback-custom"
+            *ngIf="submitted_crearte && formData.controls['name_user'].errors.required">
+            الحقل مطلوب!
           </div>
-          <div *ngIf="errorMessages.name_user" class="invalid-feedback-custom">{{ errorMessages.name_user }}</div>
+        </div>
+      </div>
+
+
+      <div class="group">
+        <div class="input-group">
+          <p class="text">رقم الجوال</p>
+          <input type="text" formControlName="phone_user" placeholder="ادخل الرقم" required>
+
+        </div>
+        <div *ngIf="submitted_crearte && formData.controls['phone_user'].errors">
+          <div class="invalid-feedback-custom"
+            *ngIf="submitted_crearte && formData.controls['phone_user'].errors.required">
+            الحقل مطلوب!
+          </div>
+          <div class="invalid-feedback-custom"
+            *ngIf="submitted_crearte && formData.controls['phone_user'].errors.pattern">
+            الرقم غير صحيح!
+          </div>
         </div>
       </div>
 
       <div class="group">
         <div class="input-group">
-          <div class="gg">
-            <p class="text">رقم الجوال</p>
-            <input type="text" [(ngModel)]="formData.phone_user" name="phone_user" placeholder="ادخل الرقم" required>
+          <p class="text">العمر</p>
+          <input type="date" formControlName="age" class="age-input" required min="1910-01-01" max="{{year}}-01-01">
+
+        </div>
+        <div *ngIf="submitted_crearte && formData.controls['age'].errors">
+          <div class="invalid-feedback-custom" *ngIf="submitted_crearte && formData.controls['age'].errors.required">
+            الحقل مطلوب!
           </div>
-          <div *ngIf="errorMessages.phone_user" class="invalid-feedback-custom">{{ errorMessages.phone_user }}</div>
+        </div>
+      </div>
+
+
+      <div class="group">
+        <div class=" input-group">
+          <p class="text">البريد الالكتروني</p>
+          <input type="text" formControlName="email_user" placeholder="ادخل البريد" required>
+
+        </div>
+        <div *ngIf="submitted_crearte && formData.controls['email_user'].errors">
+          <p class="invalid-feedback-custom"
+            *ngIf="submitted_crearte && formData.controls['email_user'].errors.required">
+            الحقل مطلوب!
+          </p>
+          <p class="invalid-feedback-custom" *ngIf="submitted_crearte && formData.controls['email_user'].errors.email">
+            البريد غير صحيح!
+          </p>
         </div>
       </div>
 
       <div class="group">
         <div class="input-group">
-          <div class="gg">
-            <p class="text">العمر</p>
-            <input type="date" [(ngModel)]="formData.age" name="age" class="age-input" required min="1910-01-01"
-              max="{{year}}-01-01">
-          </div>
-          <div *ngIf="errorMessages.age" class="invalid-feedback-custom">{{ errorMessages.age }}</div>
+          <p class="text">كلمة المرور</p>
+          <input type="password" formControlName="password_user" placeholder="ادخل كلمة المرور" required>
+        </div>
+        <div *ngIf="submitted_crearte && formData.controls['password_user'].errors">
+          <p class="invalid-feedback-custom"
+            *ngIf="submitted_crearte && formData.controls['password_user'].errors.required">
+            الحقل مطلوب!</p>
+          <p class="invalid-feedback-custom"
+            *ngIf="submitted_crearte && formData.controls['password_user'].errors.minlength">
+            كلمة السر يجب ان تكون أطول من 8 عناصر!</p>
+          <p class="invalid-feedback-custom"
+            *ngIf="submitted_crearte && formData.controls['password_user'].errors.pattern">
+            كلمة السر يجب ان تحتوي حروف كبيرة وصغيرة وارقام!</p>
         </div>
       </div>
 
-      <div class="group">
-        <div class="input-group">
-          <div class="gg">
-            <p class="text">البريد الالكتروني</p>
-            <input type="text" [(ngModel)]="formData.email_user" name="email_user" placeholder="ادخل البريد" required>
-          </div>
-          <div *ngIf="errorMessages.email_user" class="invalid-feedback-custom">{{ errorMessages.email_user }}</div>
-        </div>
-      </div>
-
-      <div class="group">
-        <div class="input-group">
-          <div class="gg">
-            <p class="text">كلمة المرور</p>
-            <input type="password" [(ngModel)]="formData.password_user" name="password_user"
-              placeholder="ادخل كلمة المرور" required>
-          </div>
-          <div *ngIf="errorMessages.password_user" class="invalid-feedback-custom">{{ errorMessages.password_user }}
-          </div>
-        </div>
-      </div>
-
-      <input type="hidden" [(ngModel)]="formData.user_type_id" name="user_type_id">
+      <input type="hidden" formControlName="user_type_id">
 
       <div class="btn">
-        <button type="submit">انشاء حساب</button>
+        <button type="submit">انشاء حساب
+        </button>
       </div>
       <p class="change"><a routerLink="/auth/login">سجل الدخول</a> لديك حساب؟ </p>
     </form>
   </div>
+
 </router-outlet>
 <app-footer></app-footer>
