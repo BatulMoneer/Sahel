@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { auth } from 'src/app/constant/Routes';
 import { OtpPopComponent } from 'src/app/main-apps/apps/popup/otp-pop/otp-pop.component';
 import { OrderService } from 'src/app/service/order.service';
@@ -25,7 +26,9 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private impApiService: ImpApiService,
     private dialog: MatDialog,
-    private service: OrderService
+    private service: OrderService,
+    private spinner: NgxSpinnerService
+
   ) { }
 
   ngOnInit(): void {

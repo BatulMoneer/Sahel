@@ -18,7 +18,10 @@ export class StoreSignupComponent implements OnInit {
 
   submit = "انشاء حساب";
   link = "/apps/home/app-store-home";
-
+  errorMessages = null;
+  selectedFile: File | null = null;
+  formData = null;
+  submitted_crearte = false;
   constructor(
     private router: Router,
     private service: OrderService,
@@ -66,7 +69,7 @@ export class StoreSignupComponent implements OnInit {
         localStorage.setItem('email', this.formData.email_user)
         console.log(localStorage.getItem('email'))
         this.spinner.hide()
-        this.dialog.open(Otp2PopComponent);
+        // this.dialog.open(Otp2PopComponent);
       }
 
     });
@@ -134,56 +137,53 @@ export class StoreSignupComponent implements OnInit {
   navigateToAccountType() {
     this.router.navigate(['/auth/login']);
   }
-  selectedFile: File | null = null;
-
-  formData: FormGroup;
-  submitted_crearte = false;
-
-  signUp() {
-    this.submitted_crearte = true;
-
-    if (this.formData.invalid) {
-      return null;
-    }
-    const formValue = this.formData.value;
-
-    const payload = {
-      name_user: formValue.name_user,
-      email_user: formValue.email_user,
-      password_user: formValue.password_user,
-      phone_user: formValue.phone_user,
-      user_type_id: formValue.user_type_id,
-      questions: [
-        {
-          question_id: 3,
-          value: formValue.commercial_register
-        },
-        {
-          question_id: 4,
-          value: formValue.logo
-        },
-        {
-          question_id: 2,
-          value: formValue.branch
-        }
-      ]
-    };
-
-    this.submitted_crearte = true
-    if (this.formData.invalid) {
-      return null;
-    }
-
-    this.impApiService.post(auth.create, payload).subscribe(data => {
-      localStorage.setItem('header', '3')
-      console.log(data.otp)
-      this.dialog.open(OtpPopComponent)
 
 
-    })
+  // signUp() {
+  //   this.submitted_crearte = true;
+
+  //   if (this.formData.invalid) {
+  //     return null;
+  //   }
+  //   const formValue = this.formData.value;
+
+  //   const payload = {
+  //     name_user: formValue.name_user,
+  //     email_user: formValue.email_user,
+  //     password_user: formValue.password_user,
+  //     phone_user: formValue.phone_user,
+  //     user_type_id: formValue.user_type_id,
+  //     questions: [
+  //       {
+  //         question_id: 3,
+  //         value: formValue.commercial_register
+  //       },
+  //       {
+  //         question_id: 4,
+  //         value: formValue.logo
+  //       },
+  //       {
+  //         question_id: 2,
+  //         value: formValue.branch
+  //       }
+  //     ]
+  //   };
+
+  //   this.submitted_crearte = true
+  //   if (this.formData.invalid) {
+  //     return null;
+  //   }
+
+  //   this.impApiService.post(auth.create, payload).subscribe(data => {
+  //     localStorage.setItem('header', '3')
+  //     console.log(data.otp)
+  //     this.dialog.open(OtpPopComponent)
 
 
-  }
+  //   })
+
+
+  // }
 
   handleFileInput(event: any) {
     this.selectedFile = event.target.files[0];

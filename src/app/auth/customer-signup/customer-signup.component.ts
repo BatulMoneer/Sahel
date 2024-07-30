@@ -6,6 +6,7 @@ import { ImpApiService } from 'src/app/services/imp-api.service';
 import { auth } from 'src/app/constant/Routes';
 import { MatDialog } from '@angular/material/dialog';
 import { OtpPopComponent } from 'src/app/main-apps/apps/popup/otp-pop/otp-pop.component';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-customer-signup',
@@ -23,6 +24,7 @@ export class CustomerSignupComponent implements OnInit {
     private formBuilder: FormBuilder,
     private impApiService: ImpApiService,
     private dialog: MatDialog,
+    private spinner: NgxSpinnerService
   ) { }
   navigateToAccountType() {
     this.router.navigate(['/auth/login']);
