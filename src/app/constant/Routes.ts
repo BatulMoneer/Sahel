@@ -10,4 +10,12 @@ export const auth = {
   logout: BASEURL + 'logout',
 
 
+
 }
+export const collector = {
+  collectorUpdate: BASEURL + 'collectorUpdate',
+
+
+
+}
+

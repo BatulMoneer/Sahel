@@ -14,6 +14,7 @@ import { CommonModule } from '@angular/common';
 import { PopupModule } from './main-apps/apps/popup/popup.module';
 import { TokenInterceptorInterceptor } from './services/token-interceptor.interceptor';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     HttpClientModule,
     CommonModule,
     PopupModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    ToastrModule.forRoot(),
   ],
   exports: [
     NgxSpinnerModule,],

@@ -1,0 +1,43 @@
+<app-header></app-header>
+<div class="body">
+  <div class="top">
+    <img src="../../../../../assets/images/Panda.png" alt="Panda">
+    <h1 class="head">متجر بنده | فرع الشرائع</h1>
+  </div>
+
+  <div class="search-container">
+    <i class="fas fa-search search-icon"></i>
+    <input type="text" placeholder="بحث">
+  </div>
+
+
+
+  <ng-container *ngFor="let cat of getFilteredCategories(); let categoryIndex = index">
+    <h1 class="category" (click)="toggleShowAllProducts(categoryIndex)">{{ cat.title }}</h1>
+    <div class="carousel" *ngIf="!showAllProducts[categoryIndex]">
+      <button (click)="scrollLeft(categoryIndex)" class="arrow left-arrow" [disabled]="isAtStart(cat.currentIndex)">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <div class="grid">
+        <div class="grid-inner" id="scrollContainer{{categoryIndex}}{{cat.currentIndex}}">
+          <app-item-card *ngFor="let i of cat.array" class="grid-item" [link]="i.link" [value]="i.value"
+            [title]="i.product" [image]="i.image" [info]="i.info"></app-item-card>
+        </div>
+      </div>
+      <button (click)="scrollRight(categoryIndex, cat.array)" class="arrow right-arrow"
+        [disabled]="isAtEnd(cat.currentIndex, cat.array)">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+    <div class="all-products" *ngIf="showAllProducts[categoryIndex]">
+      <app-item-card *ngFor="let i of cat.array" class="grid-item" [link]="i.link" [value]="i.value" [title]="i.product"
+        [image]="i.image" [info]="i.info"></app-item-card>
+    </div>
+  </ng-container>
+
+  <button (click)="toggleShowAllCategories()">
+    {{ showAllCategories ? 'عرض أقل' : 'عرض المزيد من التصنيفات' }}
+  </button>
+
+</div>
+<app-footer></app-footer>

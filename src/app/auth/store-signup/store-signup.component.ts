@@ -48,6 +48,7 @@ export class StoreSignupComponent {
     this.spinner.show();
 
     if (!this.validatePayload(this.formData)) {
+      this.spinner.hide()
       return;
     }
 

@@ -1,58 +1,52 @@
+import { Router } from '@angular/router';
 import { HttpEvent, HttpHandler, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { ToastrService } from 'ngx-toastr';
 import { catchError, Observable, throwError } from 'rxjs';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ErrorInterceptorService {
-  constructor(private router: Router) { }
+
+  constructor(private router: Router,
+    private toastr: ToastrService,
+    private spinner: NgxSpinnerService) {
+
+  }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    return next.handle(request).pipe(
-      catchError(err => {
-        let message = '';
-        let action = '';
-        /*
-                if (err.status === 400) {
-                  message = 'حدثت مشكلة في طلبك. يرجى التحقق والمحاولة مرة أخرى.';
-                  action = 'طلب غير صحيح';
-                }
-                if (err.status === 401) {
-                  message = 'انتهت صلاحية جلستك. يرجى تسجيل الدخول مرة أخرى.';
-                  action = 'غير مصرح';
-                  this.router.navigate(['/auth/login']);
-                }
-                if (err.status === 403) {
-                  message = 'ليس لديك إذن لأداء هذا الإجراء.';
-                  action = 'ممنوع';
-                  this.router.navigate(['/auth/not-found']);
-                }
-                if (err.status === 422) {
-                  message = 'كانت هناك أخطاء في التحقق من صحة تقديمك. يرجى تصحيحها والمحاولة مرة أخرى.';
-                  action = 'كيان غير قابل للمعالجة';
-                }
-                if (err.status === 429) {
-                  message = 'لقد قمت بإرسال عدد كبير جدًا من الطلبات. يرجى المحاولة مرة أخرى لاحقًا.';
-                  action = 'طلبات كثيرة جدًا';
-                }
-                if (err.status === 500) {
-                  message = 'حدث خطأ غير متوقع. يرجى المحاولة مرة أخرى لاحقًا.';
-                  action = 'خطأ داخلي في الخادم';
-                }
-
-                if (message) {
-                  this.snackBar.open(message, action, {
-                    duration: 5000,
-                    horizontalPosition: 'right',
-                    verticalPosition: 'top',
-                  });
-                }
-        */
-        return throwError(err);
-      })
-    );
+    return next.handle(request).pipe(catchError(err => {
+      if (err.status === 400) {
+        this.toastr.error('يوجد مشكلة بالطلب يرجى التحقق وإعادة المحاولة. Bad Request');
+        this.spinner.hide()
+      }
+      if (err.status === 401) {
+        this.toastr.error('غير مصرح بالدخول. Unauthorized');
+        this.router.navigate(['/auth/login']);
+        this.spinner.hide()
+      }
+      if (err.status === 403) {
+        this.toastr.error('لا يمكنك الوصول. Forbidden');
+        this.router.navigate(['/auth/not-found']);
+        this.spinner.hide()
+        /// maybe i shall end the session?
+      }
+      if (err.status === 422) {
+        this.toastr.error('يوجد مشكلة بالمدخلات حاول مجددا. Unprocessable Entity');
+        this.spinner.hide()
+      }
+      if (err.status === 429) {
+        this.toastr.error('يوجد عدد كبير من الطلبات. Too Many Requests');
+        this.spinner.hide()
+      }
+      if (err.status === 500) {
+        this.toastr.error(err.message);
+        this.spinner.hide()
+      }
+      return throwError(err);
+    }))
   }
+
 }

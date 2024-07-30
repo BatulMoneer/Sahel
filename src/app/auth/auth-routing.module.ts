@@ -8,12 +8,30 @@ import { CustomerSignupComponent } from './customer-signup/customer-signup.compo
 import { CollectorSignupComponent } from './collector-signup/collector-signup.component';
 import { AccountTypeComponent } from './account-type/account-type.component';
 import { CheckTokenGuard } from '../guard/check-token.guard';
+import { CustomerHomeComponent } from './customer-home/customer-home.component';
+import { CustomerViewProductsComponent } from './customer-view-products/customer-view-products.component';
+import { CustomerItemDetailComponent } from './customer-item-detail/customer-item-detail.component';
 
 const routes: Routes = [
   {
     path: '',
     redirectTo: 'auth/login',
     pathMatch: 'full'
+  },
+  {
+
+    path: 'home',
+    component: CustomerHomeComponent
+  },
+  {
+
+    path: 'products',
+    component: CustomerViewProductsComponent
+  },
+  {
+
+    path: 'details',
+    component: CustomerItemDetailComponent
   },
   {
 

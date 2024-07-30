@@ -53,23 +53,19 @@ export class LoginComponent implements OnInit {
     this.spinner.show()
     this.submitted_crearte = true
     if (this.formData.invalid) {
+      this.spinner.hide()
+
       return null;
     }
 
     this.impApiService.post(auth.login, this.formData.value).subscribe(data => {
       localStorage.setItem('header', data.user_info.user_type_id)
       localStorage.setItem('email', data.user_info.email_user)
-
-
       localStorage.setItem('currentUser', JSON.stringify(data))
 
       this.spinner.hide()
       this.dialog.open(OtpPopComponent)
-
-
-
     })
-
 
 
   }

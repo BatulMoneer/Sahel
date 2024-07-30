@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { InfoUpdatedPopComponent } from '../../popup/info-updated-pop/info-updated-pop.component';
 import { MatDialog } from '@angular/material/dialog';
+import { ImpApiService } from 'src/app/services/imp-api.service';
+import { auth } from 'src/app/constant/Routes';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-customer-my-information',
@@ -40,7 +43,11 @@ export class CustomerMyInformationComponent implements OnInit {
     { number: '9801 1235 4652 1532' }
   ];
 
-  constructor(private snackBar: MatSnackBar, private dialog: MatDialog) { }
+  constructor(
+    private snackBar: MatSnackBar,
+    private dialog: MatDialog,
+    private impApiService: ImpApiService,
+    private router: Router) { }
 
   openDialog(): void {
     this.dialog.open(InfoUpdatedPopComponent);
@@ -138,7 +145,30 @@ export class CustomerMyInformationComponent implements OnInit {
   }
 
   signOut() {
+    this.impApiService.post(auth.logout, localStorage.getItem('token')).subscribe(data => {
 
+    })
+    localStorage.removeItem("currentUser");
+    localStorage.removeItem("token")
+
+    this.router.navigate(['/auth/login']);
+  }
+
+  mylatlng: any = {
+    lat: null,
+    lng: null
+  };
+  findMe() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        console.log('latitude', position.coords.latitude);
+        console.log('longitude', position.coords.longitude);
+        this.mylatlng.lat = position.coords.latitude;
+        this.mylatlng.lng = position.coords.longitude;
+      });
+    } else {
+      alert("Geolocation is not supported by this browser.");
+    }
   }
 
   saveChanges() {

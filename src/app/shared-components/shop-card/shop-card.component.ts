@@ -1,4 +1,4 @@
-import { Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-shop-card',
@@ -8,21 +8,17 @@ import { Component, OnInit, Input} from '@angular/core';
 export class ShopCardComponent implements OnInit {
 
 
-  @Input() more :  any;
-  @Input() submit : any;
+  @Input() more: any;
+  @Input() submit: any;
 
   @Input() title = '';
   @Input() image = '';
   @Input() info = '';
 
   constructor() {
-    console.log(this.more)
-    console.log(this.submit)
-   }
+  }
 
   ngOnInit(): void {
-    console.log(this.more)
-    console.log(this.submit)
   }
 
 }

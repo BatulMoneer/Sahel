@@ -15,6 +15,9 @@ import { AccountTypeComponent } from './account-type/account-type.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { NgOtpInputModule } from 'ng-otp-input';
+import { CustomerHomeComponent } from './customer-home/customer-home.component';
+import { CustomerViewProductsComponent } from './customer-view-products/customer-view-products.component';
+import { CustomerItemDetailComponent } from './customer-item-detail/customer-item-detail.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { NgOtpInputModule } from 'ng-otp-input';
     CollectorSignupComponent,
     HeaderComponent,
     FooterComponent,
-    AccountTypeComponent
+    AccountTypeComponent,
+    CustomerHomeComponent,
+    CustomerViewProductsComponent,
+    CustomerItemDetailComponent
   ],
   imports: [
     CommonModule,
