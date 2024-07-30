@@ -53,51 +53,52 @@
         <h2>أرباح التطبيق الشهرية</h2>
         <div class="chartDiv" id="main"></div>
       </div>
-
     </div>
 
-    <div class="tableTitleDiv">
-      <h2>بيانات العملاء</h2>
-    </div>
+  </div>
 
-    <div class="search-container">
-      <i class="fas fa-search search-icon"></i>
-      <input type="text" placeholder="بحث">
-    </div>
+  <div class="tableTitleDiv">
+    <h2>بيانات العملاء</h2>
+  </div>
 
-    <div class="table-container-div">
-      <table>
-        <thead>
-          <tr>
-            <th class="th-first">اسم العميل</th>
-            <th>العنوان</th>
-            <th>البريد الإلكتروني</th>
-            <th>رقم الجوال</th>
-            <th class="th-last">رقم الحساب المصرفي</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let item of customersList">
-            <td>{{item.name_user}}</td>
-            <td>{{item.customerAddress}}</td>
-            <td>{{item.email_user}}</td>
-            <td>{{item.phone_user}}</td>
-            <td>{{item.IBAN}}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+  <div class="search-container">
+    <i class="fas fa-search search-icon"></i>
+    <input type="text" placeholder="بحث">
+  </div>
 
-    <div class="tableTitleDiv">
-      <h2>بيانات المناديب</h2>
-    </div>
+  <div class="table-container-div">
+    <table>
+      <thead>
+        <tr>
+          <th class="th-first">اسم العميل</th>
+          <th>العنوان</th>
+          <th>البريد الإلكتروني</th>
+          <th>رقم الجوال</th>
+          <th class="th-last">رقم الحساب المصرفي</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of customersList">
+          <td>{{item.name_user}}</td>
+          <td>{{item.customerAddress}}</td>
+          <td>{{item.email_user}}</td>
+          <td>{{item.phone_user}}</td>
+          <td>{{item.IBAN}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
-    <div class="search-container">
-      <i class="fas fa-search search-icon"></i>
-      <input type="text" placeholder="بحث">
-    </div>
+  <div class="tableTitleDiv">
+    <h2>بيانات المناديب</h2>
+  </div>
 
-    <div class="table-container-div">
+  <div class="search-container">
+    <i class="fas fa-search search-icon"></i>
+    <input type="text" placeholder="بحث">
+  </div>
+
+  <div class="table-container-div">
     <table>
       <thead>
         <tr>
@@ -113,7 +114,9 @@
       <tbody>
         <tr *ngFor="let item of collectorsList">
           <td>{{item.name_user}}</td>
-          <ng-container *ngFor="let item_2 of item.values_info"><ng-container *ngIf="item_2.info == 'age'"><td>{{item_2.answer}}</td></ng-container></ng-container>
+          <ng-container *ngFor="let item_2 of item.values_info"><ng-container *ngIf="item_2.info == 'age'">
+              <td>{{item_2.answer}}</td>
+            </ng-container></ng-container>
           <td>{{item.email_user}}</td>
           <td>{{item.phone_user}}</td>
           <td>{{item.IBAN}}</td>
@@ -128,16 +131,16 @@
     </table>
   </div>
 
-    <div class="tableTitleDiv">
-      <h2>بيانات المتاجر</h2>
-    </div>
+  <div class="tableTitleDiv">
+    <h2>بيانات المتاجر</h2>
+  </div>
 
-    <div class="search-container">
-      <i class="fas fa-search search-icon"></i>
-      <input type="text" placeholder="بحث">
-    </div>
+  <div class="search-container">
+    <i class="fas fa-search search-icon"></i>
+    <input type="text" placeholder="بحث">
+  </div>
 
-    <div class="table-container-div">
+  <div class="table-container-div">
     <table>
       <thead>
         <tr>
@@ -148,23 +151,28 @@
           <th>المبيعات الشهرية</th>
           <th>السجل التجاري</th>
           <th class="th-last">حالة الحساب</th>
+          <th class="th-last">السجل التجاري</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let item of marketsList">
           <td>{{item.name_user}}</td>
-          <ng-container *ngFor="let item_2 of item.values_info"><ng-container *ngIf="item_2.info == 'branch'"><td>{{item_2.answer}}</td></ng-container></ng-container>
+          <ng-container *ngFor="let item_2 of item.values_info">
+            <ng-container *ngIf="item_2.info == 'branch'">
+              <td>{{item_2.answer}}</td>
+            </ng-container>
+          </ng-container>
           <td>{{item.email_user}}</td>
           <td>{{item.phone_user}}</td>
           <td>{{item.monthSales}}</td>
-          <td><a href="{{item.commercialRegistration}}" target="_blank"><img class="commercialRegistration"
-                src={{item.commercialRegistration}} alt="السجل"></a></td>
+          <td>
+            <a href="{{item.commercialRegistration}}" target="_blank">
+              <img class="commercialRegistration" src={{item.commercialRegistration}} alt="السجل"></a>
+          </td>
           <td>{{item.account_status}}</td>
         </tr>
       </tbody>
     </table>
-    </div>
-
   </div>
 
 </div>
