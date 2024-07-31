@@ -279,15 +279,9 @@ input[type="text"] {
   border-color: var(--prime);
 }
 
-.table-container-div {
+table {
   width: 90%;
   height: 400px;
-  padding: 0;
-  margin: 0;
-}
-
-table {
-  width: 100%;
   display: table;
   align-self: center;
   text-align: center;
