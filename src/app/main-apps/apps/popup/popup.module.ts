@@ -13,6 +13,8 @@ import { OtpPopComponent } from './otp-pop/otp-pop.component';
 import { NgOtpInputModule } from 'ng-otp-input';
 import { AccountVerifyComponent } from './account-verify/account-verify.component';
 import { Otp2PopComponent } from './otp2-pop/otp2-pop.component';
+import { ForgetPassPopComponent } from './forget-pass-pop/forget-pass-pop.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -26,13 +28,14 @@ import { Otp2PopComponent } from './otp2-pop/otp2-pop.component';
     OtpPopComponent,
     AccountVerifyComponent,
     Otp2PopComponent,
+    ForgetPassPopComponent,
   ],
   imports: [
     CommonModule,
     PopupRoutingModule,
     MatDialogModule,
     NgOtpInputModule,
-
+    ReactiveFormsModule
 
   ],
   exports: [

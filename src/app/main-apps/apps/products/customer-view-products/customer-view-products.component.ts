@@ -1,4 +1,6 @@
 import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
+import { category, product } from 'src/app/constant/Routes';
+import { ImpApiService } from 'src/app/services/imp-api.service';
 
 @Component({
   selector: 'app-customer-view-products',
@@ -8,6 +10,10 @@ import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 export class CustomerViewProductsComponent implements OnInit {
   @ViewChild('scrollContainer') scrollContainer!: ElementRef;
 
+  constructor(private impApiService: ImpApiService) { }
+
+
+  categories = []
   category = [
     {
       title: "مواد تنظيف",
@@ -330,7 +336,20 @@ export class CustomerViewProductsComponent implements OnInit {
     this.showAllProducts[categoryIndex] = !this.showAllProducts[categoryIndex];
   }
 
-  constructor() { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.impApiService.get(category.categories_index).subscribe(data => {
+      for (let index = 0; index < data.length; index++) {
+        this.categories.push(data[index].category_name);
+      }
+    });
+    const shop_id = 1
+    this.impApiService.get(product.viewProducts + shop_id).subscribe(data => {
+      // for (let index = 0; index < data.length; index++) {
+      //   this.categories.push(data[index].category_name);
+      // }
+      console.log(data);
+    });
+
+  }
 }

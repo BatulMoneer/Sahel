@@ -1,0 +1,50 @@
+<div class="body">
+  <header class="head">
+    <h1 class="title">تغيير كلمة المرور</h1>
+  </header>
+  <div class="middle">
+
+    <form [formGroup]="passwordForm" (ngSubmit)="checkEntered()">
+
+      <div class="group">
+        <div class="input-group">
+          <p class="text">كلمة المرور</p>
+          <input type="password" formControlName="newPassword" placeholder="ادخل كلمة المرور" required>
+        </div>
+        <div *ngIf="submitted_crearte && passwordForm.controls['newPassword'].errors">
+          <p class="invalid-feedback-custom"
+            *ngIf="submitted_crearte && passwordForm.controls['newPassword'].errors.required">
+            الحقل مطلوب!</p>
+          <p class="invalid-feedback-custom"
+            *ngIf="submitted_crearte && passwordForm.controls['newPassword'].errors.minlength">
+            كلمة السر يجب ان تكون أطول من 8 عناصر!</p>
+          <p class="invalid-feedback-custom"
+            *ngIf="submitted_crearte && passwordForm.controls['newPassword'].errors.pattern">
+            كلمة السر يجب ان تحتوي حروف كبيرة وصغيرة وارقام!</p>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="input-group">
+          <p class="text">كلمة المرور</p>
+          <input type="password" formControlName="newPasswordConfirm" placeholder="ادخل كلمة المرور" required>
+        </div>
+        <div *ngIf="submitted_crearte && passwordForm.controls['newPasswordConfirm'].errors">
+          <p class="invalid-feedback-custom"
+            *ngIf="submitted_crearte && passwordForm.controls['newPasswordConfirm'].errors.required">
+            الحقل مطلوب!</p>
+          <p class="invalid-feedback-custom"
+            *ngIf="submitted_crearte && passwordForm.controls['newPasswordConfirm'].errors.minlength">
+            كلمة السر يجب ان تكون أطول من 8 عناصر!</p>
+          <p class="invalid-feedback-custom"
+            *ngIf="submitted_crearte && passwordForm.controls['newPasswordConfirm'].errors.pattern">
+            كلمة السر يجب ان تحتوي حروف كبيرة وصغيرة وارقام!</p>
+        </div>
+      </div>
+
+      <div class="foot">
+        <button class="btn" type="submit">تأكيد</button>
+      </div>
+    </form>
+
+  </div>

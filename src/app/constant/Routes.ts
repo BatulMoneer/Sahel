@@ -19,14 +19,26 @@ export const collector = {
 
 }
 
+export const category = {
+  categories_index: BASEURL + 'categories/index'
+}
+
+export const customer = {
+  viewMarkets: BASEURL + 'viewMarkets',
+  addOrder: BASEURL + 'addOrder'
+}
+
+export const product = {
+  viewProducts: BASEURL + 'viewProducts/'
+}
 
 export const HOME = {
   //  total_all_users_manager: BASEURL + 'getNumberOfUsers',
-   total_users_customers_manager: BASEURL + 'getNumberOfUsers',
-   total_users_collectors_manager: BASEURL + 'getNumberOfCollectors',
-   total_users_markets_manager: BASEURL + 'getNumberOfMarkets',
-   list_users_customers: BASEURL + 'showAllUsersDetailedInfo',
-   list_users_collectors: BASEURL + 'showAllCollectorsDetailedInfo',
-   list_users_markets: BASEURL + 'showAllMarketsDetailedInfo',
-  }
+  total_users_customers_manager: BASEURL + 'getNumberOfUsers',
+  total_users_collectors_manager: BASEURL + 'getNumberOfCollectors',
+  total_users_markets_manager: BASEURL + 'getNumberOfMarkets',
+  list_users_customers: BASEURL + 'showAllUsersDetailedInfo',
+  list_users_collectors: BASEURL + 'showAllCollectorsDetailedInfo',
+  list_users_markets: BASEURL + 'showAllMarketsDetailedInfo',
+}
 

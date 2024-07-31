@@ -23,28 +23,7 @@
         <p class="text">البريد الالكتروني</p>
         <input type="email" [(ngModel)]="email" name="email" />
       </div>
-      <div class="input-group">
-        <p class="text">كلمة المرور الحالية</p>
-        <input type="password" [(ngModel)]="currentPassword" name="currentPassword" />
-      </div>
-      <div class="input-group">
-        <p class="text">كلمة مرور جديدة</p>
-        <div class="password-container">
-          <input type="password" [(ngModel)]="newPassword" [type]="showNewPassword ? 'text' : 'password'"
-            name="newPassword" (input)="checkPasswordStrength()" />
-          <i (click)="toggleNewPasswordVisibility()"
-            [ngClass]="showNewPassword ? 'fas fa-eye-slash' : 'fas fa-eye'"></i>
-        </div>
-      </div>
-      <div class="input-group">
-        <p class="text">تأكيد كلمة المرور </p>
-        <div class="password-container">
-          <input type="password" [(ngModel)]="confirmPassword" [type]="showConfirmPassword ? 'text' : 'password'"
-            name="confirmPassword" />
-          <i (click)="toggleConfirmPasswordVisibility()"
-            [ngClass]="showConfirmPassword ? 'fas fa-eye-slash' : 'fas fa-eye'"></i>
-        </div>
-      </div>
+
     </div>
 
     <div class="section">
