@@ -8,6 +8,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { OtpPopComponent } from 'src/app/main-apps/apps/popup/otp-pop/otp-pop.component';
 import { Otp2PopComponent } from 'src/app/main-apps/apps/popup/otp2-pop/otp2-pop.component';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-customer-signup',
@@ -26,6 +27,8 @@ export class CustomerSignupComponent implements OnInit {
     private impApiService: ImpApiService,
     private spinner: NgxSpinnerService,
     private dialog: MatDialog,
+    private toastr: ToastrService,
+
   ) { }
   navigateToAccountType() {
     this.router.navigate(['/auth/login']);
@@ -53,8 +56,13 @@ export class CustomerSignupComponent implements OnInit {
         this.spinner.hide()
         this.dialog.open(Otp2PopComponent);
       }
+      else if (data.message == "The email user has already been taken.") {
+        this.toastr.error("البريد الالكتروني موجود مسبقا ");
 
-    })
+      }
+
+    });
+
   }
 
   ngOnInit(): void {

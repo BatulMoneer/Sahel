@@ -4,7 +4,9 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { ToastrService } from 'ngx-toastr';
 import { auth } from 'src/app/constant/Routes';
+import { ForgetPassPopComponent } from 'src/app/main-apps/apps/popup/forget-pass-pop/forget-pass-pop.component';
 import { OtpPopComponent } from 'src/app/main-apps/apps/popup/otp-pop/otp-pop.component';
 import { OrderService } from 'src/app/service/order.service';
 
@@ -27,7 +29,9 @@ export class LoginComponent implements OnInit {
     private impApiService: ImpApiService,
     private dialog: MatDialog,
     private service: OrderService,
-    private spinner: NgxSpinnerService
+    private spinner: NgxSpinnerService,
+    private toastr: ToastrService,
+
   ) { }
 
   ngOnInit(): void {
@@ -68,6 +72,17 @@ export class LoginComponent implements OnInit {
     })
 
 
+  }
+
+  forgotPass() {
+    if (this.formData.value.email_user) {
+      this.dialog.open(ForgetPassPopComponent)
+
+    }
+    else {
+      this.toastr.error("يرجى ادخال البريد");
+
+    }
   }
 
 }

@@ -32,10 +32,6 @@ export class CustomerMyInformationComponent implements OnInit {
   expirationDate: string = '';
   confirmationCode: string = '';
 
-  showNewPassword: boolean = false;
-  showConfirmPassword: boolean = false;
-  passwordStrength: number;
-  currentStoredPassword: string = this.current_password;
 
   savedCards = [
     { number: '9801 1235 4652 1532' },
@@ -59,31 +55,6 @@ export class CustomerMyInformationComponent implements OnInit {
     this.phoneNumber = '1234567890';
   }
 
-  toggleNewPasswordVisibility() {
-    this.showNewPassword = !this.showNewPassword;
-  }
-
-  toggleConfirmPasswordVisibility() {
-    this.showConfirmPassword = !this.showConfirmPassword;
-  }
-
-  checkPasswordStrength() {
-    const password = this.newPassword;
-    let strengthScore = 0;
-
-    const hasLowerCase = /[a-z]/.test(password);
-    const hasUpperCase = /[A-Z]/.test(password);
-    const hasNumber = /\d/.test(password);
-
-    if (hasLowerCase) strengthScore++;
-    if (hasUpperCase) strengthScore++;
-    if (hasNumber) strengthScore++;
-
-    if (password.length >= 6) strengthScore++;
-    if (password.length >= 12) strengthScore++;
-
-    this.passwordStrength = strengthScore;
-  }
 
   formatCardNumber() {
     this.cardNumber = this.cardNumber.replace(/\s+/g, '').replace(/(\d{4})(?=\d)/g, '$1 ');
@@ -172,56 +143,12 @@ export class CustomerMyInformationComponent implements OnInit {
   }
 
   saveChanges() {
-    if (this.currentPassword !== this.currentStoredPassword) {
-      this.snackBar.open('كلمة المرور الحالية غير صحيحة', 'إغلاق', {
-        duration: 3000,
-        verticalPosition: 'top',
-        horizontalPosition: 'center'
-      });
-      return;
-    }
-
-    if (this.newPassword !== this.confirmPassword) {
-      this.snackBar.open('كلمات المرور الجديدة غير متطابقة', 'إغلاق', {
-        duration: 3000,
-        verticalPosition: 'top',
-        horizontalPosition: 'center'
-      });
-      return;
-    }
-
-    if (this.passwordStrength < 4) {
-      this.snackBar.open('كلمة المرور ضعيفة', 'إغلاق', {
-        duration: 3000,
-        verticalPosition: 'top',
-        horizontalPosition: 'center'
-      });
-      return;
-    }
-
-    if (this.newPassword === this.currentStoredPassword) {
-      this.snackBar.open('كلمة المرور الجديدة يجب أن تكون مختلفة عن كلمة المرور الحالية', 'إغلاق', {
-        duration: 3000,
-        verticalPosition: 'top',
-        horizontalPosition: 'center'
-      });
-      return;
-    }
-
-    this.currentStoredPassword = this.newPassword;
-    this.snackBar.open('كلمة المرور تم تحديثها بنجاح', 'إغلاق', {
-      duration: 3000,
-      verticalPosition: 'top',
-      horizontalPosition: 'center'
-    });
 
     console.log('User information saved:', {
       wallet: this.wallet,
       name: this.name,
       phoneNumber: this.phoneNumber,
       email: this.email,
-      currentPassword: this.currentPassword,
-      newPassword: this.newPassword,
       neighborhood: this.neighborhood,
       street: this.street,
       building: this.building,

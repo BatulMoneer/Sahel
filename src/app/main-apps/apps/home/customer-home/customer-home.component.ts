@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { customer } from 'src/app/constant/Routes';
+import { ImpApiService } from 'src/app/services/imp-api.service';
 
 @Component({
   selector: 'app-customer-home',
@@ -23,10 +25,14 @@ export class CustomerHomeComponent implements OnInit {
   displayedShops: any[] = [];
   showMore: boolean = false;
 
-  constructor() { }
+  constructor(private impApiService: ImpApiService) { }
 
   ngOnInit(): void {
     this.displayedShops = this.shops.slice(0, 4);
+
+    // this.impApiService.get(customer.viewMarkets).subscribe(data => {
+    //   console.log(data);
+    // });
   }
 
   showAllShops(): void {

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ImpApiService } from 'src/app/services/imp-api.service';
@@ -11,167 +12,94 @@ import { auth } from 'src/app/constant/Routes';
   templateUrl: './store-signup.component.html',
   styleUrls: ['./store-signup.component.scss']
 })
-export class StoreSignupComponent {
-  submit = "انشاء حساب";
-  link = "/apps/home/app-store-home";
-
-  formData: any = {
-    name_user: '',
-    branch: '',
-    email_user: '',
-    password_user: '',
-    phone_user: '',
-    commercial_register: '',
-    logo: '',
-    user_type_id: 3
-  };
-  errorMessages: any = {
-    name_user: '',
-    branch: '',
-    email_user: '',
-    password_user: '',
-    phone_user: '',
-    commercial_register: '',
-    logo: ''
-  };
-  submitted_crearte = false;
+export class StoreSignupComponent implements OnInit {
+  signupForm: FormGroup;
+  submitted = false;
 
   constructor(
+    private formBuilder: FormBuilder,
     private router: Router,
     private impApiService: ImpApiService,
     private dialog: MatDialog,
     private spinner: NgxSpinnerService
   ) { }
 
-  signUp() {
-
-    this.spinner.show();
-
-    if (!this.validatePayload(this.formData)) {
-      this.spinner.hide()
-      return;
-    }
-
-    const payload = {
-      name_user: this.formData.name_user,
-      email_user: this.formData.email_user,
-      password_user: this.formData.password_user,
-      phone_user: this.formData.phone_user,
-      user_type_id: this.formData.user_type_id,
-      questions: [
-
-        {
-          question_id: 2,
-          value: this.formData.branch
-        },
-        {
-          question_id: 3,
-          value: this.formData.commercial_register
-        },
-        {
-          question_id: 4,
-          value: this.formData.logo
-        }
-      ]
-    };
-
-    this.impApiService.post(auth.create, payload).subscribe(data => {
-      if (data.message == "Account successfully created") {
-        localStorage.setItem('header', this.formData.user_type_id)
-        localStorage.setItem('email', this.formData.email_user)
-        console.log(localStorage.getItem('email'))
-        this.spinner.hide()
-        this.dialog.open(Otp2PopComponent);
-      }
-
+  ngOnInit(): void {
+    this.signupForm = this.formBuilder.group({
+      name_user: ['', Validators.required],
+      branch: ['', Validators.required],
+      email_user: ['', [Validators.required, Validators.email]],
+      password_user: ['', [Validators.required, Validators.pattern(/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}/)]],
+      phone_user: ['', [Validators.required, Validators.pattern(/^05[0-9]{8}$/)]],
+      commercial_register: ['', Validators.required],
+      logo: ['', Validators.required],
+      user_type_id: [3]
     });
   }
 
-  validatePayload(payload: any): boolean {
-    this.submitted_crearte = true;
-    this.errorMessages = {
-      name_user: '',
-      branch: '',
-      email_user: '',
-      password_user: '',
-      phone_user: '',
-      commercial_register: '',
-      logo: ''
-    };
-    let isValid = true;
+  get f() { return this.signupForm.controls; }
 
-    if (!payload.name_user) {
-      this.errorMessages.name_user = 'الحقل مطلوب!';
-      isValid = false;
-    }
-    if (!payload.branch) {
-      this.errorMessages.branch = 'الحقل مطلوب!';
-      isValid = false;
-    }
-    if (!payload.email_user) {
-      this.errorMessages.email_user = 'الحقل مطلوب!';
-      isValid = false;
-    }
-    if (!payload.email_user || !/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(payload.email_user)) {
-      this.errorMessages.email_user = 'البريد خطأ';
-      isValid = false;
-    }
-    if (!payload.password_user) {
-      this.errorMessages.password_user = 'الحقل مطلوب!';
-      isValid = false;
-    }
-    if (!payload.password_user || !/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}/.test(payload.password_user)) {
+  signUp() {
+    this.submitted = true;
 
-      this.errorMessages.password_user = 'كلمة المرور يجب ان تكون اطول من 8 عناصر ويجب ان تحوي أرقام وحروف كبيرة وصغيرة';
-      isValid = false;
-    }
-    if (!payload.phone_user) {
-      this.errorMessages.phone_user = 'الحقل مطلوب!';
-      isValid = false;
-    }
-    const phonePattern = /^05[0-9]{8}$/;
-    if (!payload.phone_user || !phonePattern.test(payload.phone_user)) {
-      this.errorMessages.phone_user = 'الرقم خطأ';
-      isValid = false;
-    }
-    if (!payload.commercial_register) {
-      this.errorMessages.commercial_register = 'الحقل مطلوب!';
-      isValid = false;
-    }
-    if (!payload.logo) {
-      this.errorMessages.logo = 'الحقل مطلوب!';
-      isValid = false;
+    if (this.signupForm.invalid) {
+      return;
     }
 
-    return isValid;
+    this.spinner.show();
+
+    const formData = new FormData();
+    formData.append('name_user', this.signupForm.value.name_user);
+    formData.append('email_user', this.signupForm.value.email_user);
+    formData.append('password_user', this.signupForm.value.password_user);
+    formData.append('phone_user', this.signupForm.value.phone_user);
+    formData.append('user_type_id', '3');
+
+    formData.append('questions[0][question_id]', '2');
+    formData.append('questions[0][value]', this.signupForm.value.branch);
+    formData.append('questions[1][question_id]', '3');
+    formData.append('questions[1][value]', this.signupForm.value.commercial_register);
+    formData.append('questions[2][question_id]', '4');
+    formData.append('questions[2][value]', this.signupForm.value.logo);
+
+    console.log(formData)
+    this.impApiService.post(auth.create, formData).subscribe(data => {
+      if (data.message == "Account successfully created") {
+        localStorage.setItem('header', '3');
+        localStorage.setItem('email', this.signupForm.value.email_user);
+        console.log(localStorage.getItem('email'));
+        this.spinner.hide();
+        this.dialog.open(Otp2PopComponent);
+      } else {
+        this.spinner.hide();
+      }
+    });
   }
+
 
   navigateToAccountType() {
     this.router.navigate(['/auth/login']);
   }
 
-  handleFileInput(event: any) {
-    const file = event.target.files[0];
+  handleImageInput(event: any) {
+    const file: File = event.target.files[0];
     if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        this.formData.commercial_register = reader.result as string;
-        console.log(this.formData.commercial_register);
-      };
-      reader.readAsDataURL(file);
+      this.signupForm.patchValue({
+        logo: file
+      });
+      console.log('Image file selected:', file);
     }
   }
 
-  handleImageInput(event: any) {
-    const file = event.target.files[0];
+  handleFileInput(event: any) {
+    const file: File = event.target.files[0];
     if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        this.formData.logo = reader.result as string;
-        console.log(this.formData.logo);
-      };
-      reader.readAsDataURL(file);
+      this.signupForm.patchValue({
+        commercial_register: file
+      });
+      console.log('File selected:', file);
     }
   }
+
 
 }

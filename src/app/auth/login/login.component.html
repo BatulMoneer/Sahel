@@ -24,7 +24,8 @@
             *ngIf="submitted_crearte && formData.controls['email_user'].errors.required">
             الحقل مطلوب!
           </p>
-          <p class="invalid-feedback-custom" *ngIf="submitted_crearte && formData.controls['email_user'].errors.email_user">
+          <p class="invalid-feedback-custom"
+            *ngIf="submitted_crearte && formData.controls['email_user'].errors.email_user">
             البريد غير صحيح!
           </p>
         </div>
@@ -55,6 +56,7 @@
         <button type="submit">تسجيل
           الدخول</button>
       </div>
+      <p class="change"> <a (click)="forgotPass()">نسيت كلمة المرور؟</a></p>
 
       <p class="change"><a routerLink="/auth/accountType">انشاء حساب </a>ليس لديك حساب؟ </p>
     </form>

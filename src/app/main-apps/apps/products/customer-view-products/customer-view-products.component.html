@@ -11,8 +11,8 @@
 
 
 
-  <ng-container *ngFor="let cat of getFilteredCategories(); let categoryIndex = index">
-    <h1 class="category" (click)="toggleShowAllProducts(categoryIndex)">{{ cat.title }}</h1>
+  <ng-container *ngFor="let cat of getFilteredCategories();  let categoryIndex = index">
+    <h1 class="category" (click)="toggleShowAllProducts(categoryIndex)">{{ categories[categoryIndex] }}</h1>
     <div class="carousel" *ngIf="!showAllProducts[categoryIndex]">
       <button (click)="scrollLeft(categoryIndex)" class="arrow left-arrow" [disabled]="isAtStart(cat.currentIndex)">
         <i class="fas fa-chevron-left"></i>
