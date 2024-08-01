@@ -12,8 +12,7 @@ export class ManagerMyInformationComponent implements OnInit {
     private router: Router
   ) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
   signout() {
     localStorage.removeItem("user");
@@ -24,7 +23,7 @@ export class ManagerMyInformationComponent implements OnInit {
   }
 
   update_() {
-    this.router.navigate(['apps/my-information/app-manager-my-information']);
+    location.reload()
   }
 
 }

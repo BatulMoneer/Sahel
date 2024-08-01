@@ -9,7 +9,7 @@
   background-color: var(--background);
 }
 
-.containerDiv {
+.container-div {
   height: auto;
   width: 90%;
   padding: 10px 0px 30px;
@@ -30,7 +30,7 @@
   border-color: var(--prime);
 }
 
-.titleDiv {
+.title-div {
   padding: 0;
   margin: 0;
   margin-bottom: 10px;
@@ -56,14 +56,16 @@ h6 {
   margin-bottom: 15px;
 }
 
-.statisticsContainer {
+.statistics-container {
   width: 90%;
   height: auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
-.helper1 {
+.helper-1 {
+  width: 90%;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -71,7 +73,8 @@ h6 {
   padding: 0px;
   margin: 0px;
 }
-.helper2 {
+
+.helper-2 {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -79,7 +82,8 @@ h6 {
   padding: 0px;
   margin: 0px;
 }
-.helper3 {
+
+.helper-3 {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -101,7 +105,7 @@ h6 {
   text-align: center;
 }
 
-.usersP {
+.users-p {
   display: flex;
   justify-self: center;
   text-align: center;
@@ -110,25 +114,25 @@ h6 {
   margin: 5px;
 }
 
-.totalP,
-.customerP,
-.collectorsP,
-.storesP {
+.total-p,
+.customers-p,
+.collectors-p,
+.stores-p {
   font-size: 15px;
   padding: 5px 5px 0px 0px;
   margin: 0;
 }
 
-.totalNP,
-.customerNP,
-.collectorsNP,
-.storesNP {
+.total-n-p,
+.customers-n-p,
+.collectors-n-p,
+.stores-n-p {
   font-size: 18px;
   padding: 2px 5px 0px 0px;
   margin: 0;
 }
 
-.totalDiv {
+.total-div {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -138,7 +142,7 @@ h6 {
   margin: 0;
 }
 
-.customerDiv {
+.customers-div {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -148,7 +152,7 @@ h6 {
   margin: 0;
 }
 
-.collectorsDiv {
+.collectors-div {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -157,7 +161,7 @@ h6 {
   padding: 0;
   margin: 0;
 }
-.storesDiv {
+.stores-div {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -167,7 +171,7 @@ h6 {
   margin: 0;
 }
 
-.con {
+.card-container {
   display: flex;
   flex-direction: row;
   height: auto;
@@ -180,12 +184,12 @@ h6 {
   border-top: 0px;
   border-bottom: 2px;
   border-right: 0px;
-  border-left: 2px;
+  border-left: 0px;
   border-style: solid;
   border-color: var(--prime);
 }
 
-.customersIcon{
+.customers-icon{
   padding: 10px;
   margin-right: 0px;
   margin: 0px;
@@ -194,7 +198,7 @@ h6 {
   height: 105px;
 }
 
-.chartContainer {
+.chart-container {
   width: auto;
   height: auto;
   padding: 0;
@@ -205,7 +209,7 @@ h6 {
   align-items: center;
 }
 
-.chartDiv {
+.chart-div {
   width: 380px;
   height: 260px;
   background-color: var(--background);
@@ -214,7 +218,7 @@ h6 {
   border-top: 0px;
   border-bottom: 2px;
   border-right: 0px;
-  border-left: 2px;
+  border-left: 0px;
   border-style: solid;
   border-color: var(--prime);
   padding: 0px;
@@ -226,7 +230,7 @@ h6 {
   align-items: center;
 }
 
-.tableTitleDiv {
+.table-title-div {
   padding: 0;
   margin: 0;
   margin-top: 10px;
@@ -274,21 +278,28 @@ input[type="text"] {
   border-top: 0px;
   border-bottom: 2px;
   border-right: 0px;
-  border-left: 2px;
+  border-left: 0px;
   border-style: solid;
   border-color: var(--prime);
 }
 
-table {
+.table-container {
   width: 90%;
-  height: 400px;
+  height: 300px;
+  overflow-y: auto;
+}
+
+table {
+  width: 100%;
+  height: 300px;
+  overflow-y: auto;
   display: table;
   align-self: center;
   text-align: center;
   background-color: var(--background);
   color: var(--font);
   border-radius: 10px;
-  box-shadow: 3px 3px 3px 3px var(--shadow);
+  margin: 0 auto;
   margin-bottom: 50px;
 }
 
@@ -299,6 +310,8 @@ th {
   padding: 10px;
   margin: 0;
   color: var(--background) !important;
+  position: sticky;
+    top: 0;
 }
 
 .th-first{
@@ -311,7 +324,7 @@ th {
 
 td {
   width: auto;
-  height: auto;
+  height:auto;
   padding: 10px;
   margin: 0;
 }

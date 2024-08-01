@@ -1,39 +1,49 @@
 <div class="body">
-  <div class="containerDiv">
+  <form class="container">
 
-    <div class="titleDiv">
+    <div class="title-div">
       <h1>معلوماتي</h1>
     </div>
 
-    <div class="managerNameDiv">
-      <label class="managerNameLable" for="managerName">الاسم :</label>
-      <input class="managerNameField" id="managerName" type="text" name="managerNameName" value="محمد عمر" disabled = "true">
+    <div class="manager-name-div">
+      <label class="manager-name-lable" for="manager-name">الاسم :</label>
+      <input class="manager-name-field" id="manager-name" type="text" name="manager-name-name" value="محمد عمر" required disabled = "true">
     </div>
 
-    <div class="managerEmailDiv">
-      <label class="managerEmailLable" for="managerEmail">البريد الإلكتروني :</label>
-      <input class="managerEmailField" id="managerEmail" type="email" name="managerEmailName" value="mohammedumar@gmial.com" disabled = "true">
+    <div class="manager-email-div">
+      <label class="manager-email-lable" for="manager-email">البريد الإلكتروني :</label>
+      <input class="manager-email-field" id="manager-email" type="email" name="manager-email-name" value="mohammedumar@gmial.com" required disabled = "true">
     </div>
 
-    <div class="managerPhoneDiv">
-      <label class="managerPhoneLable" for="managerPhone">رقم الجوال :</label>
-      <input class="managerPhoneField" id="managerPhone" type="text" name="managerPhoneName" value="0598432431" disabled = "true">
+    <div class="manager-phone-div">
+      <label class="manager-phone-lable" for="manager-phone">رقم الجوال :</label>
+      <input class="manager-phone-field" id="manager-phone" type="text" name="manager-phone-name" value="0598432431" required disabled = "true">
     </div>
 
-    <div class="IBANDiv">
-      <label class="IBANLable" for="IBAN">رقم الحساب المصرفي :</label>
-      <input class="IBANLableField" id="IBAN" type="text" id="IBANName" value="SA 238593150347285401285352" disabled = "true">
+    <div class="IBAN-div">
+      <label class="IBAN-lable" for="IBAN">رقم الحساب المصرفي :</label>
+      <input class="IBAN-field" id="IBAN" type="text" name="IBAN-name" value="SA 238593150347285401285352" required disabled = "true">
     </div>
 
-    <div class="passwordDiv">
-      <label class="passwordLable" for="password">كلمة المرور :</label>
-      <input class="passwordField" id="password" type="password" name="passwordName" value="hdgu56jn" disabled = "true">
+    <div class="password-div">
+      <label class="password-lable" for="password">كلمة المرور :</label>
+      <input class="password-field" id="password" type="password" name="password-name" value="hdgu56jn" required disabled = "true">
     </div>
 
-    <div class="updateDiv">
-      <button class="updateButton" (click)="update_()">تحديث</button>
-      <button class="signout" (click)="signout()">تسجيل خروج</button>
+    <div class="new-password-div">
+      <label class="new-password-lable" for="password" hidden = "true">كلمة المرور الجديدة:</label>
+      <input class="new-password-field" id="password" type="password" name="new-password-name"  required hidden =  "true">
     </div>
 
-  </div>
+    <div class="confirm-new-password-div">
+      <label class="confirm-new-password-lable" for="password" hidden = "true">كلمة المرور تأكيد:</label>
+      <input class="confirm-new-password-field" id="password" type="password" name="confirm-new-password-name" required hidden = "true">
+    </div>
+
+    <div class="update-div">
+      <button class="update-button"(click)="update_()">تحديث</button>
+      <button class="signout-button" (click)="signout()">تسجيل خروج</button>
+    </div>
+
+  </form>
 </div>

@@ -17,14 +17,18 @@ export class StoreHomeComponent implements OnInit {
     var chartDom = document.getElementById('main')!;
     var myChart = echarts.init(chartDom);
     var option: EChartsOption;
+
     option = {
+
       legend: {
         top: '25%',
         orient: 'vertical',
         left: 'right',
         show: true,
       },
+
       tooltip: {},
+
       dataset: {
         source: [
           [
@@ -44,10 +48,10 @@ export class StoreHomeComponent implements OnInit {
           ['الأسبوع الأول', 8000, 13000, 2500, 2500, 4000, 10000, 2000]
         ]
       },
+
       xAxis: { type: 'category' },
       yAxis: {},
-      // Declare several bar series, each will be mapped
-      // to a column of dataset.source by default.
+
       series: [
         { type: 'bar' },
         { type: 'bar' },
@@ -63,10 +67,13 @@ export class StoreHomeComponent implements OnInit {
     var chartDom = document.getElementById('main1')!;
     var myChart = echarts.init(chartDom);
     var option: EChartsOption;
+
     option = {
+
       tooltip: {
         trigger: 'item'
       },
+
       legend: {
         top: '5%',
         right: '30%',
@@ -74,6 +81,7 @@ export class StoreHomeComponent implements OnInit {
         left: 'right',
         show: true,
       },
+
       series: [
         {
           name: 'الشهر :',
@@ -85,10 +93,12 @@ export class StoreHomeComponent implements OnInit {
             borderColor: '#fff',
             borderWidth: 2
           },
+
           label: {
             show: false,
             position: 'center'
           },
+
           emphasis: {
             label: {
               show: true,
@@ -96,9 +106,11 @@ export class StoreHomeComponent implements OnInit {
               fontWeight: 'bold'
             }
           },
+
           labelLine: {
             show: false
           },
+
           data: [
             { value: 300000, name: 'يناير' },
             { value: 900000, name: 'فبراير' },
@@ -117,7 +129,7 @@ export class StoreHomeComponent implements OnInit {
     option && myChart.setOption(option);
   }
 
-  img = "../../../../../assets/images/Panda.png";
+  img = "../../../../../assets/images/Panda.png"; //store_logo
 
   customersArray = [
     {

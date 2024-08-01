@@ -1,20 +1,26 @@
 <div class="body">
+
   <form>
 
     <div class="container">
-    <div class="titleDiv">
-    <h1>إدارة طلبات التسجيل</h1>
-    <h6>اختر القسم الذي تريده</h6>
-    </div>
 
-    <div class="slide-controls">
-      <input type="radio" name="slide" id="stores" (change)="navigateToRequests()">
-      <label class="slide stores" for="stores">المتاجر</label>
+      <div class="title-div">
+        <h1>إدارة طلبات التسجيل</h1>
+        <h6>اختر القسم الذي تريده</h6>
+      </div>
 
-      <input type="radio" name="slide" id="collectors" (change)="navigateToRequests()">
-      <label class="slide collectors" for="collectors">مناديب التجميع</label>
+      <div class="slide-controls">
+
+        <input type="radio" name="slide" id="stores" (change)="navigateToRequests()">
+        <label class="slide stores" for="stores">المتاجر</label>
+
+        <input type="radio" name="slide" id="collectors" (change)="navigateToRequests()">
+        <label class="slide collectors" for="collectors">مناديب التجميع</label>
+
+      </div>
+
     </div>
-  </div>
 
   </form>
+
 </div>

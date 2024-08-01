@@ -1,8 +1,8 @@
 .body {
   direction: rtl;
   height: 100%;
-  padding: 20px;
-  margin: 20px;
+  padding: 10px;
+  margin: 30px;
   font-family: var(--font);
   display: flex;
   justify-content: center;
@@ -10,14 +10,12 @@
   background-color: var(--background);
 }
 
-.containerDiv {
+.container-div {
   height: auto;
   width: 90%;
-  padding: 10px 0px 30px;
-  margin: 50px;
-  margin-top: 110px;
+  padding: 30px;
+  margin: 100px 30px 50px;
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
   background-color: var(--background);
@@ -31,13 +29,13 @@
   border-color: var(--prime);
 }
 
-.titleDiv {
+.title-div {
   padding: 0;
   margin: 0;
   margin-bottom: 10px;
   display: flex;
   align-self: center;
-  justify-content: center;
+  align-items: center;
   flex-direction: column;
 }
 
@@ -48,7 +46,7 @@ h1 {
   margin: 0;
 }
 
-.headOfAlerts {
+.head-of-alerts {
   background-color: var(--background);
   width: 90%;
   height: auto;
@@ -58,36 +56,35 @@ h1 {
   display: flex;
   align-self: center;
   justify-content: center;
-  align-items: center;
   flex-direction: row;
 }
 
-.alertdiv {
+.alert-div {
   padding: 0px;
   margin: 0px;
-  width:50%;
+  width: 50%;
   display: flex;
   justify-content: center;
   text-align: center;
 }
 
-.alertDatediv {
+.alert-date-div {
   padding: 0px;
   margin: 0px;
-  width:40%;
+  width: 40%;
   display: flex;
   justify-content: center;
   text-align: center;
 }
 
-.Alerts {
+.alerts {
   background-color: var(--background);
   box-shadow: 3px 3px 3px 3px var(--shadow);
   border-radius: 10px;
   border-top: 0px;
   border-bottom: 2px;
   border-right: 0px;
-  border-left: 2px;
+  border-left: 0px;
   border-style: solid;
   border-color: var(--prime);
   display: flex;
@@ -96,27 +93,26 @@ h1 {
   height: auto;
   font-size: 18px;
   padding: 5px;
-  padding-bottom: 0px;
   margin: 0;
   margin-bottom: 10px;
 }
 
-.alertDetailesDiv {
+.alert-detailes-div {
   padding: 0px;
   margin: 0px;
   margin-right: 25px;
-  width:50%;
+  width: 50%;
   display: flex;
   justify-self: start;
   justify-content: center;
   text-align: center;
 }
 
-.divAlertDate {
+.div-alert-date {
   padding: 0px;
   margin: 0px;
   margin-right: 35px;
-  width:40%;
+  width: 40%;
   display: flex;
   justify-self: end;
   justify-content: center;

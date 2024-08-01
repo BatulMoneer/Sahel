@@ -1,18 +1,33 @@
 <div class=body>
-  <div class="containerDiv">
 
-    <div class="titleDiv">
+  <div class="container-div">
+
+    <div class="title-div">
       <h1>التنبيهات</h1>
     </div>
 
-        <div class="headOfAlerts">
-          <div class="alertdiv"><p>التنبيه</p></div>
-          <div class="alertDatediv"><p>تاريخ التنبيه</p></div>
-        </div>
+    <div class="head-of-alerts">
 
-    <div *ngFor="let item of arrayList" class="Alerts">
-      <div class="alertDetailesDiv"><p >{{item.alert}}</p></div>
-      <div class="divAlertDate"><p>{{item.dateAlert}}</p></div>
+      <div class="alert-div">
+        <p>التنبيه</p>
+      </div>
+
+      <div class="alert-date-div">
+        <p>تاريخ التنبيه</p>
+      </div>
+
+    </div>
+
+    <div *ngFor="let item of arrayList" class="alerts">
+
+      <div class="alert-detailes-div">
+        <p>{{item.alert}}</p>
+      </div>
+
+      <div class="div-alert-date">
+        <p>{{item.dateAlert}}</p>
+      </div>
+
     </div>
 
   </div>

@@ -90,13 +90,10 @@ export class ManagerStoresRegistrationRequestsComponent implements OnInit {
 
   ]
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  acceptance(){
-  }
+  acceptance(){}
 
-  rejection(){
-  }
+  rejection(){ }
 
 }

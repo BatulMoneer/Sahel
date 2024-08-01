@@ -1,63 +1,74 @@
 <div class=body>
 
-  <div class="containerDiv">
+  <div class="container-div">
 
-    <div class="titleDiv">
+    <div class="title-div">
       <h1>الإحصائيات</h1>
       <h6>راقب نجاحك</h6>
     </div>
 
-    <div class="statisticsContainer">
+    <div class="statistics-container">
 
-      <div class="helper1">
+      <div class="helper-1">
+
         <div>
-          <p class="usersP">عدد المستخدمين</p>
+          <p class="users-p">عدد المستخدمين</p>
         </div>
-        <div class="helper2">
-          <div class="helper3">
-            <div class="con">
-              <div class="totalDiv">
-                <p class="totalP">الإجمالي :</p>
-                <p class="totalNP">{{total}}</p>
+
+        <div class="helper-2">
+
+          <div class="helper-3">
+
+            <div class="card-container">
+              <div class="total-div">
+                <p class="total-p">الإجمالي :</p>
+                <p class="total-n-p">{{total}}</p>
               </div>
-              <img class="customersIcon" src="../../../../../assets/images/customers.png" alt="Total Image">
+              <img class="customers-icon" src="../../../../../assets/images/customers.png" alt="Total Image">
             </div>
-            <div class="con">
-              <div class="customerDiv">
-                <p class="customerP">العملاء :</p>
-                <p class="customerNP">{{number_of_users}}</p>
+
+            <div class="card-container">
+              <div class="customers-div">
+                <p class="customers-p">العملاء :</p>
+                <p class="customers-n-p">{{number_of_users}}</p>
               </div>
-              <img class="customersIcon" src="../../../../../assets/images/customers.png" alt="Total Image">
+              <img class="customers-icon" src="../../../../../assets/images/customers.png" alt="Total Image">
             </div>
+
           </div>
-          <div class="helper3">
-            <div class="con">
-              <div class="collectorsDiv">
-                <p class="collectorsP">المناديب :</p>
-                <p class="collectorsNP">{{number_of_collectors}}</p>
+
+          <div class="helper-3">
+
+            <div class="card-container">
+              <div class="collectors-div">
+                <p class="collectors-p">المناديب :</p>
+                <p class="collectors-n-p">{{number_of_collectors}}</p>
               </div>
-              <img class="customersIcon" src="../../../../../assets/images/customers.png" alt="Total Image">
+              <img class="customers-icon" src="../../../../../assets/images/customers.png" alt="Total Image">
             </div>
-            <div class="con">
-              <div class="storesDiv">
-                <p class="storesP">المتاجر :</p>
-                <p class="storesNP">{{number_of_markets}}</p>
+
+            <div class="card-container">
+              <div class="stores-div">
+                <p class="stores-p">المتاجر :</p>
+                <p class="stores-n-p">{{number_of_markets}}</p>
               </div>
-              <img class="customersIcon" src="../../../../../assets/images/customers.png" alt="Total Image">
+              <img class="customers-icon" src="../../../../../assets/images/customers.png" alt="Total Image">
             </div>
+
           </div>
+
         </div>
+
       </div>
 
-      <div class="chartContainer">
+      <div class="chart-container">
         <h2>أرباح التطبيق الشهرية</h2>
-        <div class="chartDiv" id="main"></div>
+        <div class="chart-div" id="main"></div>
       </div>
+
     </div>
 
-
-
-    <div class="tableTitleDiv">
+    <div class="table-title-div">
       <h2>بيانات العملاء</h2>
     </div>
 
@@ -66,8 +77,10 @@
       <input type="text" placeholder="بحث">
     </div>
 
+    <div class="table-container">
 
       <table>
+
         <thead>
           <tr>
             <th class="th-first">اسم العميل</th>
@@ -77,6 +90,7 @@
             <th class="th-last">رقم الحساب المصرفي</th>
           </tr>
         </thead>
+
         <tbody>
           <tr *ngFor="let item of customersList">
             <td>{{item.name_user}}</td>
@@ -86,20 +100,25 @@
             <td>{{item.IBAN}}</td>
           </tr>
         </tbody>
+
       </table>
 
+    </div>
 
-    <div class="tableTitleDiv">
+
+    <div class="table-title-div">
       <h2>بيانات المناديب</h2>
     </div>
 
     <div class="search-container">
       <i class="fas fa-search search-icon"></i>
-      <input type="text" placeholder="بحث">
+      <input type="text" placeholder="بحث" (input)="filter_collecrot($event.target.value)">
     </div>
 
+    <div class="table-container">
 
       <table>
+
         <thead>
           <tr>
             <th class="th-first">اسم المندوب</th>
@@ -111,27 +130,34 @@
             <th class="th-last">حالة الحساب</th>
           </tr>
         </thead>
+
         <tbody>
           <tr *ngFor="let item of collectorsList">
             <td>{{item.name_user}}</td>
-            <ng-container *ngFor="let item_2 of item.values_info"><ng-container *ngIf="item_2.info == 'age'">
-                <td>{{item_2.answer}}</td>
-              </ng-container></ng-container>
+
+            <td>
+              <ng-container *ngFor="let item_2 of item.values_info">
+                <ng-container *ngIf="item_2.info == 'age'">
+            <td>{{item_2.answer == '' ? 'الباكيند رمم' :''}}</td>
+            </ng-container>
+            </ng-container>
+            </td>
+
             <td>{{item.email_user}}</td>
             <td>{{item.phone_user}}</td>
             <td>{{item.IBAN}}</td>
-            <ng-container *ngFor="let item_2 of item.values_info">
-              <ng-container *ngIf="item_2.info == 'collector_status'">
+            <ng-container *ngFor="let item_2 of item.values_info"><ng-container
+                *ngIf="item_2.info == 'collector_status'">
                 <td>{{item_2.answer}}</td>
-              </ng-container>
-            </ng-container>
+              </ng-container></ng-container>
             <td>{{item.account_status}}</td>
           </tr>
         </tbody>
+
       </table>
+    </div>
 
-
-    <div class="tableTitleDiv">
+    <div class="table-title-div">
       <h2>بيانات المتاجر</h2>
     </div>
 
@@ -140,7 +166,9 @@
       <input type="text" placeholder="بحث">
     </div>
 
+    <div class="table-container">
       <table>
+
         <thead>
           <tr>
             <th class="th-first">المتجر</th>
@@ -152,19 +180,24 @@
             <th class="th-last">حالة الحساب</th>
           </tr>
         </thead>
+
         <tbody>
           <tr *ngFor="let item of marketsList">
             <td>{{item.name_user}}</td>
-            <ng-container *ngFor="let item_3 of item.values_info"><ng-container *ngIf="item_3.info == 'branch'"><td>{{item_3.answer}}</td></ng-container></ng-container>
+            <td><ng-container *ngFor="let item_3 of item.values_info"><ng-container
+                  *ngIf="item_3.info == 'branch'">{{item_3.answer}}</ng-container></ng-container></td>
             <td>{{item.email_user}}</td>
             <td>{{item.phone_user}}</td>
             <td>{{item.monthSales}}</td>
-            <ng-container *ngFor="let item_3 of item.values_info"><ng-container *ngIf="item_3.info == 'commercial_register_'"><td>{{item_3.answer}}</td></ng-container></ng-container>
+            <td><ng-container *ngFor="let item_3 of item.values_info"><ng-container
+                  *ngIf="item_3.info == 'commercial_register_'">{{item_3.answer}}</ng-container></ng-container></td>
             <td>{{item.account_status}}</td>
           </tr>
         </tbody>
-      </table>
 
+      </table>
+    </div>
 
   </div>
+
 </div>
