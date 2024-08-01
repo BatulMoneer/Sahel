@@ -1,10 +1,12 @@
 <div class="body">
-  <div class="containerDiv">
-    <div class="titleDiv">
+
+  <div class="container-div">
+
+    <div class="title-div">
       <h1>طلبات التحويل للمناديب</h1>
     </div>
 
-    <div class="tableTitleDiv">
+    <div class="table-title-div">
       <h2>تغاصيل الطلبات</h2>
     </div>
 
@@ -14,16 +16,18 @@
     </div>
 
     <table>
+
       <thead>
         <tr>
-          <th class="thName">اسم المندوب</th>
+          <th class="th-name">اسم المندوب</th>
           <th>رقم الطلب</th>
           <th>تاريخ الطلب</th>
           <th>الفاتورة</th>
           <th>حالة الطلب</th>
-          <th class="thNotes">ملاحظات</th>
+          <th class="th-last">ملاحظات</th>
         </tr>
       </thead>
+
       <tbody>
         <tr>
         <tr *ngFor="let item of arrayList">
@@ -35,7 +39,9 @@
           <td>{{item.notes}}</td>
         </tr>
       </tbody>
+
     </table>
 
   </div>
+
 </div>

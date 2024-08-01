@@ -22,6 +22,7 @@ export class ManagerHomeComponent implements OnInit {
   customersList = []
 
   collectorsList = []
+  collectorsListv2 = []
 
   marketsList = []
 
@@ -30,9 +31,7 @@ export class ManagerHomeComponent implements OnInit {
     // console.log(data); to print data in "inespect"
 
     // this.impApiService.get(HOME.total_all_users_manager).subscribe(data => {
-    //   console.log(data);
-
-    //   this.total = data.total
+    //    this.total = data.total
     // })
 
     this.impApiService.get(HOME.total_users_customers_manager).subscribe(data => {
@@ -53,6 +52,8 @@ export class ManagerHomeComponent implements OnInit {
 
     this.impApiService.get(HOME.list_users_collectors).subscribe(data => {
       this.collectorsList = data.data
+      this.collectorsListv2 = data.data
+
     })
     this.impApiService.get(HOME.list_users_markets).subscribe(data => {
       this.marketsList = data.data
@@ -105,6 +106,14 @@ export class ManagerHomeComponent implements OnInit {
       ]
     };
     option && myChart.setOption(option);
+  }
+
+  filter_collecrot(user_filter){
+    this.collectorsList = this.collectorsListv2
+   this.collectorsList =  this.collectorsList.filter((data)=>{
+       return data.name_user.includes(user_filter)
+    })
+
   }
 
 }

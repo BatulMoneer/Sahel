@@ -9,12 +9,11 @@
   background-color: var(--background);
 }
 
-.containerDiv {
+.container-div {
   height: auto;
   width: 90%;
-  padding: 10px 0px 30px;
-  margin: 50px;
-  margin-top: 110px;
+  padding: 30px;
+  margin: 100px 30px 50px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -29,7 +28,7 @@
   border-color: var(--prime);
 }
 
-.titleDiv {
+.title-div {
   padding: 0;
   margin: 0;
   display: flex;
@@ -45,7 +44,7 @@ h1 {
   margin: 0;
 }
 
-.tableTitleDiv {
+.table-title-div {
   padding: 0;
   margin: 0;
   margin-top: 10px;
@@ -93,7 +92,7 @@ input[type="text"] {
   border-top: 0px;
   border-bottom: 2px;
   border-right: 0px;
-  border-left: 2px;
+  border-left: 0px;
   border-style: solid;
   border-color: var(--prime);
 }
@@ -118,11 +117,11 @@ th {
   color: var(--background) !important;
 }
 
-.thName {
+.th-name {
   border-radius: 0 10px 0 0;
 }
 
-.thLast {
+.th-last{
   border-radius: 10px 0 0 0;
 }
 
@@ -142,7 +141,7 @@ td :hover {
   color: var(--textCol);
 }
 
-.tdButton {
+.td-button {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -165,24 +164,7 @@ button {
   align-self: center;
 }
 
-.replayField {
-  height: 100%;
-  width: 100%;
-  border: none;
-  padding: 0;
-  margin: 0;
-  background-color: rgba(255, 255, 255, 0);
-  display: flex;
-  text-align: center;
-  border-top: 0px;
-  border-bottom: 2px;
-  border-right: 0px;
-  border-left: 2px;
-  border-style: solid;
-  border-color: var(--prime);
-}
-
-.replayButton {
+.replay-button {
   width: 65px;
   background-color: var(--main);
   border-radius: 10px;
@@ -199,13 +181,13 @@ button {
   align-self: center;
 }
 
-.popUp {
+.pop-up {
   direction: rtl;
   padding: 30px;
   margin: 0;
 }
 
-.popUpHeaderDiv {
+.popUp-header-div {
   width: 100%;
   direction: rtl;
   display: flex;
@@ -215,12 +197,11 @@ button {
   margin: 0px;
 }
 
-.popUpTitleH4 {
+.pop-up-title-h4 {
   font-size: 18px;
   padding: 0;
   margin: 0;
 }
-
 
 .btn-close {
   padding: 10px;
@@ -231,14 +212,14 @@ button {
   height: 10px;
 }
 
-.popUpOprationDiv {
+.pop-up-opration-div {
   direction: rtl;
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 
-.popUpbodyDiv {
+.popUp-body-div {
   width: 100%;
   direction: rtl;
   display: flex;
@@ -248,24 +229,24 @@ button {
   margin: 0px;
 }
 
-.rplayMassegeLabel {
+.rplay-massege-label {
   font-size: 14px;
   padding: 5px;
   margin: 0px 0px 5px;
 }
 
-.replayMassegeField {
+.replay-massege-field {
   height: 30px;
   border-top: 0px;
   border-bottom: 2px;
   border-right: 0px;
-  border-left: 2px;
+  border-left: 0px;
   border-style: solid;
   border-color: var(--prime);
 }
 
-.popUpacceptanceButton,
-.popUprejectioneButton{
+.pop-up-acceptance-button,
+.pop-up-rejectione-button{
   width: 50px;
   background-color: var(--main);
   border-radius: 10px;
@@ -282,8 +263,13 @@ button {
   align-self: center;
 }
 
-.popUpacceptanceButton:hover,
-.popUprejectioneButton:hover {
+.pop-up-acceptance-button:hover,
+.pop-up-rejectione-button:hover {
   background-color: var(--back);
   color: var(--textCol);
+}
+
+input:focus {
+  outline-color: var(--main);
+  border-bottom: 0px;
 }

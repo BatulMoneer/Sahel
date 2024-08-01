@@ -2,7 +2,7 @@
 
   <div class="container-div">
 
-      <img class="store-logo" src="{{img}}" alt="شعار المتجر">
+    <img class="store-logo" src="{{img}}" alt="شعار المتجر">
 
     <div class="title-div">
       <h1>الإحصائيات</h1>
@@ -13,55 +13,56 @@
     <div class="customers-container-div" *ngFor="let item of customersArray">
 
       <div class="card-container">
-      <div class="p-total-div">
-        <p class="p-total">الإجمالي :</p>
-        <p class="p-total-number">{{item.total}}</p>
+        <div class="p-total-div">
+          <p class="p-total">الإجمالي :</p>
+          <p class="p-total-number">{{item.total}}</p>
+        </div>
+        <img class="customers-icon" src="../../../../../assets/images/customers.png" alt="Total Image">
       </div>
-      <img class="customers-icon" src="../../../../../assets/images/customers.png" alt="Total Image">
-    </div>
 
       <div class="card-container ">
-      <div class="p-new-div">
-        <p class="p-new">الجدد :</p>
-        <p class="p-new-number">{{item.newCustomer}}</p>
+        <div class="p-new-div">
+          <p class="p-new">الجدد :</p>
+          <p class="p-new-number">{{item.newCustomer}}</p>
+        </div>
+        <img class="customers-icon" src="../../../../../assets/images/customers.png" alt="Total Image">
       </div>
-      <img class="customers-icon" src="../../../../../assets/images/customers.png" alt="Total Image">
-    </div>
 
       <div class="card-container">
-      <div class="p-returnees-div">
-        <p class="p-returnees">العائدون :</p>
-        <p class="returneesNP">{{item.returnees}}</p>
+        <div class="p-returnees-div">
+          <p class="p-returnees">العائدون :</p>
+          <p class="returneesNP">{{item.returnees}}</p>
+        </div>
+        <img class="customers-icon" src="../../../../../assets/images/customers.png" alt="Total Image">
       </div>
-      <img class="customers-icon" src="../../../../../assets/images/customers.png" alt="Total Image">
-    </div>
 
     </div>
 
     <div class="chart-container">
 
-    <div class="month-statistics-chart">
-    <h2 class="h2-statistics">الإحصائيات الشهرية</h2>
-    <div class="chart-div" id="main"></div>
-    </div>
+      <div class="month-statistics-chart">
+        <h2 class="h2-statistics">الإحصائيات الشهرية</h2>
+        <div class="chart-div" id="main"></div>
+      </div>
 
-    <div class="year-statistics-chart">
-    <h2 class="h2-statistics">الإحصائيات السنوية</h2>
-    <div class="chart-div-1" id="main1"></div>
-    </div>
+      <div class="year-statistics-chart">
+        <h2 class="h2-statistics">الإحصائيات السنوية</h2>
+        <div class="chart-div-1" id="main1"></div>
+      </div>
 
     </div>
 
     <div class="table-title-div">
       <h2>مقارنة مع المتاجر الأخرى</h2>
-     </div>
+    </div>
 
-     <div class="search-container">
+    <div class="search-container">
       <i class="fas fa-search search-icon"></i>
       <input type="text" placeholder="بحث">
     </div>
 
     <table>
+
       <thead>
         <tr>
           <th class="th-first">المتجر</th>
@@ -73,18 +74,19 @@
           <th class="th-last">التقدم</th>
         </tr>
       </thead>
+
       <tbody>
-        <tr>
-          <tr *ngFor="let item of comparingArray">
-            <td>{{item.store}}</td>
-            <td>{{item.percentageOfSalesBetweenStores}}</td>
-            <td>{{item.sortBySales}}</td>
-            <td>{{item.branchOfStore}}</td>
-            <td>{{item.sortByBranchs}}</td>
-            <td>{{item.NumberOfClients}}</td>
-            <td>{{item.progress}}</td>
+        <tr *ngFor="let item of comparingArray">
+          <td>{{item.store}}</td>
+          <td>{{item.percentageOfSalesBetweenStores}}</td>
+          <td>{{item.sortBySales}}</td>
+          <td>{{item.branchOfStore}}</td>
+          <td>{{item.sortByBranchs}}</td>
+          <td>{{item.NumberOfClients}}</td>
+          <td>{{item.progress}}</td>
         </tr>
       </tbody>
+
     </table>
 
   </div>

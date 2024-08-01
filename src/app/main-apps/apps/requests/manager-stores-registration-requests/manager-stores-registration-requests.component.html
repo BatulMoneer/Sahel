@@ -1,11 +1,12 @@
 <div class="body">
-  <div class="containerDiv">
 
-  <div class="titleDiv">
+  <div class="container-div">
+
+  <div class="title-div">
     <h1>طلبات تسجيل المتاجر</h1>
   </div>
 
-  <div class="tableTitleDiv">
+  <div class="table-title-div">
     <h2>تفاصيل الطلبات</h2>
   </div>
 
@@ -15,45 +16,48 @@
   </div>
 
   <table>
+
     <thead>
       <tr>
-        <th class="thName">اسم المتجر</th>
+        <th class="th-name">اسم المتجر</th>
         <th>الفرع</th>
         <th>البريد الإلكتروني</th>
         <th>رقم الجوال</th>
         <th>السجل التجاري</th>
-        <th class="thLast">الرد</th>
+        <th class="th-last">الرد</th>
       </tr>
     </thead>
+
     <tbody>
       <tr *ngFor="let item of arrayList">
         <td>{{item.store}}</td>
         <td>{{item.branch}}</td>
         <td>{{item.email}}</td>
         <td>{{item.phone}}</td>
-        <td><a href="{{item.commercialRegistration}}" target="_blank"><img class="commercialRegistration" src= {{item.commercialRegistration}} alt="السجل"></a></td>
-        <td class="tdButton">
-          <button class="replayButton" (click)="open(content)">انقر للرد</button>
-        </td>
+        <td><a href="{{item.commercialRegistration}}" target="_blank"><img class="commercial-registration" src= {{item.commercialRegistration}} alt="السجل"></a></td>
+        <td class="td-button"> <button class="replay-button" (click)="open(content)">انقر للرد</button></td>
       </tr>
     </tbody>
+
   </table>
+
   </div>
+
 </div>
 
-<ng-template class="popUp" #content let-modal>
-  <div class="popUpHeaderDiv">
-    <h4 class="popUpTitleH4" id="popUpTitle">انقر للقبول أو الرفض مع التوضيح: </h4>
+<ng-template class="pop-up" #content let-modal>
+  <div class="pop-up-header-div">
+    <h4 class="pop-up-title-h4" id="popUp-title">انقر للقبول أو الرفض مع التوضيح: </h4>
     <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
   </div>
 
-  <div class="popUpbodyDiv">
-    <label class="rplayMassegeLabel" for="replayMassege">رسالة الرد :</label>
-    <input class="replayMassegeField" id="replayMassege" type="text">
+  <div class="pop-up-bbody-div">
+    <label class="rplay-massege-label" for="replay-massege">رسالة الرد :</label>
+    <input class="replay-massege-field" id="replay-massege" type="text">
   </div>
 
-  <div class="popUpOprationDiv">
-    <button type="button" class="popUpacceptanceButton" (click)="modal.acceptance('accept click')">قبول</button>
-    <button type="button" class="popUprejectioneButton" (click)="modal.rejection('reject click')">رفض</button>
+  <div class="pop-up-opration-div">
+    <button type="button" class="pop-up-acceptance-button" (click)="modal.acceptance('accept click')">قبول</button>
+    <button type="button" class="pop-up-rejectione-button" (click)="modal.rejection('reject click')">رفض</button>
   </div>
 </ng-template>
