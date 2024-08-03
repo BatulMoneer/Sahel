@@ -8,22 +8,22 @@ import { Router } from '@angular/router';
 })
 export class StoreMyInformationComponent implements OnInit {
 
+  img = "../../../../../assets/images/Panda.png"; //store_logo
+
+  commercialRegistration = "../../../../../assets/images/commercialRegistration.jpg"
 
   constructor(private router: Router) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
   signout() {
     localStorage.removeItem("currentUser");
     localStorage.removeItem("token")
-
     this.router.navigate(['/auth/login']);
-
   }
 
   update_() {
-    this.router.navigate(['apps/my-information/app-store-my-information']);
+    location.reload()
   }
 
 }

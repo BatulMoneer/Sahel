@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
   templateUrl: './manager-my-information.component.html',
   styleUrls: ['./manager-my-information.component.scss']
 })
+
 export class ManagerMyInformationComponent implements OnInit {
 
   constructor(
@@ -17,9 +18,7 @@ export class ManagerMyInformationComponent implements OnInit {
   signout() {
     localStorage.removeItem("user");
     localStorage.removeItem("token")
-
     this.router.navigate(['/auth/login']);
-
   }
 
   update_() {

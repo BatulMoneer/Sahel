@@ -76,7 +76,7 @@
 .new-password-field,
 .confirm-new-password-field {
   border: none;
-  padding: 5px;
+  padding: 10px;
   margin: 5px 80px;
   width: 300px;
   border-radius: 10px;
@@ -123,11 +123,11 @@ input:focus {
   text-align: center;
 }
 
-.updateButton:hover{
+.updateButton:hover {
   background-color: var(textCol);
 }
 
-.signout-button{
+.signout-button {
   background-color: var(--background);
   color: var(--prime);
   border: 0;

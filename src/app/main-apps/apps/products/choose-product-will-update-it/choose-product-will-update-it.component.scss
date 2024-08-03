@@ -9,15 +9,14 @@
   background-color: var(--background);
 }
 
-.containerDiv {
+.container-div {
   height: auto;
   width: 90%;
-  padding: 10px 0px 30px;
-  margin: 50px;
-  margin-top: 140px;
+  padding: 30px;
+  margin: 100px 30px 50px;
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  align-items: center;
   background-color: var(--background);
   box-shadow: 0px 2px 6px var(--shadow);
   border-radius: 10px;
@@ -29,7 +28,7 @@
   border-color: var(--prime);
 }
 
-.titleDiv {
+.title-div {
   padding: 0;
   margin: 0;
   margin-bottom: 10px;
@@ -46,7 +45,7 @@ h1 {
   margin: 0;
 }
 
-.tableTitleDiv {
+.table-title-div {
   padding: 0;
   margin: 0;
   margin-top: 10px;
@@ -68,12 +67,9 @@ h2 {
 
 .search-container {
   display: flex;
+  align-self: center;
   justify-content: center;
-  align-items: center;
-  justify-self: center;
   position: relative;
-  right: 260px;
-  left: 200px;
   width: 60%;
   margin-bottom: 20px;
 }
@@ -97,20 +93,35 @@ input[type="text"] {
   border-top: 0px;
   border-bottom: 2px;
   border-right: 0px;
-  border-left: 2px;
+  border-left: 0px;
   border-style: solid;
   border-color: var(--prime);
 }
 
-table {
+.table-container-div {
   width: 90%;
+  height: 500px;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 10px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px 3px var(--shadow);
+}
+
+table {
+  width: 100%;
+  height: auto;
+  overflow-y: auto;
   display: table;
-  align-self: center;
   text-align: center;
   background-color: var(--background);
   color: var(--font);
   border-radius: 10px;
-  box-shadow: 3px 3px 3px 3px var(--shadow);
+  margin: 0 auto;
 }
 
 th {
@@ -120,43 +131,40 @@ th {
   padding: 10px;
   margin: 0;
   color: var(--background) !important;
+  position: sticky;
+  top: 0;
 }
 
-.thName{
+.th-first{
   border-radius: 0 10px 0 0;
 }
 
-.thProsses{
+.th-last{
   border-radius: 10px 0 0 0;
 }
 
 td {
   width: auto;
-  height: auto;
+  height:auto;
   padding: 10px;
   margin: 0;
-}
-
-td :hover {
-  background-color: var(--back);
-  color: var(--textCol);
 }
 
 tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-.productImage {
+.product-image {
   height: 50px;
   width: 50px;
 }
 
-.productBarcode {
+.product-barcode {
   height: 50px;
   width: 80px;
 }
 
-.tdButton {
+.td-button {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -179,13 +187,13 @@ button {
   align-self: center;
 }
 
-.popUp {
+.pop-up {
   direction: rtl;
   padding: 30px;
   margin: 0;
 }
 
-.popUpHeaderDiv {
+.pop-up-header-div {
   width: 100%;
   direction: rtl;
   display: flex;
@@ -195,7 +203,7 @@ button {
   margin: 0px;
 }
 
-.popUpTitleH4 {
+.pop-up-title-h4 {
   font-size: 18px;
   padding: 0;
   margin: 0;
@@ -211,14 +219,14 @@ button {
 
 }
 
-.popUpOprationDiv {
+.pop-up-opration-div {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 
-.popUpEditButton:hover,
-.popUpDeleteButton:hover {
+.pop-up-edit-button:hover,
+.pop-up-delete-button:hover {
   background-color: var(--textCol);
 }
 

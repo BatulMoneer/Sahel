@@ -12,11 +12,9 @@
 .container-div {
   height: auto;
   width: 90%;
-  padding: 10px 0px 30px;
-  margin: 50px;
-  margin-top: 110px;
+  padding: 30px;
+  margin: 100px 30px 50px;
   display: flex;
-  justify-content: center;
   flex-direction: column;
   align-items: center;
   background-color: var(--background);
@@ -56,56 +54,49 @@ h6 {
   margin-bottom: 15px;
 }
 
-.statistics-container {
+.statistics-container-div {
   width: 90%;
   height: auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
-}
-.helper-1 {
-  width: 90%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 0px;
-  margin: 0px;
-}
-
-.helper-2 {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  text-align: center;
-  padding: 0px;
-  margin: 0px;
-}
-
-.helper-3 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 0px;
-  margin: 0px;
-}
-
-.usersContainerDiv {
-  height: auto;
-  width: auto;
+  justify-content: space-around;
+  justify-content: space-between;
   padding: 0;
   margin: 0;
-  margin-left: 15px;
-  margin-bottom: 25px;
+}
+
+.helper-div-1 {
+  width: 90%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+}
+
+.helper-div-2 {
   display: flex;
   flex-direction: row;
   justify-content: center;
   text-align: center;
+  padding: 0px;
+  margin: 0px;
 }
 
-.users-p {
+.helper-div-3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+}
+
+.users-p,
+.chart-p {
   display: flex;
   justify-self: center;
   text-align: center;
@@ -118,53 +109,27 @@ h6 {
 .customers-p,
 .collectors-p,
 .stores-p {
-  font-size: 15px;
+  font-size: 16px;
   padding: 5px 5px 0px 0px;
-  margin: 0;
+  margin: 20px 0 0 80px;
 }
 
 .total-n-p,
 .customers-n-p,
 .collectors-n-p,
 .stores-n-p {
-  font-size: 18px;
+  font-size: 20px;
   padding: 2px 5px 0px 0px;
   margin: 0;
 }
 
-.total-div {
+.total-div,
+.customers-div,
+.collectors-div
+.stores-div  {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  height: auto;
-  width: 120px;
-  padding: 0;
-  margin: 0;
-}
-
-.customers-div {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  height: auto;
-  width: 120px;
-  padding: 0;
-  margin: 0;
-}
-
-.collectors-div {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  height: auto;
-  width: 120px;
-  padding: 0;
-  margin: 0;
-}
-.stores-div {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   height: auto;
   width: 150px;
   padding: 0;
@@ -174,10 +139,11 @@ h6 {
 .card-container {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   height: auto;
-  width: 280px;
-  padding: 5px 5px 2px 5px;
-  margin: 5px 25px 30px 25px;
+  width: 320px;
+  padding: 5px 5px 2px;
+  margin: 5px 20px 10px 5px;
   background-color: var(--background);
   box-shadow: 0px 2px 6px var(--shadow);
   border-radius: 10px;
@@ -194,8 +160,8 @@ h6 {
   margin-right: 0px;
   margin: 0px;
   margin-right: 20px;
-  width: 100px;
-  height: 105px;
+  width: auto;
+  height: 120px;
 }
 
 .chart-container {
@@ -203,15 +169,15 @@ h6 {
   height: auto;
   padding: 0;
   margin: 0;
-  margin-right: 25px;
+  margin-top: 7px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .chart-div {
-  width: 380px;
-  height: 260px;
+  width: 400px;
+  height: 272px;
   background-color: var(--background);
   box-shadow: 0px 2px 6px var(--shadow);
   border-radius: 10px;
@@ -221,24 +187,22 @@ h6 {
   border-left: 0px;
   border-style: solid;
   border-color: var(--prime);
-  padding: 0px;
-  margin: 0px;
-  margin-bottom: 20px;
+  padding: 5px 5px 2px;
+  margin: 5px 20px 10px 5px;
   font-family: var(--font);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
 }
 
 .table-title-div {
   padding: 0;
   margin: 0;
-  margin-top: 10px;
+  margin-top: 20px;
   color: var(--textCol);
   display: flex;
-  align-self: center;
-  justify-content: center;
   flex-direction: column;
+  align-items: center;
 }
 
 h2 {
@@ -283,24 +247,30 @@ input[type="text"] {
   border-color: var(--prime);
 }
 
-.table-container {
+.table-container-div {
   width: 90%;
-  height: 300px;
+  height: 500px;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 10px;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px 3px var(--shadow);
 }
 
 table {
   width: 100%;
-  height: 300px;
+  height: auto;
   overflow-y: auto;
   display: table;
-  align-self: center;
   text-align: center;
   background-color: var(--background);
   color: var(--font);
   border-radius: 10px;
   margin: 0 auto;
-  margin-bottom: 50px;
 }
 
 th {
@@ -311,7 +281,7 @@ th {
   margin: 0;
   color: var(--background) !important;
   position: sticky;
-    top: 0;
+  top: 0;
 }
 
 .th-first{

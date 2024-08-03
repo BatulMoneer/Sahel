@@ -5,9 +5,8 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './alerts.component.html',
   styleUrls: ['./alerts.component.scss']
 })
-export class AlertsComponent implements OnInit {
 
-  constructor() { }
+export class AlertsComponent implements OnInit {
 
   arrayList = [
     {
@@ -32,7 +31,8 @@ export class AlertsComponent implements OnInit {
     },
   ]
 
-  ngOnInit(): void {
-  }
+  constructor() { }
+
+  ngOnInit(): void { }
 
 }

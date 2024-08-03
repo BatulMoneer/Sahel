@@ -8,13 +8,187 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class ManagerRepresentativeRegistrationRequestsComponent implements OnInit {
 
-  constructor(private modalService: NgbModal) { }
-
-  open(content) {
-		this.modalService.open(content ,{ centered: true })
-	}
-
-  arrayList = [
+  collectorsList = [
+    {
+      collectorName: 'عامر عثمان',
+      collectorAge: '31	',
+      email: 'amir@gmail.com',
+      phone: '0593644354',
+      commercialRegistration: '//awfwaf//waf/waf',
+      id: '1',
+      reason: " "
+    },
+    {
+      collectorName: 'عامر عثمان',
+      collectorAge: '31	',
+      email: 'amir@gmail.com',
+      phone: '0593644354',
+      commercialRegistration: '//awfwaf//waf/waf',
+      id: '1',
+      reason: " "
+    },
+    {
+      collectorName: 'عامر عثمان',
+      collectorAge: '31	',
+      email: 'amir@gmail.com',
+      phone: '0593644354',
+      commercialRegistration: '//awfwaf//waf/waf',
+      id: '1',
+      reason: " "
+    },
+    {
+      collectorName: 'عامر عثمان',
+      collectorAge: '31	',
+      email: 'amir@gmail.com',
+      phone: '0593644354',
+      commercialRegistration: '//awfwaf//waf/waf',
+      id: '1',
+      reason: " "
+    },
+    {
+      collectorName: 'عامر عثمان',
+      collectorAge: '31	',
+      email: 'amir@gmail.com',
+      phone: '0593644354',
+      commercialRegistration: '//awfwaf//waf/waf',
+      id: '1',
+      reason: " "
+    },
+    {
+      collectorName: 'عامر عثمان',
+      collectorAge: '31	',
+      email: 'amir@gmail.com',
+      phone: '0593644354',
+      commercialRegistration: '//awfwaf//waf/waf',
+      id: '1',
+      reason: " "
+    },
+    {
+      collectorName: 'عامر عثمان',
+      collectorAge: '31	',
+      email: 'amir@gmail.com',
+      phone: '0593644354',
+      commercialRegistration: '//awfwaf//waf/waf',
+      id: '1',
+      reason: " "
+    },
+    {
+      collectorName: 'عامر عثمان',
+      collectorAge: '31	',
+      email: 'amir@gmail.com',
+      phone: '0593644354',
+      commercialRegistration: '//awfwaf//waf/waf',
+      id: '1',
+      reason: " "
+    },
+    {
+      collectorName: 'عامر عثمان',
+      collectorAge: '31	',
+      email: 'amir@gmail.com',
+      phone: '0593644354',
+      commercialRegistration: '//awfwaf//waf/waf',
+      id: '1',
+      reason: " "
+    },
+    {
+      collectorName: 'عامر عثمان',
+      collectorAge: '31	',
+      email: 'amir@gmail.com',
+      phone: '0593644354',
+      commercialRegistration: '//awfwaf//waf/waf',
+      id: '1',
+      reason: " "
+    },
+    {
+      collectorName: 'عامر عثمان',
+      collectorAge: '31	',
+      email: 'amir@gmail.com',
+      phone: '0593644354',
+      commercialRegistration: '//awfwaf//waf/waf',
+      id: '1',
+      reason: " "
+    },
+    {
+      collectorName: 'فؤاد عثمان',
+      collectorAge: '31	',
+      email: 'amir@gmail.com',
+      phone: '0593644354',
+      commercialRegistration: '//awfwaf//waf/waf',
+      id: '1',
+      reason: " "
+    },
+    {
+      collectorName: 'فؤاد عثمان',
+      collectorAge: '31	',
+      email: 'amir@gmail.com',
+      phone: '0593644354',
+      commercialRegistration: '//awfwaf//waf/waf',
+      id: '1',
+      reason: " "
+    },
+    {
+      collectorName: 'عامر عثمان',
+      collectorAge: '31	',
+      email: 'amir@gmail.com',
+      phone: '0593644354',
+      commercialRegistration: '//awfwaf//waf/waf',
+      id: '1',
+      reason: " "
+    },
+    {
+      collectorName: 'عامر عثمان',
+      collectorAge: '31	',
+      email: 'amir@gmail.com',
+      phone: '0593644354',
+      commercialRegistration: '//awfwaf//waf/waf',
+      id: '1',
+      reason: " "
+    },
+    {
+      collectorName: 'عامر عثمان',
+      collectorAge: '31	',
+      email: 'amir@gmail.com',
+      phone: '0593644354',
+      commercialRegistration: '//awfwaf//waf/waf',
+      id: '1',
+      reason: " "
+    },
+    {
+      collectorName: 'عامر عثمان',
+      collectorAge: '31	',
+      email: 'amir@gmail.com',
+      phone: '0593644354',
+      commercialRegistration: '//awfwaf//waf/waf',
+      id: '1',
+      reason: " "
+    },
+    {
+      collectorName: 'عامر عثمان',
+      collectorAge: '31	',
+      email: 'amir@gmail.com',
+      phone: '0593644354',
+      commercialRegistration: '//awfwaf//waf/waf',
+      id: '1',
+      reason: " "
+    },
+    {
+      collectorName: 'عامر عثمان',
+      collectorAge: '31	',
+      email: 'amir@gmail.com',
+      phone: '0593644354',
+      commercialRegistration: '//awfwaf//waf/waf',
+      id: '1',
+      reason: " "
+    },
+    {
+      collectorName: 'عامر عثمان',
+      collectorAge: '31	',
+      email: 'amir@gmail.com',
+      phone: '0593644354',
+      commercialRegistration: '//awfwaf//waf/waf',
+      id: '1',
+      reason: " "
+    },
     {
       collectorName: 'عامر عثمان',
       collectorAge: '31	',
@@ -62,13 +236,252 @@ export class ManagerRepresentativeRegistrationRequestsComponent implements OnIni
     },
   ]
 
-  ngOnInit(): void {
+  collectorsList_ = [
+    {
+      collectorName: 'عامر عثمان',
+      collectorAge: '31	',
+      email: 'amir@gmail.com',
+      phone: '0593644354',
+      commercialRegistration: '//awfwaf//waf/waf',
+      id: '1',
+      reason: " "
+    },
+    {
+      collectorName: 'عامر عثمان',
+      collectorAge: '31	',
+      email: 'amir@gmail.com',
+      phone: '0593644354',
+      commercialRegistration: '//awfwaf//waf/waf',
+      id: '1',
+      reason: " "
+    },
+    {
+      collectorName: 'عامر عثمان',
+      collectorAge: '31	',
+      email: 'amir@gmail.com',
+      phone: '0593644354',
+      commercialRegistration: '//awfwaf//waf/waf',
+      id: '1',
+      reason: " "
+    },
+    {
+      collectorName: 'عامر عثمان',
+      collectorAge: '31	',
+      email: 'amir@gmail.com',
+      phone: '0593644354',
+      commercialRegistration: '//awfwaf//waf/waf',
+      id: '1',
+      reason: " "
+    },
+    {
+      collectorName: 'عامر عثمان',
+      collectorAge: '31	',
+      email: 'amir@gmail.com',
+      phone: '0593644354',
+      commercialRegistration: '//awfwaf//waf/waf',
+      id: '1',
+      reason: " "
+    },
+    {
+      collectorName: 'عامر عثمان',
+      collectorAge: '31	',
+      email: 'amir@gmail.com',
+      phone: '0593644354',
+      commercialRegistration: '//awfwaf//waf/waf',
+      id: '1',
+      reason: " "
+    },
+    {
+      collectorName: 'عامر عثمان',
+      collectorAge: '31	',
+      email: 'amir@gmail.com',
+      phone: '0593644354',
+      commercialRegistration: '//awfwaf//waf/waf',
+      id: '1',
+      reason: " "
+    },
+    {
+      collectorName: 'عامر عثمان',
+      collectorAge: '31	',
+      email: 'amir@gmail.com',
+      phone: '0593644354',
+      commercialRegistration: '//awfwaf//waf/waf',
+      id: '1',
+      reason: " "
+    },
+    {
+      collectorName: 'عامر عثمان',
+      collectorAge: '31	',
+      email: 'amir@gmail.com',
+      phone: '0593644354',
+      commercialRegistration: '//awfwaf//waf/waf',
+      id: '1',
+      reason: " "
+    },
+    {
+      collectorName: 'عامر عثمان',
+      collectorAge: '31	',
+      email: 'amir@gmail.com',
+      phone: '0593644354',
+      commercialRegistration: '//awfwaf//waf/waf',
+      id: '1',
+      reason: " "
+    },
+    {
+      collectorName: 'عامر عثمان',
+      collectorAge: '31	',
+      email: 'amir@gmail.com',
+      phone: '0593644354',
+      commercialRegistration: '//awfwaf//waf/waf',
+      id: '1',
+      reason: " "
+    },
+    {
+      collectorName: 'فؤاد عثمان',
+      collectorAge: '31	',
+      email: 'amir@gmail.com',
+      phone: '0593644354',
+      commercialRegistration: '//awfwaf//waf/waf',
+      id: '1',
+      reason: " "
+    },
+    {
+      collectorName: 'فؤاد عثمان',
+      collectorAge: '31	',
+      email: 'amir@gmail.com',
+      phone: '0593644354',
+      commercialRegistration: '//awfwaf//waf/waf',
+      id: '1',
+      reason: " "
+    },
+    {
+      collectorName: 'عامر عثمان',
+      collectorAge: '31	',
+      email: 'amir@gmail.com',
+      phone: '0593644354',
+      commercialRegistration: '//awfwaf//waf/waf',
+      id: '1',
+      reason: " "
+    },
+    {
+      collectorName: 'عامر عثمان',
+      collectorAge: '31	',
+      email: 'amir@gmail.com',
+      phone: '0593644354',
+      commercialRegistration: '//awfwaf//waf/waf',
+      id: '1',
+      reason: " "
+    },
+    {
+      collectorName: 'عامر عثمان',
+      collectorAge: '31	',
+      email: 'amir@gmail.com',
+      phone: '0593644354',
+      commercialRegistration: '//awfwaf//waf/waf',
+      id: '1',
+      reason: " "
+    },
+    {
+      collectorName: 'عامر عثمان',
+      collectorAge: '31	',
+      email: 'amir@gmail.com',
+      phone: '0593644354',
+      commercialRegistration: '//awfwaf//waf/waf',
+      id: '1',
+      reason: " "
+    },
+    {
+      collectorName: 'عامر عثمان',
+      collectorAge: '31	',
+      email: 'amir@gmail.com',
+      phone: '0593644354',
+      commercialRegistration: '//awfwaf//waf/waf',
+      id: '1',
+      reason: " "
+    },
+    {
+      collectorName: 'عامر عثمان',
+      collectorAge: '31	',
+      email: 'amir@gmail.com',
+      phone: '0593644354',
+      commercialRegistration: '//awfwaf//waf/waf',
+      id: '1',
+      reason: " "
+    },
+    {
+      collectorName: 'عامر عثمان',
+      collectorAge: '31	',
+      email: 'amir@gmail.com',
+      phone: '0593644354',
+      commercialRegistration: '//awfwaf//waf/waf',
+      id: '1',
+      reason: " "
+    },
+    {
+      collectorName: 'عامر عثمان',
+      collectorAge: '31	',
+      email: 'amir@gmail.com',
+      phone: '0593644354',
+      commercialRegistration: '//awfwaf//waf/waf',
+      id: '1',
+      reason: " "
+    },
+    {
+      collectorName: 'عامر عثمان',
+      collectorAge: '31	',
+      email: 'amir@gmail.com',
+      phone: '0593644354',
+      commercialRegistration: '//awfwaf//waf/waf',
+      id: '1',
+      reason: " "
+    },
+    {
+      collectorName: 'عامر عثمان',
+      collectorAge: '31	',
+      email: 'amir@gmail.com',
+      phone: '0593644354',
+      commercialRegistration: '//awfwaf//waf/waf',
+      id: '1',
+      reason: " "
+    },
+    {
+      collectorName: 'عامر عثمان',
+      collectorAge: '31	',
+      email: 'amir@gmail.com',
+      phone: '0593644354',
+      commercialRegistration: '//awfwaf//waf/waf',
+      id: '1',
+      reason: " "
+    },
+    {
+      collectorName: 'عامر عثمان',
+      collectorAge: '31	',
+      email: 'amir@gmail.com',
+      phone: '0593644354',
+      commercialRegistration: '//awfwaf//waf/waf',
+      id: '1',
+      reason: " "
+    },
+  ]
+  constructor(
+    private modalService: NgbModal
+  ) { }
+
+  ngOnInit(): void { }
+
+  open(content) {
+    this.modalService.open(content, { centered: true })
   }
 
-  acceptance(){
+  filter_collector(user_filter) {
+    this.collectorsList = this.collectorsList_
+    this.collectorsList = this.collectorsList.filter((data) => {
+      return data.collectorName.includes(user_filter)
+    })
   }
 
-  rejection(){
-  }
+  acceptance() { }
+
+  rejection() { }
 
 }

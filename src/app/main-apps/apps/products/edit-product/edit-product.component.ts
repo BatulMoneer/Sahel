@@ -7,9 +7,11 @@ import { Router } from '@angular/router';
 })
 export class EditProductComponent implements OnInit {
 
-  constructor(){}
+  productImage = "../../../../../assets/images/Oats.jpg"
 
-  arrayList = [
+  productBarcode = "../../../../../assets/images/Barcode.png"
+
+  sectionsList = [
     {
       section: 'الشاي والقهوة'
     },
@@ -33,7 +35,8 @@ export class EditProductComponent implements OnInit {
     },
   ]
 
-  ngOnInit(): void {
-  }
+  constructor(){}
+
+  ngOnInit(): void {}
 
 }
