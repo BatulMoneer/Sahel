@@ -48,11 +48,10 @@ export class CustomerSignupComponent implements OnInit {
     }
     const formValue = this.formData.value;
 
-    this.impApiService.post(auth.create, this.formData.value).subscribe(data => {
+    this.impApiService.post(auth.register, this.formData.value).subscribe(data => {
       if (data.message == "Account successfully created") {
         localStorage.setItem('header', '1')
         localStorage.setItem('email', formValue.email_user)
-        console.log(localStorage.getItem('email'))
         this.spinner.hide()
         this.dialog.open(Otp2PopComponent);
       }

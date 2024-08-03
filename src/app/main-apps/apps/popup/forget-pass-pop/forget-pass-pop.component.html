@@ -8,7 +8,7 @@
 
       <div class="group">
         <div class="input-group">
-          <p class="text">كلمة المرور</p>
+          <p class="text">كلمة المرور الجديد</p>
           <input type="password" formControlName="newPassword" placeholder="ادخل كلمة المرور" required>
         </div>
         <div *ngIf="submitted_crearte && passwordForm.controls['newPassword'].errors">
@@ -26,7 +26,7 @@
 
       <div class="group">
         <div class="input-group">
-          <p class="text">كلمة المرور</p>
+          <p class="text">تأكيد كلمة المرور الجديدة</p>
           <input type="password" formControlName="newPasswordConfirm" placeholder="ادخل كلمة المرور" required>
         </div>
         <div *ngIf="submitted_crearte && passwordForm.controls['newPasswordConfirm'].errors">

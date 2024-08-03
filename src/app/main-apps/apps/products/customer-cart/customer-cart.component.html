@@ -1,4 +1,4 @@
-<div class="body">
+<div class="body" *ngIf="hasCart; else noOrder">
 
   <div class="head">
     <h1 class="title">سلة التسوق</h1>
@@ -68,3 +68,11 @@
   </div>
   <button (click)="openDialog()">ادفع الآن</button>
 </div>
+
+<ng-template #noOrder>
+  <div class="no-order">
+    <h2 class="title">لا توجد منتجات في السلة </h2>
+    <h6 class="text">يمكنك اضافة منتجات وطلبها في الموقع</h6>
+    <button routerLink="/apps/products/customer-view-products">عرض المنتجات</button>
+  </div>
+</ng-template>

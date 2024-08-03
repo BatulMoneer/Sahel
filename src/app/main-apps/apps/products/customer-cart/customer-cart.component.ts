@@ -16,6 +16,7 @@ import { PayNowPopComponent } from '../../popup/pay-now-pop/pay-now-pop.componen
 })
 export class CustomerCartComponent implements OnInit {
 
+  hasCart = false
   products = []
   cards = [{ card: 1345, check: "one" }, { card: 1345, check: "two" }, { card: 1345, check: "three" }]
 
@@ -73,7 +74,7 @@ export class CustomerCartComponent implements OnInit {
     localStorage.setItem('cart', JSON.stringify(this.products));
 
     this.currentOrder = {
-      id: 0, // Will be set by OrderService
+      id: 0,
       customerId: 2,
       items: this.products.map(p => ({
         productId: p.productId,
@@ -106,11 +107,14 @@ export class CustomerCartComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
     console.log(this.collectPrice, " l1ll")
 
     let retString = localStorage.getItem("cart");
     if (retString) {
       this.products = JSON.parse(retString);
+      if (this.products[0])
+        this.hasCart = true
     }
     console.log(this.collectPrice, " ll2l")
 

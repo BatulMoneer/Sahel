@@ -14,13 +14,7 @@ export class CustomerHomeComponent implements OnInit {
   moreProducts = "عرض المنتجات";
   productLink = "/apps/products/customer-view-products";
 
-  shops = [
-    { title: 'متجر بنده', image: '../../../assets/images/Panda.png', info: 'فرع الشرائع', productLink: '/apps/products/customer-view-products' },
-    { title: 'متجر بنده', image: '../../../assets/images/Panda.png', info: 'فرع الشرائع', productLink: '/apps/products/customer-view-products' },
-    { title: 'متجر بنده', image: '../../../assets/images/Panda.png', info: 'فرع الشرائع', productLink: '/apps/products/customer-view-products' },
-    { title: 'متجر بنده', image: '../../../assets/images/Panda.png', info: 'فرع الشرائع', productLink: '/apps/products/customer-view-products' },
-    { title: 'متجر بنده', image: '../../../assets/images/Panda.png', info: 'فرع الشرائع', productLink: '/apps/products/customer-view-products' },
-  ];
+  shops = [];
 
   displayedShops: any[] = [];
   showMore: boolean = false;
@@ -28,23 +22,35 @@ export class CustomerHomeComponent implements OnInit {
   constructor(private impApiService: ImpApiService) { }
 
   ngOnInit(): void {
-    this.displayedShops = this.shops.slice(0, 4);
+    this.showAllShops()
 
-    // this.impApiService.get(customer.viewMarkets).subscribe(data => {
-    //   console.log(data);
-    // });
+    this.impApiService.get(customer.viewMarkets).subscribe(data => {
+      for (let index = 0; index < data.data.length; index++) {
+        this.shops.push(data.data[index])
+      }
+      console.log(this.shops)
+    });
+  }
+
+  setShop(id) {
+    localStorage.setItem('market', id)
+    console.log(localStorage.getItem('market'))
+
   }
 
   showAllShops(): void {
-    if (!this.showMore) {
+    if (this.showMore) {
       this.displayedShops = this.shops;
       this.showMore = true;
     }
     else {
-      this.displayedShops = this.shops.slice(0, 4);
-      this.showMore = false;
-
-
+      if (this.shops.length < 4) {
+        this.displayedShops = this.shops;
+      }
+      else {
+        this.displayedShops = this.shops.slice(0, 4);
+        this.showMore = false;
+      }
     }
 
   }

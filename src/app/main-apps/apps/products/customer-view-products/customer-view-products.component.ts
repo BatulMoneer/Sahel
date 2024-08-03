@@ -10,282 +10,40 @@ import { ImpApiService } from 'src/app/services/imp-api.service';
 export class CustomerViewProductsComponent implements OnInit {
   @ViewChild('scrollContainer') scrollContainer!: ElementRef;
 
+  categories = [];
+  category = [];
+  showAllProducts = [];
+  showAllCategories = false;
+  visibleItems = 4;
+  link = "/apps/products/customer-item-detail"
+
   constructor(private impApiService: ImpApiService) { }
 
+  ngOnInit(): void {
+    const shop_id = localStorage.getItem('market');
+    //const shop_id = 1;
 
-  categories = []
-  category = [
-    {
-      title: "مواد تنظيف",
-      currentIndex: 1,
-      array: [
-        {
-          link: "/apps/products/customer-item-detail",
-          value: "عرض",
-          product: 'شوفان',
-          image: '../../../assets/images/Oats.jpg',
-          info: 20,
-          linkk: "link",
-          valuee: "المزيد من الاصناف",
-        },
-        {
-          link: "/apps/products/customer-item-detail",
-          value: "عرض",
-          product: 'شوفان',
-          image: '../../../assets/images/Oats.jpg',
-          info: 20,
-          linkk: "link",
-          valuee: "المزيد من الاصناف",
-        },
-        {
-          link: "/apps/products/customer-item-detail",
-          value: "عرض",
-          product: 'شوفان',
-          image: '../../../assets/images/Oats.jpg',
-          info: 20,
-          linkk: "link",
-          valuee: "المزيد من الاصناف",
-        },
-        {
-          link: "/apps/products/customer-item-detail",
-          value: "عرض",
-          product: 'شوفان',
-          image: '../../../assets/images/Oats.jpg',
-          info: 20,
-          linkk: "link",
-          valuee: "المزيد من الاصناف",
-        },
-        {
-          link: "/apps/products/customer-item-detail",
-          value: "عرض",
-          product: 'شوفان',
-          image: '../../../assets/images/Oats.jpg',
-          info: 20,
-          linkk: "link",
-          valuee: "المزيد من الاصناف",
-        },
-        {
-          link: "/apps/products/customer-item-detail",
-          value: "عرض",
-          product: 'شوفان',
-          image: '../../../assets/images/Oats.jpg',
-          info: 20,
-          linkk: "link",
-          valuee: "المزيد من الاصناف",
-        },
-        {
-          link: "/apps/products/customer-item-detail",
-          value: "عرض",
-          product: 'شوفان',
-          image: '../../../assets/images/Oats.jpg',
-          info: 20,
-          linkk: "link",
-          valuee: "المزيد من الاصناف",
-        },
-        {
-          link: "/apps/products/customer-item-detail",
-          value: "عرض",
-          product: 'شوفان',
-          image: '../../../assets/images/Oats.jpg',
-          info: 20,
-          linkk: "link",
-          valuee: "المزيد من الاصناف",
-        },
-      ]
+    this.impApiService.get(category.categories_index).subscribe(data => {
+      this.categories = data.map(cat => cat.category_name);
+      this.category = this.categories.map(title => ({ title, currentIndex: 1, array: [] }));
+      this.showAllProducts = new Array(this.category.length).fill(false);
+    });
 
-    },
-    {
-      title: "أجهزة الكترونية",
-      currentIndex: 1,
-      array: [
-        {
-          link: "/apps/products/customer-item-detail",
-          value: "عرض",
-          product: 'شوفان',
-          image: '../../../assets/images/Oats.jpg',
-          info: 20,
-          linkk: "link",
-          valuee: "المزيد من الاصناف",
-        },
-        {
-          link: "/apps/products/customer-item-detail",
-          value: "عرض",
-          product: 'شوفان',
-          image: '../../../assets/images/Oats.jpg',
-          info: 20,
-          linkk: "link",
-          valuee: "المزيد من الاصناف",
-        },
-        {
-          link: "/apps/products/customer-item-detail",
-          value: "عرض",
-          product: 'شوفان',
-          image: '../../../assets/images/Oats.jpg',
-          info: 20,
-          linkk: "link",
-          valuee: "المزيد من الاصناف",
-        },
-        {
-          link: "/apps/products/customer-item-detail",
-          value: "عرض",
-          product: 'شوفان',
-          image: '../../../assets/images/Oats.jpg',
-          info: 20,
-          linkk: "link",
-          valuee: "المزيد من الاصناف",
-        },
-        {
-          link: "/apps/products/customer-item-detail",
-          value: "عرض",
-          product: 'شوفان',
-          image: '../../../assets/images/Oats.jpg',
-          info: 20,
-          linkk: "link",
-          valuee: "المزيد من الاصناف",
-        },
-        {
-          link: "/apps/products/customer-item-detail",
-          value: "عرض",
-          product: 'شوفان',
-          image: '../../../assets/images/Oats.jpg',
-          info: 20,
-          linkk: "link",
-          valuee: "المزيد من الاصناف",
-        },
-      ]
-    },
-    {
-      title: "مواد غذائية",
-      currentIndex: 1,
-      array: [
-        {
-          link: "/apps/products/customer-item-detail",
-          value: "عرض",
-          product: 'شوفان',
-          image: '../../../assets/images/Oats.jpg',
-          info: 20,
-          linkk: "link",
-          valuee: "المزيد من الاصناف",
-        },
-        {
-          link: "/apps/products/customer-item-detail",
-          value: "عرض",
-          product: 'شوفان',
-          image: '../../../assets/images/Oats.jpg',
-          info: 20,
-          linkk: "link",
-          valuee: "المزيد من الاصناف",
-        },
-        {
-          link: "/apps/products/customer-item-detail",
-          value: "عرض",
-          product: 'شوفان',
-          image: '../../../assets/images/Oats.jpg',
-          info: 20,
-          linkk: "link",
-          valuee: "المزيد من الاصناف",
-        },
-        {
-          link: "/apps/products/customer-item-detail",
-          value: "عرض",
-          product: 'شوفان',
-          image: '../../../assets/images/Oats.jpg',
-          info: 20,
-          linkk: "link",
-          valuee: "المزيد من الاصناف",
-        },
-        {
-          link: "/apps/products/customer-item-detail",
-          value: "عرض",
-          product: 'شوفان',
-          image: '../../../assets/images/Oats.jpg',
-          info: 20,
-          linkk: "link",
-          valuee: "المزيد من الاصناف",
-        },
-        {
-          link: "/apps/products/customer-item-detail",
-          value: "عرض",
-          product: 'شوفان',
-          image: '../../../assets/images/Oats.jpg',
-          info: 20,
-          linkk: "link",
-          valuee: "المزيد من الاصناف",
-        },
-      ]
-    },
-    {
-      title: "مواد غذائية",
-      currentIndex: 1,
-      array: [
-        {
-          link: "/apps/products/customer-item-detail",
-          value: "عرض",
-          product: 'شوفان',
-          image: '../../../assets/images/Oats.jpg',
-          info: 20,
-          linkk: "link",
-          valuee: "المزيد من الاصناف",
-        },
-        {
-          link: "/apps/products/customer-item-detail",
-          value: "عرض",
-          product: 'شوفان',
-          image: '../../../assets/images/Oats.jpg',
-          info: 20,
-          linkk: "link",
-          valuee: "المزيد من الاصناف",
-        },
-        {
-          link: "/apps/products/customer-item-detail",
-          value: "عرض",
-          product: 'شوفان',
-          image: '../../../assets/images/Oats.jpg',
-          info: 20,
-          linkk: "link",
-          valuee: "المزيد من الاصناف",
-        },
-        {
-          link: "/apps/products/customer-item-detail",
-          value: "عرض",
-          product: 'شوفان',
-          image: '../../../assets/images/Oats.jpg',
-          info: 20,
-          linkk: "link",
-          valuee: "المزيد من الاصناف",
-        },
-        {
-          link: "/apps/products/customer-item-detail",
-          value: "عرض",
-          product: 'شوفان',
-          image: '../../../assets/images/Oats.jpg',
-          info: 20,
-          linkk: "link",
-          valuee: "المزيد من الاصناف",
-        },
-        {
-          link: "/apps/products/customer-item-detail",
-          value: "عرض",
-          product: 'شوفان',
-          image: '../../../assets/images/Oats.jpg',
-          info: 20,
-          linkk: "link",
-          valuee: "المزيد من الاصناف",
-        },
-      ]
-    }
-  ]
+    this.impApiService.get(`${product.viewProducts}${shop_id}`).subscribe(data => {
+      data.data.forEach(prod => {
+        const catIndex = this.categories.findIndex(cat => cat === prod.category.name);
+        if (catIndex > -1) {
+          this.category[catIndex].array.push(prod);
+          console.log(this.category[catIndex].array)
+        } else {
+          this.categories.push(prod.category.name);
+          this.category.push({ title: prod.category.name, currentIndex: 1, array: [prod] });
+        }
+      });
+      this.showAllProducts = new Array(this.category.length).fill(false);
 
-  link = "/apps/products/customer-item-detail";
-  value = "عرض";
-  title = 'شوفان';
-  image = '../../../assets/images/Oats.jpg';
-  info = 20;
-  linkk = "link";
-  valuee = "المزيد من الاصناف";
-  visibleItems = 4;
-  showAllProducts = new Array(this.category.length).fill(false);
-  showAllCategories = false
+    });
+  }
 
   getFilteredCategories() {
     return this.showAllCategories ? this.category : this.category.slice(0, 3);
@@ -304,19 +62,17 @@ export class CustomerViewProductsComponent implements OnInit {
   }
 
   private updateScrollPosition(categoryIndex, type) {
-    if (type == 'right') {
-      const itemWidth = 300;
-      const offset = this.category[categoryIndex].currentIndex * itemWidth;
-      document.getElementById(`scrollContainer${categoryIndex}${this.category[categoryIndex].currentIndex}`).setAttribute("style", `transform:translateX(-${offset}px)`);
-      this.category[categoryIndex].currentIndex = this.category[categoryIndex].currentIndex + 1;
+    const itemWidth = 300;
+    let offset;
+    if (type === 'right') {
+      offset = this.category[categoryIndex].currentIndex * itemWidth;
+      this.category[categoryIndex].currentIndex += 1;
+    } else {
+      offset = (this.category[categoryIndex].currentIndex - 2) * itemWidth;
+      this.category[categoryIndex].currentIndex -= 1;
     }
-
-    if (type == 'left') {
-      const itemWidth = 300;
-      const offset = (this.category[categoryIndex].currentIndex - 2) * itemWidth;
-      document.getElementById(`scrollContainer${categoryIndex}${this.category[categoryIndex].currentIndex}`).setAttribute("style", `transform:translateX(-${offset}px)`);
-      this.category[categoryIndex].currentIndex = this.category[categoryIndex].currentIndex - 1;
-    }
+    document.getElementById(`scrollContainer${categoryIndex}${this.category[categoryIndex].currentIndex}`)
+      .setAttribute("style", `transform:translateX(-${offset}px)`);
   }
 
   isAtStart(currentIndex): boolean {
@@ -332,24 +88,10 @@ export class CustomerViewProductsComponent implements OnInit {
   }
 
   toggleShowAllProducts(categoryIndex: number): void {
-    console.log(this.showAllProducts[categoryIndex])
     this.showAllProducts[categoryIndex] = !this.showAllProducts[categoryIndex];
   }
 
-
-  ngOnInit(): void {
-    this.impApiService.get(category.categories_index).subscribe(data => {
-      for (let index = 0; index < data.length; index++) {
-        this.categories.push(data[index].category_name);
-      }
-    });
-    const shop_id = 1
-    this.impApiService.get(product.viewProducts + shop_id).subscribe(data => {
-      // for (let index = 0; index < data.length; index++) {
-      //   this.categories.push(data[index].category_name);
-      // }
-      console.log(data);
-    });
-
+  setProd(id) {
+    localStorage.setItem('product', id)
   }
 }
