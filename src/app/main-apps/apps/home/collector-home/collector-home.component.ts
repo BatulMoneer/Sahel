@@ -11,40 +11,43 @@ import { ImpApiService } from 'src/app/services/imp-api.service';
 export class CollectorHomeComponent implements OnInit {
 
   isActive: boolean;
-  name = "قصي"
-  link = "/apps/products/collector-orders"
-  value = "عرض الطلبات"
+  status: any;
+  name = "قصي";
+  link = "/apps/products/collector-orders";
+  value = "عرض الطلبات";
+
   constructor(
     private service: OrderService,
     private impApiService: ImpApiService
   ) { }
 
-
   ngOnInit(): void {
     const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-    console.log(currentUser)
-    const payload = {
-      user_id: currentUser.user_info.id,
-      values_info: "inactive"
-    };
-    this.impApiService.post(collector.collectorUpdate, payload).subscribe(data => {
-      console.log(data)
-    })
+    console.log(currentUser);
 
+    this.impApiService.get(`${collector.getCollectorStatus}${currentUser.user_info.id}`).subscribe(data => {
+      this.status = data.collector_status[0];
+      console.log(this.status);
+      this.isActive = this.status === 'active';
+    });
   }
 
   toggleStatus(): void {
     this.isActive = !this.isActive;
+    console.log(this.isActive);
+
     const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-    console.log(currentUser)
+    console.log(currentUser);
+
     const payload = {
       user_id: currentUser.user_info.id,
-      values_info: "inactive"
+      values_info: this.isActive ? 'active' : 'inactive'
     };
-    this.impApiService.post(collector.collectorUpdate, payload).subscribe(data => {
-      console.log(data)
-    })
 
+    console.log(this.isActive ? 'active' : 'inactive');
+
+    this.impApiService.post(collector.updateCollectorStatus, payload).subscribe(data => {
+      console.log(data);
+    });
   }
-
 }

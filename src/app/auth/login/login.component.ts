@@ -5,8 +5,9 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
-import { auth } from 'src/app/constant/Routes';
+import { auth, user } from 'src/app/constant/Routes';
 import { ForgetPassPopComponent } from 'src/app/main-apps/apps/popup/forget-pass-pop/forget-pass-pop.component';
+import { OtpPassPopComponent } from 'src/app/main-apps/apps/popup/otp-pass-pop/otp-pass-pop.component';
 import { OtpPopComponent } from 'src/app/main-apps/apps/popup/otp-pop/otp-pop.component';
 import { OrderService } from 'src/app/service/order.service';
 
@@ -76,7 +77,16 @@ export class LoginComponent implements OnInit {
 
   forgotPass() {
     if (this.formData.value.email_user) {
-      this.dialog.open(ForgetPassPopComponent)
+      const payload = {
+        email_user: this.formData.value.email_user,
+      }
+      this.impApiService.post(user.resetPassword, payload).subscribe(data => {
+        if (data.message == "OTP has been Sended to the Email") {
+          localStorage.setItem('email', this.formData.value.email_user)
+          this.dialog.open(OtpPassPopComponent)
+        }
+      })
+      //
 
     }
     else {

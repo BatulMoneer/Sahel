@@ -37,7 +37,7 @@ export class Otp2PopComponent implements OnInit {
     console.log(payload)
 
     this.impApiService.post(auth.verifyOtp, payload).subscribe(data => {
-      localStorage.setItem('token', data.access_token)
+      //localStorage.setItem('token', data.access_token)
       if (this.currentID == '1') {
         this.router.navigate(["/apps/home/app-customer-home"])
         this.spinner.hide()

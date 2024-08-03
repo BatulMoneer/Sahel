@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-shop-card',
@@ -7,13 +7,19 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ShopCardComponent implements OnInit {
 
+  @Output() shopButtonClick = new EventEmitter<void>();
 
-  @Input() more: any;
-  @Input() submit: any;
+
+  @Input() link: any;
+  @Input() value: any;
 
   @Input() title = '';
   @Input() image = '';
   @Input() info = '';
+
+  onClick() {
+    this.shopButtonClick.emit();
+  }
 
   constructor() {
   }

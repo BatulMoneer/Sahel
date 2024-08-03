@@ -15,6 +15,7 @@ import { AccountVerifyComponent } from './account-verify/account-verify.componen
 import { Otp2PopComponent } from './otp2-pop/otp2-pop.component';
 import { ForgetPassPopComponent } from './forget-pass-pop/forget-pass-pop.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { OtpPassPopComponent } from './otp-pass-pop/otp-pass-pop.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     AccountVerifyComponent,
     Otp2PopComponent,
     ForgetPassPopComponent,
+    OtpPassPopComponent,
   ],
   imports: [
     CommonModule,

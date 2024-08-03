@@ -13,6 +13,7 @@ export class OrderStateComponent implements OnInit {
   products = []
 
   hasOrder: boolean = false;
+  timeOut = false;
 
   card: number = 3374;
 

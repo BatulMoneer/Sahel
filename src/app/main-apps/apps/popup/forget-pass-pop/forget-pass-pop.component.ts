@@ -1,7 +1,10 @@
+import { Router } from '@angular/router';
+import { ImpApiService } from './../../../../services/imp-api.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
+import { user } from 'src/app/constant/Routes';
 
 @Component({
   selector: 'app-forget-pass-pop',
@@ -13,6 +16,8 @@ export class ForgetPassPopComponent implements OnInit {
   constructor(public dialogRef: MatDialogRef<ForgetPassPopComponent>,
     private formBuilder: FormBuilder,
     private toastr: ToastrService,
+    private impApiService: ImpApiService,
+    private router: Router
 
   ) { }
 
@@ -28,9 +33,19 @@ export class ForgetPassPopComponent implements OnInit {
     this.newPasswordConfirm = this.passwordForm.value.newPasswordConfirm;
     if (this.newPassword && this.newPasswordConfirm) {
       if (this.newPassword == this.newPasswordConfirm) {
-        this.toastr.success("تم تغيير كلمة السر بنجاح");
+        const payload = {
+          email_user: this.newPassword,
+        }
 
-        this.dialogRef.close()
+        localStorage.setItem('token', localStorage.getItem('passToken'))
+
+        this.impApiService.post(user.updatePassword, payload).subscribe(data => {
+          this.toastr.success("تم تغيير كلمة السر بنجاح");
+          localStorage.removeItem('token')
+          localStorage.removeItem('passToken')
+          this.dialogRef.close()
+        })
+
       }
       else {
         this.toastr.error("كلمة السر غير مطابقة");

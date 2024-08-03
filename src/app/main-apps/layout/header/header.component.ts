@@ -34,7 +34,7 @@ export class HeaderComponent implements OnInit {
         { content: "حسابي", link: "/apps/my-information/app-store-my-information" },
         { content: "ادارة المنتجات", link: "/apps/products/app-ch-the-p-of-m-the-p" },
         { content: "الاحصائيات", link: "/apps/home/app-store-home" },
-        { content: "الرئيسية", link: "/auth/app-customer-home" }
+        { content: "الرئيسية", link: "/auth/app-customer-home" }//
       ]
     }
     else if (this.val == '4') {
