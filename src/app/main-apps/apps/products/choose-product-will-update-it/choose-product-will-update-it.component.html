@@ -1,57 +1,69 @@
 <div class="body">
-  <div class="containerDiv">
 
-    <div class="titleDiv">
+  <div class="container-div">
+
+    <div class="title-div">
       <h1>تحديث منتج</h1>
     </div>
 
-    <div class="tableTitleDiv">
+    <div class="table-title-div">
       <h2>اختر العملية التي تريد القيام بها</h2>
      </div>
 
      <div class="search-container">
       <i class="fas fa-search search-icon"></i>
-      <input type="text" placeholder="بحث">
+      <input type="text" placeholder="بحث" (input)="filter_products($event.target.value)">
     </div>
 
+    <div class="table-container-div">
+
     <table>
+
       <thead>
         <tr>
-          <th class="thName">اسم المنتج</th>
+          <th class="th-first">اسم المنتج</th>
           <th>سعر المنتج</th>
           <th>قسم المنتج</th>
           <th>الكمية</th>
           <th>صورة المنتج</th>
           <th>باركود المنتج</th>
-          <th class="thProsses">عملية</th>
+          <th class="th-last">عملية</th>
         </tr>
       </thead>
+
       <tbody>
-        <tr class="trbody" *ngFor="let item of arrayList">
+        <tr *ngFor="let item of productsList">
           <td>{{item.prodcutName}}</td>
           <td>{{item.productPrice}}</td>
           <td>{{item.productSection}}</td>
           <td>{{item.quntity}}</td>
-          <td><img class="productImage" src="{{item.productImage}}" alt="صورة"></td>
-          <td><img class="productBarcode" src="{{item.productBarcode}}" alt="باركود"></td>
-          <td class="tdButton">
+          <td><img class="product-image" src="{{item.productImage}}" alt="صورة"></td>
+          <td><img class="product-barcode" src="{{item.productBarcode}}" alt="باركود"></td>
+          <td class="td-button">
             <button (click)="open(content)">اختر</button>
           </td>
         </tr>
       </tbody>
+
     </table>
 
+    </div>
+
   </div>
+
 </div>
 
 
-<ng-template class="popUp" #content let-modal>
-  <div class="popUpHeaderDiv">
-    <h4 class="popUpTitleH4" id="popUpTitle">اختر العملية التي تريد تنفيذها : </h4>
+<ng-template class="pop-up" #content let-modal>
+
+  <div class="pop-up-header-div">
+    <h4 class="pop-up-title-h4" id="pop-up-title">اختر العملية التي تريد تنفيذها : </h4>
     <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
   </div>
-  <div class="popUpOprationDiv">
-    <button type="button" class="popUpEditButton" (click)="modal.nevigateAndSend('edit click')">تعديل</button>
-    <button type="button" class="popUpDeleteButton" (click)="modal.delete('delete click')">حذف</button>
+
+  <div class="pop-up-opration-div">
+    <button type="button" class="pop-up-edit-button" (click)="modal.nevigateAndSend('edit click')">تعديل</button>
+    <button type="button" class="pop-up-delete-button" (click)="modal.delete('delete click')">حذف</button>
   </div>
+
 </ng-template>
