@@ -69,7 +69,7 @@ export class CollectorSignupComponent {
       ]
     };
 
-    this.impApiService.post(auth.create, payload).subscribe(data => {
+    this.impApiService.post(auth.register, payload).subscribe(data => {
       if (data.message == "Account successfully created") {
         localStorage.setItem('header', this.formData.user_type_id)
         localStorage.setItem('email', this.formData.email_user)

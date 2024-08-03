@@ -3,33 +3,39 @@ import { environment } from "src/environments/environment";
 const BASEURL = environment.api;
 
 export const auth = {
-  login: BASEURL + 'login',
-  create: BASEURL + 'create',
-  register: BASEURL + 'register',
-  verifyOtp: BASEURL + 'verifyOtp',
-  logout: BASEURL + 'logout',
+  login: BASEURL + 'login', //done
+  register: BASEURL + 'register', //done
+  verifyOtp: BASEURL + 'verifyOtp', //done
+  logout: BASEURL + 'logout', //done
 
 
 
 }
 export const collector = {
-  collectorUpdate: BASEURL + 'collectorUpdate',
-
-
-
+  updateCollectorStatus: BASEURL + 'updateCollectorStatus', //done
+  getCollectorStatus: BASEURL + 'getCollectorStatus/', //done
+  viewOrders: BASEURL + 'viewOrders',
+  acceptOrder: BASEURL + 'acceptOrder',
+  updateOrderStatus: BASEURL + 'updateOrderStatus'
 }
 
 export const category = {
-  categories_index: BASEURL + 'categories/index'
+  categories_index: BASEURL + 'categories/index' //done
 }
 
 export const customer = {
-  viewMarkets: BASEURL + 'viewMarkets',
+  viewMarkets: BASEURL + 'viewMarkets', //done
   addOrder: BASEURL + 'addOrder'
 }
 
 export const product = {
-  viewProducts: BASEURL + 'viewProducts/'
+  viewProducts: BASEURL + 'products/view/', //done
+  productShow: BASEURL + 'products/show/'
+}
+
+export const user = {
+  resetPassword: BASEURL + 'resetPassword', //done
+  updatePassword: BASEURL + 'resetPassword.updatePassword' //done
 }
 
 export const HOME = {

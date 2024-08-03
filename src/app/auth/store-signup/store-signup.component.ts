@@ -63,7 +63,7 @@ export class StoreSignupComponent implements OnInit {
     formData.append('questions[2][value]', this.signupForm.value.logo);
 
     console.log(formData)
-    this.impApiService.post(auth.create, formData).subscribe(data => {
+    this.impApiService.post(auth.register, formData).subscribe(data => {
       if (data.message == "Account successfully created") {
         localStorage.setItem('header', '3');
         localStorage.setItem('email', this.signupForm.value.email_user);

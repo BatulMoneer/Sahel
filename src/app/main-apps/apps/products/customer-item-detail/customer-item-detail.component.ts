@@ -1,6 +1,8 @@
 import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AddToCartPopComponent } from '../../popup/add-to-cart-pop/add-to-cart-pop.component';
+import { product } from 'src/app/constant/Routes';
+import { ImpApiService } from 'src/app/services/imp-api.service';
 
 
 @Component({
@@ -11,7 +13,9 @@ import { AddToCartPopComponent } from '../../popup/add-to-cart-pop/add-to-cart-p
 export class CustomerItemDetailComponent implements OnInit {
 
 
-  constructor(private dialog: MatDialog) { }
+  constructor(private dialog: MatDialog,
+    private impApiService: ImpApiService
+  ) { }
 
   @ViewChild('scrollContainer') scrollContainer!: ElementRef;
 
@@ -169,6 +173,10 @@ export class CustomerItemDetailComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.impApiService.get(`${product.productShow}${localStorage.getItem('market')}${localStorage.getItem('product')}`).subscribe(data => {
+
+      console.log(data);
+    });
   }
 
 }

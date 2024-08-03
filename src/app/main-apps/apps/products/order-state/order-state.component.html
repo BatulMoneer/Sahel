@@ -1,131 +1,133 @@
-<div class="body" *ngIf="hasOrder; else noOrder">
-  <h2 class="title">حالة الطلب</h2>
-  <div class="status-container">
-    <ul>
-      <li [ngClass]="{'completed': orderState >= 1}">
-        <mat-icon *ngIf="orderState >= 1">check_circle</mat-icon>
-        <mat-icon *ngIf="orderState < 1">access_time</mat-icon>
-        <span *ngIf="orderState >= 1">تم قبول طلبك من مندوب التجميع</span>
-        <span *ngIf="orderState < 1">بانتظار قبول طلبك من مندوب التجميع</span>
+<div *ngIf="!timeOut; else reOrder">
+  <div class="body" *ngIf="hasOrder; else noOrder">
+    <h2 class="title">حالة الطلب</h2>
+    <div class="status-container">
+      <ul>
+        <li [ngClass]="{'completed': orderState >= 1}">
+          <mat-icon *ngIf="orderState >= 1">check_circle</mat-icon>
+          <mat-icon *ngIf="orderState < 1">access_time</mat-icon>
+          <span *ngIf="orderState >= 1">تم قبول طلبك من مندوب التجميع</span>
+          <span *ngIf="orderState < 1">بانتظار قبول طلبك من مندوب التجميع</span>
 
-      </li>
-      <li [ngClass]="{'completed': orderState >= 2}">
-        <mat-icon *ngIf="orderState >= 2 && productFound  && allProductFound">check_circle</mat-icon>
-        <mat-icon *ngIf="orderState >= 2 && productFound  && !allProductFound">shopping_cart</mat-icon>
-        <mat-icon *ngIf="orderState < 2">shopping_cart</mat-icon>
-        <mat-icon *ngIf="orderState >= 2 && !productFound " matSuffix><i class="fa fa-exclamation-circle"
-            aria-hidden="true"></i></mat-icon>
-        <span *ngIf="orderState < 2">يقوم مندوب التجميع بجمع المنتجات</span>
-        <span *ngIf="orderState >= 2 && !productFound" class="no">يوجد منتج غير موجود </span>
-        <span *ngIf="orderState >= 2 && productFound && allProductFound">تم تجميع الطلبات</span>
-        <span *ngIf="orderState >= 2 && productFound && !allProductFound">يكمل مندوب التجميع جمع المنتجات</span>
+        </li>
+        <li [ngClass]="{'completed': orderState >= 2}">
+          <mat-icon *ngIf="orderState >= 2 && productFound  && allProductFound">check_circle</mat-icon>
+          <mat-icon *ngIf="orderState >= 2 && productFound  && !allProductFound">shopping_cart</mat-icon>
+          <mat-icon *ngIf="orderState < 2">shopping_cart</mat-icon>
+          <mat-icon *ngIf="orderState >= 2 && !productFound " matSuffix><i class="fa fa-exclamation-circle"
+              aria-hidden="true"></i></mat-icon>
+          <span *ngIf="orderState < 2">يقوم مندوب التجميع بجمع المنتجات</span>
+          <span *ngIf="orderState >= 2 && !productFound" class="no">يوجد منتج غير موجود </span>
+          <span *ngIf="orderState >= 2 && productFound && allProductFound">تم تجميع الطلبات</span>
+          <span *ngIf="orderState >= 2 && productFound && !allProductFound">يكمل مندوب التجميع جمع المنتجات</span>
 
 
-        <button class="no-but" *ngIf="orderState === 2 && !productFound"
-          routerLink="/apps/products/change-product">تغيير المنتج</button>
+          <button class="no-but" *ngIf="orderState === 2 && !productFound"
+            routerLink="/apps/products/change-product">تغيير المنتج</button>
 
-      </li>
-      <li [ngClass]="{'completed': orderState >= 3}">
+        </li>
+        <li [ngClass]="{'completed': orderState >= 3}">
 
-        <div class="del-cont">
-          <div>
-            <mat-icon *ngIf="orderState >= 3">check_circle</mat-icon>
-            <mat-icon *ngIf="orderState < 3">local_shipping</mat-icon>
+          <div class="del-cont">
+            <div>
+              <mat-icon *ngIf="orderState >= 3">check_circle</mat-icon>
+              <mat-icon *ngIf="orderState < 3">local_shipping</mat-icon>
 
-            <span *ngIf="orderState < 3">بانتظار مندوب التوصيل</span>
-            <span *ngIf="orderState >= 3">تم قبول الطلب من مندوب التوصيل
-            </span>
+              <span *ngIf="orderState < 3">بانتظار مندوب التوصيل</span>
+              <span *ngIf="orderState >= 3">تم قبول الطلب من مندوب التوصيل
+              </span>
+            </div>
+
+
+            <div class="del" *ngIf="orderState >= 3">
+              اسم المندوب: {{deliveryPerson.name}}
+              رقم الاتصال: {{deliveryPerson.phone}}
+            </div>
           </div>
 
+        </li>
+        <li [ngClass]="{'completed': orderState >= 4}">
+          <mat-icon *ngIf="orderState >= 4">check_circle</mat-icon>
+          <mat-icon *ngIf="orderState < 4">store</mat-icon>
+          <span *ngIf="orderState >= 4">وصل مندوب التوصيل الى المتجر</span>
+          <span *ngIf="orderState < 4">بانتظار وصول مندوب التوصيل الى المتجر</span>
+        </li>
+        <li [ngClass]="{'completed': orderState >= 5}">
+          <mat-icon *ngIf="orderState >= 5">check_circle</mat-icon>
+          <mat-icon *ngIf="orderState < 5">home</mat-icon>
+          <span *ngIf="orderState < 5">بانتظار استلام مندوب التوصيل للطلب من المتجر</span>
+          <span *ngIf="orderState >= 5">استلم مندوب التوصيل الطلب من المتجر</span>
+        </li>
+        <li [ngClass]="{'completed': orderState >= 6}">
+          <mat-icon *ngIf="orderState >= 6">check_circle</mat-icon>
+          <mat-icon *ngIf="orderState < 6">home</mat-icon>
+          <span *ngIf="orderState < 6">بانتظار وصول مندوب التوصيل الى الموقع</span>
+          <span *ngIf="orderState >= 6"> وصل مندوب التوصيل الى الموقع</span>
+        </li>
+        <li [ngClass]="{'completed': orderState >= 7}">
+          <mat-icon *ngIf="orderState >= 7">check_circle</mat-icon>
+          <mat-icon *ngIf="orderState < 7">check_circle_outline</mat-icon>
+          <span *ngIf="orderState >= 7">تم تسليم الطلب</span>
+          <span *ngIf="orderState < 7">بانتظار تسليم الطلب</span>
+        </li>
+      </ul>
+      <div class="progress-bar-container">
+        <mat-progress-bar mode="determinate" [value]="(orderState / 7) * 100"
+          class="horizontal-progress-bar"></mat-progress-bar>
+      </div>
+    </div>
+    <button (click)="nextState()">Next State</button>
 
-          <div class="del" *ngIf="orderState >= 3">
-            اسم المندوب: {{deliveryPerson.name}}
-            رقم الاتصال: {{deliveryPerson.phone}}
-          </div>
+    <h2 class="title">منتجات الطلب</h2>
+
+    <div class="items">
+      <ng-container *ngFor="let item of products">
+        <app-cart-card [image]="item.image" [info]="item.info" [barcode]="item.barcode" [title]="item.title"
+          [amount]="item.amount"></app-cart-card>
+      </ng-container>
+    </div>
+
+    <h2 class="title">ملخص الطلب</h2>
+
+    <div class="brief">
+
+
+      <div class="one">
+        <div class="part">
+          <h6 class="text">سعر المنتجات ({{count}} منتجات)</h6>
+          <p class="info">{{price}} ريال</p>
         </div>
+        <div class="part">
+          <h6 class="text">سعر التوصيل</h6>
+          <p class="info">{{delivery}} ريال</p>
+        </div>
+        <div class="part">
+          <h6 class="text">رصيد المحفظة</h6>
+          <p class="info">{{wallet}} ريال</p>
+        </div>
+        <div class="part">
+          <h6 class="text-bold">المجموع: {{total}}</h6>
+          <p class="info">(شامل التوصيل)</p>
+        </div>
+      </div>
 
-      </li>
-      <li [ngClass]="{'completed': orderState >= 4}">
-        <mat-icon *ngIf="orderState >= 4">check_circle</mat-icon>
-        <mat-icon *ngIf="orderState < 4">store</mat-icon>
-        <span *ngIf="orderState >= 4">وصل مندوب التوصيل الى المتجر</span>
-        <span *ngIf="orderState < 4">بانتظار وصول مندوب التوصيل الى المتجر</span>
-      </li>
-      <li [ngClass]="{'completed': orderState >= 5}">
-        <mat-icon *ngIf="orderState >= 5">check_circle</mat-icon>
-        <mat-icon *ngIf="orderState < 5">home</mat-icon>
-        <span *ngIf="orderState < 5">بانتظار استلام مندوب التوصيل للطلب من المتجر</span>
-        <span *ngIf="orderState >= 5">استلم مندوب التوصيل الطلب من المتجر</span>
-      </li>
-      <li [ngClass]="{'completed': orderState >= 6}">
-        <mat-icon *ngIf="orderState >= 6">check_circle</mat-icon>
-        <mat-icon *ngIf="orderState < 6">home</mat-icon>
-        <span *ngIf="orderState < 6">بانتظار وصول مندوب التوصيل الى الموقع</span>
-        <span *ngIf="orderState >= 6"> وصل مندوب التوصيل الى الموقع</span>
-      </li>
-      <li [ngClass]="{'completed': orderState >= 7}">
-        <mat-icon *ngIf="orderState >= 7">check_circle</mat-icon>
-        <mat-icon *ngIf="orderState < 7">check_circle_outline</mat-icon>
-        <span *ngIf="orderState >= 7">تم تسليم الطلب</span>
-        <span *ngIf="orderState < 7">بانتظار تسليم الطلب</span>
-      </li>
-    </ul>
-    <div class="progress-bar-container">
-      <mat-progress-bar mode="determinate" [value]="(orderState / 7) * 100"
-        class="horizontal-progress-bar"></mat-progress-bar>
+      <div class="two">
+        <h6 class="text">طريقة الدفع</h6>
+        <div class="checkbox">
+          <p class="small">
+            {{card}}تنتهي ب
+          <p>
+        </div>
+      </div>
+
+      <div class="three">
+        <h6 class="text">الموقع</h6>
+        <p class="small">{{location}}</p>
+
+      </div>
     </div>
+
   </div>
-  <button (click)="nextState()">Next State</button>
-
-  <h2 class="title">منتجات الطلب</h2>
-
-  <div class="items">
-    <ng-container *ngFor="let item of products">
-      <app-cart-card [image]="item.image" [info]="item.info" [barcode]="item.barcode" [title]="item.title"
-        [amount]="item.amount"></app-cart-card>
-    </ng-container>
-  </div>
-
-  <h2 class="title">ملخص الطلب</h2>
-
-  <div class="brief">
-
-
-    <div class="one">
-      <div class="part">
-        <h6 class="text">سعر المنتجات ({{count}} منتجات)</h6>
-        <p class="info">{{price}} ريال</p>
-      </div>
-      <div class="part">
-        <h6 class="text">سعر التوصيل</h6>
-        <p class="info">{{delivery}} ريال</p>
-      </div>
-      <div class="part">
-        <h6 class="text">رصيد المحفظة</h6>
-        <p class="info">{{wallet}} ريال</p>
-      </div>
-      <div class="part">
-        <h6 class="text-bold">المجموع: {{total}}</h6>
-        <p class="info">(شامل التوصيل)</p>
-      </div>
-    </div>
-
-    <div class="two">
-      <h6 class="text">طريقة الدفع</h6>
-      <div class="checkbox">
-        <p class="small">
-          {{card}}تنتهي ب
-        <p>
-      </div>
-    </div>
-
-    <div class="three">
-      <h6 class="text">الموقع</h6>
-      <p class="small">{{location}}</p>
-
-    </div>
-  </div>
-
 </div>
 
 <ng-template #noOrder>
@@ -133,5 +135,14 @@
     <h2 class="title">لا توجد طلبات حاليا</h2>
     <h6 class="text">يمكنك اضافة منتجات وطلبها في الموقع</h6>
     <app-button [link]=linkOrder [value]=valueOrder></app-button>
+  </div>
+</ng-template>
+
+
+<ng-template #reOrder>
+  <div class="no-order">
+    <h2 class="title">تأخر طلبك كثيرا</h2>
+    <h6 class="text">تم الغاء الطلب وتحويل المبلغ الى المحفظة, يرجي اعادة الطلب</h6>
+    <button routerLink="/apps/products/customer-cart">عرض السلة</button>
   </div>
 </ng-template>

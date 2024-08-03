@@ -10,7 +10,7 @@
     <p class="status-description">حدد حالة استقبال الطلبات لديك</p>
     <div class="cont">
       <label for="status-toggle" class="status-label">حالة استقبال الطلبات</label>
-      <input class="status" type="checkbox" id="status-toggle" (ngModel)="isActive" (change)="toggleStatus()" />
+      <input class="status" type="checkbox" id="status-toggle" [checked]="isActive" (change)="toggleStatus()" />
     </div>
   </div>
   <app-button [link]="link" [value]="value"></app-button>

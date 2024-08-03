@@ -7,6 +7,7 @@ import { ManagerHomeComponent } from './manager-home/manager-home.component';
 import { CustomerHomeComponent } from './customer-home/customer-home.component';
 import { SharedComponentsModule } from 'src/app/shared-components/shared-components.module';
 import { CollectorHomeComponent } from './collector-home/collector-home.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { CollectorHomeComponent } from './collector-home/collector-home.componen
   imports: [
     CommonModule,
     HomeRoutingModule,
-    SharedComponentsModule
+    SharedComponentsModule,
+    FormsModule
   ]
 })
 export class HomeModule { }

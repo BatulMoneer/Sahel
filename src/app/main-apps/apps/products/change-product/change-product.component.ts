@@ -54,10 +54,9 @@ export class ChangeProductComponent implements OnInit {
       this.orderService.setProductFound(true);
       this.dialog.open(ChangeHighProductPopComponent);
     } else {
+
       this.orderService.setProductFound(true);
       this.dialog.open(ChangeLowProductPopComponent);
-
-
     }
   }
 

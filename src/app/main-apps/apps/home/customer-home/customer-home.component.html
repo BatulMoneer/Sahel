@@ -26,8 +26,8 @@
   </div>
 
   <div class="grid">
-    <app-shop-card *ngFor="let shop of displayedShops" class="grid-item" [title]="shop.title" [image]="shop.image"
-      [info]="shop.info" [more]="shop.productLink" [submit]="moreProducts">
+    <app-shop-card *ngFor="let shop of displayedShops" class="grid-item" [title]="shop.name_user" [image]="shop.logo"
+      [info]="shop.branch" [link]="productLink" [value]="moreProducts" (shopButtonClick)="setShop(shop.market_id)">>
     </app-shop-card>
   </div>
 
