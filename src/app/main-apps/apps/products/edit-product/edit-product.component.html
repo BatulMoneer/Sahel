@@ -1,50 +1,69 @@
 <div class="body">
-  <div class="containerDiv">
 
-    <div class="titleDiv">
-    <h1>تحديث منتج</h1>
-    <h6>حدث تفاصيل المنتج</h6>
-  </div>
+  <form class="container">
 
-    <div class="productNameDiv">
-      <label class="productNameLabel" for="productName">اسم المنتج :</label>
-      <input class="productNameField" type="text" id="productName" name="productNameName" value="صابون الببايا"  required>
+    <div class="title-div">
+      <h1>تحديث منتج</h1>
+      <h6>حدث تفاصيل المنتج</h6>
     </div>
 
-    <div class="productPriceDiv">
-      <label class="productPriceLabel" for="productPrice">سعر المنتج :</label>
-      <input class = "productPriceField" type="text" id="productPrice" name="productPriceName" value="10 ريال"  required>
+    <div class="product-name-div">
+      <label class="product-name-label" for="product-name">اسم المنتج :</label>
+      <input class="product-name-field" type="text" id="product-name" name="product-name-name" value="صابون الببايا">
     </div>
 
-    <div class="productsSectionDiv">
-      <label class="productsSectionLabel" for="productsSection"> قسم المنتج :</label>
-        <input class="productsSectionList" list="productsSection" name="productsSection" placeholder="اختر قسم المنتج">
-        <datalist id="productsSection" name="productsSectionsName">
-          <ng-container *ngFor="let item of arrayList">
-            <option value="{{item.section}}">
-          </ng-container>
-        </datalist>
+    <div class="product-price-div">
+      <label class="product-price-label" for="product-price">سعر المنتج :</label>
+      <input class="product-price-field" type="text" id="product-price" name="product-price--name" value="10 ريال">
     </div>
 
-    <div class="quantityDiv">
-      <label class="quantityLabel" for="quantity">الكمية :</label>
-      <input class="quantityCounter" type="number" id = "quantity" name="quantityName" min="0" value="600">
+    <div class="product-section-div">
+      <label class="product-section-label" for="product-section"> قسم المنتج :</label>
+      <input class="product-section-list" list="product-section" name="product-section-name"
+        placeholder="اختر قسم المنتج">
+      <datalist id="product-section" name="product-section-name">
+        <ng-container *ngFor="let item of sectionsList">
+          <option value="{{item.section}}">
+        </ng-container>
+      </datalist>
     </div>
 
-    <div class="productPhotoDiv">
-      <label class="productPhotoLabel" for="productPhoto">حدث صورة المنتج :</label>
-      <input class="productPhotoInput" type="file" name="productPhotoName" id="productPhoto">
+    <div class="quantity-div">
+      <label class="quantity-label" for="quantity">الكمية :</label>
+      <input class="quantity-counter" type="number" id="quantity" name="quantity-name" min="0" value="600">
     </div>
 
-    <div class="productBarcodeDiv">
-      <label class="productBarcodeLabel" for="productBarcode">حدث صورة لباركود المنتج :</label>
-      <input class = "productBarcodeInput" type="file" name="productBarcodeName" id="productBarcode">
+    <div class="product-image-div">
+      <label class="product-image-label" for="product-image">حدث صورة المنتج :</label>
+      <input class="product-image-input" type="file" name="product-image-name" id="product-image">
     </div>
 
-    <div class="ResetAddDiv">
-      <input class="resetButton" type="reset" value="مسح الحقول" name="resetName">
-      <input class="updateButton" type="button" value="تحديث" name="updateName">
+    <div class="product-barcode-div">
+      <label class="product-barcode-label" for="product-barcode">حدث باركود المنتج :</label>
+      <input class="product-barcode-input" type="file" name="product-barcode-name" id="product-barcode">
     </div>
 
-  </div>
+    <div class="product-image-git-div">
+      <label class="product-image-label" for="product-image"> صورة المنتج:</label>
+      <div class="helper-div">
+      <a href="{{productImage}}" target="_blank">
+        <img class="product-image-image" src="{{productImage}}" alt="السجل" id="product-image"></a>
+      </div>
+    </div>
+
+    <div class="product-barcode-git-div">
+      <label class="product-barcode-label" for="product-barcode"> باركود المنتج:</label>
+      <div class="helper-div">
+      <a href="{{productBarcode}}" target="_blank">
+        <img class="product-barcode-image" src="{{productBarcode}}" alt="السجل" id="product-barcode"></a>
+      </div>
+    </div>
+
+    <div class="Reset-add-div">
+      <input class="reset-button" type="reset" value="مسح الحقول" name="resetName">
+      <button class="update-button" type="button" name="updateName">تحديث</button>
+    </div>
+
+  </form>
+
 </div>

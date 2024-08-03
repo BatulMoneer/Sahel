@@ -8,7 +8,9 @@ import { Router } from '@angular/router';
 })
 export class ChooseManagerRegistrationRequestsComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(private router: Router) { }
+
+  ngOnInit(): void { }
 
   navigateToRequests() {
     const inputId = (event.target as HTMLInputElement).id;
@@ -18,10 +20,6 @@ export class ChooseManagerRegistrationRequestsComponent implements OnInit {
     else if (inputId === 'collectors') {
       this.router.navigate(['/apps//requests/app-manager-representative-registration-requests']);
     }
-  }
-
-
-  ngOnInit(): void {
   }
 
 }

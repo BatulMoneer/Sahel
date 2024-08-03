@@ -1,4 +1,4 @@
-<div class=body>
+<div class="body">
 
   <div class="container-div">
 
@@ -7,17 +7,17 @@
       <h6>راقب نجاحك</h6>
     </div>
 
-    <div class="statistics-container">
+    <div class="statistics-container-div">
 
-      <div class="helper-1">
+      <div class="helper-div-1">
 
         <div>
           <p class="users-p">عدد المستخدمين</p>
         </div>
 
-        <div class="helper-2">
+        <div class="helper-div-2">
 
-          <div class="helper-3">
+          <div class="helper-div-3">
 
             <div class="card-container">
               <div class="total-div">
@@ -37,7 +37,7 @@
 
           </div>
 
-          <div class="helper-3">
+          <div class="helper-div-3">
 
             <div class="card-container">
               <div class="collectors-div">
@@ -62,7 +62,7 @@
       </div>
 
       <div class="chart-container">
-        <h2>أرباح التطبيق الشهرية</h2>
+        <h2 class="chart-p">أرباح التطبيق الشهرية</h2>
         <div class="chart-div" id="main"></div>
       </div>
 
@@ -74,10 +74,10 @@
 
     <div class="search-container">
       <i class="fas fa-search search-icon"></i>
-      <input type="text" placeholder="بحث">
+      <input type="text" placeholder="بحث" (input)="filter_customers($event.target.value)">
     </div>
 
-    <div class="table-container">
+    <div class="table-container-div">
 
       <table>
 
@@ -112,10 +112,10 @@
 
     <div class="search-container">
       <i class="fas fa-search search-icon"></i>
-      <input type="text" placeholder="بحث" (input)="filter_collecrot($event.target.value)">
+      <input type="text" placeholder="بحث" (input)="filter_collectors($event.target.value)">
     </div>
 
-    <div class="table-container">
+    <div class="table-container-div">
 
       <table>
 
@@ -127,29 +127,30 @@
             <th>رقم الجوال</th>
             <th>رقم الحساب المصرفي</th>
             <th>حالة المندوب</th>
-            <th class="th-last">حالة الحساب</th>
+            <th class=" th-last">حالة الحساب</th>
           </tr>
         </thead>
 
         <tbody>
           <tr *ngFor="let item of collectorsList">
             <td>{{item.name_user}}</td>
-
             <td>
               <ng-container *ngFor="let item_2 of item.values_info">
                 <ng-container *ngIf="item_2.info == 'age'">
-            <td>{{item_2.answer == '' ? 'الباكيند رمم' :''}}</td>
-            </ng-container>
-            </ng-container>
+                  {{item_2.answer}}
+                </ng-container>
+              </ng-container>
             </td>
-
             <td>{{item.email_user}}</td>
             <td>{{item.phone_user}}</td>
             <td>{{item.IBAN}}</td>
-            <ng-container *ngFor="let item_2 of item.values_info"><ng-container
-                *ngIf="item_2.info == 'collector_status'">
-                <td>{{item_2.answer}}</td>
-              </ng-container></ng-container>
+            <td>
+              <ng-container *ngFor="let item_2 of item.values_info">
+                <ng-container *ngIf="item_2.info == 'collector_status'">
+                  {{item_2.answer}}
+                </ng-container>
+              </ng-container>
+            </td>
             <td>{{item.account_status}}</td>
           </tr>
         </tbody>
@@ -163,10 +164,10 @@
 
     <div class="search-container">
       <i class="fas fa-search search-icon"></i>
-      <input type="text" placeholder="بحث">
+      <input type="text" placeholder="بحث" (input)="filter_markets($event.target.value)">
     </div>
 
-    <div class="table-container">
+    <div class="table-container-div">
       <table>
 
         <thead>
@@ -184,18 +185,29 @@
         <tbody>
           <tr *ngFor="let item of marketsList">
             <td>{{item.name_user}}</td>
-            <td><ng-container *ngFor="let item_3 of item.values_info"><ng-container
-                  *ngIf="item_3.info == 'branch'">{{item_3.answer}}</ng-container></ng-container></td>
+            <td>
+              <ng-container *ngFor="let item_3 of item.values_info">
+                <ng-container *ngIf="item_3.info == 'branch'">
+                  {{item_3.answer}}
+                </ng-container>
+              </ng-container>
+            </td>
             <td>{{item.email_user}}</td>
             <td>{{item.phone_user}}</td>
             <td>{{item.monthSales}}</td>
-            <td><ng-container *ngFor="let item_3 of item.values_info"><ng-container
-                  *ngIf="item_3.info == 'commercial_register_'">{{item_3.answer}}</ng-container></ng-container></td>
+            <td>
+              <ng-container *ngFor="let item_3 of item.values_info">
+                <ng-container *ngIf="item_3.info == 'commercial_register_'">
+                  {{item_3.answer}}
+                </ng-container>
+              </ng-container>
+            </td>
             <td>{{item.account_status}}</td>
           </tr>
         </tbody>
 
       </table>
+
     </div>
 
   </div>

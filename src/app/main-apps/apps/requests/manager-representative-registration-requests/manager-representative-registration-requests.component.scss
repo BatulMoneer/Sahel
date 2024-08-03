@@ -1,8 +1,8 @@
 .body {
   direction: rtl;
   height: 100%;
-  padding: 20px;
-  margin: 20px;
+  padding: 10px;
+  margin: 30px;
   font-family: var(--font);
   display: flex;
   justify-content: center;
@@ -15,8 +15,8 @@
   padding: 30px;
   margin: 100px 30px 50px;
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  align-items: center;
   background-color: var(--background);
   box-shadow: 0px 2px 6px var(--shadow);
   border-radius: 10px;
@@ -32,9 +32,8 @@
   padding: 0;
   margin: 0;
   display: flex;
-  align-self: center;
-  justify-content: center;
   flex-direction: column;
+  align-items: center;
 }
 
 h1 {
@@ -47,12 +46,11 @@ h1 {
 .table-title-div {
   padding: 0;
   margin: 0;
-  margin-top: 10px;
+  margin-top: 20px;
   color: var(--textCol);
   display: flex;
-  align-self: center;
-  justify-content: center;
   flex-direction: column;
+  align-items: center;
 }
 
 h2 {
@@ -97,15 +95,30 @@ input[type="text"] {
   border-color: var(--prime);
 }
 
-table {
+.table-container-div {
   width: 90%;
+  height: 500px;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 10px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px 3px var(--shadow);
+}
+
+table {
+  width: 100%;
+  height: auto;
+  overflow-y: auto;
   display: table;
-  align-self: center;
   text-align: center;
   background-color: var(--background);
   color: var(--font);
   border-radius: 10px;
-  box-shadow: 3px 3px 3px 3px var(--shadow);
+  margin: 0 auto;
 }
 
 th {
@@ -115,13 +128,15 @@ th {
   padding: 10px;
   margin: 0;
   color: var(--background) !important;
+  position: sticky;
+  top: 0;
 }
 
 .th-name {
   border-radius: 0 10px 0 0;
 }
 
-.th-last{
+.th-last {
   border-radius: 10px 0 0 0;
 }
 
@@ -200,7 +215,7 @@ button {
 .pop-up-title-h4 {
   font-size: 18px;
   padding: 0;
-  margin: 0;
+  margin: 5px;
 }
 
 .btn-close {
@@ -246,13 +261,14 @@ button {
 }
 
 .pop-up-acceptance-button,
-.pop-up-rejectione-button{
+.pop-up-rejectione-button {
   width: 50px;
   background-color: var(--main);
   border-radius: 10px;
   border: var(--main);
   padding: 7px 10px 7px 10px;
   margin: 5px;
+  margin-bottom: 20px;
   font-family: var(--font);
   color: var(--background);
   box-shadow: 0px 2px 6px var(--shadow);

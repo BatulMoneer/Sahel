@@ -2,44 +2,49 @@
 
   <div class="container-div">
 
-  <div class="title-div">
-    <h1>طلبات تسجيل المتاجر</h1>
-  </div>
+    <div class="title-div">
+      <h1>طلبات تسجيل المتاجر</h1>
+    </div>
 
-  <div class="table-title-div">
-    <h2>تفاصيل الطلبات</h2>
-  </div>
+    <div class="table-title-div">
+      <h2>تفاصيل الطلبات</h2>
+    </div>
 
-  <div class="search-container">
-    <i class="fas fa-search search-icon"></i>
-    <input type="text" placeholder="بحث">
-  </div>
+    <div class="search-container">
+      <i class="fas fa-search search-icon"></i>
+      <input type="text" placeholder="بحث" (input)=" filter_store($event.target.value)">
+    </div>
 
-  <table>
+    <div class="table-container-div">
 
-    <thead>
-      <tr>
-        <th class="th-name">اسم المتجر</th>
-        <th>الفرع</th>
-        <th>البريد الإلكتروني</th>
-        <th>رقم الجوال</th>
-        <th>السجل التجاري</th>
-        <th class="th-last">الرد</th>
-      </tr>
-    </thead>
+      <table>
 
-    <tbody>
-      <tr *ngFor="let item of arrayList">
-        <td>{{item.store}}</td>
-        <td>{{item.branch}}</td>
-        <td>{{item.email}}</td>
-        <td>{{item.phone}}</td>
-        <td><a href="{{item.commercialRegistration}}" target="_blank"><img class="commercial-registration" src= {{item.commercialRegistration}} alt="السجل"></a></td>
-        <td class="td-button"> <button class="replay-button" (click)="open(content)">انقر للرد</button></td>
-      </tr>
-    </tbody>
+        <thead>
+          <tr>
+            <th class="th-name">اسم المتجر</th>
+            <th>الفرع</th>
+            <th>البريد الإلكتروني</th>
+            <th>رقم الجوال</th>
+            <th>السجل التجاري</th>
+            <th class="th-last">الرد</th>
+          </tr>
+        </thead>
 
-  </table>
+        <tbody>
+          <tr *ngFor="let item of storesList">
+            <td>{{item.store}}</td>
+            <td>{{item.branch}}</td>
+            <td>{{item.email}}</td>
+            <td>{{item.phone}}</td>
+            <td><a href="{{item.commercialRegistration}}" target="_blank"><img class="commercial-registration"
+                  src={{item.commercialRegistration}} alt="السجل"></a></td>
+            <td class="td-button"> <button class="replay-button" (click)="open(content)">انقر للرد</button></td>
+          </tr>
+        </tbody>
+
+      </table>
+
+    </div>
 
   </div>
 

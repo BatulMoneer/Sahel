@@ -12,14 +12,17 @@
 
     <div class="search-container">
       <i class="fas fa-search search-icon"></i>
-      <input type="text" placeholder="بحث">
+      <input type="text" placeholder="بحث" (input)=" filter_collectors($event.target.value)">
     </div>
+
+    <div class="table-container-div">
 
     <table>
 
       <thead>
         <tr>
           <th class="th-name">اسم المندوب</th>
+          <th>رقم الجوال</th>
           <th>رقم الطلب</th>
           <th>تاريخ الطلب</th>
           <th>الفاتورة</th>
@@ -30,8 +33,9 @@
 
       <tbody>
         <tr>
-        <tr *ngFor="let item of arrayList">
+        <tr *ngFor="let item of transferRequestsList">
           <td>{{item.collertorName}}</td>
+          <td>{{item.phone}}</td>
           <td>{{item.orderNumber}}</td>
           <td>{{item.orderDate}}</td>
           <td>{{item.bill}}</td>
@@ -41,6 +45,8 @@
       </tbody>
 
     </table>
+
+  </div>
 
   </div>
 

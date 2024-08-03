@@ -10,21 +10,23 @@ import { ImpApiService } from 'src/app/services/imp-api.service';
 })
 export class ManagerHomeComponent implements OnInit {
 
-  constructor(
-    private impApiService: ImpApiService,
-  ) { }
-
   total: '';
   number_of_users: '';
   number_of_collectors: '';
   number_of_markets: '';
 
   customersList = []
+  customersList_ = []
 
   collectorsList = []
-  collectorsListv2 = []
+  collectorsList_ = []
 
   marketsList = []
+  marketsList_ = []
+
+  constructor(
+    private impApiService: ImpApiService,
+  ) { }
 
   ngOnInit(): void {
 
@@ -48,15 +50,17 @@ export class ManagerHomeComponent implements OnInit {
 
     this.impApiService.get(HOME.list_users_customers).subscribe(data => {
       this.customersList = data.data
+      this.customersList_ = data.data
     })
 
     this.impApiService.get(HOME.list_users_collectors).subscribe(data => {
       this.collectorsList = data.data
-      this.collectorsListv2 = data.data
-
+      this.collectorsList_ = data.data
     })
+
     this.impApiService.get(HOME.list_users_markets).subscribe(data => {
       this.marketsList = data.data
+      this.marketsList_ = data.data
     })
 
     var chartDom = document.getElementById('main');
@@ -108,12 +112,22 @@ export class ManagerHomeComponent implements OnInit {
     option && myChart.setOption(option);
   }
 
-  filter_collecrot(user_filter){
-    this.collectorsList = this.collectorsListv2
+  filter_customers(user_filter){
+    this.customersList = this.customersList_
+   this.customersList =  this.customersList.filter((data)=>{
+       return data.name_user.includes(user_filter)
+    })}
+
+  filter_collectors(user_filter){
+    this.collectorsList = this.collectorsList_
    this.collectorsList =  this.collectorsList.filter((data)=>{
        return data.name_user.includes(user_filter)
-    })
+    })}
 
-  }
+  filter_markets(user_filter){
+    this.marketsList = this.marketsList_
+   this.marketsList =  this.marketsList.filter((data)=>{
+       return data.name_user.includes(user_filter), data.account_status.includes(user_filter)
+    })}
 
 }
