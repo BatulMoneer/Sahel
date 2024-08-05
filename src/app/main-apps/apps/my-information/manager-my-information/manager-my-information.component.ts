@@ -18,7 +18,7 @@ export class ManagerMyInformationComponent implements OnInit {
   signout() {
     localStorage.removeItem("user");
     localStorage.removeItem("token")
-    this.router.navigate(['/auth/login']);
+    this.router.navigate(['/auth/home']);
   }
 
   update_() {

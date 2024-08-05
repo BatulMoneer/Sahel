@@ -98,6 +98,11 @@ input[type="text"] {
   border-color: var(--prime);
 }
 
+input:focus {
+  outline-color: var(--main);
+  border-bottom: 0px;
+}
+
 .table-container-div {
   width: 90%;
   height: 500px;
@@ -216,7 +221,6 @@ button {
   border: 0;
   width: 10px;
   height: 10px;
-
 }
 
 .pop-up-opration-div {

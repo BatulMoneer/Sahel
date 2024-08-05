@@ -15,7 +15,7 @@ const routes: Routes = [
     loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
   },
   {
-    path: 'apps', canActivate: [AuthCheckGuard],
+    path: 'apps',
     component: MainLayoutComponent,
     loadChildren: () => import('./main-apps/main-apps.module').then(m => m.MainAppsModule)
   },
@@ -23,8 +23,8 @@ const routes: Routes = [
     path: '**',
     redirectTo: '/auth/notFound' // or design a page for it 404
   }
+  // canActivate: [AuthCheckGuard],
 
-  //
 ];
 
 @NgModule({

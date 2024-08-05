@@ -10,8 +10,8 @@ import { ImpApiService } from 'src/app/services/imp-api.service';
 })
 export class ManagerHomeComponent implements OnInit {
 
-  total: '';
   number_of_users: '';
+  number_of_customers: '';
   number_of_collectors: '';
   number_of_markets: '';
 
@@ -30,15 +30,13 @@ export class ManagerHomeComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // console.log(data); to print data in "inespect"
-
-    // this.impApiService.get(HOME.total_all_users_manager).subscribe(data => {
-    //    this.total = data.total
-    // })
-
-    this.impApiService.get(HOME.total_users_customers_manager).subscribe(data => {
-      this.number_of_users = data.number_of_users
+    this.impApiService.get(HOME.total_all_users_manager).subscribe(data => {
+       this.number_of_users = data.number_of_users
     })
+
+    // this.impApiService.get(HOME.total_users_customers_manager).subscribe(data => {
+    //   this.number_of_customers = data.number_of_customers
+    // })
 
     this.impApiService.get(HOME.total_users_collectors_manager).subscribe(data => {
       this.number_of_collectors = data.number_of_collectors
@@ -127,7 +125,7 @@ export class ManagerHomeComponent implements OnInit {
   filter_markets(user_filter){
     this.marketsList = this.marketsList_
    this.marketsList =  this.marketsList.filter((data)=>{
-       return data.name_user.includes(user_filter), data.account_status.includes(user_filter)
+       return data.name_user.includes(user_filter)
     })}
 
 }

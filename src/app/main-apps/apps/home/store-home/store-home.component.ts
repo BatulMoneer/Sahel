@@ -1,14 +1,160 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import * as echarts from 'echarts';
+import { ImpApiService } from 'src/app/services/imp-api.service';
 
 @Component({
   selector: 'app-store-home',
   templateUrl: './store-home.component.html',
   styleUrls: ['./store-home.component.scss']
 })
+
 export class StoreHomeComponent implements OnInit {
 
-  constructor() { }
+  img = "../../../../../assets/images/Panda.png"; //store_logo
+
+  customersArray = [
+    {
+      total: '500,000  عميل',
+      newCustomer: '5,000  عميل',
+      returnees: '300,000 عميل',
+    }
+  ]
+
+  comparingList = [
+    {
+      store: 'بن داوود',
+      percentageOfSalesBetweenStores: '30%',
+      sortBySales: '1',
+      branchOfStore: 'الشيششة',
+      sortByBranchs: '1',
+      NumberOfClients: '700,000 عميل',
+      progress: '+',
+    },
+    {
+      store: 'بن داوود',
+      percentageOfSalesBetweenStores: '30%',
+      sortBySales: '1',
+      branchOfStore: 'الشيششة',
+      sortByBranchs: '1',
+      NumberOfClients: '700,000 عميل',
+      progress: '+',
+    },
+    {
+      store: 'بن داوود',
+      percentageOfSalesBetweenStores: '30%',
+      sortBySales: '1',
+      branchOfStore: 'الشيششة',
+      sortByBranchs: '1',
+      NumberOfClients: '700,000 عميل',
+      progress: '+',
+    },
+    {
+      store: 'بن داوود',
+      percentageOfSalesBetweenStores: '30%',
+      sortBySales: '1',
+      branchOfStore: 'الشيششة',
+      sortByBranchs: '1',
+      NumberOfClients: '700,000 عميل',
+      progress: '+',
+    },
+    {
+      store: 'بنده',
+      percentageOfSalesBetweenStores: '30%',
+      sortBySales: '1',
+      branchOfStore: 'الشيششة',
+      sortByBranchs: '1',
+      NumberOfClients: '700,000 عميل',
+      progress: '+',
+    },
+    {
+      store: 'بنده',
+      percentageOfSalesBetweenStores: '30%',
+      sortBySales: '1',
+      branchOfStore: 'الشيششة',
+      sortByBranchs: '1',
+      NumberOfClients: '700,000 عميل',
+      progress: '+',
+    },
+    {
+      store: 'بنده',
+      percentageOfSalesBetweenStores: '30%',
+      sortBySales: '1',
+      branchOfStore: 'الشيششة',
+      sortByBranchs: '1',
+      NumberOfClients: '700,000 عميل',
+      progress: '+',
+    },
+  ]
+  comparingList_ = [
+    {
+      store: 'بن داوود',
+      percentageOfSalesBetweenStores: '30%',
+      sortBySales: '1',
+      branchOfStore: 'الشيششة',
+      sortByBranchs: '1',
+      NumberOfClients: '700,000 عميل',
+      progress: '+',
+    },
+    {
+      store: 'بن داوود',
+      percentageOfSalesBetweenStores: '30%',
+      sortBySales: '1',
+      branchOfStore: 'الشيششة',
+      sortByBranchs: '1',
+      NumberOfClients: '700,000 عميل',
+      progress: '+',
+    },
+    {
+      store: 'بن داوود',
+      percentageOfSalesBetweenStores: '30%',
+      sortBySales: '1',
+      branchOfStore: 'الشيششة',
+      sortByBranchs: '1',
+      NumberOfClients: '700,000 عميل',
+      progress: '+',
+    },
+    {
+      store: 'بن داوود',
+      percentageOfSalesBetweenStores: '30%',
+      sortBySales: '1',
+      branchOfStore: 'الشيششة',
+      sortByBranchs: '1',
+      NumberOfClients: '700,000 عميل',
+      progress: '+',
+    },
+    {
+      store: 'بنده',
+      percentageOfSalesBetweenStores: '30%',
+      sortBySales: '1',
+      branchOfStore: 'الشيششة',
+      sortByBranchs: '1',
+      NumberOfClients: '700,000 عميل',
+      progress: '+',
+    },
+    {
+      store: 'بنده',
+      percentageOfSalesBetweenStores: '30%',
+      sortBySales: '1',
+      branchOfStore: 'الشيششة',
+      sortByBranchs: '1',
+      NumberOfClients: '700,000 عميل',
+      progress: '+',
+    },
+    {
+      store: 'بنده',
+      percentageOfSalesBetweenStores: '30%',
+      sortBySales: '1',
+      branchOfStore: 'الشيششة',
+      sortByBranchs: '1',
+      NumberOfClients: '700,000 عميل',
+      progress: '+',
+    },
+  ]
+
+  constructor(private impApiService: ImpApiService,) { }
 
   ngOnInit(): void {
 
@@ -129,79 +275,50 @@ export class StoreHomeComponent implements OnInit {
     option && myChart.setOption(option);
   }
 
-  img = "../../../../../assets/images/Panda.png"; //store_logo
+  filter_comparing(user_filter) {
+    this.comparingList = this.comparingList_
+    this.comparingList = this.comparingList.filter((data) => {
+      return data.store.includes(user_filter)
+    })
+  }
 
-  customersArray = [
-    {
-      total: '500,000  عميل',
-      newCustomer: '5,000  عميل',
-      returnees: '300,000 عميل',
-    }
-  ]
-
-  comparingArray = [
-    {
-      store: 'بن داوود',
-      percentageOfSalesBetweenStores: '30%',
-      sortBySales: '1',
-      branchOfStore: 'الشيششة',
-      sortByBranchs: '1',
-      NumberOfClients: '700,000 عميل',
-      progress: '+',
-    },
-    {
-      store: 'بن داوود',
-      percentageOfSalesBetweenStores: '30%',
-      sortBySales: '1',
-      branchOfStore: 'الشيششة',
-      sortByBranchs: '1',
-      NumberOfClients: '700,000 عميل',
-      progress: '+',
-    },
-    {
-      store: 'بن داوود',
-      percentageOfSalesBetweenStores: '30%',
-      sortBySales: '1',
-      branchOfStore: 'الشيششة',
-      sortByBranchs: '1',
-      NumberOfClients: '700,000 عميل',
-      progress: '+',
-    },
-    {
-      store: 'بن داوود',
-      percentageOfSalesBetweenStores: '30%',
-      sortBySales: '1',
-      branchOfStore: 'الشيششة',
-      sortByBranchs: '1',
-      NumberOfClients: '700,000 عميل',
-      progress: '+',
-    },
-    {
-      store: 'بن داوود',
-      percentageOfSalesBetweenStores: '30%',
-      sortBySales: '1',
-      branchOfStore: 'الشيششة',
-      sortByBranchs: '1',
-      NumberOfClients: '700,000 عميل',
-      progress: '+',
-    },
-    {
-      store: 'بن داوود',
-      percentageOfSalesBetweenStores: '30%',
-      sortBySales: '1',
-      branchOfStore: 'الشيششة',
-      sortByBranchs: '1',
-      NumberOfClients: '700,000 عميل',
-      progress: '+',
-    },
-    {
-      store: 'بن داوود',
-      percentageOfSalesBetweenStores: '30%',
-      sortBySales: '1',
-      branchOfStore: 'الشيششة',
-      sortByBranchs: '1',
-      NumberOfClients: '700,000 عميل',
-      progress: '+',
-    },
-  ]
 }
+
+
+//ng-table
+// displayedColumns = [
+//   'id',
+//   'first_name',
+//   'last_name',
+//   'email',
+//   'avatar',
+// ];
+
+// @ViewChild(MatSort) sort: MatSort;
+//  @ViewChild(MatPaginator) paginator: MatPaginator;
+//   dataSource: any;
+//    totalData = null;
+//     pageSizes = [3, 5, 7];
+
+//     getTableData$(pageNumber, pageSize) {
+//       return this.impApiService.getEmployees(pageNumber, pageSize);
+//     }
+
+//     //ngOnInit:
+//     this.getTableData$(1, 3).subscribe(data => {
+//       this.dataSource = new MatTableDataSource(data.data);
+//       this.totalData = data.total;
+//       this.dataSource.paginator = this.paginator;
+//       this.dataSource.sort = this.sort;
+//     })
+
+//     applyFilterInput = '';
+//     applyFilter(filterValue) {
+//       filterValue = filterValue.trim(); // Remove whitespace
+//       filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
+//       this.dataSource.filter = filterValue;
+//     }
+
+//     changePage(data) {
+//       this.getTableData$(data.pageIndex, data.pageSize)
+//     }

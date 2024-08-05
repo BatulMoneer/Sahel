@@ -307,3 +307,8 @@ tr:nth-child(even) {
   height: 50px;
   width: 50px;
 }
+
+input:focus {
+  outline-color: var(--main);
+  border-bottom: 0px;
+}

@@ -25,17 +25,25 @@
             <th>العمر</th>
             <th>البريد الإلكتروني</th>
             <th>رقم الجوال</th>
+            <th>حالة الحساب</th>
             <th class="th-last">الرد</th>
           </tr>
         </thead>
 
         <tbody>
           <tr *ngFor="let item of collectorsList">
-            <td>{{item.collectorName}}</td>
-            <td>{{item.collectorAge}}</td>
-            <td>{{item.email}}</td>
-            <td>{{item.phone}}</td>
-            <td class="td-button"><button class="replay-button" (click)="open(content)">انقر للرد</button></td>
+            <td>{{item.name_user}}</td>
+            <td>
+              <ng-container *ngFor="let item_2 of item.values_info">
+                <ng-container *ngIf="item_2.info == 'age'">
+                  {{item_2.answer}}
+                </ng-container>
+              </ng-container>
+            </td>
+            <td>{{item.email_user}}</td>
+            <td>{{item.phone_user}}</td>
+            <td>{{item.account_status}}</td>
+            <td class="td-button"><button class="replay-button" (click)="open(replay, item)">انقر للرد</button></td>
           </tr>
         </tbody>
 
@@ -48,7 +56,7 @@
 
 </div>
 
-<ng-template class="pop-up" #content let-modal>
+<ng-template class="pop-up" #replay let-modal>
 
   <div class="popUp-header-div">
     <h4 class="pop-up-title-h4" id="pop-up-title">انقر للقبول أو الرفض مع التوضيح: </h4>
@@ -57,12 +65,12 @@
 
   <div class="popUp-body-div">
     <label class="rplay-massege-label" for="replay-massege">رسالة الرد :</label>
-    <input class="replay-massege-field" id="replay-massege" type="text">
+    <input class="replay-massege-field" [(ngModel)]="replay_data.replay" id="replay-massege" type="text">
   </div>
 
   <div class="pop-up-opration-div">
-    <button type="button" class="pop-up-acceptance-button" (click)="modal.acceptance()">قبول</button>
-    <button type="button" class="pop-up-rejectione-button" (click)="modal.rejection()">رفض</button>
+    <button type="button" class="pop-up-acceptance-button" (click)="acceptance()">قبول</button>
+    <button type="button" class="pop-up-rejectione-button" (click)="rejection()">رفض</button>
   </div>
 
 </ng-template>

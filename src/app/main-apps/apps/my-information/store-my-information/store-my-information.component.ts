@@ -19,7 +19,7 @@ export class StoreMyInformationComponent implements OnInit {
   signout() {
     localStorage.removeItem("currentUser");
     localStorage.removeItem("token")
-    this.router.navigate(['/auth/login']);
+    this.router.navigate(['/auth/home']);
   }
 
   update_() {
