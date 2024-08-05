@@ -14,7 +14,7 @@ export class AuthCheckGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     const token = localStorage.getItem("token");
     if (token == null) {
-      this.router.navigate(["/auth/login"]);
+      this.router.navigate(["/auth/home"]);
       return false
     } else {
       return true

@@ -3,8 +3,12 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { InfoUpdatedPopComponent } from '../../popup/info-updated-pop/info-updated-pop.component';
 import { MatDialog } from '@angular/material/dialog';
 import { ImpApiService } from 'src/app/services/imp-api.service';
-import { auth } from 'src/app/constant/Routes';
+import { auth, cardinfo } from 'src/app/constant/Routes';
 import { Router } from '@angular/router';
+import { error } from 'console';
+import { ToastrService } from 'ngx-toastr';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NgxSpinnerService, Spinner } from 'ngx-spinner';
 
 @Component({
   selector: 'app-customer-my-information',
@@ -12,6 +16,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./customer-my-information.component.scss']
 })
 export class CustomerMyInformationComponent implements OnInit {
+
+
+  constructor(
+    private toastr: ToastrService,
+    private dialog: MatDialog,
+    private impApiService: ImpApiService,
+    private router: Router,
+    private formBuilder: FormBuilder,
+    private spinner: NgxSpinnerService
+  ) { }
+
+  cardForm: FormGroup;
   title1 = "عمل";
   title2 = "بيت";
   add_card = "اضف البطاقة";
@@ -28,10 +44,15 @@ export class CustomerMyInformationComponent implements OnInit {
   neighborhood: string = 'الشرائع';
   street: string = 'الفردوس';
   building: string = '1752';
-  cardNumber: string = '';
-  expirationDate: string = '';
-  confirmationCode: string = '';
 
+  cardNumber: string = '';
+  bankName: string = '';
+  iban: string = '';
+  cardType: string = '';
+  nameOnCard: string = '';
+  expirationDate: string = '';
+  submitted_crearte;
+  card_id;
 
   savedCards = [
     { number: '9801 1235 4652 1532' },
@@ -39,80 +60,60 @@ export class CustomerMyInformationComponent implements OnInit {
     { number: '9801 1235 4652 1532' }
   ];
 
-  constructor(
-    private snackBar: MatSnackBar,
-    private dialog: MatDialog,
-    private impApiService: ImpApiService,
-    private router: Router) { }
 
   openDialog(): void {
     this.dialog.open(InfoUpdatedPopComponent);
-
   }
 
   ngOnInit(): void {
-    this.name = 'بتول';
-    this.phoneNumber = '1234567890';
+    this.cardForm = this.formBuilder.group({
+      bank_name: ['', [
+        Validators.required
+      ]],
+      iban: ['', [
+        Validators.required,
+      ]],
+      card_number: ['', [
+        Validators.required,
+        Validators.pattern('^([0-9]{16})$')
+      ]],
+      name_on_card: ['', [
+        Validators.required,
+
+      ]],
+      expiry_date: ['', [
+        Validators.required,
+        Validators.pattern('^(0[1-9]|1[0-2])\/([0-9]{2})$')
+
+      ]],
+      type_of_card: ['', [
+        Validators.required,
+      ]]
+    });
   }
 
-
-  formatCardNumber() {
-    this.cardNumber = this.cardNumber.replace(/\s+/g, '').replace(/(\d{4})(?=\d)/g, '$1 ');
-  }
 
   addCard() {
-    const cardNumberRegex = /^\d{16}$/;
-    const expirationDateRegex = /^(0[1-9]|1[0-2])\/\d{2}$/;
-    const confirmationCodeRegex = /^\d{3}$/;
-
-    const sanitizedCardNumber = this.cardNumber.replace(/\s/g, '');
-
-    if (!cardNumberRegex.test(sanitizedCardNumber)) {
-      this.snackBar.open('رقم البطاقة يجب أن يكون 16 رقمًا', 'إغلاق', {
-        duration: 3000,
-        verticalPosition: 'top',
-        horizontalPosition: 'center'
-      });
-      return;
+    this.submitted_crearte = true
+    this.spinner.show()
+    if (this.cardForm.invalid) {
+      this.spinner.hide()
+      return null;
     }
-
-    if (!expirationDateRegex.test(this.expirationDate)) {
-      this.snackBar.open('تاريخ الانتهاء يجب أن يكون بالصيغة MM/YY', 'إغلاق', {
-        duration: 3000,
-        verticalPosition: 'top',
-        horizontalPosition: 'center'
-      });
-      return;
-    }
-
-    if (!confirmationCodeRegex.test(this.confirmationCode)) {
-      this.snackBar.open('رمز التأكيد يجب أن يكون 3 أرقام', 'إغلاق', {
-        duration: 3000,
-        verticalPosition: 'top',
-        horizontalPosition: 'center'
-      });
-      return;
-    }
-
-    if (sanitizedCardNumber && this.expirationDate && this.confirmationCode) {
-      this.savedCards.push({
-        number: this.cardNumber
-      });
-
-      this.cardNumber = '';
-      this.expirationDate = '';
-      this.confirmationCode = '';
-    } else {
-      this.snackBar.open('يرجى ملء جميع الحقول', 'إغلاق', {
-        duration: 3000,
-        verticalPosition: 'top',
-        horizontalPosition: 'center'
-      });
-    }
+    this.impApiService.post(cardinfo.cardCreate, this.cardForm.value).subscribe(data => {
+    },
+      error => {
+        console.log((error));
+      })
+    this.spinner.hide()
   }
 
   removeCard(cardNumber: string) {
-    this.savedCards = this.savedCards.filter(card => card.number !== cardNumber);
+    this.impApiService.delete(`${cardinfo.cardDelete}${this.card_id}`).subscribe(data => {
+    },
+      error => {
+        console.log((error));
+      })
   }
 
   signOut() {
@@ -124,7 +125,6 @@ export class CustomerMyInformationComponent implements OnInit {
 
     this.router.navigate(['/auth/login']);
   }
-
   mylatlng: any = {
     lat: null,
     lng: null
@@ -153,8 +153,7 @@ export class CustomerMyInformationComponent implements OnInit {
       street: this.street,
       building: this.building,
       cardNumber: this.cardNumber,
-      expirationDate: this.expirationDate,
-      confirmationCode: this.confirmationCode
+      expirationDate: this.expirationDate
     });
   }
 

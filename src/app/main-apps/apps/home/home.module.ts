@@ -8,6 +8,9 @@ import { CustomerHomeComponent } from './customer-home/customer-home.component';
 import { SharedComponentsModule } from 'src/app/shared-components/shared-components.module';
 import { CollectorHomeComponent } from './collector-home/collector-home.component';
 import { FormsModule } from '@angular/forms';
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 @NgModule({
@@ -21,7 +24,11 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     HomeRoutingModule,
     SharedComponentsModule,
-    FormsModule
+    FormsModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule
+
   ]
 })
 export class HomeModule { }
