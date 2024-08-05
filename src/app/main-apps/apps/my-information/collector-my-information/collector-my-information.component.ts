@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { auth } from 'src/app/constant/Routes';
+import { ImpApiService } from 'src/app/services/imp-api.service';
 
 @Component({
   selector: 'app-collector-my-information',
@@ -19,7 +22,20 @@ export class CollectorMyInformationComponent implements OnInit {
   age = 27
   image = "../../../../../assets/images/Collector.jpg"
 
-  constructor() { }
+  constructor(
+    private impApiService: ImpApiService,
+    private router: Router
+  ) { }
+
+  logOut() {
+    this.impApiService.post(auth.logout, localStorage.getItem('token')).subscribe(data => {
+
+    })
+    localStorage.removeItem("currentUser");
+    localStorage.removeItem("token")
+
+    this.router.navigate(['/auth/login']);
+  }
 
   ngOnInit(): void {
   }
