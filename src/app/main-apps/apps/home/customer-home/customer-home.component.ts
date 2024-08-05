@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { customer } from 'src/app/constant/Routes';
 import { ImpApiService } from 'src/app/services/imp-api.service';
 
@@ -19,15 +20,20 @@ export class CustomerHomeComponent implements OnInit {
   displayedShops: any[] = [];
   showMore: boolean = false;
 
-  constructor(private impApiService: ImpApiService) { }
+  constructor(private impApiService: ImpApiService,
+    private spinner: NgxSpinnerService
+  ) { }
 
   ngOnInit(): void {
     this.showAllShops()
+    this.spinner.show()
 
     this.impApiService.get(customer.viewMarkets).subscribe(data => {
       for (let index = 0; index < data.data.length; index++) {
         this.shops.push(data.data[index])
       }
+      this.spinner.hide()
+
       console.log(this.shops)
     });
   }

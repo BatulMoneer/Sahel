@@ -19,12 +19,14 @@ export class OrderService {
   createOrder(order: Order): Order {
     order.id = this.orders.length + 1;
     this.orders.push(order);
+    console.log("cc", this.orders)
     this.saveOrders();
     return order;
   }
 
   getOrders(): Order[] {
     this.loadOrders();
+    console.log("vv", this.orders)
     return this.orders;
   }
 
