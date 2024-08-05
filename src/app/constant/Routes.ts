@@ -23,18 +23,28 @@ export const category = {
 
 export const customer = {
   viewMarkets: BASEURL + 'viewMarkets', //done
-  addOrder: BASEURL + 'addOrder'
+  addOrder: BASEURL + 'addOrder', //done
+  filterMarkets: BASEURL + 'filter.markets'
 }
 
 export const product = {
   viewProducts: BASEURL + 'products/view/', //done
-  productShow: BASEURL + 'products/show/',
+
+productShow: BASEURL + 'products/show/', //done
   add_products: BASEURL + 'addProducts'
 }
 
 export const user = {
   resetPassword: BASEURL + 'resetPassword', //done
   updatePassword: BASEURL + 'resetPassword.updatePassword' //done
+}
+
+export const cardinfo = {
+  cardCreate: BASEURL + 'card_infos/create',
+  cardShow: BASEURL + 'card_infos/show/',
+  cardUpdate: BASEURL + 'card_infos/update/',
+  cardDelete: BASEURL + 'card_infos/delete/',
+
 }
 
 export const HOME = {

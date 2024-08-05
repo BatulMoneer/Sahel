@@ -40,6 +40,7 @@ export class CustomerSignupComponent implements OnInit {
   submitted_crearte = false;
 
   signUp() {
+    this.spinner.show()
 
     this.submitted_crearte = true
     if (this.formData.invalid) {

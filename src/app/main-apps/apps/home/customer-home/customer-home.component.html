@@ -22,19 +22,16 @@
 
   <div class="search-container">
     <i class="fas fa-search search-icon"></i>
-    <input type="text" placeholder="بحث">
+    <input type="text" placeholder="بحث" [(ngModel)]="search" (keyup)="filterShop()">
   </div>
 
   <div class="grid">
     <app-shop-card *ngFor="let shop of displayedShops" class="grid-item" [title]="shop.name_user" [image]="shop.logo"
-      [info]="shop.branch" [link]="productLink" [value]="moreProducts" (shopButtonClick)="setShop(shop.market_id)">>
+      [info]="shop.branch" [link]="productLink" [value]="moreProducts" (shopButtonClick)="setShop(shop.market_id)">
     </app-shop-card>
   </div>
 
-
-
-  <button (click)="showAllShops()">
+  <button (click)="toggleShowMore()">
     {{ showMore ? 'عرض أقل' : 'عرض المزيد من المتاجر' }}
   </button>
-
 </div>

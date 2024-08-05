@@ -1,3 +1,4 @@
+import { NgxSpinnerService } from 'ngx-spinner';
 import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { category, product } from 'src/app/constant/Routes';
 import { ImpApiService } from 'src/app/services/imp-api.service';
@@ -17,12 +18,14 @@ export class CustomerViewProductsComponent implements OnInit {
   visibleItems = 4;
   link = "/apps/products/customer-item-detail"
 
-  constructor(private impApiService: ImpApiService) { }
+  constructor(
+    private impApiService: ImpApiService,
+    private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
     const shop_id = localStorage.getItem('market');
     //const shop_id = 1;
-
+    this.spinner.show()
     this.impApiService.get(category.categories_index).subscribe(data => {
       this.categories = data.map(cat => cat.category_name);
       this.category = this.categories.map(title => ({ title, currentIndex: 1, array: [] }));
@@ -41,6 +44,8 @@ export class CustomerViewProductsComponent implements OnInit {
         }
       });
       this.showAllProducts = new Array(this.category.length).fill(false);
+      this.spinner.hide()
+
 
     });
   }

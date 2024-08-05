@@ -80,10 +80,14 @@ export class LoginComponent implements OnInit {
       const payload = {
         email_user: this.formData.value.email_user,
       }
+      this.spinner.show()
+
       this.impApiService.post(user.resetPassword, payload).subscribe(data => {
         if (data.message == "OTP has been Sended to the Email") {
           localStorage.setItem('email', this.formData.value.email_user)
           this.dialog.open(OtpPassPopComponent)
+          this.spinner.hide()
+
         }
       })
       //

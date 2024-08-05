@@ -88,10 +88,10 @@ export class CustomerItemDetailComponent implements OnInit {
     productId: 1,
     link: "/apps/products/customer-item-detail",
     value: "عرض",
-    title: ' شوفان كويكر 500جم',
-    image: '../../../../../assets/images/Oats.jpg',
-    info: 15,
-    barcode: '../../../../../assets/images/Barcode.png',
+    title: String,
+    image: String,
+    info: Number,
+    barcode: String,
     amount: 1
   }
 
@@ -173,8 +173,12 @@ export class CustomerItemDetailComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.impApiService.get(`${product.productShow}${localStorage.getItem('market')}${localStorage.getItem('product')}`).subscribe(data => {
+    this.impApiService.get(`${product.productShow}${localStorage.getItem('market')}${'/'}${localStorage.getItem('product')}`).subscribe(data => {
 
+      this.current.title = data.data.name
+      this.current.barcode = data.data.barcode
+      this.current.image = data.data.image
+      this.current.info = data.data.price
       console.log(data);
     });
   }
