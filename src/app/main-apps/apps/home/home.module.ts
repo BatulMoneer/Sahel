@@ -28,7 +28,6 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatTableModule,
     MatSortModule,
     MatPaginatorModule
-
   ]
 })
 export class HomeModule { }

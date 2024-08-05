@@ -150,7 +150,7 @@ export class ChooseProductWillUpdateItComponent implements OnInit {
   filter_products(user_filter){
     this.productsList = this.productsList_
    this.productsList =  this.productsList.filter((data)=>{
-       return data.prodcutName.includes(user_filter), data.productSection.includes(user_filter)
+       return data.prodcutName.includes(user_filter)
     })}
 
   navigateAndSend(){}

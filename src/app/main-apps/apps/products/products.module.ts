@@ -21,6 +21,7 @@ import { CollectorOrdersComponent } from './collector-orders/collector-orders.co
 import { CollectorOrderDetailsComponent } from './collector-order-details/collector-order-details.component';
 import { MatRadioModule } from '@angular/material/radio';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatSnackBarModule,
     MatRadioModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgSelectModule
   ]
 })
 export class ProductsModule { }

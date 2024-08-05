@@ -58,37 +58,83 @@
 
     <div class="search-container">
       <i class="fas fa-search search-icon"></i>
-      <input type="text" placeholder="بحث">
+      <input type="text" placeholder="بحث" (input)="filter_comparing($event.target.value)">
     </div>
 
-    <table>
+    <div class="table-container-div">
 
-      <thead>
-        <tr>
-          <th class="th-first">المتجر</th>
-          <th>نسبة المبيعات بين المتاجر</th>
-          <th>الترتيب حسب المبيعات</th>
-          <th>فرع المتجر</th>
-          <th>الترتيب حسب الفروع</th>
-          <th>عدد العملاء</th>
-          <th class="th-last">التقدم</th>
-        </tr>
-      </thead>
+      <table>
 
-      <tbody>
-        <tr *ngFor="let item of comparingArray">
-          <td>{{item.store}}</td>
-          <td>{{item.percentageOfSalesBetweenStores}}</td>
-          <td>{{item.sortBySales}}</td>
-          <td>{{item.branchOfStore}}</td>
-          <td>{{item.sortByBranchs}}</td>
-          <td>{{item.NumberOfClients}}</td>
-          <td>{{item.progress}}</td>
-        </tr>
-      </tbody>
+        <thead>
+          <tr>
+            <th class="th-first">المتجر</th>
+            <th>نسبة المبيعات بين المتاجر</th>
+            <th>الترتيب حسب المبيعات</th>
+            <th>فرع المتجر</th>
+            <th>الترتيب حسب الفروع</th>
+            <th>عدد العملاء</th>
+            <th class="th-last">التقدم</th>
+          </tr>
+        </thead>
 
-    </table>
+        <tbody>
+          <tr *ngFor="let item of comparingList">
+            <td>{{item.store}}</td>
+            <td>{{item.percentageOfSalesBetweenStores}}</td>
+            <td>{{item.sortBySales}}</td>
+            <td>{{item.branchOfStore}}</td>
+            <td>{{item.sortByBranchs}}</td>
+            <td>{{item.NumberOfClients}}</td>
+            <td>{{item.progress}}</td>
+          </tr>
+        </tbody>
+
+      </table>
+
+    </div>
 
   </div>
 
 </div>
+
+
+
+<!-- ng-table
+ <div class="container  " style="display: flex;flex-direction: column;">
+  <input type="text" class="form-control bg-white" placeholder="بحث" aria-label="Username"
+    (keyup)="applyFilter(applyFilterInput)" aria-describedby="basic-addon1" [(ngModel)]="applyFilterInput">
+  <br>
+
+  <div class="row">
+    <ng-select [items]="cars" bindLabel="name" bindValue="id" [(ngModel)]="selectedCar">
+    </ng-select>
+</div>
+
+<table mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8">
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>id</th>
+    <td mat-cell *matCellDef="let emp">{{ emp.id }}</td>
+  </ng-container>
+  <ng-container matColumnDef="first_name">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>first_name</th>
+    <td mat-cell *matCellDef="let emp">{{ emp.first_name }}</td>
+  </ng-container>
+  <ng-container matColumnDef="last_name">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>last_name</th>
+    <td mat-cell *matCellDef="let emp">{{ emp.last_name }}</td>
+  </ng-container>
+  <ng-container matColumnDef="email">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>email</th>
+    <td mat-cell *matCellDef="let emp">{{ emp.email }}</td>
+  </ng-container>
+  <ng-container matColumnDef="avatar">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>avatar</th>
+    <td mat-cell *matCellDef="let emp">{{ emp.avatar }}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let emprow; columns: displayedColumns"></tr>
+</table>
+<mat-paginator (page)="changePage($event)" [length]="totalData" [pageSizeOptions]="pageSizes"
+  showFirstLastButtons></mat-paginator>
+</div> -->

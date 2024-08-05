@@ -15,6 +15,12 @@ import { PopupModule } from './main-apps/apps/popup/popup.module';
 import { TokenInterceptorInterceptor } from './services/token-interceptor.interceptor';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { ToastrModule } from 'ngx-toastr';
+import {MatTableModule} from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
+
+
+
 
 
 @NgModule({
@@ -34,6 +40,9 @@ import { ToastrModule } from 'ngx-toastr';
     PopupModule,
     NgxSpinnerModule,
     ToastrModule.forRoot(),
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule
   ],
   exports: [
     NgxSpinnerModule,],

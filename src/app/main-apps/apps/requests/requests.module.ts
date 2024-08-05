@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -19,7 +20,9 @@ import { SharedComponentsModule } from "../../../shared-components/shared-compon
   imports: [
     CommonModule,
     RequestsRoutingModule,
-    SharedComponentsModule
+    SharedComponentsModule,
+    FormsModule
+
 ]
 })
 export class RequestsModule { }

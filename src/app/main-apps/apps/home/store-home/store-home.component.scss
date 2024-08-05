@@ -251,26 +251,41 @@ input:focus {
   border-bottom: 0px;
 }
 
-table {
+.table-container-div {
   width: 90%;
-  height: 400px;
+  height: 500px;
   padding: 0;
-  margin: 5px 0 20px;
+  margin: 0;
+  margin-bottom: 10px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px 3px var(--shadow);
+}
+
+table {
+  width: 100%;
+  height: auto;
+  overflow-y: auto;
   display: table;
   text-align: center;
   background-color: var(--background);
   color: var(--font);
   border-radius: 10px;
-  box-shadow: 3px 3px 3px 3px var(--shadow);
+  margin: 0 auto;
 }
 
 th {
   background-color: var(--prime);
   width: auto;
-  height: 30px;
-  padding: 5px;
+  height: auto;
+  padding: 10px;
   margin: 0;
   color: var(--background) !important;
+  position: sticky;
+  top: 0;
 }
 
 .th-first {
