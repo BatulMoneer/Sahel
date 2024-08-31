@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { customer } from 'src/app/constant/Routes';
 import { ImpApiService } from 'src/app/services/imp-api.service';
 
@@ -14,44 +15,52 @@ export class CustomerHomeComponent implements OnInit {
   moreProducts = "عرض المنتجات";
   productLink = "/apps/products/customer-view-products";
 
+  search: string = '';
+
   shops = [];
 
   displayedShops: any[] = [];
   showMore: boolean = false;
 
-  constructor(private impApiService: ImpApiService) { }
+  constructor(private impApiService: ImpApiService,
+    private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
-    this.showAllShops()
+    this.spinner.show();
 
     this.impApiService.get(customer.viewMarkets).subscribe(data => {
-      for (let index = 0; index < data.data.length; index++) {
-        this.shops.push(data.data[index])
-      }
-      console.log(this.shops)
+      this.shops = data.data;
+      this.spinner.hide();
+      this.updateDisplayedShops();
+      console.log(this.shops);
     });
   }
 
-  setShop(id) {
-    localStorage.setItem('market', id)
-    console.log(localStorage.getItem('market'))
-
+  filterShop(): void {
+    if (this.search) {
+      this.displayedShops = this.shops.filter(shop =>
+        shop.name_user.toLowerCase().includes(this.search.toLowerCase())
+      );
+    } else {
+      this.updateDisplayedShops();
+    }
   }
 
-  showAllShops(): void {
+  setShop(id: string): void {
+    localStorage.setItem('market', id);
+    console.log(localStorage.getItem('market'));
+  }
+
+  updateDisplayedShops(): void {
     if (this.showMore) {
       this.displayedShops = this.shops;
-      this.showMore = true;
+    } else {
+      this.displayedShops = this.shops.slice(0, 4);
     }
-    else {
-      if (this.shops.length < 4) {
-        this.displayedShops = this.shops;
-      }
-      else {
-        this.displayedShops = this.shops.slice(0, 4);
-        this.showMore = false;
-      }
-    }
+  }
 
+  toggleShowMore(): void {
+    this.showMore = !this.showMore;
+    this.updateDisplayedShops();
   }
 }

@@ -7,6 +7,8 @@ import { AddToCartPopComponent } from '../../popup/add-to-cart-pop/add-to-cart-p
 import { OrderService } from 'src/app/service/order.service';
 import { Order } from 'src/app/model/order.model';
 import { PayNowPopComponent } from '../../popup/pay-now-pop/pay-now-pop.component';
+import { customer } from 'src/app/constant/Routes';
+import { ImpApiService } from 'src/app/services/imp-api.service';
 
 
 @Component({
@@ -15,6 +17,13 @@ import { PayNowPopComponent } from '../../popup/pay-now-pop/pay-now-pop.componen
   styleUrls: ['./customer-cart.component.scss']
 })
 export class CustomerCartComponent implements OnInit {
+
+  constructor(
+    private dialog: MatDialog,
+    private router: Router,
+    private service: OrderService,
+    private impApiService: ImpApiService,
+  ) { }
 
   hasCart = false
   products = []
@@ -55,14 +64,6 @@ export class CustomerCartComponent implements OnInit {
     localStorage.setItem('cart', JSON.stringify(this.products));
   }
 
-
-
-  constructor(
-    private dialog: MatDialog,
-    private router: Router,
-    private service: OrderService
-  ) { }
-
   currentOrder: Order;
 
   updateValues(): void {
@@ -101,14 +102,25 @@ export class CustomerCartComponent implements OnInit {
   openDialog(): void {
     this.service.setHasOrder(true);
     this.orders.push(this.currentOrder);
+    console.log("ss", this.orders)
     this.service.createOrder(this.currentOrder);
+
+    const payload = {
+      market_id: localStorage.getItem('market'),
+      total_price: this.getPrice(),
+      delivery_price: this.delivery,
+      distance_kilo: 17,
+      number_of_products: this.noOfItems
+    }
+
+    this.impApiService.post(customer.addOrder, payload).subscribe(data => {
+    })
     this.dialog.open(PayNowPopComponent);
     this.router.navigate(['/apps/products/order-state']);
   }
 
   ngOnInit(): void {
 
-    console.log(this.collectPrice, " l1ll")
 
     let retString = localStorage.getItem("cart");
     if (retString) {
@@ -116,7 +128,6 @@ export class CustomerCartComponent implements OnInit {
       if (this.products[0])
         this.hasCart = true
     }
-    console.log(this.collectPrice, " ll2l")
 
     this.updateValues();
     console.log(this.products);

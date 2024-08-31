@@ -12,7 +12,7 @@ import { CollectorViewRecieptsComponent } from './collector-view-reciepts/collec
 import { CollectorRequestWalletComponent } from './collector-request-wallet/collector-request-wallet.component';
 import { CollectorViewPaymentsComponent } from './collector-view-payments/collector-view-payments.component';
 import { CollectorRecieptDetailsComponent } from './collector-reciept-details/collector-reciept-details.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
@@ -33,7 +33,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MyInformationRoutingModule,
     SharedComponentsModule,
     FormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    ReactiveFormsModule
   ],
   exports: [
     CustomerMyInformationComponent

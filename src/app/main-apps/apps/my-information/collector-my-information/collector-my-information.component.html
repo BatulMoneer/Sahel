@@ -5,7 +5,6 @@
 
   <div class="two">
     <div class="two-top">
-      <img src="{{image}}" alt="" class="image">
       <h6 class="sub-title">{{job}}</h6>
     </div>
     <div class="two-down">
@@ -14,7 +13,7 @@
       </div>
       <div class="two-down-left">
         <app-button [link]="info_link" [value]="' تعديل المعلومات'"></app-button>
-        <app-button [link]="logout_link" [value]="' تسجيل الخروج'"></app-button>
+        <button (click)="logOut()">تسجيل الخروج</button>
       </div>
     </div>
   </div>

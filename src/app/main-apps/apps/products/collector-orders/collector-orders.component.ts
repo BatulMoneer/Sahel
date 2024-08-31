@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { collector } from 'src/app/constant/Routes';
 import { Order } from 'src/app/model/order.model';
 import { OrderService } from 'src/app/service/order.service';
+import { ImpApiService } from 'src/app/services/imp-api.service';
 
 @Component({
   selector: 'app-collector-orders',
@@ -15,7 +17,10 @@ export class CollectorOrdersComponent implements OnInit {
   link = "/apps/products/collector-order-details";
   value = "قبول";
 
-  constructor(private service: OrderService) { }
+  constructor(
+    private service: OrderService,
+    private impApiService: ImpApiService
+  ) { }
 
   onOrderButtonClick(order: Order): void {
     console.log('Order button clicked for:', order);
@@ -26,11 +31,21 @@ export class CollectorOrdersComponent implements OnInit {
 
   }
 
+  isActive;
   ngOnInit(): void {
     console.log(this.service.getOrders())
     this.allOrders = this.service.getOrders();
     this.ordersCount = this.allOrders.length;
     this.filterOrders();
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    this.impApiService.get(`${collector.getCollectorStatus}${currentUser.user_info.id}`).subscribe(data => {
+      this.isActive = data.collector_status[0] === 'active';
+    });
+
+    if (this.isActive) {
+
+    }
+
   }
 
   filterOrders(): void {

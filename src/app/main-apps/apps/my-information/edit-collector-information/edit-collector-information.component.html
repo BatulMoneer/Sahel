@@ -1,53 +1,124 @@
 <div class="body">
   <h1 class="title">معلوماتي</h1>
   <div>
-    <form action="" class="form">
-      <div class="top">
-        <img src="{{image}}" alt="" class="image">
-        <h6 class="text">تعديل الصورة</h6>
+    <div class="top">
+    </div>
+    <div class="bottom">
+
+      <div class="section">
+
+        <h6 class="note">معلوماتي</h6>
+        <div class="input-group">
+          <p class="text">الاسم</p>
+          <input type="text" name="name" />
+        </div>
+        <div class="input-group">
+          <p class="text">رقم الجوال</p>
+          <input type="tel" name="phoneNumber" />
+        </div>
+        <div class="input-group">
+          <p class="text">البريد الالكتروني</p>
+          <input type="email" name="email" />
+        </div>
+
+        <div class="input-group">
+          <p class="text">العمر</p>
+          <input type="date" class="age-input" required>
+        </div>
       </div>
 
-      <div class="bottom">
-        <div class="section">
-
-          <h6 class="text">البطاقة الائتمانية</h6>
-
-          <div class="saved-cards">
-            <div class="card">
-              <i class="fas fa-trash-alt trash-icon"></i>
-              <span class="card-info">تنتهي برقم 9801</span>
-              <i class="fas fa-credit-card card-icon"></i>
+      <div class="section">
+        <h6 class="note">اضافة بطاقة</h6>
+        <form [formGroup]="cardForm" (ngSubmit)="addCard()">
+          <div class="input-group">
+            <p class="text">اسم البنك</p>
+            <input type="text" formControlName="bank_name" placeholder="اسم البنك" />
+            <div *ngIf="submitted_crearte && cardForm.controls['bank_name'].errors">
+              <div class="invalid-feedback-custom"
+                *ngIf="submitted_crearte && cardForm.controls['bank_name'].errors.required">
+                الحقل مطلوب!
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="section">
-          <h6 class="note">معلوماتي</h6>
           <div class="input-group">
-            <p class="text">الاسم</p>
-            <app-text-field></app-text-field>
+            <p class="text"> الايبان</p>
+            <input type="text" formControlName="iban" placeholder="الايبان" />
+            <div *ngIf="submitted_crearte && cardForm.controls['iban'].errors">
+              <div class="invalid-feedback-custom"
+                *ngIf="submitted_crearte && cardForm.controls['iban'].errors.required">
+                الحقل مطلوب!
+              </div>
+            </div>
           </div>
-          <div class="input-group">
-            <p class="text">رقم الجوال</p>
-            <app-text-field></app-text-field>
-          </div>
-          <div class="input-group">
-            <p class="text">البريد الالكتروني</p>
-            <app-text-field></app-text-field>
-          </div>
-          <div class="input-group">
-            <p class="text">كلمة المرور</p>
-            <app-pass-field></app-pass-field>
-          </div>
-          <div class="input-group">
-            <p class="text">العمر</p>
-            <input type="date" class="age-input" required>
-          </div>
-        </div>
 
+          <div class="input-group">
+            <p class="text">رقم البطاقة</p>
+            <input type="text" formControlName="card_number" placeholder="Card No." />
+            <div *ngIf="submitted_crearte && cardForm.controls['card_number'].errors">
+              <div class="invalid-feedback-custom"
+                *ngIf="submitted_crearte && cardForm.controls['card_number'].errors.required">
+                الحقل مطلوب!
+              </div>
+              <div class="invalid-feedback-custom"
+                *ngIf="submitted_crearte && cardForm.controls['card_number'].errors.pattern">
+                الرقم غير صحيح!
+              </div>
+            </div>
+          </div>
 
-        <button>حفظ</button>
+          <div class="input-group">
+            <p class="text"> الاسم على البطاقة</p>
+            <input type="text" formControlName="name_on_card" placeholder="الاسم" />
+            <div *ngIf="submitted_crearte && cardForm.controls['name_on_card'].errors">
+              <div class="invalid-feedback-custom"
+                *ngIf="submitted_crearte && cardForm.controls['name_on_card'].errors.required">
+                الحقل مطلوب!
+              </div>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <p class="text">تاريخ الانتهاء</p>
+            <input type="text" formControlName="expiry_date" placeholder="MM/YY" />
+            <div *ngIf="submitted_crearte && cardForm.controls['expiry_date'].errors">
+              <div class="invalid-feedback-custom"
+                *ngIf="submitted_crearte && cardForm.controls['expiry_date'].errors.required">
+                الحقل مطلوب!
+              </div>
+              <div class="invalid-feedback-custom"
+                *ngIf="submitted_crearte && cardForm.controls['expiry_date'].errors.pattern">
+                التاريخ غير صحيح!
+              </div>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <p class="text">نوع البطاقة</p>
+            <input type="text" formControlName="type_of_card" placeholder="النوع" />
+            <div *ngIf="submitted_crearte && cardForm.controls['type_of_card'].errors">
+              <div class="invalid-feedback-custom"
+                *ngIf="submitted_crearte && cardForm.controls['type_of_card'].errors.required">
+                الحقل مطلوب!
+              </div>
+            </div>
+          </div>
+
+          <button type="button" (click)="addCard()">{{add_card}}</button>
+        </form>
       </div>
-    </form>
+
+      <div class="section">
+        <h6 class="text">البطاقات المحفوظة</h6>
+        <div class="saved-cards">
+          <div class="card" *ngFor="let card of savedCards">
+            <i class="fas fa-trash-alt trash-icon" (click)="removeCard(card.number)"></i>
+            <span class="card-info">{{card.number}}</span>
+            <i class="fas fa-credit-card card-icon"></i>
+          </div>
+        </div>
+      </div>
+      <button>حفظ</button>
+    </div>
   </div>
 </div>

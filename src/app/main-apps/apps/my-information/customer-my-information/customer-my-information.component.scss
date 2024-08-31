@@ -182,6 +182,15 @@ app-button {
   color: var(--prime);
 }
 
+
+    .invalid-feedback-custom{
+      font-size: 10px;
+      color: var(--warn);
+      padding-top: 3px;
+      margin-top: 0;
+    }
+
+
 @media (max-width: 1110px) {
   .body {
     display: flex;
