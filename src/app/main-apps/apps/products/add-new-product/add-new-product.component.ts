@@ -20,13 +20,18 @@ export class AddNewProductComponent implements OnInit {
 
   submitted_create = false;
 
+  attatchmentFile = {
+    product_image: null,
+    product_barcode: null
+  }
+
   addPrudectForm = this.fb.group({
     product_name: ['', [Validators.required]],
     price: ['', [Validators.required]],
     category_id: ['', [Validators.required]],
-    quantity: ['', [Validators.required]]
-    // product_image: ['', [Validators.required]],
-    // product_barcode: ['', [Validators.required]],
+    quantity: ['', [Validators.required]],
+    product_image: [null],
+    product_barcode: [null],
   })
 
 
@@ -35,25 +40,56 @@ export class AddNewProductComponent implements OnInit {
 
   ngOnInit(): void {
     this.impApiService.get(category.categories_index).subscribe(data => {
-      this.categories_index = data.data
+      this.categories_index = data
       console.log(this.categories_index)
     })
   }
 
+  uploadAttachmenet(attach, object) {
+    console.log(attach.target.files)
+    this.attatchmentFile[object] = attach.target.files
+  }
+
   addproduct() {
+
+
     this.submitted_create = true
-    console.log(this.addPrudectForm.value)
     if (this.addPrudectForm.invalid) {
       console.log("error");
       return
+    }
+
+    let data = Object.assign({}, this.addPrudectForm.value)
+    data.category_id = data.category_id.id
+
+    let Formdata = new FormData()
+    Formdata.append('product_name', data.product_name)
+    Formdata.append('category_id', data.category_id)
+    Formdata.append('quantity', data.quantity)
+    Formdata.append('price', data.price)
+
+    if (this.attatchmentFile.product_image) {
+      Formdata.append('product_image', this.attatchmentFile.product_image[0])
 
     }
-    this.impApiService.post(product.add_products, this.addPrudectForm.value).subscribe(data => {
-      this.addPrudectForm = data.data
 
+    if (this.attatchmentFile.product_barcode) {
+      Formdata.append('product_barcode', this.attatchmentFile.product_barcode[0])
+
+    }
+
+
+console.log(Formdata)
+
+    this.impApiService.post(product.add_products, Formdata).subscribe(data => {
+      this.addPrudectForm = this.fb.group({
+        product_name: ['', [Validators.required]],
+        price: ['', [Validators.required]],
+        category_id: ['', [Validators.required]],
+        quantity: ['', [Validators.required]],
+        product_image: [null],
+        product_barcode: [null],
+      })
     })
-
-
-
-}
+  }
 }

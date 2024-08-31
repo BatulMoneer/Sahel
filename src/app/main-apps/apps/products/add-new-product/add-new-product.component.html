@@ -47,19 +47,19 @@
       <p *ngIf="addPrudectForm.get('quantity').invalid  && submitted_create">الحقل مطلوب</p>
     </div>
 
-    <!-- <div class="product-photo-div">
+    <div class="product-photo-div">
       <label class="product-photo-label" for="product-photo">أرفق صورة المنتج :</label>
-      <input class="product-photo-input" formControlName="product_image" type="file" name="product-photo-name"
+      <input class="product-photo-input" (change)="uploadAttachmenet($event,'product_image')" formControlName="product_image" type="file" name="product-photo-name"
         id="product-photo">
       <p *ngIf="addPrudectForm.get('product_image').invalid  && submitted_create">الحقل مطلوب</p>
     </div>
 
     <div class="product-barcode-div">
       <label class="product-barcode-label" for="product-barcode">أرفق صورة لباركود المنتج :</label>
-      <input class="product-barcode-input" formControlName="barcode_image" type="file" name="product-barcode-name"
+      <input class="product-barcode-input" (change)="uploadAttachmenet($event,'product_barcode')" formControlName="product_barcode" type="file" name="product-barcode-name"
         id="product-barcode">
       <p *ngIf="addPrudectForm.get('product_barcode').invalid  && submitted_create">الحقل مطلوب</p>
-    </div> -->
+    </div>
 
     <div class="Reset-add-div">
       <input class="reset-button" type="reset" value="مسح الحقول" name="reset-name">

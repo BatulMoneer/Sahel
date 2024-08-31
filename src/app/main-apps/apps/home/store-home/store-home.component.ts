@@ -17,9 +17,9 @@ export class StoreHomeComponent implements OnInit {
 
   customersArray = [
     {
-      total: '500,000  عميل',
-      newCustomer: '5,000  عميل',
-      returnees: '300,000 عميل',
+      total: 500000,
+      newCustomer: 5000,
+      returnees: 300000,
     }
   ]
 
